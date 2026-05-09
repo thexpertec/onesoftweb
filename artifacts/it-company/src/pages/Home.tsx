@@ -14,6 +14,7 @@ import { OfficeSlider } from "@/components/OfficeSlider";
 import { DashboardSlider } from "@/components/DashboardSlider";
 import { CTAStrip } from "@/components/CTAStrip";
 import { CTAFormSection } from "@/components/CTAFormSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -201,6 +202,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <ServicesSection />
 
       <DashboardSlider />
 
