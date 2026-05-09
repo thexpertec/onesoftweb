@@ -6,7 +6,7 @@ import dubaiSkyline from "@/assets/skylines/dubai.png";
 
 const offices = [
   {
-    label: "UK Office",
+    label: "Head Office",
     city: "Hull",
     country: "United Kingdom",
     flag: "🇬🇧",
@@ -28,7 +28,7 @@ const offices = [
     accent: "#ef4444",
   },
   {
-    label: "Head Office",
+    label: "Pakistan Office",
     city: "Islamabad",
     country: "Pakistan",
     flag: "🇵🇰",
