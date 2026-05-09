@@ -6,6 +6,7 @@ import {
   Palette, Globe, ShoppingBag, Webhook, Code2, Users, LayoutDashboard,
   Wrench, BrainCircuit, Megaphone, SearchCheck, ImagePlay,
   ArrowRight, Sparkles, Phone,
+  Pill, Hotel, Home, Dumbbell, Shirt, Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,12 +14,18 @@ import { motion, AnimatePresence } from "framer-motion";
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const erpProducts = [
-  { icon: GraduationCap, label: "School ERP",         desc: "Admissions, fees, timetables, results", color: "#2563eb", href: "#products" },
-  { icon: Stethoscope,   label: "Hospital ERP",        desc: "OPD, IPD, pharmacy, lab management",   color: "#16a34a", href: "#products" },
-  { icon: Building2,     label: "Shadi Hall ERP",      desc: "Bookings, catering, event scheduling",  color: "#db2777", href: "#products" },
-  { icon: UtensilsCrossed, label: "Restaurant ERP",   desc: "POS, kitchen, menu, delivery",          color: "#ea580c", href: "#products" },
-  { icon: ShoppingCart,  label: "E-commerce ERP",      desc: "Inventory, orders, multi-channel",      color: "#7c3aed", href: "#products" },
-  { icon: Package,       label: "Wholesaler / Distributor ERP", desc: "Stock, invoicing, supply chain", color: "#0891b2", href: "#products" },
+  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables, results",  color: "#2563eb", href: "#products" },
+  { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy, lab management",     color: "#16a34a", href: "#products" },
+  { icon: Building2,       label: "Shadi Hall ERP",           desc: "Bookings, catering, event scheduling",   color: "#db2777", href: "#products" },
+  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen, menu, delivery",           color: "#ea580c", href: "#products" },
+  { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders, multi-channel",       color: "#7c3aed", href: "#products" },
+  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing, supply chain",         color: "#0891b2", href: "#products" },
+  { icon: Pill,            label: "Pharmacy ERP",             desc: "Medicines, stock, billing, expiry",      color: "#059669", href: "#products" },
+  { icon: Hotel,           label: "Hotel & Hospitality",      desc: "Rooms, bookings, housekeeping",          color: "#0369a1", href: "#products" },
+  { icon: Home,            label: "Real Estate ERP",          desc: "Properties, leads, rentals, sales",      color: "#b45309", href: "#products" },
+  { icon: Dumbbell,        label: "Gym & Fitness ERP",        desc: "Members, attendance, packages",          color: "#be185d", href: "#products" },
+  { icon: Shirt,           label: "Garments / Textile ERP",   desc: "Production, fabric, orders, exports",    color: "#6d28d9", href: "#products" },
+  { icon: Truck,           label: "Transport & Logistics",    desc: "Fleet, trips, drivers, invoices",        color: "#c2410c", href: "#products" },
 ];
 
 const themeProducts = [
@@ -46,11 +53,11 @@ const marketingServices = [
 
 function ProductsMega({ close }: { close: () => void }) {
   return (
-    <div className="grid grid-cols-[1fr_220px] gap-0 min-w-[680px]">
+    <div className="grid grid-cols-[1fr_220px] gap-0 min-w-[860px]">
       {/* Left: ERP + Themes */}
       <div className="p-6 border-r border-white/8">
         <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">ERP Systems</p>
-        <div className="grid grid-cols-2 gap-1.5 mb-5">
+        <div className="grid grid-cols-3 gap-1.5 mb-5">
           {erpProducts.map(p => (
             <a key={p.label} href={p.href} onClick={close}
               className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group">
