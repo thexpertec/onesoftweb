@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { TechMarquee } from "@/components/TechMarquee";
+import { ClientLogos } from "@/components/ClientLogos";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -94,6 +95,8 @@ export default function Home() {
       </section>
 
       <TechMarquee />
+
+      <ClientLogos />
 
       {/* Stats Section */}
       <section id="stats" className="py-16 bg-secondary/20">
