@@ -16,7 +16,11 @@ export function Navigation() {
         
         <nav className="hidden md:flex items-center gap-8">
           <a href="#products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</a>
-          <a href="#industries" className="text-sm text-muted-foreground hover:text-primary transition-colors">Industries</a>
+          <a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Services</a>
+          <a href="#ai-automation" className="text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse inline-block" />
+            AI
+          </a>
           <a href="#themes" className="text-sm text-muted-foreground hover:text-primary transition-colors">PowerThemes</a>
           <a href="#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Why Us</a>
         </nav>

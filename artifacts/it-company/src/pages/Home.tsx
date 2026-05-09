@@ -15,6 +15,7 @@ import { DashboardSlider } from "@/components/DashboardSlider";
 import { CTAStrip } from "@/components/CTAStrip";
 import { CTAFormSection } from "@/components/CTAFormSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { AIAutomationSection } from "@/components/AIAutomationSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -204,6 +205,7 @@ export default function Home() {
       </section>
 
       <ServicesSection />
+      <AIAutomationSection />
 
       <DashboardSlider />
 
