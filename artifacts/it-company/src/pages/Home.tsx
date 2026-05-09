@@ -9,6 +9,7 @@ import { StickyCTA } from "@/components/StickyCTA";
 import { GlobalOffices } from "@/components/GlobalOffices";
 import { HowWeWork } from "@/components/HowWeWork";
 import { FAQSection } from "@/components/FAQSection";
+import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -131,6 +132,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FeatureMarquee />
 
       {/* Core ERP Products */}
       <section id="products" className="py-24 relative">
