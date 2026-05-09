@@ -53,55 +53,55 @@ const marketingServices = [
 
 function ProductsMega({ close }: { close: () => void }) {
   return (
-    <div className="grid grid-cols-[1fr_220px] gap-0 min-w-[860px]">
+    <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[820px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: ERP + Themes */}
-      <div className="p-6 border-r border-white/8">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">ERP Systems</p>
-        <div className="grid grid-cols-3 gap-1.5 mb-5">
+      <div className="p-4 border-r border-white/8">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">ERP Systems</p>
+        <div className="grid grid-cols-3 gap-0.5 mb-3">
           {erpProducts.map(p => (
             <a key={p.label} href={p.href} onClick={close}
-              className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+              className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
+              <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
                 style={{ backgroundColor: `${p.color}1a`, border: `1px solid ${p.color}30` }}>
-                <p.icon className="w-4 h-4" style={{ color: p.color }} />
+                <p.icon className="w-3.5 h-3.5" style={{ color: p.color }} />
               </div>
-              <div>
-                <p className="text-sm font-semibold text-white group-hover:text-white leading-tight">{p.label}</p>
-                <p className="text-[11px] text-white/45 mt-0.5">{p.desc}</p>
+              <div className="min-w-0">
+                <p className="text-[12px] font-semibold text-white/90 group-hover:text-white leading-tight truncate">{p.label}</p>
+                <p className="text-[10px] text-white/40 leading-tight truncate">{p.desc}</p>
               </div>
             </a>
           ))}
         </div>
-        <div className="h-px bg-white/8 mb-4" />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">Website Products</p>
+        <div className="h-px bg-white/8 mb-2" />
+        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Website Products</p>
         {themeProducts.map(p => (
           <a key={p.label} href={p.href} onClick={close}
-            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+            className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
+            <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
               style={{ backgroundColor: `${p.color}1a`, border: `1px solid ${p.color}30` }}>
-              <p.icon className="w-4 h-4" style={{ color: p.color }} />
+              <p.icon className="w-3.5 h-3.5" style={{ color: p.color }} />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">{p.label}</p>
-              <p className="text-[11px] text-white/45 mt-0.5">{p.desc}</p>
+              <p className="text-[12px] font-semibold text-white/90 group-hover:text-white leading-tight">{p.label}</p>
+              <p className="text-[10px] text-white/40 leading-tight">{p.desc}</p>
             </div>
           </a>
         ))}
       </div>
 
       {/* Right: CTA */}
-      <div className="p-6 flex flex-col justify-between bg-white/[0.02]">
+      <div className="p-4 flex flex-col justify-between bg-white/[0.02]">
         <div>
-          <div className="w-10 h-10 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-4">
-            <Zap className="w-5 h-5 text-primary" />
+          <div className="w-9 h-9 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-3">
+            <Zap className="w-4 h-4 text-primary" />
           </div>
-          <p className="text-sm font-bold text-white mb-1.5">See it in action</p>
+          <p className="text-sm font-bold text-white mb-1">See it in action</p>
           <p className="text-xs text-white/50 leading-relaxed">
             Book a free 30-minute demo of any ERP module — live, no slides.
           </p>
         </div>
         <a href="#contact" onClick={close}
-          className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+          className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
           Book Free Demo <ArrowRight className="w-3.5 h-3.5" />
         </a>
       </div>
@@ -111,34 +111,34 @@ function ProductsMega({ close }: { close: () => void }) {
 
 function ServicesMega({ close }: { close: () => void }) {
   return (
-    <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[700px]">
+    <div className="grid grid-cols-[1fr_190px] gap-0 min-w-[660px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: Dev + Marketing */}
-      <div className="p-6 border-r border-white/8">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">Software & Development</p>
-        <div className="grid grid-cols-2 gap-1 mb-5">
+      <div className="p-4 border-r border-white/8">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Software & Development</p>
+        <div className="grid grid-cols-2 gap-0.5 mb-3">
           {devServices.map(s => (
             <a key={s.label} href={s.href} onClick={close}
-              className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-white/[0.06] transition-colors group">
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+              className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
+              <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
                 style={{ backgroundColor: `${s.color}18`, border: `1px solid ${s.color}28` }}>
-                <s.icon className="w-3.5 h-3.5" style={{ color: s.color }} />
+                <s.icon className="w-3 h-3" style={{ color: s.color }} />
               </div>
               <div>
-                <p className="text-[13px] font-medium text-white/85 group-hover:text-white leading-tight">{s.label}</p>
+                <p className="text-[12px] font-medium text-white/85 group-hover:text-white leading-tight">{s.label}</p>
                 <p className="text-[10px] text-white/38">{s.desc}</p>
               </div>
             </a>
           ))}
         </div>
-        <div className="h-px bg-white/8 mb-4" />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">Digital Marketing</p>
-        <div className="grid grid-cols-3 gap-1">
+        <div className="h-px bg-white/8 mb-2" />
+        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Digital Marketing</p>
+        <div className="grid grid-cols-3 gap-0.5">
           {marketingServices.map(s => (
             <a key={s.label} href={s.href} onClick={close}
-              className="flex flex-col items-center gap-2 px-2 py-3 rounded-xl hover:bg-white/[0.06] transition-colors group text-center">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+              className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
+              <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
                 style={{ backgroundColor: `${s.color}18`, border: `1px solid ${s.color}28` }}>
-                <s.icon className="w-4 h-4" style={{ color: s.color }} />
+                <s.icon className="w-3 h-3" style={{ color: s.color }} />
               </div>
               <p className="text-[12px] font-medium text-white/80 group-hover:text-white leading-tight">{s.label}</p>
             </a>
@@ -147,18 +147,18 @@ function ServicesMega({ close }: { close: () => void }) {
       </div>
 
       {/* Right: CTA */}
-      <div className="p-6 flex flex-col justify-between bg-white/[0.02]">
+      <div className="p-4 flex flex-col justify-between bg-white/[0.02]">
         <div>
-          <div className="flex items-center gap-1.5 mb-3">
-            <Sparkles className="w-4 h-4 text-violet-400" />
+          <div className="flex items-center gap-1.5 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-violet-400" />
             <span className="text-[10px] font-bold uppercase tracking-wider text-violet-400">AI-Powered</span>
           </div>
-          <p className="text-sm font-bold text-white mb-1.5">Every service AI-ready</p>
+          <p className="text-sm font-bold text-white mb-1">Every service AI-ready</p>
           <p className="text-xs text-white/50 leading-relaxed">
             We layer AI automation into every product we build — chatbots, document AI, predictive analytics.
           </p>
         </div>
-        <div className="mt-6 space-y-2">
+        <div className="mt-4 space-y-2">
           <a href="#ai-automation" onClick={close}
             className="flex items-center gap-1.5 text-xs font-semibold text-violet-400 hover:underline">
             Explore AI <ArrowRight className="w-3.5 h-3.5" />
