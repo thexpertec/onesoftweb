@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import { Zap, Twitter, Linkedin, Youtube, Github, ExternalLink } from "lucide-react";
 
 const colVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -12,13 +12,13 @@ const colVariants = {
 
 export function Footer() {
   return (
-    <footer id="site-footer" className="bg-background border-t border-border py-16">
+    <footer id="site-footer" className="bg-background border-t border-border pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
 
           {/* Brand col */}
           <motion.div
-            className="col-span-1 md:col-span-1"
+            className="col-span-2 md:col-span-2"
             custom={0}
             initial="hidden"
             whileInView="visible"
@@ -29,11 +29,29 @@ export function Footer() {
               <div className="w-8 h-8 rounded bg-primary flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-white">PowerTech</span>
+              <span className="font-bold text-xl text-white">PowerTech Solutions</span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Precision-engineered ERP systems and premium website themes for modern businesses.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
+              Precision-engineered ERP systems and premium website themes for schools, hospitals, restaurants, distributors, and more. Built in the UK. Deployed globally.
             </p>
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              {[
+                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: Twitter,  href: "#", label: "Twitter / X" },
+                { icon: Youtube,  href: "#", label: "YouTube" },
+                { icon: Github,   href: "#", label: "GitHub" },
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-9 h-9 rounded-lg border border-white/10 bg-white/[0.04] flex items-center justify-center text-white/40 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-200"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </motion.div>
 
           {/* ERP Solutions */}
@@ -44,11 +62,19 @@ export function Footer() {
             viewport={{ once: true }}
             variants={colVariants}
           >
-            <h4 className="font-semibold text-white mb-4">ERP Solutions</h4>
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">ERP Products</h4>
             <ul className="space-y-3">
-              {["School ERP", "Hospital ERP", "E-commerce ERP", "Restaurant ERP"].map((item) => (
+              {[
+                "School ERP",
+                "Hospital ERP",
+                "E-commerce ERP",
+                "Restaurant ERP",
+                "Shadi Hall ERP",
+                "Distributor ERP",
+              ].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#products" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
+                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                     {item}
                   </a>
                 </li>
@@ -64,19 +90,27 @@ export function Footer() {
             viewport={{ once: true }}
             variants={colVariants}
           >
-            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Company</h4>
             <ul className="space-y-3">
-              {["About Us", "Careers", "Case Studies", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {item}
+              {[
+                { label: "About Us",     href: "#" },
+                { label: "Our Team",     href: "#" },
+                { label: "Case Studies", href: "#" },
+                { label: "Careers",      href: "#" },
+                { label: "Contact",      href: "#contact" },
+                { label: "Blog",         href: "#" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
+                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+                    {label}
                   </a>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Legal */}
+          {/* Legal + Contact */}
           <motion.div
             custom={3}
             initial="hidden"
@@ -84,31 +118,46 @@ export function Footer() {
             viewport={{ once: true }}
             variants={colVariants}
           >
-            <h4 className="font-semibold text-white mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "SLA Agreement"].map((item) => (
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+            <ul className="space-y-3 mb-8">
+              {["Privacy Policy", "Terms of Service", "SLA Agreement", "Cookie Policy"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
+                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                     {item}
                   </a>
                 </li>
               ))}
             </ul>
+
+            <h4 className="font-semibold text-white mb-3 text-sm uppercase tracking-wider">Offices</h4>
+            <div className="space-y-1.5 text-xs text-muted-foreground">
+              <p>🇬🇧 Hull, United Kingdom</p>
+              <p>🇦🇪 Business Bay, Dubai</p>
+              <p>🇵🇰 G9 Markaz, Islamabad</p>
+            </div>
           </motion.div>
         </div>
 
+        {/* Bottom bar */}
         <motion.div
-          className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
+          className="pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} PowerTech Solutions. All rights reserved.
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} PowerTech Solutions Ltd. Registered in England & Wales. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>System Status: <span className="text-primary">99.9% Uptime</span></span>
+          <div className="flex items-center gap-6 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse" />
+              All systems operational
+            </span>
+            <a href="#" className="hover:text-primary transition-colors flex items-center gap-1">
+              System Status <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </motion.div>
       </div>

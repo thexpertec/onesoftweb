@@ -18,16 +18,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  ArrowRight, Activity, ShieldCheck, Zap, 
+  ArrowRight, Activity, ShieldCheck, Star,
   Building2, GraduationCap, Stethoscope, 
   ShoppingCart, Utensils, Box, Globe, Users, Server,
-  CheckCircle2, Cpu, LineChart, Lock
+  CheckCircle2, Cpu, LineChart, Lock, Quote
 } from "lucide-react";
 
 import schoolErp from "@/assets/school-erp.png";
 import hospitalErp from "@/assets/hospital-erp.png";
 import ecommerceErp from "@/assets/ecommerce-erp.png";
 import themesShowcase from "@/assets/themes-showcase.png";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonial-3.jpg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -108,7 +111,7 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-10" data-testid="btn-hero-demo">
-                Deploy Now <ArrowRight className="ml-2 w-5 h-5" />
+                Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 border-border hover:bg-secondary" data-testid="btn-hero-explore">
                 Explore Products
@@ -127,10 +130,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: "ERP Deployments", to: 200, suffix: "+",  decimals: 0, icon: Server     },
-              { label: "Industries Served", to: 7,  suffix: "",   decimals: 0, icon: Building2  },
-              { label: "Happy Clients",    to: 500, suffix: "+",  decimals: 0, icon: Users      },
-              { label: "Uptime SLA",       to: 99.9,suffix: "%",  decimals: 1, icon: ShieldCheck},
+              { label: "ERP Deployments", to: 340, suffix: "+",  decimals: 0, icon: Server     },
+              { label: "Industries Served", to: 6,  suffix: "",   decimals: 0, icon: Building2  },
+              { label: "Active Clients",   to: 520, suffix: "+",  decimals: 0, icon: Users      },
+              { label: "Uptime Delivered", to: 99.9,suffix: "%",  decimals: 1, icon: ShieldCheck},
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -202,7 +205,7 @@ export default function Home() {
       <DashboardSlider />
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-black relative overflow-hidden border-y border-border">
+      <section id="why-choose-us" className="py-24 bg-black relative overflow-hidden border-y border-border">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -218,7 +221,7 @@ export default function Home() {
               </p>
               <div className="space-y-6">
                 {[
-                  { title: "Military-Grade Security", desc: "End-to-end encryption, role-based access control, and continuous audits.", icon: Lock },
+                  { title: "Enterprise Encryption & Access", desc: "AES-256 data encryption, granular role-based permissions, and quarterly security audits.", icon: Lock },
                   { title: "High-Performance Architecture", desc: "Optimized queries and scalable infrastructure ensuring sub-second response times.", icon: Cpu },
                   { title: "Actionable Intelligence", desc: "Real-time analytics and predictive reporting to drive your decision making.", icon: LineChart }
                 ].map((feature, i) => (
@@ -335,36 +338,73 @@ export default function Home() {
       <section className="py-24 bg-secondary/30 border-y border-border">
          <div className="container mx-auto px-4">
             <motion.div
-              className="text-center max-w-3xl mx-auto mb-16"
+              className="text-center max-w-2xl mx-auto mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Trusted by Industry Leaders</h2>
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">Client Stories</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">What our clients say after going live</h2>
+              <p className="mt-3 text-muted-foreground">Straight from the people who run their business on PowerTech every day.</p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { quote: "PowerTech's Hospital ERP streamlined our entire operation. Wait times are down 40% and billing errors are practically eliminated.", author: "Dr. Sarah Chen", role: "Chief Medical Officer" },
-                { quote: "The most robust eCommerce backend we've ever used. It handles our multi-channel inventory with absolute precision.", author: "James Wilson", role: "Operations Director" },
-                { quote: "Our school's administrative overhead was cut in half within the first month of deployment. Incredibly powerful system.", author: "Michael Chang", role: "Principal" }
+                {
+                  quote: "We were drowning in paper-based patient records and manual billing. PowerTech's Hospital ERP brought everything — OPD, pharmacy, lab — into one screen. Our billing errors dropped from dozens a day to almost zero in the first week.",
+                  author: "Dr. Adil Rehman",
+                  role: "Chief Medical Officer",
+                  company: "Al-Noor Hospital, Dubai",
+                  photo: testimonial1,
+                  flag: "🇦🇪",
+                },
+                {
+                  quote: "We run 4 branches of our school network on the same system now. Fee collection, attendance, results, timetabling — it's all automated. The admin team went from overworked to actually having time to focus on students.",
+                  author: "Mrs. Fatima Akhtar",
+                  role: "Principal & Director",
+                  company: "Beacon Public School, Lahore",
+                  photo: testimonial2,
+                  flag: "🇵🇰",
+                },
+                {
+                  quote: "We distribute to over 200 retailers across Yorkshire. Before PowerTech, stock reconciliation alone took two people two days a month. Now it's a 10-minute report. The system paid for itself in the first quarter.",
+                  author: "Tom Ashworth",
+                  role: "Operations Director",
+                  company: "Northern Star Distribution, Hull",
+                  photo: testimonial3,
+                  flag: "🇬🇧",
+                },
               ].map((t, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.12 }}
+                  className="h-full"
                 >
-                  <Card className="bg-background border-border h-full">
-                    <CardContent className="p-8">
-                      <div className="mb-6 flex gap-1">
-                        {[1,2,3,4,5].map(s => <Zap key={s} className="w-4 h-4 text-primary fill-primary" />)}
+                  <Card className="bg-background border-border h-full flex flex-col">
+                    <CardContent className="p-8 flex flex-col h-full">
+                      {/* Stars */}
+                      <div className="flex gap-0.5 mb-5">
+                        {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
                       </div>
-                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed">"{t.quote}"</p>
-                      <div>
-                        <p className="text-white font-semibold">{t.author}</p>
-                        <p className="text-sm text-primary">{t.role}</p>
+                      {/* Quote icon */}
+                      <Quote className="w-6 h-6 text-primary/30 mb-3" />
+                      {/* Quote */}
+                      <p className="text-muted-foreground text-base leading-relaxed flex-1 mb-8">{t.quote}</p>
+                      {/* Author */}
+                      <div className="flex items-center gap-3 pt-4 border-t border-border">
+                        <img
+                          src={t.photo}
+                          alt={t.author}
+                          className="w-12 h-12 rounded-full object-cover ring-2 ring-border"
+                        />
+                        <div>
+                          <p className="text-white font-semibold text-sm">{t.author} <span className="text-base">{t.flag}</span></p>
+                          <p className="text-xs text-primary font-medium">{t.role}</p>
+                          <p className="text-xs text-muted-foreground">{t.company}</p>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>

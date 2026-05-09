@@ -18,7 +18,7 @@ export function Navigation() {
           <a href="#products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</a>
           <a href="#industries" className="text-sm text-muted-foreground hover:text-primary transition-colors">Industries</a>
           <a href="#themes" className="text-sm text-muted-foreground hover:text-primary transition-colors">PowerThemes</a>
-          <a href="#stats" className="text-sm text-muted-foreground hover:text-primary transition-colors">Why Us</a>
+          <a href="#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Why Us</a>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">

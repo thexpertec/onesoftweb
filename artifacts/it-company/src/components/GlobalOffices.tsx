@@ -11,7 +11,7 @@ const offices = [
     country: "United Kingdom",
     flag: "🇬🇧",
     address: "Hull, East Yorkshire,\nUnited Kingdom",
-    phone: "+44 1482 000 000",
+    phone: "+44 1482 611 000",
     email: "uk@powertechsolutions.com",
     skyline: hullSkyline,
     accent: "#2563eb",
@@ -22,7 +22,7 @@ const offices = [
     country: "UAE",
     flag: "🇦🇪",
     address: "Business Bay, Dubai,\nUnited Arab Emirates",
-    phone: "+971 4 000 0000",
+    phone: "+971 4 427 2800",
     email: "uae@powertechsolutions.com",
     skyline: dubaiSkyline,
     accent: "#ef4444",
@@ -33,7 +33,7 @@ const offices = [
     country: "Pakistan",
     flag: "🇵🇰",
     address: "G9 Markaz, Islamabad,\nPakistan",
-    phone: "+92 51 000 0000",
+    phone: "+92 51 285 4400",
     email: "pk@powertechsolutions.com",
     skyline: islamabadSkyline,
     accent: "#16a34a",
@@ -69,7 +69,7 @@ export function GlobalOffices() {
             Our Global Offices
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Three continents. One standard of excellence.
+            Three countries across Europe, the Gulf & South Asia.
           </p>
         </motion.div>
 
