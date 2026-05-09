@@ -66,13 +66,13 @@ export function OfficeSlider() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-5">
             <MapPin className="w-3.5 h-3.5" />
-            Hull, United Kingdom — Head Office
+            UK · UAE · Pakistan — Global Offices
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Our Hull Office
+            Inside Our Offices
           </h2>
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            A small, focused team working from Hull, East Yorkshire — managing UK client relationships, product direction, and company strategy.
+            From Hull to Dubai to Islamabad — a look at the spaces where our global team designs, builds, and delivers world-class software every day.
           </p>
         </motion.div>
 
