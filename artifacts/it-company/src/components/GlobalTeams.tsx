@@ -19,6 +19,12 @@ import uk3 from "@/assets/team/uk-3.png";
 import bd1 from "@/assets/team/bd-1.png";
 import bd2 from "@/assets/team/bd-2.png";
 import bd3 from "@/assets/team/bd-3.png";
+import in1 from "@/assets/team/in-1.jpg";
+import in2 from "@/assets/team/in-2.jpg";
+import in3 from "@/assets/team/in-3.jpg";
+import us1 from "@/assets/team/us-1.jpg";
+import us2 from "@/assets/team/us-2.jpg";
+import us3 from "@/assets/team/us-3.jpg";
 
 type Member = {
   name: string;
@@ -47,6 +53,12 @@ const members: Member[] = [
   { name: "Rafiqul Islam",      role: "Full-Stack Developer",  photo: bd1,  flag: "🇧🇩", accent: "#dc2626" },
   { name: "Nadia Akter",        role: "QA & DevOps Lead",      photo: bd2,  flag: "🇧🇩", accent: "#dc2626" },
   { name: "Kamal Hossain",      role: "ERP Specialist",        photo: bd3,  flag: "🇧🇩", accent: "#dc2626" },
+  { name: "Rohan Verma",        role: "Cloud Architect",       photo: in1,  flag: "🇮🇳", accent: "#f97316" },
+  { name: "Priya Sharma",       role: "AI / ML Engineer",      photo: in2,  flag: "🇮🇳", accent: "#f97316" },
+  { name: "Kiran Mehta",        role: "Data Analytics Lead",   photo: in3,  flag: "🇮🇳", accent: "#f97316" },
+  { name: "Daniel Brooks",      role: "Sales Director",        photo: us1,  flag: "🇺🇸", accent: "#6366f1" },
+  { name: "Sarah O'Connor",     role: "Partnership Manager",   photo: us2,  flag: "🇺🇸", accent: "#6366f1" },
+  { name: "Marcus Webb",        role: "Enterprise Accounts",   photo: us3,  flag: "🇺🇸", accent: "#6366f1" },
 ];
 
 const doubled = [...members, ...members];
@@ -95,7 +107,7 @@ export function GlobalTeams() {
             Meet the Teams Behind the Tech
           </h2>
           <p className="text-muted-foreground text-lg">
-            Four offices. One mission. A globally distributed team of engineers, designers, and strategists building world-class software.
+            Six countries. One mission. A globally distributed team of engineers, designers, and strategists building world-class software.
           </p>
         </motion.div>
       </div>
@@ -104,7 +116,7 @@ export function GlobalTeams() {
       <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div
           className="flex gap-5 w-max"
-          style={{ animation: "marquee-left 40s linear infinite" }}
+          style={{ animation: "marquee-left 55s linear infinite" }}
         >
           {doubled.map((member, i) => (
             <MemberCard key={i} member={member} />
@@ -115,25 +127,28 @@ export function GlobalTeams() {
       {/* Office flags row */}
       <div className="container mx-auto px-4 mt-14">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
+          className="grid grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {[
-            { flag: "🇵🇰", country: "Pakistan",       city: "Lahore / Karachi" },
-            { flag: "🇦🇪", country: "UAE",            city: "Dubai"            },
-            { flag: "🇬🇧", country: "United Kingdom", city: "Hull"             },
-            { flag: "🇧🇩", country: "Bangladesh",     city: "Dhaka"            },
+            { flag: "🇵🇰", country: "Pakistan",       city: "Lahore / Karachi",  accent: "#16a34a" },
+            { flag: "🇦🇪", country: "UAE",            city: "Dubai",              accent: "#ef4444" },
+            { flag: "🇬🇧", country: "United Kingdom", city: "Hull",               accent: "#2563eb" },
+            { flag: "🇧🇩", country: "Bangladesh",     city: "Dhaka",              accent: "#dc2626" },
+            { flag: "🇮🇳", country: "India",          city: "Mumbai",             accent: "#f97316" },
+            { flag: "🇺🇸", country: "United States",  city: "New York",           accent: "#6366f1" },
           ].map((o, i) => (
             <div
               key={i}
-              className="flex flex-col items-center gap-1 p-4 rounded-xl border border-white/8 bg-white/[0.03]"
+              className="flex flex-col items-center gap-1 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06] transition-all duration-200"
             >
               <span className="text-2xl">{o.flag}</span>
               <span className="text-white text-sm font-semibold">{o.country}</span>
               <span className="text-xs text-muted-foreground">{o.city}</span>
+              <div className="w-8 h-0.5 rounded-full mt-1" style={{ backgroundColor: o.accent }} />
             </div>
           ))}
         </motion.div>
