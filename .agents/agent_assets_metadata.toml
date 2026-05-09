@@ -102,3 +102,21 @@ id = "HFLdMh1ODDHAP41xsPHvO"
 uri = "file://artifacts/it-company/src/assets/team/bd-3.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "gTd3VU6Ihd8XNbByzCWVl"
+uri = "file://artifacts/it-company/src/assets/skylines/islamabad.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "vunG9U34Zwv6GTKtD4zmm"
+uri = "file://artifacts/it-company/src/assets/skylines/hull.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "TEM5XFeq5WAFlKeHTNTvd"
+uri = "file://artifacts/it-company/src/assets/skylines/dubai.png"
+type = "image"
+title = "generated_image"
