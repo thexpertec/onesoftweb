@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import pk1 from "@/assets/team/pk-1.png";
 import pk2 from "@/assets/team/pk-2.png";
 import pk3 from "@/assets/team/pk-3.png";
+import pk4 from "@/assets/team/pk-4.jpg";
+import pk5 from "@/assets/team/pk-5.jpg";
+import pk6 from "@/assets/team/pk-6.jpg";
+import pk7 from "@/assets/team/pk-7.jpg";
+import pk8 from "@/assets/team/pk-8.jpg";
+import pk9 from "@/assets/team/pk-9.jpg";
 import uae1 from "@/assets/team/uae-1.png";
 import uae2 from "@/assets/team/uae-2.png";
 import uae3 from "@/assets/team/uae-3.png";
@@ -26,6 +32,12 @@ const members: Member[] = [
   { name: "Ahmed Raza",         role: "Head of Engineering",   photo: pk1,  flag: "🇵🇰", accent: "#16a34a" },
   { name: "Sara Malik",         role: "Lead UX Designer",      photo: pk2,  flag: "🇵🇰", accent: "#16a34a" },
   { name: "Tariq Hassan",       role: "Senior Backend Dev",    photo: pk3,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Usman Farooq",       role: "ERP Implementation",    photo: pk4,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Bilal Chaudhry",     role: "Mobile Developer",      photo: pk5,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Ayesha Siddiqui",    role: "Project Coordinator",   photo: pk6,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Hamza Nawaz",        role: "DevOps Engineer",       photo: pk7,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Zainab Qureshi",     role: "Business Analyst",      photo: pk8,  flag: "🇵🇰", accent: "#16a34a" },
+  { name: "Faisal Mehmood",     role: "Database Architect",    photo: pk9,  flag: "🇵🇰", accent: "#16a34a" },
   { name: "Khalid Al Mansoori", role: "Regional Director",     photo: uae1, flag: "🇦🇪", accent: "#ef4444" },
   { name: "Layla Al Farsi",     role: "Business Development",  photo: uae2, flag: "🇦🇪", accent: "#ef4444" },
   { name: "Omar Rashid",        role: "Solutions Architect",   photo: uae3, flag: "🇦🇪", accent: "#ef4444" },
