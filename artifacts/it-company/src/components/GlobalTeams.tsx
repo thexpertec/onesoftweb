@@ -124,35 +124,6 @@ export function GlobalTeams() {
         </div>
       </div>
 
-      {/* Office flags row */}
-      <div className="container mx-auto px-4 mt-14">
-        <motion.div
-          className="grid grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {[
-            { flag: "🇵🇰", country: "Pakistan",       city: "Lahore / Karachi",  accent: "#16a34a" },
-            { flag: "🇦🇪", country: "UAE",            city: "Dubai",              accent: "#ef4444" },
-            { flag: "🇬🇧", country: "United Kingdom", city: "Hull",               accent: "#2563eb" },
-            { flag: "🇧🇩", country: "Bangladesh",     city: "Dhaka",              accent: "#dc2626" },
-            { flag: "🇮🇳", country: "India",          city: "Mumbai",             accent: "#f97316" },
-            { flag: "🇺🇸", country: "United States",  city: "New York",           accent: "#6366f1" },
-          ].map((o, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-1 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06] transition-all duration-200"
-            >
-              <span className="text-2xl">{o.flag}</span>
-              <span className="text-white text-sm font-semibold">{o.country}</span>
-              <span className="text-xs text-muted-foreground">{o.city}</span>
-              <div className="w-8 h-0.5 rounded-full mt-1" style={{ backgroundColor: o.accent }} />
-            </div>
-          ))}
-        </motion.div>
-      </div>
     </section>
   );
 }
