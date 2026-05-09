@@ -8,14 +8,26 @@ import office3 from "@/assets/office/office-3.jpg";
 import office4 from "@/assets/office/office-4.jpg";
 import office5 from "@/assets/office/office-5.jpg";
 import office6 from "@/assets/office/office-6.jpg";
+import office7 from "@/assets/office/office-7.jpg";
+import office8 from "@/assets/office/office-8.jpg";
+import office9 from "@/assets/office/office-9.jpg";
+import office10 from "@/assets/office/office-10.jpg";
+import office11 from "@/assets/office/office-11.jpg";
+import office12 from "@/assets/office/office-12.jpg";
 
 const slides = [
-  { src: office1, caption: "Our workspace in Hull — where the UK team operates from" },
-  { src: office2, caption: "Day-to-day work in our Hull office" },
-  { src: office3, caption: "Where ideas get built — Hull, East Yorkshire" },
-  { src: office4, caption: "Client calls and product planning, Hull office" },
-  { src: office5, caption: "The team at work — small team, big output" },
-  { src: office6, caption: "A typical day at PowerTech Hull" },
+  { src: office1,  caption: "Our open-plan workspace in Hull, UK" },
+  { src: office2,  caption: "Collaboration sessions with the Hull team" },
+  { src: office3,  caption: "Sprint planning and sprint reviews — weekly ritual" },
+  { src: office4,  caption: "Client calls and product planning, Hull office" },
+  { src: office5,  caption: "UI/UX reviews before every major release" },
+  { src: office6,  caption: "A typical day at PowerTech Hull" },
+  { src: office7,  caption: "Brainstorming new ERP features with the product team" },
+  { src: office8,  caption: "One-on-ones — we invest in every team member's growth" },
+  { src: office9,  caption: "Celebrating a successful product launch" },
+  { src: office10, caption: "Executive briefings — strategy meets execution" },
+  { src: office11, caption: "Tech team deep-dive: architecture and code reviews" },
+  { src: office12, caption: "Work hard, think forward — the PowerTech way" },
 ];
 
 export function OfficeSlider() {
