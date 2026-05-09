@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
+import { useCTAModal } from "@/context/CTAModalContext";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { TechMarquee } from "@/components/TechMarquee";
@@ -65,6 +66,7 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const { openCTAModal } = useCTAModal();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       <Navigation />
@@ -112,10 +114,12 @@ export default function Home() {
               Precision-engineered ERP systems and premium websites. We build the digital backbone for modern businesses that demand power, speed, and reliability.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-              <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-10" data-testid="btn-hero-demo">
+              <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-10" data-testid="btn-hero-demo"
+                onClick={() => openCTAModal()}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 border-border hover:bg-secondary" data-testid="btn-hero-explore">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 border-border hover:bg-secondary" data-testid="btn-hero-explore"
+                onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}>
                 Explore Products
               </Button>
             </motion.div>
@@ -267,7 +271,8 @@ export default function Home() {
                     </motion.li>
                   ))}
                 </ul>
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes"
+                  onClick={() => openCTAModal("PowerThemes – Website")}>
                   View Theme Library
                 </Button>
               </motion.div>

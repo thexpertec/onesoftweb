@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import avatarPhoto from "@/assets/team/pk-1.png";
+import { useCTAModal } from "@/context/CTAModalContext";
 
 export function StickyCTA() {
+  const { openCTAModal } = useCTAModal();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -94,6 +96,7 @@ export function StickyCTA() {
                   size="sm"
                   className="shrink-0 h-10 px-5 text-sm font-semibold shadow-lg shadow-primary/40 hover:shadow-primary/60 transition-shadow"
                   data-testid="btn-sticky-cta"
+                  onClick={() => openCTAModal()}
                 >
                   <Phone className="w-3.5 h-3.5 mr-2" />
                   Book My Call

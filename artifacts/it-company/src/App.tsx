@@ -6,6 +6,8 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { ThemePickerModal } from "@/components/ThemePickerModal";
+import { CTAModalProvider } from "@/context/CTAModalContext";
+import { CTAModal } from "@/components/CTAModal";
 
 const queryClient = new QueryClient();
 
@@ -21,15 +23,18 @@ function Router() {
 function App() {
   return (
     <ThemeProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-          </WouterRouter>
-          <Toaster />
-          <ThemePickerModal />
-        </TooltipProvider>
-      </QueryClientProvider>
+      <CTAModalProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <Router />
+            </WouterRouter>
+            <Toaster />
+            <ThemePickerModal />
+            <CTAModal />
+          </TooltipProvider>
+        </QueryClientProvider>
+      </CTAModalProvider>
     </ThemeProvider>
   );
 }

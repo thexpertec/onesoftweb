@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCTAModal } from "@/context/CTAModalContext";
 
 /* ─── Data ─────────────────────────────────────────────────── */
 
@@ -52,6 +53,7 @@ const marketingServices = [
 /* ─── Mega menu panel content ───────────────────────────────── */
 
 function ProductsMega({ close }: { close: () => void }) {
+  const { openCTAModal } = useCTAModal();
   return (
     <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[820px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: ERP + Themes */}
@@ -100,16 +102,17 @@ function ProductsMega({ close }: { close: () => void }) {
             Book a free 30-minute demo of any ERP module — live, no slides.
           </p>
         </div>
-        <a href="#contact" onClick={close}
+        <button onClick={() => { close(); openCTAModal(); }}
           className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
           Book Free Demo <ArrowRight className="w-3.5 h-3.5" />
-        </a>
+        </button>
       </div>
     </div>
   );
 }
 
 function ServicesMega({ close }: { close: () => void }) {
+  const { openCTAModal } = useCTAModal();
   return (
     <div className="grid grid-cols-[1fr_190px] gap-0 min-w-[660px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: Dev + Marketing */}
@@ -163,10 +166,10 @@ function ServicesMega({ close }: { close: () => void }) {
             className="flex items-center gap-1.5 text-xs font-semibold text-violet-400 hover:underline">
             Explore AI <ArrowRight className="w-3.5 h-3.5" />
           </a>
-          <a href="#contact" onClick={close}
+          <button onClick={() => { close(); openCTAModal(); }}
             className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
             Get a Quote <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -241,6 +244,18 @@ function MegaNavItem({
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+/* ─── Mobile bottom CTA bar ─────────────────────────────────── */
+
+function MobileBookDemo({ onClose }: { onClose: () => void }) {
+  const { openCTAModal } = useCTAModal();
+  return (
+    <div className="px-5 pb-8 pt-4 grid grid-cols-2 gap-3 border-t border-white/8">
+      <Button variant="outline" className="border-white/15 text-white hover:bg-white/10">Login</Button>
+      <Button onClick={() => { onClose(); openCTAModal(); }}>Book Demo</Button>
     </div>
   );
 }
@@ -339,10 +354,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             ))}
           </div>
 
-          <div className="px-5 pb-8 pt-4 grid grid-cols-2 gap-3 border-t border-white/8">
-            <Button variant="outline" className="border-white/15 text-white hover:bg-white/10">Login</Button>
-            <Button asChild><a href="#contact" onClick={onClose}>Book Demo</a></Button>
-          </div>
+          <MobileBookDemo onClose={onClose} />
         </motion.div>
       )}
     </AnimatePresence>
@@ -352,6 +364,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 /* ─── Main Navigation ───────────────────────────────────────── */
 
 export function Navigation() {
+  const { openCTAModal } = useCTAModal();
   const [openMega, setOpenMega] = useState<MegaKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -406,7 +419,7 @@ export function Navigation() {
               +44 1482 000000
             </a>
             <Button variant="outline" className="border-border text-foreground hover:bg-secondary text-sm h-9">Login</Button>
-            <Button asChild className="h-9 text-sm"><a href="#contact">Book Demo</a></Button>
+            <Button className="h-9 text-sm" onClick={() => openCTAModal()}>Book Demo</Button>
           </div>
 
           {/* Mobile hamburger */}
