@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import {
   Menu, Zap, ChevronDown, X,
@@ -177,6 +177,11 @@ function ServicesMega({ close }: { close: () => void }) {
 
 type MegaKey = "products" | "services" | null;
 
+const PANEL_WIDTH: Record<string, number> = {
+  products: 860,
+  services: 700,
+};
+
 function MegaNavItem({
   label,
   id,
@@ -193,8 +198,21 @@ function MegaNavItem({
   children: React.ReactNode;
 }) {
   const isOpen = open === id;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [panelLeft, setPanelLeft] = useState(0);
+
+  useEffect(() => {
+    if (isOpen && wrapperRef.current && id) {
+      const rect = wrapperRef.current.getBoundingClientRect();
+      const pw = PANEL_WIDTH[id] ?? 800;
+      const naturalLeft = rect.left + rect.width / 2 - pw / 2;
+      const clamped = Math.max(8, Math.min(naturalLeft, window.innerWidth - pw - 8));
+      setPanelLeft(clamped - rect.left);
+    }
+  }, [isOpen, id]);
+
   return (
-    <div className="relative" onMouseEnter={() => onEnter(id)} onMouseLeave={onLeave}>
+    <div ref={wrapperRef} className="relative" onMouseEnter={() => onEnter(id)} onMouseLeave={onLeave}>
       <button
         className={`flex items-center gap-1 text-sm transition-colors ${isOpen ? "text-white" : "text-muted-foreground hover:text-white"}`}
       >
@@ -209,10 +227,14 @@ function MegaNavItem({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.97 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+            className="absolute top-full mt-3 z-50"
+            style={{ left: panelLeft }}
           >
-            {/* Arrow */}
-            <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#0d1526] border-l border-t border-white/10" />
+            {/* Arrow — stays centred over the button */}
+            <div
+              className="absolute -top-1.5 w-3 h-3 rotate-45 bg-[#0d1526] border-l border-t border-white/10"
+              style={{ left: `calc(50% - ${panelLeft}px - 6px)` }}
+            />
             <div className="rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/60 overflow-hidden">
               {children}
             </div>
