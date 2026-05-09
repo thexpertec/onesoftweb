@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { TechMarquee } from "@/components/TechMarquee";
 import { ClientLogos } from "@/components/ClientLogos";
 import { GlobalTeams } from "@/components/GlobalTeams";
+import { StickyCTA } from "@/components/StickyCTA";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -365,6 +366,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <StickyCTA />
     </div>
   );
 }
