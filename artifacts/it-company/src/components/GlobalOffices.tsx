@@ -6,17 +6,6 @@ import dubaiSkyline from "@/assets/skylines/dubai.png";
 
 const offices = [
   {
-    label: "Head Office",
-    city: "Islamabad",
-    country: "Pakistan",
-    flag: "🇵🇰",
-    address: "G9 Markaz, Islamabad,\nPakistan",
-    phone: "+92 51 000 0000",
-    email: "pk@powertechsolutions.com",
-    skyline: islamabadSkyline,
-    accent: "#16a34a",
-  },
-  {
     label: "UK Office",
     city: "Hull",
     country: "United Kingdom",
@@ -37,6 +26,17 @@ const offices = [
     email: "uae@powertechsolutions.com",
     skyline: dubaiSkyline,
     accent: "#ef4444",
+  },
+  {
+    label: "Head Office",
+    city: "Islamabad",
+    country: "Pakistan",
+    flag: "🇵🇰",
+    address: "G9 Markaz, Islamabad,\nPakistan",
+    phone: "+92 51 000 0000",
+    email: "pk@powertechsolutions.com",
+    skyline: islamabadSkyline,
+    accent: "#16a34a",
   },
 ];
 
