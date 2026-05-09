@@ -20,7 +20,6 @@ import {
   CheckCircle2, Cpu, LineChart, Lock
 } from "lucide-react";
 
-import heroDashboard from "@/assets/hero-dashboard.png";
 import schoolErp from "@/assets/school-erp.png";
 import hospitalErp from "@/assets/hospital-erp.png";
 import ecommerceErp from "@/assets/ecommerce-erp.png";
@@ -49,54 +48,36 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background -z-10" />
         
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <motion.div 
-              className="flex-1 text-center lg:text-left"
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeInUp}>
-                <Badge variant="outline" className="border-primary/50 text-primary mb-6 bg-primary/10">
-                  <Activity className="w-3 h-3 mr-2" />
-                  Enterprise-Grade Software
-                </Badge>
-              </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white">
-                Mission-Critical <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
-                  Infrastructure.
-                </span>
-              </motion.h1>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-                Precision-engineered ERP systems and premium websites. We build the digital backbone for modern businesses that demand power, speed, and reliability.
-              </motion.p>
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8" data-testid="btn-hero-demo">
-                  Deploy Now <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 border-border hover:bg-secondary" data-testid="btn-hero-explore">
-                  Explore Products
-                </Button>
-              </motion.div>
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <Badge variant="outline" className="border-primary/50 text-primary mb-6 bg-primary/10">
+                <Activity className="w-3 h-3 mr-2" />
+                Enterprise-Grade Software
+              </Badge>
             </motion.div>
-
-            <motion.div 
-              className="flex-1 w-full"
-              initial={{ opacity: 0, scale: 0.95, rotateY: 5 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-xl blur opacity-20 animate-pulse" />
-                <img 
-                  src={heroDashboard} 
-                  alt="Enterprise Dashboard" 
-                  className="relative rounded-xl border border-border/50 shadow-2xl w-full object-cover aspect-video"
-                />
-              </div>
+            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white">
+              Mission-Critical <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+                Infrastructure.
+              </span>
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Precision-engineered ERP systems and premium websites. We build the digital backbone for modern businesses that demand power, speed, and reliability.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+              <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-10" data-testid="btn-hero-demo">
+                Deploy Now <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 border-border hover:bg-secondary" data-testid="btn-hero-explore">
+                Explore Products
+              </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
