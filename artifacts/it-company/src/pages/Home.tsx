@@ -12,6 +12,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { OfficeSlider } from "@/components/OfficeSlider";
 import { DashboardSlider } from "@/components/DashboardSlider";
+import { CTAStrip } from "@/components/CTAStrip";
+import { CTAFormSection } from "@/components/CTAFormSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -257,6 +259,8 @@ export default function Home() {
         </div>
       </section>
 
+      <CTAStrip />
+
       {/* PowerThemes Section */}
       <section id="themes" className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4">
@@ -370,32 +374,7 @@ export default function Home() {
          </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-primary/20 blur-[120px] rounded-full -z-10" />
-        
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to upgrade your infrastructure?</h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Join 500+ businesses running on PowerTech Solutions. Schedule a demo today and see how our systems can transform your operations.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg" data-testid="btn-cta-sales">
-                Contact Sales <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-10 text-lg border-primary/50 text-white hover:bg-primary/10" data-testid="btn-cta-pricing">
-                View Pricing
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTAFormSection />
 
       <HowWeWork />
       <FAQSection />
