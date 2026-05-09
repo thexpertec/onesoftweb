@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "2zC3gV0ZjhvCMXo9pgWs7"
+uri = "file://artifacts/it-company/src/assets/hero-dashboard.png"
+type = "image"
+title = "Hero dashboard interface"
+
+[[generated]]
+id = "u13E1kO7lfcxD4ahv5mSD"
+uri = "file://artifacts/it-company/src/assets/school-erp.png"
+type = "image"
+title = "School ERP interface"
+
+[[generated]]
+id = "LrKBi7skTvtvrr-zIq4A4"
+uri = "file://artifacts/it-company/src/assets/hospital-erp.png"
+type = "image"
+title = "Hospital ERP interface"
+
+[[generated]]
+id = "ATRqwqYUslKs2ohy4J7vC"
+uri = "file://artifacts/it-company/src/assets/ecommerce-erp.png"
+type = "image"
+title = "Ecommerce ERP interface"
+
+[[generated]]
+id = "IwAj7p2shgLDZVj3fbE-V"
+uri = "file://artifacts/it-company/src/assets/themes-showcase.png"
+type = "image"
+title = "PowerThemes showcase"
