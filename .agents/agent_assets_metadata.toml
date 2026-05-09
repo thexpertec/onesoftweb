@@ -192,3 +192,57 @@ id = "Cz24aBd-OIRE704COwaUc"
 uri = "file://artifacts/it-company/src/assets/team/us-3.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "CsKLRFSi-QHC83dqw9xm4"
+uri = "file://artifacts/it-company/src/assets/dash-school-erp.png"
+type = "image"
+title = "school erp dashboard"
+
+[[generated]]
+id = "QB1AgGRnBcP_BSA2Eil8f"
+uri = "file://artifacts/it-company/src/assets/dash-hospital-erp.png"
+type = "image"
+title = "hospital erp dashboard"
+
+[[generated]]
+id = "LFe5dYIdbVUdgNE6KHlRv"
+uri = "file://artifacts/it-company/src/assets/dash-analytics-pro.png"
+type = "image"
+title = "analytics dashboard"
+
+[[generated]]
+id = "Z_dAOIJPvdtEqSUpec-5s"
+uri = "file://artifacts/it-company/src/assets/dash-ecom-pro.png"
+type = "image"
+title = "ecommerce erp dashboard"
+
+[[generated]]
+id = "A6lTtqE5bjrhq7bYK5Xfz"
+uri = "file://artifacts/it-company/src/assets/dash-sales-report.png"
+type = "image"
+title = "sales revenue report"
+
+[[generated]]
+id = "InRj_YMYOXKnDyoT_5j4M"
+uri = "file://artifacts/it-company/src/assets/dash-kpi-metrics.png"
+type = "image"
+title = "kpi metrics overview"
+
+[[generated]]
+id = "IhC3ztor0sWWuL8Jy0vV7"
+uri = "file://artifacts/it-company/src/assets/dash-distributor.png"
+type = "image"
+title = "distributor erp dashboard"
+
+[[generated]]
+id = "WpXz97vsCkXJUyrfKKVvl"
+uri = "file://artifacts/it-company/src/assets/dash-restaurant-pos.png"
+type = "image"
+title = "restaurant pos dashboard"
+
+[[generated]]
+id = "fjbWzz-XHLpSDlluRNTx-"
+uri = "file://artifacts/it-company/src/assets/dash-realestate.png"
+type = "image"
+title = "real estate erp dashboard"

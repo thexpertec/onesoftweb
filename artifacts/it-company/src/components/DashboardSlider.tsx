@@ -2,15 +2,15 @@ import { useRef, useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Monitor } from "lucide-react";
 
-import dashSchoolHospital from "@/assets/dash-school-hospital.png";
-import dashAnalytics from "@/assets/dash-analytics.jpg";
-import dashGraphs from "@/assets/dash-graphs.jpg";
-import dashCharts from "@/assets/dash-charts.jpg";
-import dashFinance from "@/assets/dash-finance.jpg";
-import dashEcom from "@/assets/dash-ecom.jpg";
-import schoolErp from "@/assets/school-erp.png";
-import hospitalErp from "@/assets/hospital-erp.png";
-import ecommerceErp from "@/assets/ecommerce-erp.png";
+import dashSchoolErp     from "@/assets/dash-school-erp.png";
+import dashHospitalErp   from "@/assets/dash-hospital-erp.png";
+import dashAnalyticsPro  from "@/assets/dash-analytics-pro.png";
+import dashEcomPro       from "@/assets/dash-ecom-pro.png";
+import dashSalesReport   from "@/assets/dash-sales-report.png";
+import dashKpiMetrics    from "@/assets/dash-kpi-metrics.png";
+import dashDistributor   from "@/assets/dash-distributor.png";
+import dashRestaurantPos from "@/assets/dash-restaurant-pos.png";
+import dashRealestate    from "@/assets/dash-realestate.png";
 
 type Slide = {
   src: string;
@@ -21,15 +21,15 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-  { src: dashSchoolHospital, label: "School & Hospital ERP",       tag: "Live View",     tagColor: "#16a34a",  wide: true  },
-  { src: schoolErp,          label: "School Management System",    tag: "Education",     tagColor: "#2563eb"               },
-  { src: dashAnalytics,      label: "Business Analytics Dashboard",tag: "Analytics",     tagColor: "#7c3aed"               },
-  { src: hospitalErp,        label: "Hospital OPD & IPD Modules",  tag: "Healthcare",    tagColor: "#0891b2"               },
-  { src: dashGraphs,         label: "Sales & Revenue Reports",     tag: "Finance",       tagColor: "#d97706"               },
-  { src: ecommerceErp,       label: "E-commerce ERP Suite",        tag: "E-commerce",    tagColor: "#ea580c"               },
-  { src: dashCharts,         label: "KPI & Metrics Overview",      tag: "Intelligence",  tagColor: "#8b5cf6"               },
-  { src: dashFinance,        label: "Distributor & Wholesale ERP", tag: "Distribution",  tagColor: "#0284c7"               },
-  { src: dashEcom,           label: "Restaurant & POS System",     tag: "Restaurant",    tagColor: "#65a30d"               },
+  { src: dashSchoolErp,     label: "School Management ERP",        tag: "Education",     tagColor: "#2563eb",  wide: true  },
+  { src: dashHospitalErp,   label: "Hospital OPD & IPD Modules",   tag: "Healthcare",    tagColor: "#0891b2"               },
+  { src: dashAnalyticsPro,  label: "Business Analytics Dashboard", tag: "Analytics",     tagColor: "#7c3aed"               },
+  { src: dashEcomPro,       label: "E-commerce ERP Suite",         tag: "E-commerce",    tagColor: "#ea580c"               },
+  { src: dashSalesReport,   label: "Sales & Revenue Reports",      tag: "Finance",       tagColor: "#16a34a"               },
+  { src: dashKpiMetrics,    label: "Executive KPI Overview",       tag: "Intelligence",  tagColor: "#8b5cf6"               },
+  { src: dashDistributor,   label: "Distributor & Wholesale ERP",  tag: "Distribution",  tagColor: "#0284c7"               },
+  { src: dashRestaurantPos, label: "Restaurant & POS System",      tag: "Restaurant",    tagColor: "#d97706"               },
+  { src: dashRealestate,    label: "Real Estate CRM & ERP",        tag: "Real Estate",   tagColor: "#be185d"               },
 ];
 
 const SLIDE_HEIGHT = 380; // px — all images same height
