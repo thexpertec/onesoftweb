@@ -11,6 +11,7 @@ import { HowWeWork } from "@/components/HowWeWork";
 import { FAQSection } from "@/components/FAQSection";
 import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { OfficeSlider } from "@/components/OfficeSlider";
+import { DashboardSlider } from "@/components/DashboardSlider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -193,38 +194,10 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Featured ERP Screenshots */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative rounded-xl overflow-hidden border border-border group md:col-span-2"
-            >
-              <div className="absolute inset-0 bg-background/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img src={schoolErp} alt="School ERP" className="w-full aspect-video object-cover" />
-              <div className="absolute bottom-6 left-6 z-20">
-                <Badge className="bg-primary text-white mb-2">Featured Module</Badge>
-                <h4 className="font-bold text-white text-2xl drop-shadow-md">School Management UI</h4>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative rounded-xl overflow-hidden border border-border group"
-            >
-              <div className="absolute inset-0 bg-background/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img src={hospitalErp} alt="Hospital ERP" className="w-full h-full object-cover min-h-[300px]" />
-              <div className="absolute bottom-6 left-6 z-20">
-                <Badge className="bg-primary text-white mb-2">Healthcare</Badge>
-                <h4 className="font-bold text-white text-xl drop-shadow-md">Hospital Dashboard</h4>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
+
+      <DashboardSlider />
 
       {/* Why Choose Us */}
       <section className="py-24 bg-black relative overflow-hidden border-y border-border">
