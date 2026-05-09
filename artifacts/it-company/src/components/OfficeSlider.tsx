@@ -10,12 +10,12 @@ import office5 from "@/assets/office/office-5.jpg";
 import office6 from "@/assets/office/office-6.jpg";
 
 const slides = [
-  { src: office1, caption: "Our open-plan workspace in Hull, UK" },
-  { src: office2, caption: "Team collaboration sessions, Hull HQ" },
-  { src: office3, caption: "Engineering team at work, Hull office" },
-  { src: office4, caption: "Strategy meetings, Head Office Hull" },
-  { src: office5, caption: "Cross-functional sprint planning, UK" },
-  { src: office6, caption: "Modern working environment, Hull HQ" },
+  { src: office1, caption: "Our workspace in Hull — where the UK team operates from" },
+  { src: office2, caption: "Day-to-day work in our Hull office" },
+  { src: office3, caption: "Where ideas get built — Hull, East Yorkshire" },
+  { src: office4, caption: "Client calls and product planning, Hull office" },
+  { src: office5, caption: "The team at work — small team, big output" },
+  { src: office6, caption: "A typical day at PowerTech Hull" },
 ];
 
 export function OfficeSlider() {
@@ -57,10 +57,10 @@ export function OfficeSlider() {
             Hull, United Kingdom — Head Office
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Inside Our UK Headquarters
+            Our Hull Office
           </h2>
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            A look inside the office where PowerTech's leadership team drives strategy, product, and global client success.
+            A small, focused team working from Hull, East Yorkshire — managing UK client relationships, product direction, and company strategy.
           </p>
         </motion.div>
 
