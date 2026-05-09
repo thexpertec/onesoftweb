@@ -30,3 +30,75 @@ id = "IwAj7p2shgLDZVj3fbE-V"
 uri = "file://artifacts/it-company/src/assets/themes-showcase.png"
 type = "image"
 title = "PowerThemes showcase"
+
+[[generated]]
+id = "3BPzgONRSsTOzviupWqOM"
+uri = "file://artifacts/it-company/src/assets/team/pk-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "KxfOeB-VQRh2Fc3Xq4rZk"
+uri = "file://artifacts/it-company/src/assets/team/pk-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "GEpPCIZsk6lUTGKCge9e1"
+uri = "file://artifacts/it-company/src/assets/team/pk-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "mYF-nE-vLbwErESyRI53h"
+uri = "file://artifacts/it-company/src/assets/team/uae-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "3y5x1we8J-Xj1MqRWo1xX"
+uri = "file://artifacts/it-company/src/assets/team/uae-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Dy165GjcTUMhYJzgvuTum"
+uri = "file://artifacts/it-company/src/assets/team/uae-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Ottxi89Hhyakjwhr6lbiW"
+uri = "file://artifacts/it-company/src/assets/team/uk-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "AQfBoGy6zAgWsVsenHLYV"
+uri = "file://artifacts/it-company/src/assets/team/uk-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_IwcR7EhjKPjGuxxNg6hr"
+uri = "file://artifacts/it-company/src/assets/team/uk-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "rG75GC4_4a8d4AbiOvmyw"
+uri = "file://artifacts/it-company/src/assets/team/bd-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "MLscaIfGOeSY61e7dSfhR"
+uri = "file://artifacts/it-company/src/assets/team/bd-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "HFLdMh1ODDHAP41xsPHvO"
+uri = "file://artifacts/it-company/src/assets/team/bd-3.png"
+type = "image"
+title = "generated_image"

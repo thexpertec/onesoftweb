@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { TechMarquee } from "@/components/TechMarquee";
 import { ClientLogos } from "@/components/ClientLogos";
+import { GlobalTeams } from "@/components/GlobalTeams";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -296,6 +297,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <GlobalTeams />
 
       {/* Testimonials */}
       <section className="py-24 bg-secondary/30 border-y border-border">
