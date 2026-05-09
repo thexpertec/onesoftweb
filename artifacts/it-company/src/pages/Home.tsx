@@ -164,7 +164,7 @@ export default function Home() {
 
       <FeatureMarquee />
 
-      {/* Core ERP Products */}
+      {/* Core ERP Products — moved up so product offer lands early */}
       <section id="products" className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -204,10 +204,77 @@ export default function Home() {
         </div>
       </section>
 
+      <DashboardSlider />
+
       <ServicesSection />
       <AIAutomationSection />
 
-      <DashboardSlider />
+      {/* PowerThemes — secondary product, shown after AI section while interest is high */}
+      <section id="themes" className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div
+              className="flex-1"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
+                <img src={themesShowcase} alt="PowerThemes Showcase" className="w-full rounded-xl border border-border shadow-2xl" />
+              </div>
+            </motion.div>
+            <motion.div
+              className="flex-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp}>
+                <Badge variant="outline" className="border-primary/50 text-primary mb-4 bg-primary/10">
+                  <Globe className="w-3 h-3 mr-2" />
+                  Website Products
+                </Badge>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">PowerThemes</h2>
+                <p className="text-muted-foreground text-lg mb-8">
+                  Premium website themes designed for modern businesses. Fast-loading, SEO-ready, and fully customizable. Don't just build a website, build a digital presence.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "50+ Industry-specific templates",
+                    "Lightning fast performance (99+ Lighthouse)",
+                    "Responsive and mobile-first design",
+                    "Integrated with major CMS platforms"
+                  ].map((feature, i) => (
+                    <motion.li
+                      key={i}
+                      className="flex items-center gap-3 text-muted-foreground"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.12, duration: 0.45, ease: "easeOut" }}
+                    >
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.12 + 0.2, type: "spring", stiffness: 400 }}
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      </motion.span>
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes">
+                  View Theme Library
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose Us */}
       <section id="why-choose-us" className="py-24 bg-black relative overflow-hidden border-y border-border">
@@ -267,77 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      <CTAStrip />
-
-      {/* PowerThemes Section */}
-      <section id="themes" className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div 
-              className="flex-1"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative">
-                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
-                <img src={themesShowcase} alt="PowerThemes Showcase" className="w-full rounded-xl border border-border shadow-2xl" />
-              </div>
-            </motion.div>
-            <motion.div 
-              className="flex-1"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeInUp}>
-                <Badge variant="outline" className="border-primary/50 text-primary mb-4 bg-primary/10">
-                  <Globe className="w-3 h-3 mr-2" />
-                  Website Products
-                </Badge>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">PowerThemes</h2>
-                <p className="text-muted-foreground text-lg mb-8">
-                  Premium website themes designed for modern businesses. Fast-loading, SEO-ready, and fully customizable. Don't just build a website, build a digital presence.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {[
-                    "50+ Industry-specific templates",
-                    "Lightning fast performance (99+ Lighthouse)",
-                    "Responsive and mobile-first design",
-                    "Integrated with major CMS platforms"
-                  ].map((feature, i) => (
-                    <motion.li
-                      key={i}
-                      className="flex items-center gap-3 text-muted-foreground"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.12, duration: 0.45, ease: "easeOut" }}
-                    >
-                      <motion.span
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.12 + 0.2, type: "spring", stiffness: 400 }}
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      </motion.span>
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes">
-                  View Theme Library
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <GlobalTeams />
-      <OfficeSlider />
+      <HowWeWork />
 
       {/* Testimonials */}
       <section className="py-24 bg-secondary/30 border-y border-border">
@@ -390,21 +387,13 @@ export default function Home() {
                 >
                   <Card className="bg-background border-border h-full flex flex-col">
                     <CardContent className="p-8 flex flex-col h-full">
-                      {/* Stars */}
                       <div className="flex gap-0.5 mb-5">
                         {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
                       </div>
-                      {/* Quote icon */}
                       <Quote className="w-6 h-6 text-primary/30 mb-3" />
-                      {/* Quote */}
                       <p className="text-muted-foreground text-base leading-relaxed flex-1 mb-8">{t.quote}</p>
-                      {/* Author */}
                       <div className="flex items-center gap-3 pt-4 border-t border-border">
-                        <img
-                          src={t.photo}
-                          alt={t.author}
-                          className="w-12 h-12 rounded-full object-cover ring-2 ring-border"
-                        />
+                        <img src={t.photo} alt={t.author} className="w-12 h-12 rounded-full object-cover ring-2 ring-border" />
                         <div>
                           <p className="text-white font-semibold text-sm">{t.author} <span className="text-base">{t.flag}</span></p>
                           <p className="text-xs text-primary font-medium">{t.role}</p>
@@ -419,11 +408,14 @@ export default function Home() {
          </div>
       </section>
 
-      <CTAFormSection />
+      <CTAStrip />
 
-      <HowWeWork />
-      <FAQSection />
+      <GlobalTeams />
+      <OfficeSlider />
       <GlobalOffices />
+
+      <FAQSection />
+      <CTAFormSection />
       <Footer />
       <StickyCTA />
     </div>
