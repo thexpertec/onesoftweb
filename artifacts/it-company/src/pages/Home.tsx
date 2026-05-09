@@ -10,6 +10,7 @@ import { GlobalOffices } from "@/components/GlobalOffices";
 import { HowWeWork } from "@/components/HowWeWork";
 import { FAQSection } from "@/components/FAQSection";
 import { FeatureMarquee } from "@/components/FeatureMarquee";
+import { OfficeSlider } from "@/components/OfficeSlider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -351,6 +352,7 @@ export default function Home() {
       </section>
 
       <GlobalTeams />
+      <OfficeSlider />
 
       {/* Testimonials */}
       <section className="py-24 bg-secondary/30 border-y border-border">
