@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { TechMarquee } from "@/components/TechMarquee";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -92,17 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech Stack Banner */}
-      <section className="py-8 border-y border-border bg-black/40 backdrop-blur-sm">
-        <div className="container mx-auto px-4 overflow-hidden">
-          <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-6">Built with precision technologies</p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {["React", "Node.js", "PostgreSQL", "Redis", "Docker", "AWS"].map((tech, i) => (
-              <div key={i} className="text-xl font-bold font-mono tracking-tighter">{tech}</div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechMarquee />
 
       {/* Stats Section */}
       <section id="stats" className="py-16 bg-secondary/20">
