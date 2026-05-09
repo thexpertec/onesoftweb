@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { TechMarquee } from "@/components/TechMarquee";
@@ -30,6 +30,23 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
+function CountUp({ to, suffix = "", decimals = 0, duration = 2.2 }: {
+  to: number; suffix?: string; decimals?: number; duration?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (!isInView || !ref.current) return;
+    const ctrl = motionAnimate(0, to, {
+      duration,
+      ease: "easeOut",
+      onUpdate(v) { if (ref.current) ref.current.textContent = v.toFixed(decimals) + suffix; },
+    });
+    return () => ctrl.stop();
+  }, [isInView, to, suffix, decimals, duration]);
+  return <span ref={ref}>0{suffix}</span>;
+}
+
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,6 +63,22 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background -z-10" />
+        {/* Floating ambient orbs */}
+        <motion.div
+          className="absolute top-24 left-[12%] w-72 h-72 bg-primary/15 rounded-full blur-[90px] -z-10 pointer-events-none"
+          animate={{ y: [0, -24, 0], scale: [1, 1.08, 1] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-16 right-[8%] w-96 h-96 bg-blue-500/10 rounded-full blur-[110px] -z-10 pointer-events-none"
+          animate={{ y: [0, 24, 0], scale: [1, 1.06, 1] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-primary/5 rounded-full blur-[80px] -z-10 pointer-events-none"
+          animate={{ scaleX: [1, 1.15, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        />
         
         <div className="container mx-auto px-4">
           <motion.div
@@ -90,23 +123,29 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: "ERP Deployments", value: "200+", icon: Server },
-              { label: "Industries Served", value: "7", icon: Building2 },
-              { label: "Happy Clients", value: "500+", icon: Users },
-              { label: "Uptime SLA", value: "99.9%", icon: ShieldCheck }
+              { label: "ERP Deployments", to: 200, suffix: "+",  decimals: 0, icon: Server     },
+              { label: "Industries Served", to: 7,  suffix: "",   decimals: 0, icon: Building2  },
+              { label: "Happy Clients",    to: 500, suffix: "+",  decimals: 0, icon: Users      },
+              { label: "Uptime SLA",       to: 99.9,suffix: "%",  decimals: 1, icon: ShieldCheck},
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
+                transition={{ delay: i * 0.12, duration: 0.6, ease: "easeOut" }}
+                className="text-center group"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                <motion.div
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4"
+                  whileHover={{ scale: 1.15, backgroundColor: "rgba(37,99,235,0.25)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <stat.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">{stat.value}</h3>
+                </motion.div>
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">
+                  <CountUp to={stat.to} suffix={stat.suffix} decimals={stat.decimals} />
+                </h3>
                 <p className="text-muted-foreground text-sm font-medium uppercase tracking-wider">{stat.label}</p>
               </motion.div>
             ))}
@@ -207,15 +246,26 @@ export default function Home() {
                   { title: "High-Performance Architecture", desc: "Optimized queries and scalable infrastructure ensuring sub-second response times.", icon: Cpu },
                   { title: "Actionable Intelligence", desc: "Real-time analytics and predictive reporting to drive your decision making.", icon: LineChart }
                 ].map((feature, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center shrink-0">
+                  <motion.div
+                    key={i}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center shrink-0"
+                      whileHover={{ scale: 1.12, backgroundColor: "rgba(37,99,235,0.25)" }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
                       <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
+                    </motion.div>
                     <div>
                       <h4 className="text-white font-semibold mb-1">{feature.title}</h4>
                       <p className="text-sm text-muted-foreground">{feature.desc}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -271,10 +321,24 @@ export default function Home() {
                     "Responsive and mobile-first design",
                     "Integrated with major CMS platforms"
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                    <motion.li
+                      key={i}
+                      className="flex items-center gap-3 text-muted-foreground"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.12, duration: 0.45, ease: "easeOut" }}
+                    >
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.12 + 0.2, type: "spring", stiffness: 400 }}
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      </motion.span>
                       {feature}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
                 <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes">
@@ -291,9 +355,15 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-24 bg-secondary/30 border-y border-border">
          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.div
+              className="text-center max-w-3xl mx-auto mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Trusted by Industry Leaders</h2>
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { quote: "PowerTech's Hospital ERP streamlined our entire operation. Wait times are down 40% and billing errors are practically eliminated.", author: "Dr. Sarah Chen", role: "Chief Medical Officer" },
