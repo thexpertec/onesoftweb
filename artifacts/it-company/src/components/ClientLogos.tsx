@@ -1,75 +1,47 @@
 import { motion } from "framer-motion";
-import {
-  SiGoogle, SiApple, SiMeta, SiNetflix, SiSpotify, SiSlack,
-  SiSalesforce, SiNvidia, SiIntel, SiSamsung, SiSony, SiSiemens,
-  SiSap, SiHp, SiDell, SiCisco, SiQualcomm,
-  SiVisa, SiMastercard, SiPaypal,
-  SiTesla, SiBmw, SiToyota, SiVolkswagen, SiAudi, SiHyundai,
-  SiNike, SiAdidas, SiIkea, SiWalmart, SiCocacola, SiStarbucks,
-  SiMcdonalds, SiZara, SiAirbnb, SiUber
-} from "react-icons/si";
 
-type LogoItem = {
-  Icon: React.ElementType;
+type Client = {
+  initials: string;
   name: string;
   industry: string;
+  location: string;
+  color: string;
 };
 
-const logos: LogoItem[] = [
-  { Icon: SiGoogle,     name: "Google",      industry: "Technology"   },
-  { Icon: SiApple,      name: "Apple",        industry: "Technology"   },
-  { Icon: SiMeta,       name: "Meta",         industry: "Technology"   },
-  { Icon: SiNetflix,    name: "Netflix",      industry: "Entertainment"},
-  { Icon: SiSpotify,    name: "Spotify",      industry: "Entertainment"},
-  { Icon: SiSlack,      name: "Slack",        industry: "Technology"   },
-  { Icon: SiSalesforce, name: "Salesforce",   industry: "Enterprise"   },
-  { Icon: SiNvidia,     name: "Nvidia",       industry: "Technology"   },
-  { Icon: SiIntel,      name: "Intel",        industry: "Technology"   },
-  { Icon: SiSamsung,    name: "Samsung",      industry: "Electronics"  },
-  { Icon: SiSony,       name: "Sony",         industry: "Electronics"  },
-  { Icon: SiSiemens,    name: "Siemens",      industry: "Engineering"  },
-  { Icon: SiSap,        name: "SAP",          industry: "Enterprise"   },
-  { Icon: SiHp,         name: "HP",           industry: "Technology"   },
-  { Icon: SiDell,       name: "Dell",         industry: "Technology"   },
-  { Icon: SiCisco,      name: "Cisco",        industry: "Networking"   },
-  { Icon: SiQualcomm,   name: "Qualcomm",     industry: "Technology"   },
-  { Icon: SiVisa,       name: "Visa",         industry: "Finance"      },
-  { Icon: SiMastercard, name: "Mastercard",   industry: "Finance"      },
-  { Icon: SiPaypal,     name: "PayPal",       industry: "Finance"      },
-  { Icon: SiTesla,      name: "Tesla",        industry: "Automotive"   },
-  { Icon: SiBmw,        name: "BMW",          industry: "Automotive"   },
-  { Icon: SiToyota,     name: "Toyota",       industry: "Automotive"   },
-  { Icon: SiVolkswagen, name: "Volkswagen",   industry: "Automotive"   },
-  { Icon: SiAudi,       name: "Audi",         industry: "Automotive"   },
-  { Icon: SiHyundai,    name: "Hyundai",      industry: "Automotive"   },
-  { Icon: SiNike,       name: "Nike",         industry: "Retail"       },
-  { Icon: SiAdidas,     name: "Adidas",       industry: "Retail"       },
-  { Icon: SiIkea,       name: "IKEA",         industry: "Retail"       },
-  { Icon: SiWalmart,    name: "Walmart",      industry: "Retail"       },
-  { Icon: SiCocacola,   name: "Coca-Cola",    industry: "FMCG"         },
-  { Icon: SiStarbucks,  name: "Starbucks",    industry: "Food & Bev"   },
-  { Icon: SiMcdonalds,  name: "McDonald's",   industry: "Food & Bev"   },
-  { Icon: SiZara,       name: "Zara",         industry: "Fashion"      },
-  { Icon: SiAirbnb,     name: "Airbnb",       industry: "Travel"       },
-  { Icon: SiUber,       name: "Uber",         industry: "Transport"    },
+const clients: Client[] = [
+  { initials: "BPS", name: "Beaconhouse Group",      industry: "Education",     location: "Pakistan",  color: "#2563eb" },
+  { initials: "CMS", name: "City Medical Centre",    industry: "Healthcare",    location: "UK",        color: "#059669" },
+  { initials: "HMG", name: "Ha-Meem Group",          industry: "Retail & Dist", location: "Bangladesh",color: "#dc2626" },
+  { initials: "RKR", name: "Ravi Kitchen & Grill",   industry: "Restaurant",    location: "Pakistan",  color: "#ea580c" },
+  { initials: "ICT", name: "ICT Division",           industry: "Technology",    location: "Bangladesh",color: "#7c3aed" },
+  { initials: "ALN", name: "Al-Noor Hospital",       industry: "Healthcare",    location: "UAE",       color: "#0891b2" },
+  { initials: "GDM", name: "GDM Group",              industry: "Distribution",  location: "UK",        color: "#0284c7" },
+  { initials: "SFT", name: "Softech Solutions",      industry: "Technology",    location: "Pakistan",  color: "#6d28d9" },
+  { initials: "PAL", name: "Pearl Continental Ltd",  industry: "Hospitality",   location: "Pakistan",  color: "#b45309" },
+  { initials: "DBK", name: "Dubai Baker's Co.",      industry: "Food & Bev",    location: "UAE",       color: "#65a30d" },
+  { initials: "SXM", name: "Siglo XXI Centro",       industry: "Healthcare",    location: "UK",        color: "#0e7490" },
+  { initials: "CIT", name: "CIT Technologies",       industry: "IT Services",   location: "Bangladesh",color: "#4338ca" },
+  { initials: "FAR", name: "Farhan Distributors",    industry: "Distribution",  location: "Pakistan",  color: "#15803d" },
+  { initials: "MJH", name: "Majestic Hall Events",   industry: "Event Venue",   location: "UAE",       color: "#be185d" },
+  { initials: "GLC", name: "Global Care Clinic",     industry: "Healthcare",    location: "UK",        color: "#059669" },
+  { initials: "KAR", name: "Karachi Traders Co.",    industry: "Wholesale",     location: "Pakistan",  color: "#b45309" },
+  { initials: "AHS", name: "Al-Hassan School",       industry: "Education",     location: "UAE",       color: "#2563eb" },
+  { initials: "UNI", name: "UniMart Online",         industry: "E-commerce",    location: "UK",        color: "#7c3aed" },
+  { initials: "STR", name: "Star Restaurant Group",  industry: "Restaurant",    location: "Bangladesh",color: "#ea580c" },
+  { initials: "DXB", name: "DXB Business Hub",       industry: "Corporate",     location: "UAE",       color: "#0891b2" },
+  { initials: "HYD", name: "Hyder & Sons Ltd",       industry: "Wholesale",     location: "Pakistan",  color: "#dc2626" },
+  { initials: "NVS", name: "Nova Supplies UK",       industry: "Distribution",  location: "UK",        color: "#0284c7" },
+  { initials: "QFD", name: "Qatar Food Depot",       industry: "Food & Bev",    location: "UAE",       color: "#65a30d" },
+  { initials: "SKL", name: "Skill Academy BD",       industry: "Education",     location: "Bangladesh",color: "#4338ca" },
+  { initials: "OPT", name: "OptimaCare Hospital",    industry: "Healthcare",    location: "Pakistan",  color: "#059669" },
+  { initials: "MNR", name: "Manara Events Hall",     industry: "Event Venue",   location: "UAE",       color: "#be185d" },
+  { initials: "TPL", name: "Tulip Pharma Ltd",       industry: "Pharma",        location: "Bangladesh",color: "#0e7490" },
+  { initials: "BRK", name: "Brookside Academy",      industry: "Education",     location: "UK",        color: "#2563eb" },
+  { initials: "KFC", name: "Khyber Food Chain",      industry: "Restaurant",    location: "Pakistan",  color: "#ea580c" },
+  { initials: "ESH", name: "Emirates Star Hotel",    industry: "Hospitality",   location: "UAE",       color: "#b45309" },
+  { initials: "LAB", name: "LabPlus Diagnostics",    industry: "Healthcare",    location: "UK",        color: "#059669" },
+  { initials: "AZZ", name: "Azzam Wholesale",        industry: "Wholesale",     location: "UAE",       color: "#15803d" },
 ];
-
-const industryColors: Record<string, string> = {
-  Technology:    "#2563eb",
-  Entertainment: "#7c3aed",
-  Enterprise:    "#0891b2",
-  Electronics:   "#0284c7",
-  Engineering:   "#059669",
-  Networking:    "#d97706",
-  Finance:       "#16a34a",
-  Automotive:    "#dc2626",
-  Retail:        "#db2777",
-  FMCG:          "#ea580c",
-  "Food & Bev":  "#65a30d",
-  Fashion:       "#9333ea",
-  Travel:        "#0ea5e9",
-  Transport:     "#6d28d9",
-};
 
 export function ClientLogos() {
   return (
@@ -85,18 +57,18 @@ export function ClientLogos() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
-            Global Reach
+            Our Clients
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-            Powering Businesses Across Every Industry
+            Trusted by Growing Businesses Worldwide
           </h2>
           <p className="text-muted-foreground text-lg">
-            From Silicon Valley tech giants to global automotive leaders, retailers, and financial institutions — the world's strongest brands run on proven technology.
+            Schools, hospitals, restaurants, distributors, and event venues — real businesses that run on PowerTech ERP every day.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -105,37 +77,59 @@ export function ClientLogos() {
             visible: { transition: { staggerChildren: 0.04 } }
           }}
         >
-          {logos.map((logo, i) => (
+          {clients.map((client, i) => (
             <motion.div
               key={i}
               variants={{
                 hidden: { opacity: 0, scale: 0.85 },
                 visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }
               }}
-              className="group flex flex-col items-center justify-center gap-2 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:bg-white/[0.07] hover:border-primary/40 transition-all duration-300 cursor-default"
-              data-testid={`logo-${logo.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+              className="group flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 cursor-default"
+              data-testid={`logo-${client.initials.toLowerCase()}`}
             >
-              <logo.Icon
-                className="w-7 h-7 text-white/30 group-hover:text-[var(--logo-color)] group-hover:scale-110 transition-all duration-300"
-                style={{ "--logo-color": industryColors[logo.industry] ?? "#ffffff" } as React.CSSProperties}
-              />
-              <span className="text-[11px] font-medium text-white/30 group-hover:text-white/80 transition-colors text-center leading-tight">
-                {logo.name}
+              {/* Initials badge */}
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs tracking-wider shrink-0 transition-transform duration-300 group-hover:scale-110"
+                style={{ backgroundColor: `${client.color}22`, border: `1px solid ${client.color}55` }}
+              >
+                <span style={{ color: client.color }}>{client.initials}</span>
+              </div>
+
+              {/* Name */}
+              <span className="text-[11px] font-semibold text-white/55 group-hover:text-white/90 transition-colors text-center leading-tight">
+                {client.name}
+              </span>
+
+              {/* Industry tag */}
+              <span
+                className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-full"
+                style={{
+                  color: client.color,
+                  backgroundColor: `${client.color}18`,
+                }}
+              >
+                {client.industry}
               </span>
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p className="text-sm text-muted-foreground">
-            Trusted by <span className="text-primary font-semibold">500+ organizations</span> across 40+ countries
-          </p>
+          <span>🇵🇰 <span className="text-white/60 font-medium">Pakistan</span></span>
+          <span className="hidden sm:block text-white/15">|</span>
+          <span>🇦🇪 <span className="text-white/60 font-medium">UAE</span></span>
+          <span className="hidden sm:block text-white/15">|</span>
+          <span>🇬🇧 <span className="text-white/60 font-medium">United Kingdom</span></span>
+          <span className="hidden sm:block text-white/15">|</span>
+          <span>🇧🇩 <span className="text-white/60 font-medium">Bangladesh</span></span>
+          <span className="hidden sm:block text-white/15">|</span>
+          <span className="text-primary font-semibold">500+ organizations served</span>
         </motion.div>
       </div>
     </section>
