@@ -16,18 +16,18 @@ import office11 from "@/assets/office/office-11.jpg";
 import office12 from "@/assets/office/office-12.jpg";
 
 const slides = [
-  { src: office1,  caption: "Our open-plan workspace in Hull, UK" },
-  { src: office2,  caption: "Collaboration sessions with the Hull team" },
-  { src: office3,  caption: "Sprint planning and sprint reviews — weekly ritual" },
-  { src: office4,  caption: "Client calls and product planning, Hull office" },
-  { src: office5,  caption: "UI/UX reviews before every major release" },
-  { src: office6,  caption: "A typical day at PowerTech Hull" },
-  { src: office7,  caption: "Brainstorming new ERP features with the product team" },
-  { src: office8,  caption: "One-on-ones — we invest in every team member's growth" },
-  { src: office9,  caption: "Celebrating a successful product launch" },
-  { src: office10, caption: "Executive briefings — strategy meets execution" },
-  { src: office11, caption: "Tech team deep-dive: architecture and code reviews" },
-  { src: office12, caption: "Work hard, think forward — the PowerTech way" },
+  { src: office1,  caption: "Our compact workspace in Hull — small team, big ambitions" },
+  { src: office2,  caption: "Morning stand-up — the whole team in one room" },
+  { src: office3,  caption: "Quick whiteboard session before a client call" },
+  { src: office4,  caption: "Two heads on a problem — how most of our best ideas start" },
+  { src: office5,  caption: "Focused work hours — everyone heads-down on delivery" },
+  { src: office6,  caption: "Our corner of Hull — a small office that ships world-class software" },
+  { src: office7,  caption: "Reviewing a new ERP module together before release" },
+  { src: office8,  caption: "Pair programming session — how we keep code quality high" },
+  { src: office9,  caption: "A coffee and a quick retro — always room to improve" },
+  { src: office10, caption: "Client demo prep — everyone chips in" },
+  { src: office11, caption: "Architecture review: small team, clear ownership" },
+  { src: office12, caption: "End of a good sprint — shipped, tested, deployed" },
 ];
 
 export function OfficeSlider() {
