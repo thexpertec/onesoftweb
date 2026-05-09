@@ -7,6 +7,7 @@ import { ClientLogos } from "@/components/ClientLogos";
 import { GlobalTeams } from "@/components/GlobalTeams";
 import { StickyCTA } from "@/components/StickyCTA";
 import { GlobalOffices } from "@/components/GlobalOffices";
+import { HowWeWork } from "@/components/HowWeWork";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -366,6 +367,7 @@ export default function Home() {
         </div>
       </section>
 
+      <HowWeWork />
       <GlobalOffices />
       <Footer />
       <StickyCTA />
