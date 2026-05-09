@@ -12,7 +12,7 @@ export function CTAStrip() {
   };
 
   return (
-    <section className="py-14 relative overflow-hidden bg-primary">
+    <section id="cta-strip" className="py-14 relative overflow-hidden bg-primary">
       {/* subtle pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "28px 28px" }}

@@ -390,6 +390,41 @@
   -webkit-text-fill-color: #1d4ed8 !important;
 }
 
+/* ── CTAStrip — restore primary blue bg + keep all text white ── */
+[data-theme="light"] #cta-strip {
+  background-color: hsl(var(--primary)) !important;
+}
+[data-theme="light"] #cta-strip .text-white,
+[data-theme="light"] #cta-strip .text-white\/70,
+[data-theme="light"] #cta-strip .text-white\/50 {
+  color: white !important;
+}
+[data-theme="light"] #cta-strip input {
+  background-color: rgba(255,255,255,0.18) !important;
+  border-color: rgba(255,255,255,0.35) !important;
+  color: white !important;
+}
+[data-theme="light"] #cta-strip input::placeholder {
+  color: rgba(255,255,255,0.55) !important;
+}
+
+/* ── Office Slider — preserve white text/arrows on dark overlay ── */
+[data-theme="light"] .aspect-\[16\/9\] .text-white\/80,
+[data-theme="light"] .aspect-\[16\/9\] .text-white {
+  color: white !important;
+}
+
+/* ── GlobalOffices — skyline images: invert + normal blend on light bg ── */
+[data-theme="light"] img.mix-blend-lighten {
+  mix-blend-mode: normal !important;
+  filter: invert(1) brightness(0.6) !important;
+  opacity: 1 !important;
+}
+/* Fix bottom gradient fade to match the light card background */
+[data-theme="light"] .from-\[\#080d1a\] {
+  --tw-gradient-from: #dde4ef !important;
+}
+
 /* ── Scrollbar track (light mode) ───────────────────────────── */
 [data-theme="light"] ::-webkit-scrollbar-track {
   background: #f1f5f9;
