@@ -76,14 +76,14 @@ export function StickyCTA() {
                   <div className="relative shrink-0">
                     <img
                       src={avatarPhoto}
-                      alt="PowerTech team"
+                      alt="OneSoft team"
                       className="w-11 h-11 rounded-full object-cover object-top ring-2 ring-primary/60"
                     />
                     <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-green-500 border-2 border-background" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-white font-semibold text-sm leading-tight">
-                      Hi, we're <span className="text-primary">PowerTech.</span>
+                      Hi, we're <span className="text-primary">OneSoft.</span>
                     </p>
                     <p className="text-white/60 text-xs truncate">
                       Schedule a call to discover smarter ways to build &amp; grow your business.

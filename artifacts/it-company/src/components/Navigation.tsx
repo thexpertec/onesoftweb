@@ -30,7 +30,7 @@ const erpProducts = [
 ];
 
 const themeProducts = [
-  { icon: Palette, label: "PowerThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "#themes" },
+  { icon: Palette, label: "OneThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "#themes" },
 ];
 
 const devServices = [
@@ -277,11 +277,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           className="fixed inset-0 z-50 bg-[#070d1a] flex flex-col overflow-y-auto"
         >
           <div className="flex items-center justify-between px-5 h-16 border-b border-white/8 shrink-0">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded bg-primary flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-xl text-white">PowerTech</span>
+            <div className="flex items-center">
+              <img src="/onesoft-logo.png" alt="OneSoft" className="h-8 w-auto brightness-0 invert" />
             </div>
             <button onClick={onClose} className="text-white/60 hover:text-white p-1">
               <X className="w-6 h-6" />
@@ -343,7 +340,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             {[
               { label: "AI Automation", href: "#ai-automation", violet: true },
-              { label: "PowerThemes", href: "#themes" },
+              { label: "OneThemes", href: "#themes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
@@ -385,11 +382,8 @@ export function Navigation() {
       <header className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div className="w-8 h-8 rounded bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-white">PowerTech</span>
+          <Link href="/" className="flex items-center group shrink-0">
+            <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto brightness-0 invert group-hover:opacity-90 transition-opacity" />
           </Link>
 
           {/* Desktop nav */}
@@ -408,7 +402,7 @@ export function Navigation() {
               AI
             </a>
 
-            <a href="#themes" className="text-sm text-muted-foreground hover:text-white transition-colors">PowerThemes</a>
+            <a href="#themes" className="text-sm text-muted-foreground hover:text-white transition-colors">OneThemes</a>
             <a href="#why-choose-us" className="text-sm text-muted-foreground hover:text-white transition-colors">Why Us</a>
           </nav>
 

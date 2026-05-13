@@ -9,7 +9,7 @@ const INTERESTS = [
   "Restaurant ERP",
   "Shadi Hall ERP",
   "Distributor ERP",
-  "PowerThemes – Website",
+  "OneThemes – Website",
   "Custom Development",
   "General Enquiry",
 ];

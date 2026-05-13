@@ -84,18 +84,18 @@
   --sidebar: 225 40% 10%;
   --sidebar-foreground: 0 0% 100%;
   --sidebar-border: 225 30% 15%;
-  --sidebar-primary: 221 83% 53%;
+  --sidebar-primary: 215 74% 42%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 225 30% 15%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 221 83% 53%;
+  --sidebar-ring: 215 74% 42%;
 
   --popover: 225 40% 10%;
   --popover-foreground: 0 0% 100%;
   --popover-border: 225 30% 15%;
 
-  /* Electric Blue */
-  --primary: 221 83% 53%;
+  /* OneSoft Blue */
+  --primary: 215 74% 42%;
   --primary-foreground: 0 0% 100%;
 
   /* Darker Blue */
@@ -106,14 +106,14 @@
   --muted: 225 30% 15%;
   --muted-foreground: 215 20% 65%;
 
-  --accent: 221 83% 53%;
+  --accent: 215 74% 42%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 100%;
 
   --input: 225 30% 20%;
-  --ring: 221 83% 53%;
+  --ring: 215 74% 42%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
@@ -155,17 +155,17 @@
   --sidebar: 0 0% 100%;
   --sidebar-foreground: 222 47% 11%;
   --sidebar-border: 214 32% 82%;
-  --sidebar-primary: 221 83% 53%;
+  --sidebar-primary: 215 74% 42%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 210 40% 94%;
   --sidebar-accent-foreground: 222 47% 11%;
-  --sidebar-ring: 221 83% 53%;
+  --sidebar-ring: 215 74% 42%;
 
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   --popover-border: 214 32% 82%;
 
-  --primary: 221 83% 53%;
+  --primary: 215 74% 42%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 210 40% 92%;
@@ -174,14 +174,14 @@
   --muted: 210 40% 94%;
   --muted-foreground: 215 20% 40%;
 
-  --accent: 221 83% 53%;
+  --accent: 215 74% 42%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
   --input: 214 32% 88%;
-  --ring: 221 83% 53%;
+  --ring: 215 74% 42%;
 }
 
 /* ── Base body ─────────────────────────────────────────────── */

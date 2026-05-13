@@ -213,7 +213,7 @@ export default function Home() {
       <ServicesSection />
       <AIAutomationSection />
 
-      {/* PowerThemes — secondary product, shown after AI section while interest is high */}
+      {/* OneThemes — secondary product, shown after AI section while interest is high */}
       <section id="themes" className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -225,7 +225,7 @@ export default function Home() {
             >
               <div className="relative">
                  <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
-                <img src={themesShowcase} alt="PowerThemes Showcase" className="w-full rounded-xl border border-border shadow-2xl" />
+                <img src={themesShowcase} alt="OneThemes Showcase" className="w-full rounded-xl border border-border shadow-2xl" />
               </div>
             </motion.div>
             <motion.div
@@ -240,7 +240,7 @@ export default function Home() {
                   <Globe className="w-3 h-3 mr-2" />
                   Website Products
                 </Badge>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">PowerThemes</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">OneThemes</h2>
                 <p className="text-muted-foreground text-lg mb-8">
                   Premium website themes designed for modern businesses. Fast-loading, SEO-ready, and fully customizable. Don't just build a website, build a digital presence.
                 </p>
@@ -272,7 +272,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes"
-                  onClick={() => openCTAModal("PowerThemes – Website")}>
+                  onClick={() => openCTAModal("OneThemes – Website")}>
                   View Theme Library
                 </Button>
               </motion.div>
@@ -353,12 +353,12 @@ export default function Home() {
             >
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">Client Stories</span>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">What our clients say after going live</h2>
-              <p className="mt-3 text-muted-foreground">Straight from the people who run their business on PowerTech every day.</p>
+              <p className="mt-3 text-muted-foreground">Straight from the people who run their business on OneSoft every day.</p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  quote: "We were drowning in paper-based patient records and manual billing. PowerTech's Hospital ERP brought everything — OPD, pharmacy, lab — into one screen. Our billing errors dropped from dozens a day to almost zero in the first week.",
+                  quote: "We were drowning in paper-based patient records and manual billing. OneSoft's Hospital ERP brought everything — OPD, pharmacy, lab — into one screen. Our billing errors dropped from dozens a day to almost zero in the first week.",
                   author: "Dr. Adil Rehman",
                   role: "Chief Medical Officer",
                   company: "Al-Noor Hospital, Dubai",
@@ -374,7 +374,7 @@ export default function Home() {
                   flag: "🇵🇰",
                 },
                 {
-                  quote: "We distribute to over 200 retailers across Yorkshire. Before PowerTech, stock reconciliation alone took two people two days a month. Now it's a 10-minute report. The system paid for itself in the first quarter.",
+                  quote: "We distribute to over 200 retailers across Yorkshire. Before OneSoft, stock reconciliation alone took two people two days a month. Now it's a 10-minute report. The system paid for itself in the first quarter.",
                   author: "Tom Ashworth",
                   role: "Operations Director",
                   company: "Northern Star Distribution, Hull",

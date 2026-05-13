@@ -137,7 +137,7 @@ export function ClientLogos() {
           Trusted by Growing Businesses Worldwide
         </h2>
         <p className="text-muted-foreground text-lg">
-          Restaurants, hospitals, retailers, schools, distributors, pharmacies, gyms, hotels, clinics, salons, logistics firms, law offices, real estate agencies, and manufacturers — running on PowerTech every day.
+          Restaurants, hospitals, retailers, schools, distributors, pharmacies, gyms, hotels, clinics, salons, logistics firms, law offices, real estate agencies, and manufacturers — running on OneSoft every day.
         </p>
       </motion.div>
 

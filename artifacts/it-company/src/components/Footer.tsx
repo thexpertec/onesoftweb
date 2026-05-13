@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Twitter, Linkedin, Youtube, Github, ExternalLink } from "lucide-react";
+import { Twitter, Linkedin, Youtube, Github, ExternalLink } from "lucide-react";
 
 const colVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -25,14 +25,11 @@ export function Footer() {
             viewport={{ once: true }}
             variants={colVariants}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded bg-primary flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-xl text-white">PowerTech Solutions</span>
+            <div className="flex items-center mb-4">
+              <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto brightness-0 invert" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Precision-engineered ERP systems and premium website themes for schools, hospitals, restaurants, distributors, and more. Built in the UK. Deployed globally.
+              Precision-engineered ERP systems and premium website themes for schools, hospitals, restaurants, distributors, and more — built by OneSoft. UK-based. Deployed globally.
             </p>
             {/* Social links */}
             <div className="flex items-center gap-3">
@@ -148,7 +145,7 @@ export function Footer() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} PowerTech Solutions Ltd. Registered in England & Wales. All rights reserved.
+            © {new Date().getFullYear()} OneSoft Ltd. Registered in England & Wales. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">

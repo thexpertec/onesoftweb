@@ -19,7 +19,7 @@ const INTERESTS = [
   "Gym & Fitness ERP",
   "Garments / Textile ERP",
   "Transport & Logistics ERP",
-  "PowerThemes – Website",
+  "OneThemes – Website",
   "Custom Development",
   "AI & Automation",
   "General Enquiry",

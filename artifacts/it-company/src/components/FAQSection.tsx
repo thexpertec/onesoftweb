@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    q: "What exactly does PowerTech Solutions offer?",
-    a: "We build two categories of software: industry-specific ERP systems (for schools, hospitals, restaurants, shadi halls, e-commerce, wholesalers, and distributors) and premium website products under our PowerThemes brand. Every solution is custom-engineered — not off-the-shelf — so it fits your exact workflows and scales as your business grows.",
+    q: "What exactly does OneSoft offer?",
+    a: "We build two categories of software: industry-specific ERP systems (for schools, hospitals, restaurants, shadi halls, e-commerce, wholesalers, and distributors) and premium website products under our OneThemes brand. Every solution is custom-engineered — not off-the-shelf — so it fits your exact workflows and scales as your business grows.",
   },
   {
     q: "Do I need technical expertise to work with you?",
