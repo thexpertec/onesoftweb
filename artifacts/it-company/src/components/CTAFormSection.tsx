@@ -3,14 +3,22 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Send, Phone, Mail, User, MessageSquare, Building2, ChevronDown } from "lucide-react";
 
 const INTERESTS = [
+  "Accounting & Bookkeeping ERP",
   "School ERP",
   "Hospital ERP",
   "E-commerce ERP",
   "Restaurant ERP",
   "Shadi Hall ERP",
   "Distributor ERP",
+  "Pharmacy ERP",
+  "Hotel & Hospitality ERP",
+  "Real Estate ERP",
+  "Gym & Fitness ERP",
+  "Garments / Textile ERP",
+  "Transport & Logistics ERP",
   "OneThemes – Website",
   "Custom Development",
+  "AI & Automation",
   "General Enquiry",
 ];
 

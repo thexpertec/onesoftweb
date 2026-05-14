@@ -24,7 +24,7 @@ import {
   ArrowRight, Activity, ShieldCheck, Star,
   Building2, GraduationCap, Stethoscope, 
   ShoppingCart, Utensils, Box, Globe, Users, Server,
-  CheckCircle2, Cpu, LineChart, Lock, Quote
+  CheckCircle2, Cpu, LineChart, Lock, Quote, Calculator
 } from "lucide-react";
 
 import schoolErp from "@/assets/school-erp.png";
@@ -182,6 +182,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
+                { title: "Accounting & Bookkeeping", desc: "Double-entry ledger, HRM payroll, inventory, invoicing — all interconnected.", icon: Calculator, href: "/accounting" },
                 { title: "School ERP", desc: "Admissions, attendance, fees, results, library, and timetabling.", icon: GraduationCap },
                 { title: "Hospital ERP", desc: "Patient management, OPD/IPD, billing, pharmacy, and lab.", icon: Stethoscope },
                 { title: "E-commerce ERP", desc: "Orders, inventory, suppliers, and multi-channel sales.", icon: ShoppingCart },

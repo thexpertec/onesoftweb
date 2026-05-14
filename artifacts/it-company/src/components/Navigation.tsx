@@ -6,7 +6,7 @@ import {
   Palette, Globe, ShoppingBag, Webhook, Code2, Users, LayoutDashboard,
   Wrench, BrainCircuit, Megaphone, SearchCheck, ImagePlay,
   ArrowRight, Sparkles, Phone,
-  Pill, Hotel, Home, Dumbbell, Shirt, Truck,
+  Pill, Hotel, Home, Dumbbell, Shirt, Truck, Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,6 +27,7 @@ const erpProducts = [
   { icon: Dumbbell,        label: "Gym & Fitness ERP",        desc: "Members, attendance, packages",          color: "#be185d", href: "#products" },
   { icon: Shirt,           label: "Garments / Textile ERP",   desc: "Production, fabric, orders, exports",    color: "#6d28d9", href: "#products" },
   { icon: Truck,           label: "Transport & Logistics",    desc: "Fleet, trips, drivers, invoices",        color: "#c2410c", href: "#products" },
+  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory, payroll",  color: "#10b981", href: "/accounting" },
 ];
 
 const themeProducts = [
@@ -340,12 +341,14 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             {[
               { label: "AI Automation", href: "#ai-automation", violet: true },
+              { label: "Accounting", href: "/accounting", green: true },
               { label: "OneThemes", href: "#themes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
-                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : "text-white"}`}>
+                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).green ? "text-emerald-400" : "text-white"}`}>
                 {item.violet && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse mr-2 mt-1.5" />}
+                {(item as any).green && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse mr-2 mt-1.5" />}
                 {item.label}
               </a>
             ))}

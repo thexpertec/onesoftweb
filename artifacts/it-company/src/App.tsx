@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import AccountingPage from "@/pages/AccountingPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { ThemePickerModal } from "@/components/ThemePickerModal";
 import { CTAModalProvider } from "@/context/CTAModalContext";
@@ -15,6 +16,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/accounting" component={AccountingPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -7,6 +7,7 @@ import {
 import { useCTAModal } from "@/context/CTAModalContext";
 
 const INTERESTS = [
+  "Accounting & Bookkeeping ERP",
   "School ERP",
   "Hospital ERP",
   "E-commerce ERP",
