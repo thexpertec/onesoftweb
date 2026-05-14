@@ -211,7 +211,7 @@ export function AIAutomationSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-center text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#94a3b8" }}>AI & automation tools we work with</p>
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#64748b" }}>AI & automation tools we work with</p>
           <div className="flex flex-wrap items-center justify-center gap-2">
             {stack.map((tool, i) => (
               <motion.span
@@ -257,8 +257,8 @@ export function AIAutomationSection() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-sm transition-all duration-200"
-                style={{ background: "#1a69c4" }}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm transition-all duration-200"
+                style={{ background: "#1a69c4", color: "#ffffff" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#1558a8")}
                 onMouseLeave={e => (e.currentTarget.style.background = "#1a69c4")}
               >

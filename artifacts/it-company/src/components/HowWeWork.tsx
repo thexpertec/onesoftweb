@@ -83,7 +83,7 @@ export function HowWeWork() {
                 <div className="relative mb-6">
                   {/* Step number badge */}
                   <div className="absolute -top-2 -right-2 z-10 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
-                    <span className="text-[9px] font-bold text-white">{i + 1}</span>
+                    <span className="text-[9px] font-bold" style={{ color: "#ffffff" }}>{i + 1}</span>
                   </div>
                   <div className="w-20 h-20 rounded-2xl border-2 border-primary/30 bg-primary/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.3)]">
                     <s.icon className="w-9 h-9 text-primary" strokeWidth={1.5} />

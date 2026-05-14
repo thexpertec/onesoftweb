@@ -225,7 +225,8 @@ export function CTAModal() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary/90 active:scale-[0.98] transition-all disabled:opacity-60"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary font-bold text-sm hover:bg-primary/90 active:scale-[0.98] transition-all disabled:opacity-60"
+                    style={{ color: "#ffffff" }}
                   >
                     {loading ? (
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
