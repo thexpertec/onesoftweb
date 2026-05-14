@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
+import { useTheme } from "@/context/ThemeContext";
 import {
   ArrowRight, CheckCircle2, BookOpen, Users, Package,
   BarChart3, RefreshCw, ShieldCheck, Layers, TrendingUp,
@@ -616,9 +617,29 @@ const testimonials = [
 
 export default function AccountingPage() {
   const { openCTAModal } = useCTAModal();
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
+  const pageBg        = isLight ? "#ffffff"                    : "#070e1c";
+  const sectionBg     = isLight ? "#f1f5f9"                    : "#04091a";
+  const tableBg       = isLight ? "#ffffff"                    : "#07111f";
+  const connectorBg   = isLight ? "#f1f5f9"                    : "#070e1c";
+  const statsBg       = isLight ? "rgba(0,0,0,0.03)"           : "rgba(255,255,255,0.03)";
+  const dividerColor  = isLight ? "rgba(0,0,0,0.08)"           : "rgba(255,255,255,0.08)";
+  const gridLine      = isLight ? "rgba(0,0,0,0.04)"           : "rgba(255,255,255,0.06)";
+  const t45           = isLight ? "rgba(15,23,42,0.5)"         : "rgba(255,255,255,0.45)";
+  const t50           = isLight ? "rgba(15,23,42,0.55)"        : "rgba(255,255,255,0.5)";
+  const t55           = isLight ? "rgba(15,23,42,0.6)"         : "rgba(255,255,255,0.55)";
+  const t60           = isLight ? "rgba(15,23,42,0.65)"        : "rgba(255,255,255,0.6)";
+  const t65           = isLight ? "rgba(15,23,42,0.7)"         : "rgba(255,255,255,0.65)";
+  const t85           = isLight ? "rgba(15,23,42,0.9)"         : "rgba(255,255,255,0.85)";
+  const pageColor     = isLight ? "#0f172a"                    : "#fff";
+  const secBtnBg      = isLight ? "rgba(0,0,0,0.05)"          : "rgba(255,255,255,0.06)";
+  const secBtnBorder  = isLight ? "rgba(0,0,0,0.15)"          : "rgba(255,255,255,0.12)";
+  const secBtnColor   = isLight ? "rgba(15,23,42,0.85)"       : "rgba(255,255,255,0.85)";
 
   return (
-    <div style={{ background: "#070e1c", color: "#fff" }} className="min-h-screen overflow-hidden">
+    <div style={{ background: pageBg, color: pageColor }} className="min-h-screen overflow-hidden">
       <Navigation />
 
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
@@ -634,11 +655,11 @@ export default function AccountingPage() {
 
         <div className="container mx-auto px-4">
           {/* breadcrumb */}
-          <motion.div className="flex items-center gap-2 text-sm mb-8" style={{color:"rgba(255,255,255,0.45)"}}
+          <motion.div className="flex items-center gap-2 text-sm mb-8" style={{color:t45}}
             initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4}}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5"/>
-            <span style={{color:"rgba(255,255,255,0.5)"}}>Products</span>
+            <span style={{color:t50}}>Products</span>
             <ChevronRight className="w-3.5 h-3.5"/>
             <span style={{color:"#34d399",fontWeight:600}}>Accounting & Bookkeeping</span>
           </motion.div>
@@ -658,7 +679,7 @@ export default function AccountingPage() {
                 Fully Automated.
               </span>
             </motion.h1>
-            <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{color:"rgba(255,255,255,0.6)"}}
+            <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{color:t60}}
               initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:0.6,delay:0.2}}>
               Double-entry bookkeeping, HRM, inventory, products & services — all interconnected in one platform. No more spreadsheets. No more manual data entry. Just clean, accurate books.
             </motion.p>
@@ -670,7 +691,7 @@ export default function AccountingPage() {
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
               <button className="h-14 px-10 text-lg rounded-lg font-medium transition-all duration-200"
-                style={{background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.85)"}}
+                style={{background:secBtnBg,border:`1px solid ${secBtnBorder}`,color:secBtnColor}}
                 onClick={() => document.getElementById("modules")?.scrollIntoView({behavior:"smooth"})}>
                 Explore All Modules
               </button>
@@ -686,7 +707,7 @@ export default function AccountingPage() {
       </div>
 
       {/* ═══ STATS ══════════════════════════════════════════════ */}
-      <div style={{background:"rgba(255,255,255,0.03)",borderTop:"1px solid rgba(255,255,255,0.08)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}
+      <div style={{background:statsBg,borderTop:`1px solid ${dividerColor}`,borderBottom:`1px solid ${dividerColor}`}}
         className="py-14">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -703,7 +724,7 @@ export default function AccountingPage() {
                   <s.Icon className="w-5 h-5" style={{color:s.color}}/>
                 </div>
                 <h3 className="text-4xl md:text-5xl font-black mb-1"><CountUp to={s.to} suffix={s.suf} decimals={(s as any).d??0}/></h3>
-                <p style={{color:"rgba(255,255,255,0.45)"}} className="text-sm font-medium">{s.label}</p>
+                <p style={{color:t45}} className="text-sm font-medium">{s.label}</p>
               </motion.div>
             ))}
           </div>
@@ -722,7 +743,7 @@ export default function AccountingPage() {
               <Sparkles className="w-3.5 h-3.5"/>Zero Manual Work
             </span>
             <h2 className="text-3xl md:text-5xl font-black mb-5">One action. Six systems update.</h2>
-            <p style={{color:"rgba(255,255,255,0.55)"}} className="text-lg">
+            <p style={{color:t55}} className="text-lg">
               Raise a single invoice and watch your inventory, ledger, P&L, payroll, and reports all update themselves — no exports, no copy-paste, no re-entry.
             </p>
           </motion.div>
@@ -736,16 +757,16 @@ export default function AccountingPage() {
                   className="relative rounded-2xl p-5 overflow-hidden"
                   style={{background:`${f.color}0d`,border:`1px solid ${f.color}25`}}>
                   <div className="absolute top-3 right-4 text-[42px] font-black leading-none select-none pointer-events-none"
-                    style={{color:`rgba(255,255,255,0.85)`}}>{f.step}</div>
+                    style={{color:t85}}>{f.step}</div>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
                     style={{background:`${f.color}20`,border:`1px solid ${f.color}35`}}>
                     <f.icon className="w-5 h-5" style={{color:f.color}}/>
                   </div>
                   <h3 className="text-base font-bold mb-2">{f.title}</h3>
-                  <p style={{color:"rgba(255,255,255,0.5)"}} className="text-sm leading-relaxed">{f.detail}</p>
+                  <p style={{color:t50}} className="text-sm leading-relaxed">{f.detail}</p>
                   {i < flow.length - 1 && (
                     <div className="hidden lg:block absolute -right-2.5 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full z-10 flex items-center justify-center"
-                      style={{background:"#070e1c",border:`1px solid ${f.color}40`}}>
+                      style={{background:connectorBg,border:`1px solid ${f.color}40`}}>
                       <ArrowRight className="w-2.5 h-2.5" style={{color:f.color}}/>
                     </div>
                   )}
@@ -757,7 +778,7 @@ export default function AccountingPage() {
       </div>
 
       {/* ═══ MODULES GRID ════════════════════════════════════════ */}
-      <div id="modules" className="py-24" style={{background:"#04091a"}}>
+      <div id="modules" className="py-24" style={{background:sectionBg}}>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
@@ -766,7 +787,7 @@ export default function AccountingPage() {
               <Layers className="w-3.5 h-3.5"/>8 Core Modules
             </span>
             <h2 className="text-3xl md:text-5xl font-black mb-5">Everything You Need,<br/>Nothing You Don't.</h2>
-            <p style={{color:"rgba(255,255,255,0.5)"}} className="text-lg">
+            <p style={{color:t50}} className="text-lg">
               Built for ambitious businesses that need more than basic bookkeeping — without enterprise complexity.
             </p>
           </motion.div>
@@ -777,14 +798,14 @@ export default function AccountingPage() {
                 initial={{opacity:0,y:28}} whileInView={{opacity:1,y:0}}
                 viewport={{once:true}} transition={{delay:i*0.06,duration:0.5}}
                 className="group rounded-2xl p-5 transition-all duration-300 cursor-default"
-                style={{background:m.bg,border:`1px solid ${m.border}`}}
+                style={{background:isLight?`${m.color}0f`:m.bg,border:`1px solid ${isLight?m.color+"30":m.border}`}}
                 whileHover={{y:-4,boxShadow:`0 20px 40px ${m.color}12`}}>
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                   style={{background:`${m.color}20`,border:`1px solid ${m.color}40`}}>
                   <m.icon className="w-6 h-6" style={{color:m.color}}/>
                 </div>
                 <h3 className="text-base font-bold mb-2">{m.title}</h3>
-                <p className="text-sm mb-4 leading-relaxed" style={{color:"rgba(255,255,255,0.5)"}}>{m.desc}</p>
+                <p className="text-sm mb-4 leading-relaxed" style={{color:t50}}>{m.desc}</p>
                 <ul className="space-y-2">
                   {m.pts.map(p=>(
                     <li key={p} className="flex items-start gap-2">
@@ -816,7 +837,7 @@ export default function AccountingPage() {
                 <Boxes className="w-3.5 h-3.5"/>Inventory + Accounting
               </span>
               <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">Stock that talks<br/>to your books.</h2>
-              <p className="text-lg mb-10 leading-relaxed" style={{color:"rgba(255,255,255,0.55)"}}>
+              <p className="text-lg mb-10 leading-relaxed" style={{color:t55}}>
                 When stock comes in, the system posts a debit to inventory and a credit to accounts payable — automatically. When it's sold, COGS hits the P&L in real time. Your gross margin is always accurate without a single spreadsheet.
               </p>
 
@@ -839,14 +860,14 @@ export default function AccountingPage() {
                     initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}}
                     viewport={{once:true}} transition={{delay:i*0.08,duration:0.5}}
                     className="flex items-start gap-4 rounded-xl p-4"
-                    style={{background:item.bg,border:`1px solid ${item.border}`}}>
+                    style={{background:isLight?`${item.color}0f`:item.bg,border:`1px solid ${item.border}`}}>
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
                       style={{background:`${item.color}20`,border:`1px solid ${item.color}35`}}>
                       <item.icon className="w-5 h-5" style={{color:item.color}}/>
                     </div>
                     <div>
                       <p className="text-sm font-semibold mb-1">{item.title}</p>
-                      <p className="text-xs leading-relaxed" style={{color:"rgba(255,255,255,0.45)"}}>{item.sub}</p>
+                      <p className="text-xs leading-relaxed" style={{color:t45}}>{item.sub}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -862,9 +883,9 @@ export default function AccountingPage() {
             {/* inventory table */}
             <motion.div className="flex-1 w-full"
               initial={{opacity:0,x:30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.65}}>
-              <div className="rounded-2xl overflow-hidden" style={{background:"#07111f",border:"1px solid rgba(255,255,255,0.1)",boxShadow:"0 30px 60px rgba(0,0,0,0.5)"}}>
+              <div className="rounded-2xl overflow-hidden" style={{background:tableBg,border:`1px solid ${dividerColor}`,boxShadow:"0 30px 60px rgba(0,0,0,0.12)"}}>
                 {/* header */}
-                <div className="flex items-center justify-between px-5 py-4" style={{borderBottom:"1px solid rgba(255,255,255,0.07)"}}>
+                <div className="flex items-center justify-between px-5 py-4" style={{borderBottom:`1px solid ${dividerColor}`}}>
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{background:"rgba(59,130,246,0.2)"}}>
                       <Boxes className="w-4 h-4 text-blue-400"/>
@@ -873,18 +894,18 @@ export default function AccountingPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"/>
-                    <span className="text-xs" style={{color:"rgba(255,255,255,0.4)"}}>Live</span>
+                    <span className="text-xs" style={{color:t45}}>Live</span>
                   </div>
                 </div>
                 {/* summary row */}
-                <div className="grid grid-cols-3 gap-px" style={{background:"rgba(255,255,255,0.06)"}}>
+                <div className="grid grid-cols-3 gap-px" style={{background:gridLine}}>
                   {[
                     {label:"Total Items",value:"847",color:"#60a5fa"},
                     {label:"Total Value",value:"£67.2K",color:"#34d399"},
                     {label:"Low / Out",value:"3 items",color:"#fbbf24"},
                   ].map(s=>(
-                    <div key={s.label} className="px-4 py-3" style={{background:"#07111f"}}>
-                      <p className="text-xs mb-1" style={{color:"rgba(255,255,255,0.35)"}}>{s.label}</p>
+                    <div key={s.label} className="px-4 py-3" style={{background:tableBg}}>
+                      <p className="text-xs mb-1" style={{color:t45}}>{s.label}</p>
                       <p className="text-lg font-black" style={{color:s.color}}>{s.value}</p>
                     </div>
                   ))}
@@ -932,7 +953,7 @@ export default function AccountingPage() {
       </div>
 
       {/* ═══ TESTIMONIALS ════════════════════════════════════════ */}
-      <div className="py-24" style={{background:"#04091a"}}>
+      <div className="py-24" style={{background:sectionBg}}>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
@@ -949,11 +970,11 @@ export default function AccountingPage() {
                 initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}}
                 viewport={{once:true}} transition={{delay:i*0.1,duration:0.6}}
                 className="rounded-2xl p-7 flex flex-col"
-                style={{background:"rgba(255,255,255,0.03)",border:`1px solid ${t.color}25`}}>
+                style={{background:isLight?"#ffffff":"rgba(255,255,255,0.03)",border:`1px solid ${t.color}25`}}>
                 <div className="flex gap-0.5 mb-4">
                   {Array(5).fill(0).map((_,j)=><Star key={j} className="w-4 h-4 fill-current" style={{color:t.color}}/>)}
                 </div>
-                <p className="text-sm leading-relaxed mb-6 flex-1" style={{color:"rgba(255,255,255,0.65)"}}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-sm leading-relaxed mb-6 flex-1" style={{color:t65}}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
                     style={{background:`${t.color}20`,color:t.color,border:`1px solid ${t.color}35`}}>
@@ -961,7 +982,7 @@ export default function AccountingPage() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs" style={{color:"rgba(255,255,255,0.4)"}}>{t.role} · {t.co}</p>
+                    <p className="text-xs" style={{color:t45}}>{t.role} · {t.co}</p>
                   </div>
                 </div>
               </motion.div>
@@ -986,7 +1007,7 @@ export default function AccountingPage() {
                 under control.
               </span>
             </h2>
-            <p className="text-xl mb-10 max-w-2xl mx-auto" style={{color:"rgba(255,255,255,0.55)"}}>
+            <p className="text-xl mb-10 max-w-2xl mx-auto" style={{color:t55}}>
               Join 300+ businesses that run their entire finance operation on OneSoft. Set up in a day, accurate from day one.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
@@ -995,7 +1016,7 @@ export default function AccountingPage() {
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
-              <div className="flex items-center gap-2" style={{color:"rgba(255,255,255,0.4)"}}>
+              <div className="flex items-center gap-2" style={{color:t45}}>
                 <Globe className="w-4 h-4"/>
                 <span className="text-sm">Used in 12 countries</span>
               </div>

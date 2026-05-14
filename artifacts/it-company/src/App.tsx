@@ -6,7 +6,6 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import AccountingPage from "@/pages/AccountingPage";
 import { ThemeProvider } from "@/context/ThemeContext";
-import { ThemePickerModal } from "@/components/ThemePickerModal";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
 
@@ -32,7 +31,6 @@ function App() {
               <Router />
             </WouterRouter>
             <Toaster />
-            <ThemePickerModal />
             <CTAModal />
           </TooltipProvider>
         </QueryClientProvider>
