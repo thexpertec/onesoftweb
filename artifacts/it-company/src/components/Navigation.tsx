@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useTheme } from "@/context/ThemeContext";
 import { Link } from "wouter";
 import {
   Menu, Zap, ChevronDown, X,
@@ -265,6 +266,7 @@ function MobileBookDemo({ onClose }: { onClose: () => void }) {
 
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const { theme } = useTheme();
   const toggle = (k: string) => setExpanded(v => v === k ? null : k);
 
   return (
@@ -279,7 +281,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         >
           <div className="flex items-center justify-between px-5 h-16 border-b border-white/8 shrink-0">
             <div className="flex items-center">
-              <img src="/onesoft-logo.png" alt="OneSoft" className="h-8 w-auto brightness-0 invert" />
+              <img src="/onesoft-logo.png" alt="OneSoft" className={theme === "light" ? "h-8 w-auto brightness-0" : "h-8 w-auto brightness-0 invert"} />
             </div>
             <button onClick={onClose} className="text-white/60 hover:text-white p-1">
               <X className="w-6 h-6" />
@@ -365,6 +367,10 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
 export function Navigation() {
   const { openCTAModal } = useCTAModal();
+  const { theme } = useTheme();
+  const logoClass = theme === "light"
+    ? "h-9 w-auto brightness-0 group-hover:opacity-80 transition-opacity"
+    : "h-9 w-auto brightness-0 invert group-hover:opacity-90 transition-opacity";
   const [openMega, setOpenMega] = useState<MegaKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -386,7 +392,7 @@ export function Navigation() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group shrink-0">
-            <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto brightness-0 invert group-hover:opacity-90 transition-opacity" />
+            <img src="/onesoft-logo.png" alt="OneSoft" className={logoClass} />
           </Link>
 
           {/* Desktop nav */}
