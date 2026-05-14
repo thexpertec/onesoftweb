@@ -356,7 +356,7 @@ export default function AccountingPage() {
                   className="relative rounded-2xl p-5 overflow-hidden"
                   style={{background:`${f.color}0d`,border:`1px solid ${f.color}25`}}>
                   <div className="absolute top-3 right-4 text-[42px] font-black leading-none select-none pointer-events-none"
-                    style={{color:`${f.color}12`}}>{f.step}</div>
+                    style={{color:`rgba(255,255,255,0.85)`}}>{f.step}</div>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
                     style={{background:`${f.color}20`,border:`1px solid ${f.color}35`}}>
                     <f.icon className="w-5 h-5" style={{color:f.color}}/>
