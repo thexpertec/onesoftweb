@@ -99,7 +99,7 @@ export function TechMarquee() {
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
           Our Technology Stack
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
           Technologies We Master
         </h2>
         <p className="mt-4 text-muted-foreground max-w-xl mx-auto">

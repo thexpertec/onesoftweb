@@ -60,6 +60,11 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Global font scale — slightly larger base for a bolder feel */
+html {
+  font-size: 18px;
+}
+
 /* Base styling enforces dark mode colors for this specific blue/black/white vibe */
 :root {
   --button-outline: rgba(255,255,255, .10);

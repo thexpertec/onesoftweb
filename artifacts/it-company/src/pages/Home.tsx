@@ -101,13 +101,13 @@ export default function Home() {
                 Enterprise-Grade Software
               </Badge>
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white">
+            <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-tight text-white">
               Mission-Critical <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                 Infrastructure.
               </span>
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Precision-engineered ERP systems and premium websites. We build the digital backbone for modern businesses that demand power, speed, and reliability.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-4 justify-center">
@@ -170,8 +170,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Badge variant="outline" className="border-primary/50 text-primary mb-4 bg-primary/10">Core Infrastructure</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">Powerful ERP Systems</h2>
-            <p className="text-muted-foreground text-lg">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">Powerful ERP Systems</h2>
+            <p className="text-muted-foreground text-xl">
               Industry-specific software designed to streamline your operations, reduce costs, and accelerate growth.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function Home() {
                         <product.icon className="w-6 h-6 text-primary" />
                       </div>
                       <h3 className="text-xl font-semibold text-white mb-3">{product.title}</h3>
-                      <p className="text-muted-foreground text-sm">{product.desc}</p>
+                      <p className="text-muted-foreground text-base">{product.desc}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -223,8 +223,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">Client Stories</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">What our clients say after going live</h2>
-              <p className="mt-3 text-muted-foreground">Straight from the people who run their business on OneSoft every day.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">What our clients say after going live</h2>
+              <p className="mt-3 text-muted-foreground text-lg">Straight from the people who run their business on OneSoft every day.</p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[

@@ -40,7 +40,7 @@ export function HowWeWork() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-5">
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5">
             How our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
               ERP delivery

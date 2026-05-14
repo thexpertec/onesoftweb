@@ -274,7 +274,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         >
           <div className="flex items-center justify-between px-5 h-16 border-b border-white/8 shrink-0">
             <div className="flex items-center">
-              <img src="/onesoft-logo.png" alt="OneSoft" className={theme === "light" ? "h-8 w-auto brightness-0" : "h-8 w-auto brightness-0 invert"} />
+              <img src="/onesoft-logo.png" alt="OneSoft" className={theme === "light" ? "h-8 w-auto" : "h-8 w-auto brightness-0 invert"} />
             </div>
             <button onClick={onClose} className="text-white/60 hover:text-white p-1">
               <X className="w-6 h-6" />
@@ -362,7 +362,7 @@ export function Navigation() {
   const { openCTAModal } = useCTAModal();
   const { theme } = useTheme();
   const logoClass = theme === "light"
-    ? "h-9 w-auto brightness-0 group-hover:opacity-80 transition-opacity"
+    ? "h-9 w-auto group-hover:opacity-80 transition-opacity"
     : "h-9 w-auto brightness-0 invert group-hover:opacity-90 transition-opacity";
   const [openMega, setOpenMega] = useState<MegaKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);

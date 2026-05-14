@@ -174,7 +174,7 @@ export function ServicesSection() {
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-4 px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
             What We Build & Deliver
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-5">
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5">
             Full-Spectrum Digital Services
           </h2>
           <p className="text-muted-foreground text-lg">
