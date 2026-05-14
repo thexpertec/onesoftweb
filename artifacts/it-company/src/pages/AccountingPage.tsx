@@ -781,7 +781,7 @@ export default function AccountingPage() {
       </div>
 
       {/* ═══ MODULES GRID ════════════════════════════════════════ */}
-      <div id="modules" className="py-24" style={{background:sectionBg}}>
+      <div id="modules" className="py-24" style={{background:isLight?"#ffffff":sectionBg}}>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
@@ -800,23 +800,27 @@ export default function AccountingPage() {
               <motion.div key={m.title}
                 initial={{opacity:0,y:28}} whileInView={{opacity:1,y:0}}
                 viewport={{once:true}} transition={{delay:i*0.06,duration:0.5}}
-                className="group rounded-2xl p-5 transition-all duration-300 cursor-default"
-                style={{background:isLight?`${m.color}0f`:m.bg,border:`1px solid ${isLight?m.color+"30":m.border}`}}
-                whileHover={{y:-4,boxShadow:`0 20px 40px ${m.color}12`}}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{background:`${m.color}20`,border:`1px solid ${m.color}40`}}>
+                className="group rounded-2xl p-6 transition-all duration-300 cursor-default"
+                style={{
+                  background: isLight ? `${m.color}28` : m.bg,
+                  border: `1.5px solid ${isLight ? m.color + "70" : m.border}`,
+                  boxShadow: isLight ? `0 2px 16px ${m.color}18` : "none",
+                }}
+                whileHover={{y:-5,boxShadow:`0 24px 48px ${m.color}33`}}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{background:isLight?`${m.color}35`:`${m.color}20`,border:`1.5px solid ${isLight?m.color+"80":m.color+"40"}`}}>
                   <m.icon className="w-6 h-6" style={{color:m.color}}/>
                 </div>
-                <h3 className="text-base font-bold mb-2">{m.title}</h3>
-                <p className="text-sm mb-4 leading-relaxed" style={{color:t50}}>{m.desc}</p>
+                <h3 className="text-base font-bold mb-2" style={{color:isLight?"#0f172a":undefined}}>{m.title}</h3>
+                <p className="text-sm mb-4 leading-relaxed" style={{color:isLight?"#475569":t50}}>{m.desc}</p>
                 <ul className="space-y-2">
                   {m.pts.map(p=>(
                     <li key={p} className="flex items-start gap-2">
                       <div className="w-4 h-4 rounded-full flex items-center justify-center mt-0.5 shrink-0"
-                        style={{background:`${m.color}20`}}>
+                        style={{background:isLight?`${m.color}28`:`${m.color}20`,border:`1px solid ${m.color}50`}}>
                         <CheckCircle2 className="w-2.5 h-2.5" style={{color:m.color}}/>
                       </div>
-                      <span className="text-xs leading-relaxed" style={{color:"rgba(255,255,255,0.55)"}}>{p}</span>
+                      <span className="text-xs leading-relaxed" style={{color:isLight?"#475569":t55}}>{p}</span>
                     </li>
                   ))}
                 </ul>
