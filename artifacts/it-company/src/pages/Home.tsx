@@ -23,14 +23,13 @@ import { Badge } from "@/components/ui/badge";
 import { 
   ArrowRight, Activity, ShieldCheck, Star,
   Building2, GraduationCap, Stethoscope, 
-  ShoppingCart, Utensils, Box, Globe, Users, Server,
+  ShoppingCart, Utensils, Box, Users, Server,
   CheckCircle2, Cpu, LineChart, Lock, Quote, Calculator
 } from "lucide-react";
 
 import schoolErp from "@/assets/school-erp.png";
 import hospitalErp from "@/assets/hospital-erp.png";
 import ecommerceErp from "@/assets/ecommerce-erp.png";
-import themesShowcase from "@/assets/themes-showcase.png";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import testimonial3 from "@/assets/testimonial-3.jpg";
@@ -213,74 +212,6 @@ export default function Home() {
 
       <ServicesSection />
       <AIAutomationSection />
-
-      {/* OneThemes — secondary product, shown after AI section while interest is high */}
-      <section id="themes" className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div
-              className="flex-1"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative">
-                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
-                <img src={themesShowcase} alt="OneThemes Showcase" className="w-full rounded-xl border border-border shadow-2xl" />
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex-1"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeInUp}>
-                <Badge variant="outline" className="border-primary/50 text-primary mb-4 bg-primary/10">
-                  <Globe className="w-3 h-3 mr-2" />
-                  Website Products
-                </Badge>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">OneThemes</h2>
-                <p className="text-muted-foreground text-lg mb-8">
-                  Premium website themes designed for modern businesses. Fast-loading, SEO-ready, and fully customizable. Don't just build a website, build a digital presence.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {[
-                    "50+ Industry-specific templates",
-                    "Lightning fast performance (99+ Lighthouse)",
-                    "Responsive and mobile-first design",
-                    "Integrated with major CMS platforms"
-                  ].map((feature, i) => (
-                    <motion.li
-                      key={i}
-                      className="flex items-center gap-3 text-muted-foreground"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.12, duration: 0.45, ease: "easeOut" }}
-                    >
-                      <motion.span
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.12 + 0.2, type: "spring", stiffness: 400 }}
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      </motion.span>
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg" data-testid="btn-view-themes"
-                  onClick={() => openCTAModal("OneThemes – Website")}>
-                  View Theme Library
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section id="why-choose-us" className="py-24 bg-black relative overflow-hidden border-y border-border">
