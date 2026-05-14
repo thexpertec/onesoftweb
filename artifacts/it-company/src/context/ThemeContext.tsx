@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 
-type Theme = "dark" | "light";
+type Theme = "light";
 
 interface ThemeContextValue {
   theme: Theme;
@@ -17,30 +17,13 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
-
-  const setTheme = (t: Theme) => {
-    setThemeState(t);
-    const root = document.documentElement;
-    if (t === "dark") {
-      root.removeAttribute("data-theme");
-    } else {
-      root.setAttribute("data-theme", "light");
-    }
-    sessionStorage.setItem("pt-theme", t);
-  };
-
   useEffect(() => {
-    const saved = sessionStorage.getItem("pt-theme") as Theme | null;
-    if (saved) {
-      setTheme(saved);
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
+    sessionStorage.removeItem("pt-theme");
+    document.documentElement.setAttribute("data-theme", "light");
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme: "light", setTheme: () => {} }}>
       {children}
     </ThemeContext.Provider>
   );

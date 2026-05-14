@@ -284,41 +284,6 @@ html {
   background-color: unset !important;
 }
 
-/* ── AI Automation section: always dark, cancel all light-mode overrides ── */
-[data-theme="light"] #ai-automation {
-  background-color: #030711 !important;
-}
-[data-theme="light"] #ai-automation .bg-\[\#030711\],
-[data-theme="light"] #ai-automation .bg-black {
-  background-color: #030711 !important;
-}
-[data-theme="light"] #ai-automation .text-white,
-[data-theme="light"] #ai-automation .text-white\/90,
-[data-theme="light"] #ai-automation .text-white\/85,
-[data-theme="light"] #ai-automation .text-white\/80,
-[data-theme="light"] #ai-automation .text-white\/75,
-[data-theme="light"] #ai-automation .text-white\/70,
-[data-theme="light"] #ai-automation .text-white\/65,
-[data-theme="light"] #ai-automation .text-white\/60,
-[data-theme="light"] #ai-automation .text-white\/55,
-[data-theme="light"] #ai-automation .text-white\/50,
-[data-theme="light"] #ai-automation .text-white\/45,
-[data-theme="light"] #ai-automation .text-white\/40,
-[data-theme="light"] #ai-automation .text-white\/35,
-[data-theme="light"] #ai-automation .text-white\/30,
-[data-theme="light"] #ai-automation .text-white\/25,
-[data-theme="light"] #ai-automation .text-white\/15 {
-  color: unset !important;
-}
-[data-theme="light"] #ai-automation .text-muted-foreground {
-  color: hsl(215 20% 65%) !important;
-}
-[data-theme="light"] #ai-automation .border-white\/8,
-[data-theme="light"] #ai-automation .border-white\/10,
-[data-theme="light"] #ai-automation .border-white\/15,
-[data-theme="light"] #ai-automation .border-white\/18 {
-  border-color: unset !important;
-}
 
 /* ── Borders: white-opacity → slate ────────────────────────── */
 [data-theme="light"] .border-white\/5,
