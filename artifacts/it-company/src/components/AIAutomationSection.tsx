@@ -60,12 +60,12 @@ const capabilities = [
 ];
 
 const useCases = [
-  { sector: "Schools", icon: "🎓", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
-  { sector: "Hospitals", icon: "🏥", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
-  { sector: "Restaurants", icon: "🍽️", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
-  { sector: "Distributors", icon: "📦", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
-  { sector: "E-commerce", icon: "🛒", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
-  { sector: "Event Halls", icon: "💒", task: "Intelligent booking assistant that checks availability, quotes packages, and sends contracts — all without human involvement." },
+  { sector: "Schools",     icon: "🎓", color: "#2563eb", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
+  { sector: "Hospitals",   icon: "🏥", color: "#16a34a", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
+  { sector: "Restaurants", icon: "🍽️", color: "#ea580c", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
+  { sector: "Distributors",icon: "📦", color: "#0891b2", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
+  { sector: "E-commerce",  icon: "🛒", color: "#7c3aed", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
+  { sector: "Event Halls", icon: "💒", color: "#db2777", task: "Intelligent booking assistant that checks availability, quotes packages, and sends contracts — all without human involvement." },
 ];
 
 const stack = [
@@ -142,22 +142,23 @@ export function AIAutomationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: Math.min(i * 0.08, 0.4) }}
-              className="group relative rounded-2xl border border-white/8 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/18 p-7 transition-all duration-300 overflow-hidden"
+              className="group relative rounded-2xl p-7 transition-all duration-300 overflow-hidden"
+              style={{
+                background: `${cap.color}0e`,
+                border: `1.5px solid ${cap.color}45`,
+                boxShadow: `0 2px 16px ${cap.color}12`,
+              }}
             >
-              {/* Glow */}
+              {/* Top accent line */}
               <div
-                className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: `linear-gradient(90deg, transparent, ${cap.color}80, transparent)` }}
-              />
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: `radial-gradient(circle at 20% 20%, ${cap.color}0d 0%, transparent 60%)` }}
+                className="absolute top-0 left-0 right-0 h-[2px]"
+                style={{ background: `linear-gradient(90deg, transparent, ${cap.color}90, transparent)` }}
               />
 
               {/* Icon */}
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundColor: `${cap.color}18`, border: `1px solid ${cap.color}35` }}
+                style={{ backgroundColor: `${cap.color}22`, border: `1.5px solid ${cap.color}55` }}
               >
                 <cap.icon className="w-6 h-6" style={{ color: cap.color }} />
               </div>
@@ -203,14 +204,21 @@ export function AIAutomationSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex gap-4 p-5 rounded-xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.05] hover:border-violet-500/25 transition-all duration-300"
+                className="flex gap-4 p-5 rounded-xl border transition-all duration-300"
+                style={{
+                  background: `${uc.color}12`,
+                  borderColor: `${uc.color}40`,
+                  boxShadow: `0 2px 12px ${uc.color}10`,
+                }}
+                whileHover={{ y: -3, boxShadow: `0 12px 28px ${uc.color}22` }}
               >
-                <div className="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-xl shrink-0">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-xl shrink-0"
+                  style={{ background: `${uc.color}20`, border: `1.5px solid ${uc.color}50` }}>
                   {uc.icon}
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-violet-400 block mb-1">{uc.sector}</span>
-                  <p className="text-sm text-white/65 leading-relaxed">{uc.task}</p>
+                  <span className="text-[10px] font-bold uppercase tracking-widest block mb-1" style={{ color: uc.color }}>{uc.sector}</span>
+                  <p className="text-sm text-white/75 leading-relaxed">{uc.task}</p>
                 </div>
               </motion.div>
             ))}
