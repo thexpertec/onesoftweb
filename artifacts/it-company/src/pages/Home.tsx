@@ -12,7 +12,6 @@ import { HowWeWork } from "@/components/HowWeWork";
 import { FAQSection } from "@/components/FAQSection";
 import { FeatureMarquee } from "@/components/FeatureMarquee";
 import { OfficeSlider } from "@/components/OfficeSlider";
-import { DashboardSlider } from "@/components/DashboardSlider";
 import { CTAStrip } from "@/components/CTAStrip";
 import { CTAFormSection } from "@/components/CTAFormSection";
 import { ServicesSection } from "@/components/ServicesSection";
@@ -208,7 +207,6 @@ export default function Home() {
         </div>
       </section>
 
-      <DashboardSlider />
 
       <ServicesSection />
       <AIAutomationSection />
