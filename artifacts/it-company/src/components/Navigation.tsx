@@ -16,7 +16,7 @@ import { useCTAModal } from "@/context/CTAModalContext";
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const erpProducts = [
-  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#2563eb", href: "#products" },
+  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#1a69c4", href: "/school" },
   { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#16a34a", href: "#products" },
   { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "#products" },
   { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#7c3aed", href: "#products" },
@@ -336,14 +336,15 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             {[
               { label: "AI Automation", href: "#ai-automation", violet: true },
-              { label: "Accounting", href: "/accounting", green: true },
+              { label: "Accounting", href: "/accounting", blue: true },
+              { label: "School ERP", href: "/school", blue: true },
               { label: "OneThemes", href: "#themes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
-                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).green ? "text-emerald-400" : "text-white"}`}>
+                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).blue ? "text-blue-400" : "text-white"}`}>
                 {item.violet && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse mr-2 mt-1.5" />}
-                {(item as any).green && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse mr-2 mt-1.5" />}
+                {(item as any).blue && <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse mr-2 mt-1.5" />}
                 {item.label}
               </a>
             ))}
