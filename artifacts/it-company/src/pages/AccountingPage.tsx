@@ -242,7 +242,7 @@ export default function AccountingPage() {
       <Navigation />
 
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         {/* background glows */}
         <div className="absolute inset-0 pointer-events-none -z-10">
           <div className="absolute top-0 left-0 right-0 h-[600px]" style={{background:"radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,185,129,0.22), transparent)"}}/>
@@ -303,10 +303,10 @@ export default function AccountingPage() {
             <div className="h-[370px]"><AccountingDashboard /></div>
           </motion.div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ STATS ══════════════════════════════════════════════ */}
-      <section style={{background:"rgba(255,255,255,0.03)",borderTop:"1px solid rgba(255,255,255,0.08)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}
+      <div style={{background:"rgba(255,255,255,0.03)",borderTop:"1px solid rgba(255,255,255,0.08)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}
         className="py-14">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -328,10 +328,10 @@ export default function AccountingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ FLOW — how it all connects ═════════════════════════ */}
-      <section className="py-24 relative overflow-hidden">
+      <div className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
           style={{background:"radial-gradient(ellipse 70% 50% at 50% 100%, rgba(16,185,129,0.07), transparent)"}}/>
         <div className="container mx-auto px-4">
@@ -374,10 +374,10 @@ export default function AccountingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ MODULES GRID ════════════════════════════════════════ */}
-      <section id="modules" className="py-24" style={{background:"#04091a"}}>
+      <div id="modules" className="py-24" style={{background:"#04091a"}}>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
@@ -420,10 +420,10 @@ export default function AccountingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ INVENTORY DEEP-DIVE ════════════════════════════════ */}
-      <section className="py-24 relative overflow-hidden">
+      <div className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
           style={{background:"radial-gradient(ellipse 60% 60% at 80% 50%, rgba(59,130,246,0.09), transparent)"}}/>
         <div className="container mx-auto px-4">
@@ -564,10 +564,10 @@ export default function AccountingPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ TESTIMONIALS ════════════════════════════════════════ */}
-      <section className="py-24" style={{background:"#04091a"}}>
+      <div className="py-24" style={{background:"#04091a"}}>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-xl mx-auto mb-14"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
@@ -621,10 +621,10 @@ export default function AccountingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ═══ FINAL CTA ═══════════════════════════════════════════ */}
-      <section className="py-28 relative overflow-hidden">
+      <div className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
           style={{background:"radial-gradient(ellipse 80% 60% at 50% 50%, rgba(16,185,129,0.14), transparent)"}}/>
         <div className="absolute inset-0 pointer-events-none -z-10"
@@ -655,7 +655,7 @@ export default function AccountingPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
 
       <CTAStrip />
       <Footer />
