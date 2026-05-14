@@ -185,7 +185,7 @@ export default function Home() {
                 { title: "E-commerce ERP", desc: "Orders, inventory, suppliers, and multi-channel sales.", icon: ShoppingCart, href: "/ecommerce" },
                 { title: "Restaurant ERP", desc: "Table management, POS, kitchen orders, and inventory.", icon: Utensils, href: "/restaurant" },
                 { title: "Shadi Hall ERP", desc: "Event booking, hall availability, catering, and invoicing.", icon: Building2 },
-                { title: "Distributor ERP", desc: "Stock ledger, party accounts, GST billing, and delivery.", icon: Box }
+                { title: "Distributor ERP", desc: "Stock ledger, party accounts, GST billing, and delivery.", icon: Box, href: "/distributor" }
               ].map((product, i) => (
                 <motion.div key={i} variants={fadeInUp}>
                   <Card className="bg-secondary/30 border-border hover:border-primary/50 transition-all hover:-translate-y-1 overflow-hidden group">

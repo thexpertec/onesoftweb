@@ -9,6 +9,7 @@ import SchoolPage from "@/pages/SchoolPage";
 import HospitalPage from "@/pages/HospitalPage";
 import RestaurantPage from "@/pages/RestaurantPage";
 import EcommercePage from "@/pages/EcommercePage";
+import DistributorPage from "@/pages/DistributorPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/hospital" component={HospitalPage} />
       <Route path="/restaurant" component={RestaurantPage} />
       <Route path="/ecommerce" component={EcommercePage} />
+      <Route path="/distributor" component={DistributorPage} />
       <Route component={NotFound} />
     </Switch>
   );
