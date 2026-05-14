@@ -182,7 +182,7 @@ export default function Home() {
                 { title: "Accounting & Bookkeeping", desc: "Double-entry ledger, HRM payroll, inventory, invoicing — all interconnected.", icon: Calculator, href: "/accounting" },
                 { title: "School ERP", desc: "Admissions, attendance, fees, results, library, and timetabling.", icon: GraduationCap, href: "/school" },
                 { title: "Hospital ERP", desc: "Patient management, OPD/IPD, billing, pharmacy, and lab.", icon: Stethoscope, href: "/hospital" },
-                { title: "E-commerce ERP", desc: "Orders, inventory, suppliers, and multi-channel sales.", icon: ShoppingCart },
+                { title: "E-commerce ERP", desc: "Orders, inventory, suppliers, and multi-channel sales.", icon: ShoppingCart, href: "/ecommerce" },
                 { title: "Restaurant ERP", desc: "Table management, POS, kitchen orders, and inventory.", icon: Utensils, href: "/restaurant" },
                 { title: "Shadi Hall ERP", desc: "Event booking, hall availability, catering, and invoicing.", icon: Building2 },
                 { title: "Distributor ERP", desc: "Stock ledger, party accounts, GST billing, and delivery.", icon: Box }
