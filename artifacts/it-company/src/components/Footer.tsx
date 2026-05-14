@@ -26,7 +26,7 @@ export function Footer() {
             variants={colVariants}
           >
             <div className="flex items-center mb-4">
-              <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto brightness-0 invert" />
+              <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
               Precision-engineered ERP systems and premium website themes for schools, hospitals, restaurants, distributors, and more — built by OneSoft. UK-based. Deployed globally.
