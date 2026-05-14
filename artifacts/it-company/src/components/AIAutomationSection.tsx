@@ -257,42 +257,41 @@ export function AIAutomationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          style={{ background: "#0d1526", border: "1.5px solid #1a69c440" }}
         >
-          {/* CTA bg */}
-          <div className="absolute inset-0 bg-gradient-to-r from-violet-900/40 via-blue-900/30 to-violet-900/40" />
-          <div className="absolute inset-0 border border-violet-500/20 rounded-3xl" />
-          <div
-            className="absolute inset-0 opacity-5 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
-            }}
-          />
+          {/* Sharp blue left accent panel */}
+          <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-3xl" style={{ background: "#1a69c4" }} />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 px-10 py-12">
             <div className="text-center lg:text-left">
               <div className="flex items-center gap-2 justify-center lg:justify-start mb-3">
-                <Zap className="w-5 h-5 text-violet-400" />
-                <span className="text-violet-400 text-sm font-semibold">Free AI Readiness Audit</span>
+                <Zap className="w-4 h-4" style={{ color: "#1a69c4" }} />
+                <span className="text-sm font-semibold" style={{ color: "#1a69c4" }}>Free AI Readiness Audit</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
                 See exactly where AI can save<br className="hidden md:block" /> your business 10+ hours a week
               </h3>
-              <p className="text-white/60 text-sm max-w-lg">
+              <p className="text-white/55 text-sm max-w-lg">
                 We'll audit your current workflows, identify the top 3 automation opportunities, and show you a concrete ROI estimate — all in a free 30-minute call.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-sm transition-all duration-200"
+                style={{ background: "#1a69c4" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#1558a8")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#1a69c4")}
               >
                 <BrainCircuit className="w-4 h-4" />
                 Book AI Audit
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-200"
+                style={{ border: "1.5px solid #1a69c450", color: "#ffffff", background: "transparent" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#1a69c415"; e.currentTarget.style.borderColor = "#1a69c480"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "#1a69c450"; }}
               >
                 View Case Studies <ArrowRight className="w-4 h-4" />
               </a>
