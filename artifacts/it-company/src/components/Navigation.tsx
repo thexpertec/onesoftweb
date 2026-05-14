@@ -16,19 +16,12 @@ import { useCTAModal } from "@/context/CTAModalContext";
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const erpProducts = [
-  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables, results",  color: "#2563eb", href: "#products" },
-  { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy, lab management",     color: "#16a34a", href: "#products" },
-  { icon: Building2,       label: "Shadi Hall ERP",           desc: "Bookings, catering, event scheduling",   color: "#db2777", href: "#products" },
-  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen, menu, delivery",           color: "#ea580c", href: "#products" },
-  { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders, multi-channel",       color: "#7c3aed", href: "#products" },
-  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing, supply chain",         color: "#0891b2", href: "#products" },
-  { icon: Pill,            label: "Pharmacy ERP",             desc: "Medicines, stock, billing, expiry",      color: "#059669", href: "#products" },
-  { icon: Hotel,           label: "Hotel & Hospitality",      desc: "Rooms, bookings, housekeeping",          color: "#0369a1", href: "#products" },
-  { icon: Home,            label: "Real Estate ERP",          desc: "Properties, leads, rentals, sales",      color: "#b45309", href: "#products" },
-  { icon: Dumbbell,        label: "Gym & Fitness ERP",        desc: "Members, attendance, packages",          color: "#be185d", href: "#products" },
-  { icon: Shirt,           label: "Garments / Textile ERP",   desc: "Production, fabric, orders, exports",    color: "#6d28d9", href: "#products" },
-  { icon: Truck,           label: "Transport & Logistics",    desc: "Fleet, trips, drivers, invoices",        color: "#c2410c", href: "#products" },
-  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory, payroll",  color: "#10b981", href: "/accounting" },
+  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#2563eb", href: "#products" },
+  { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#16a34a", href: "#products" },
+  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "#products" },
+  { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#7c3aed", href: "#products" },
+  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#0891b2", href: "#products" },
+  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#10b981", href: "/accounting" },
 ];
 
 const themeProducts = [
@@ -57,21 +50,21 @@ const marketingServices = [
 function ProductsMega({ close }: { close: () => void }) {
   const { openCTAModal } = useCTAModal();
   return (
-    <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[820px] max-h-[calc(100vh-90px)] overflow-y-auto">
+    <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[640px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: ERP + Themes */}
       <div className="p-4 border-r border-white/8">
         <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">ERP Systems</p>
-        <div className="grid grid-cols-3 gap-0.5 mb-3">
+        <div className="grid grid-cols-2 gap-1 mb-3">
           {erpProducts.map(p => (
             <a key={p.label} href={p.href} onClick={close}
-              className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
-              <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `${p.color}1a`, border: `1px solid ${p.color}30` }}>
-                <p.icon className="w-3.5 h-3.5" style={{ color: p.color }} />
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.07] transition-colors group">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                style={{ backgroundColor: `${p.color}20`, border: `1px solid ${p.color}40` }}>
+                <p.icon className="w-4 h-4" style={{ color: p.color }} />
               </div>
               <div className="min-w-0">
-                <p className="text-[12px] font-semibold text-white/90 group-hover:text-white leading-tight truncate">{p.label}</p>
-                <p className="text-[10px] text-white/40 leading-tight truncate">{p.desc}</p>
+                <p className="text-[13px] font-semibold text-white/90 group-hover:text-white leading-tight truncate">{p.label}</p>
+                <p className="text-[11px] text-white/45 leading-tight truncate">{p.desc}</p>
               </div>
             </a>
           ))}
