@@ -82,10 +82,10 @@ export function StickyCTA() {
                     <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-green-500 border-2 border-background" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-white font-semibold text-sm leading-tight">
-                      Hi, we're <span className="text-primary">OneSoft.</span>
+                    <p className="font-semibold text-sm leading-tight" style={{ color: "#ffffff" }}>
+                      Hi, we're <span style={{ color: "#ffffff" }}>OneSoft.</span>
                     </p>
-                    <p className="text-white/60 text-xs truncate">
+                    <p className="text-xs truncate" style={{ color: "rgba(255,255,255,0.75)" }}>
                       Schedule a call to discover smarter ways to build &amp; grow your business.
                     </p>
                   </div>
