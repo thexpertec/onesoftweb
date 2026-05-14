@@ -547,7 +547,7 @@ function AccountingDashboard() {
         {TABS.map((_,i) => (
           <button key={i} onClick={() => go(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{width: i===slide ? 24 : 6, background: i===slide ? "#10b981" : "rgba(255,255,255,0.2)"}}/>
+            style={{width: i===slide ? 24 : 6, background: i===slide ? "#1a69c4" : "rgba(255,255,255,0.2)"}}/>
         ))}
       </div>
     </div>
@@ -647,10 +647,10 @@ export default function AccountingPage() {
       <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         {/* background glows */}
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{background:"radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,185,129,0.22), transparent)"}}/>
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{background:"rgba(16,185,129,0.12)",filter:"blur(90px)"}}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{background:"radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)"}}/>
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{background:"rgba(26,105,196,0.10)",filter:"blur(90px)"}}
             animate={{y:[0,-18,0]}} transition={{duration:8,repeat:Infinity,ease:"easeInOut"}}/>
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{background:"rgba(139,92,246,0.1)",filter:"blur(110px)"}}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{background:"rgba(26,105,196,0.07)",filter:"blur(110px)"}}
             animate={{y:[0,18,0]}} transition={{duration:10,repeat:Infinity,ease:"easeInOut",delay:2}}/>
         </div>
 
@@ -662,21 +662,21 @@ export default function AccountingPage() {
             <ChevronRight className="w-3.5 h-3.5"/>
             <span style={{color:t50}}>Products</span>
             <ChevronRight className="w-3.5 h-3.5"/>
-            <span style={{color:"#34d399",fontWeight:600}}>Accounting & Bookkeeping</span>
+            <span style={{color:"#1a69c4",fontWeight:600}}>Accounting & Bookkeeping</span>
           </motion.div>
 
           {/* headline */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{background:"rgba(16,185,129,0.12)",border:"1px solid rgba(16,185,129,0.3)",color:"#34d399"}}>
+                style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
                 <Calculator className="w-3.5 h-3.5"/>Accounting & Bookkeeping ERP
               </span>
             </motion.div>
-            <motion.h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.08]"
+            <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.08]"
               initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.65,delay:0.1}}>
               Your Finances,{" "}
-              <span style={{background:"linear-gradient(135deg,#34d399,#38bdf8)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+              <span style={{color:"#1a69c4"}}>
                 Fully Automated.
               </span>
             </motion.h1>
@@ -686,8 +686,8 @@ export default function AccountingPage() {
             </motion.p>
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:0.6,delay:0.3}}>
-              <Button size="lg" className="h-14 px-10 text-lg text-white font-semibold"
-                style={{background:"linear-gradient(135deg,#059669,#0d9488)",border:"none"}}
+              <Button size="lg" className="h-14 px-10 text-lg font-semibold"
+                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
@@ -713,7 +713,7 @@ export default function AccountingPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              {to:40,  suf:"+", label:"Accounting Modules",     Icon:Layers,     color:"#10b981"},
+              {to:40,  suf:"+", label:"Accounting Modules",     Icon:Layers,     color:"#1a69c4"},
               {to:300, suf:"+", label:"Businesses on Platform",  Icon:Building2,  color:"#3b82f6"},
               {to:99.9,suf:"%", label:"Data Accuracy",           Icon:ShieldCheck,color:"#8b5cf6",d:1},
               {to:80,  suf:"%", label:"Time Saved on Bookkeeping",Icon:Clock,     color:"#f59e0b"},
@@ -737,15 +737,15 @@ export default function AccountingPage() {
       {/* ═══ FLOW — how it all connects ═════════════════════════ */}
       <div className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{background:"radial-gradient(ellipse 70% 50% at 50% 100%, rgba(16,185,129,0.07), transparent)"}}/>
+          style={{background:"radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)"}}/>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(16,185,129,0.12)",border:"1px solid rgba(16,185,129,0.3)",color:"#34d399"}}>
+              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
               <Sparkles className="w-3.5 h-3.5"/>Zero Manual Work
             </span>
-            <h2 className="text-3xl md:text-5xl font-black mb-5">One action. Six systems update.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">One action. Six systems update.</h2>
             <p style={{color:t55}} className="text-lg">
               Raise a single invoice and watch your inventory, ledger, P&L, payroll, and reports all update themselves — no exports, no copy-paste, no re-entry.
             </p>
@@ -786,10 +786,10 @@ export default function AccountingPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(59,130,246,0.12)",border:"1px solid rgba(59,130,246,0.3)",color:"#60a5fa"}}>
+              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
               <Layers className="w-3.5 h-3.5"/>8 Core Modules
             </span>
-            <h2 className="text-3xl md:text-5xl font-black mb-5">Everything You Need,<br/>Nothing You Don't.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Everything You Need,<br/>Nothing You Don't.</h2>
             <p style={{color:t50}} className="text-lg">
               Built for ambitious businesses that need more than basic bookkeeping — without enterprise complexity.
             </p>
@@ -840,10 +840,10 @@ export default function AccountingPage() {
             <motion.div className="flex-1"
               initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.65}}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{background:"rgba(59,130,246,0.12)",border:"1px solid rgba(59,130,246,0.3)",color:"#60a5fa"}}>
+                style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
                 <Boxes className="w-3.5 h-3.5"/>Inventory + Accounting
               </span>
-              <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">Stock that talks<br/>to your books.</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Stock that talks<br/>to your books.</h2>
               <p className="text-lg mb-10 leading-relaxed" style={{color:t55}}>
                 When stock comes in, the system posts a debit to inventory and a credit to accounts payable — automatically. When it's sold, COGS hits the P&L in real time. Your gross margin is always accurate without a single spreadsheet.
               </p>
@@ -880,8 +880,8 @@ export default function AccountingPage() {
                 ))}
               </div>
 
-              <Button size="lg" className="h-13 px-8 text-base text-white font-semibold"
-                style={{background:"linear-gradient(135deg,#1d4ed8,#1e40af)",border:"none"}}
+              <Button size="lg" className="h-13 px-8 text-base font-semibold"
+                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 See Inventory Demo <ArrowRight className="ml-2 w-4 h-4"/>
               </Button>
@@ -965,10 +965,10 @@ export default function AccountingPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-16"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(16,185,129,0.12)",border:"1px solid rgba(16,185,129,0.3)",color:"#34d399"}}>
+              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
               <Star className="w-3.5 h-3.5 fill-current"/>What Customers Say
             </span>
-            <h2 className="text-3xl md:text-5xl font-black mb-5">Real results from real businesses.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Real results from real businesses.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -1001,16 +1001,16 @@ export default function AccountingPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{background:"radial-gradient(ellipse 70% 70% at 50% 50%, rgba(16,185,129,0.12), transparent)"}}/>
+          style={{background:"radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)"}}/>
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7}}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{background:"rgba(16,185,129,0.12)",border:"1px solid rgba(16,185,129,0.3)",color:"#34d399"}}>
+              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
               <Lock className="w-3.5 h-3.5"/>No card required · Free 30-day trial
             </div>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Your books, finally<br/>
-              <span style={{background:"linear-gradient(135deg,#34d399,#38bdf8)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+              <span style={{color:"#1a69c4"}}>
                 under control.
               </span>
             </h2>
@@ -1018,8 +1018,8 @@ export default function AccountingPage() {
               Join 300+ businesses that run their entire finance operation on OneSoft. Set up in a day, accurate from day one.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-              <Button size="lg" className="h-14 px-12 text-lg text-white font-semibold"
-                style={{background:"linear-gradient(135deg,#059669,#0d9488)",border:"none"}}
+              <Button size="lg" className="h-14 px-12 text-lg font-semibold"
+                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
