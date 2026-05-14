@@ -23,12 +23,11 @@ import {
   ArrowRight, Activity, ShieldCheck, Star,
   Building2, GraduationCap, Stethoscope, 
   ShoppingCart, Utensils, Box, Users, Server,
-  CheckCircle2, Cpu, LineChart, Lock, Quote, Calculator
+  CheckCircle2, Quote, Calculator
 } from "lucide-react";
 
 import schoolErp from "@/assets/school-erp.png";
 import hospitalErp from "@/assets/hospital-erp.png";
-import ecommerceErp from "@/assets/ecommerce-erp.png";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import testimonial3 from "@/assets/testimonial-3.jpg";
@@ -210,64 +209,6 @@ export default function Home() {
 
       <ServicesSection />
       <AIAutomationSection />
-
-      {/* Why Choose Us */}
-      <section id="why-choose-us" className="py-24 bg-black relative overflow-hidden border-y border-border">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <motion.div 
-              className="flex-1"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">Engineered for <br/> Absolute Reliability</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                We don't just write code; we architect systems that handle critical business operations without failure.
-              </p>
-              <div className="space-y-6">
-                {[
-                  { title: "Enterprise Encryption & Access", desc: "AES-256 data encryption, granular role-based permissions, and quarterly security audits.", icon: Lock },
-                  { title: "High-Performance Architecture", desc: "Optimized queries and scalable infrastructure ensuring sub-second response times.", icon: Cpu },
-                  { title: "Actionable Intelligence", desc: "Real-time analytics and predictive reporting to drive your decision making.", icon: LineChart }
-                ].map((feature, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex gap-4"
-                    initial={{ opacity: 0, x: -24 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
-                  >
-                    <motion.div
-                      className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center shrink-0"
-                      whileHover={{ scale: 1.12, backgroundColor: "rgba(37,99,235,0.25)" }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </motion.div>
-                    <div>
-                      <h4 className="text-white font-semibold mb-1">{feature.title}</h4>
-                      <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div 
-              className="flex-1 w-full"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative p-2 rounded-xl border border-border bg-secondary/20 backdrop-blur-sm">
-                <img src={ecommerceErp} alt="System Architecture" className="w-full rounded-lg" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <HowWeWork />
 
