@@ -18,7 +18,7 @@ import { useCTAModal } from "@/context/CTAModalContext";
 const erpProducts = [
   { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#1a69c4", href: "/school" },
   { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#1a69c4", href: "/hospital" },
-  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "#products" },
+  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "/restaurant" },
   { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#7c3aed", href: "#products" },
   { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#0891b2", href: "#products" },
   { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#10b981", href: "/accounting" },
@@ -339,6 +339,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               { label: "Accounting", href: "/accounting", blue: true },
               { label: "School ERP", href: "/school", blue: true },
               { label: "Hospital ERP", href: "/hospital", blue: true },
+              { label: "Restaurant ERP", href: "/restaurant", blue: true },
               { label: "OneThemes", href: "#themes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (
