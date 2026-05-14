@@ -199,10 +199,13 @@
 [data-theme="light"] .bg-black,
 [data-theme="light"] .bg-\[\#030711\],
 [data-theme="light"] .bg-\[\#060b16\],
-[data-theme="light"] .bg-\[\#070d1a\],
-[data-theme="light"] .bg-\[\#080d1a\],
-[data-theme="light"] .bg-\[\#0d1526\] {
+[data-theme="light"] .bg-\[\#080d1a\] {
   background-color: #eef2f7 !important;
+}
+/* Mega-menu dropdown + mobile drawer stay dark even in light mode */
+[data-theme="light"] .bg-\[\#0d1526\],
+[data-theme="light"] .bg-\[\#070d1a\] {
+  background-color: unset !important;
 }
 
 /* ── Header ─────────────────────────────────────────────────── */
@@ -243,6 +246,36 @@
 }
 [data-theme="light"] .text-muted-foreground {
   color: #475569 !important;
+}
+
+/* ── Mega-menu panel: cancel text overrides (panel is always dark) ── */
+[data-theme="light"] .mega-panel .text-white,
+[data-theme="light"] .mega-panel .text-white\/90,
+[data-theme="light"] .mega-panel .text-white\/85,
+[data-theme="light"] .mega-panel .text-white\/80,
+[data-theme="light"] .mega-panel .text-white\/70,
+[data-theme="light"] .mega-panel .text-white\/65,
+[data-theme="light"] .mega-panel .text-white\/60,
+[data-theme="light"] .mega-panel .text-white\/55,
+[data-theme="light"] .mega-panel .text-white\/50,
+[data-theme="light"] .mega-panel .text-white\/45,
+[data-theme="light"] .mega-panel .text-white\/40,
+[data-theme="light"] .mega-panel .text-white\/38,
+[data-theme="light"] .mega-panel .text-white\/35,
+[data-theme="light"] .mega-panel .text-white\/30,
+[data-theme="light"] .mega-panel .text-white\/25,
+[data-theme="light"] .mega-panel .text-white\/15 {
+  color: unset !important;
+}
+[data-theme="light"] .mega-panel .border-white\/5,
+[data-theme="light"] .mega-panel .border-white\/8,
+[data-theme="light"] .mega-panel .border-white\/10 {
+  border-color: unset !important;
+}
+[data-theme="light"] .mega-panel .bg-white\/\[0\.02\],
+[data-theme="light"] .mega-panel .bg-white\/\[0\.06\],
+[data-theme="light"] .mega-panel .bg-white\/\[0\.07\] {
+  background-color: unset !important;
 }
 
 /* ── Borders: white-opacity → slate ────────────────────────── */

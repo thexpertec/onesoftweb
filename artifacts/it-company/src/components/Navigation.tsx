@@ -233,7 +233,7 @@ function MegaNavItem({
               className="absolute -top-1.5 w-3 h-3 rotate-45 bg-[#0d1526] border-l border-t border-white/10"
               style={{ left: `calc(50% - ${panelLeft}px - 6px)` }}
             />
-            <div className="rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/60 overflow-hidden">
+            <div className="mega-panel rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/60 overflow-hidden">
               {children}
             </div>
           </motion.div>
