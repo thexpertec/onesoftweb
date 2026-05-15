@@ -43,6 +43,7 @@ export function ERPCrossLinks({ current }: { current: string }) {
             <Link
               key={p.href}
               href={p.href}
+              onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-200 hover:scale-105 hover:shadow-md"
               style={{
                 background: pillBg,
