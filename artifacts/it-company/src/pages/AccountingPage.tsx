@@ -3,6 +3,7 @@ import { motion, useInView, animate as motionAnimate, AnimatePresence } from "fr
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -1033,6 +1034,7 @@ export default function AccountingPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Accounting & Bookkeeping ERP")}/>
+      <ERPCrossLinks current="/accounting" />
       <Footer />
     </div>
   );

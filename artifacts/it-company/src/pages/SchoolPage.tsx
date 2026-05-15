@@ -3,6 +3,7 @@ import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -804,6 +805,7 @@ export default function SchoolPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("School Management ERP")} />
+      <ERPCrossLinks current="/school" />
       <Footer />
     </div>
   );

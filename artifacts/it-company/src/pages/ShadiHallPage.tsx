@@ -3,6 +3,7 @@ import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -673,31 +674,7 @@ export default function ShadiHallPage() {
         </div>
       </section>
 
-      {/* ── OTHER ERP PRODUCTS ───────────────────────────────── */}
-      <section className="py-16 border-t" style={{ background: sectionBg, borderColor: dividerColor }}>
-        <div className="container mx-auto px-4">
-          <p className="text-center text-sm font-bold uppercase tracking-widest mb-8" style={{ color: t45 }}>Explore Our Other ERP Systems</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { label: "School ERP",      href: "/school",      color: "#1a69c4", icon: "🎓" },
-              { label: "Hospital ERP",    href: "/hospital",    color: "#10b981", icon: "🏥" },
-              { label: "Restaurant ERP",  href: "/restaurant",  color: "#ea580c", icon: "🍽️" },
-              { label: "E-commerce ERP",  href: "/ecommerce",   color: "#7c3aed", icon: "🛒" },
-              { label: "Distributor ERP", href: "/distributor", color: "#0891b2", icon: "📦" },
-              { label: "Accounting ERP",  href: "/accounting",  color: "#10b981", icon: "📊" },
-            ].map(p => (
-              <Link key={p.label} href={p.href}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all hover:scale-105"
-                style={{ background: cardBg, borderColor: cardBorder, color: t80 }}>
-                <span>{p.icon}</span>
-                {p.label}
-                <ChevronRight className="w-3.5 h-3.5" style={{ color: p.color }} />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <ERPCrossLinks current="/shadi-hall" />
       <Footer />
     </div>
   );
