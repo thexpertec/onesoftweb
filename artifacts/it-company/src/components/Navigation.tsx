@@ -27,7 +27,7 @@ const erpProducts = [
 ];
 
 const themeProducts = [
-  { icon: Palette, label: "OneThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "#themes" },
+  { icon: Palette, label: "OneThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "/onethemes" },
 ];
 
 const allServices = [

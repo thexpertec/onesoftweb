@@ -11,6 +11,7 @@ import RestaurantPage from "@/pages/RestaurantPage";
 import EcommercePage from "@/pages/EcommercePage";
 import DistributorPage from "@/pages/DistributorPage";
 import ShadiHallPage from "@/pages/ShadiHallPage";
+import OneThemesPage from "@/pages/OneThemesPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/ecommerce" component={EcommercePage} />
       <Route path="/distributor" component={DistributorPage} />
       <Route path="/shadi-hall" component={ShadiHallPage} />
+      <Route path="/onethemes" component={OneThemesPage} />
       <Route component={NotFound} />
     </Switch>
   );
