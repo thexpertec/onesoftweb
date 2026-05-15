@@ -371,6 +371,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               { label: "Shadi Hall ERP", href: "/shadi-hall", blue: true },
               { label: "OneSites", href: "/onethemes" },
               { label: "Why Us", href: "#why-choose-us" },
+              { label: "About Us", href: "/about" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
                 className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).blue ? "text-blue-400" : "text-white"}`}>
@@ -438,6 +439,7 @@ export function Navigation() {
 
             <Link href="/onethemes" className="text-sm text-muted-foreground hover:text-white transition-colors">OneSites</Link>
             <a href="#why-choose-us" className="text-sm text-muted-foreground hover:text-white transition-colors">Why Us</a>
+            <Link href="/about" className="text-sm text-muted-foreground hover:text-white transition-colors">About</Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
