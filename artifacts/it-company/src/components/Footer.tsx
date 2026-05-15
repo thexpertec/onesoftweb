@@ -30,7 +30,7 @@ export function Footer() {
               <img src="/onesoft-logo.png" alt="OneSoft" className="h-9 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Precision-engineered ERP systems and premium website themes for schools, hospitals, restaurants, distributors, and more — built by OneSoft. Trusted globally.
+              Precision-engineered ERP systems and custom websites for any business — built by OneSoft. Trusted globally.
             </p>
             {/* Social links */}
             <div className="flex items-center gap-3">

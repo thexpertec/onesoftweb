@@ -27,7 +27,7 @@ const erpProducts = [
 ];
 
 const themeProducts = [
-  { icon: Palette, label: "OneThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "/onethemes" },
+  { icon: Palette, label: "OneSites",  desc: "Custom websites built for any business", color: "#1a69c4", href: "/onethemes" },
 ];
 
 const allServices = [
@@ -369,7 +369,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               { label: "E-commerce ERP", href: "/ecommerce", blue: true },
               { label: "Distributor ERP", href: "/distributor", blue: true },
               { label: "Shadi Hall ERP", href: "/shadi-hall", blue: true },
-              { label: "OneThemes", href: "#themes" },
+              { label: "OneSites", href: "/onethemes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
@@ -436,7 +436,7 @@ export function Navigation() {
               AI
             </a>
 
-            <a href="#themes" className="text-sm text-muted-foreground hover:text-white transition-colors">OneThemes</a>
+            <Link href="/onethemes" className="text-sm text-muted-foreground hover:text-white transition-colors">OneSites</Link>
             <a href="#why-choose-us" className="text-sm text-muted-foreground hover:text-white transition-colors">Why Us</a>
           </nav>
 
