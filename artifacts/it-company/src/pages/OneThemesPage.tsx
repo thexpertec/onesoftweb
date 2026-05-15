@@ -76,7 +76,7 @@ function ConversationMockup() {
             className={`flex ${m.from === "client" ? "justify-end" : "justify-start"}`}>
             <div className="max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
               style={m.from === "client"
-                ? { background: "#f59e0b", color: "#fff", borderBottomRightRadius: "6px" }
+                ? { background: "#1a69c4", color: "#fff", borderBottomRightRadius: "6px" }
                 : { background: isLight ? "#f1f5f9" : "rgba(255,255,255,0.07)", color: t70, borderBottomLeftRadius: "6px" }}>
               {m.text}
             </div>
@@ -99,7 +99,7 @@ function ConversationMockup() {
 
 /* ─────────────────── Data ───────────────────────────────── */
 
-const ACCENT = "#f59e0b";
+const ACCENT = "#1a69c4";
 
 const techStack = [
   { icon: Code2,       color: "#1a69c4", label: "React & Next.js",   desc: "Lightning-fast, SEO-optimised apps with server-side rendering." },
