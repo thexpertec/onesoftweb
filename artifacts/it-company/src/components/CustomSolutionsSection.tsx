@@ -170,7 +170,7 @@ export function CustomSolutionsSection({ accentColor, productName }: Props) {
               Request a Custom Build <ArrowRight className="w-4 h-4" />
             </button>
             <a
-              href="tel:+441482000000"
+              href="tel:+447984273482"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border transition-all hover:opacity-80"
               style={{ borderColor: `${accentColor}50`, color: accentColor, background: `${accentColor}10` }}
             >

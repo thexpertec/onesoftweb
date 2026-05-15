@@ -441,10 +441,10 @@ export function Navigation() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:+441234567890"
+            <a href="tel:+447984273482"
               className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors">
               <Phone className="w-3.5 h-3.5" />
-              +44 1482 000000
+              +44 7984 273482
             </a>
             <Button variant="outline" className="border-border text-foreground hover:bg-secondary text-sm h-9">Login</Button>
             <Button className="h-9 text-sm" onClick={() => openCTAModal()}>Book Demo</Button>

@@ -90,8 +90,8 @@ export function CTAFormSection() {
               <a href="mailto:hello@powertech.co.uk" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/12 bg-white/[0.04] text-white/60 hover:text-white hover:border-primary/40 text-sm transition-all">
                 <Mail className="w-4 h-4 text-primary" /> hello@powertech.co.uk
               </a>
-              <a href="tel:+441234567890" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/12 bg-white/[0.04] text-white/60 hover:text-white hover:border-primary/40 text-sm transition-all">
-                <Phone className="w-4 h-4 text-primary" /> +44 1234 567 890
+              <a href="tel:+447984273482" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/12 bg-white/[0.04] text-white/60 hover:text-white hover:border-primary/40 text-sm transition-all">
+                <Phone className="w-4 h-4 text-primary" /> +44 7984 273482
               </a>
             </div>
           </motion.div>
