@@ -164,8 +164,8 @@ export function CustomSolutionsSection({ accentColor, productName }: Props) {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <button
               onClick={() => openCTAModal(`${productName} – Custom Solution`)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white transition-all hover:opacity-90 active:scale-95"
-              style={{ background: accentColor }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90 active:scale-95"
+              style={{ background: accentColor, color: "#fff" }}
             >
               Request a Custom Build <ArrowRight className="w-4 h-4" />
             </button>
