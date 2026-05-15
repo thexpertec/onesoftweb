@@ -451,11 +451,6 @@ export default function ShadiHallPage() {
               </motion.div>
             </div>
 
-            {/* Right dashboard */}
-            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex-1 w-full lg:max-w-[600px]" style={{ height: 360 }}>
-              <ShadiDashboard />
-            </motion.div>
           </div>
         </div>
       </section>

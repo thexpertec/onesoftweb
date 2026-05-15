@@ -437,10 +437,6 @@ export default function EcommercePage() {
             </motion.div>
           </div>
 
-          <motion.div className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }}>
-            <div className="h-[400px]"><EcommerceDashboard /></div>
-          </motion.div>
         </div>
       </div>
 
