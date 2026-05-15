@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -752,6 +753,53 @@ export default function HospitalPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Hospital Management ERP")} />
+      <FeatureMarqueeSection
+        accentColor="#1a69c4"
+        heading="Everything a Hospital Needs"
+        subheading="From OPD queues to insurance claims — every module built for modern hospitals and clinics."
+        row1={[
+          { icon: "🏥", label: "OPD Management",        color: "#1a69c4" },
+          { icon: "🛏️", label: "IPD Management",       color: "#8b5cf6" },
+          { icon: "🚑", label: "Emergency Care",        color: "#ef4444" },
+          { icon: "📋", label: "Patient Registration",  color: "#10b981" },
+          { icon: "🏨", label: "Ward Management",       color: "#f59e0b" },
+          { icon: "🛌", label: "Bed Allocation",        color: "#06b6d4" },
+          { icon: "👨‍⚕️", label: "Doctor Scheduling",  color: "#ec4899" },
+          { icon: "📅", label: "Appointment Booking",   color: "#14b8a6" },
+          { icon: "💊", label: "Pharmacy",              color: "#6366f1" },
+          { icon: "🔬", label: "Laboratory",            color: "#f97316" },
+          { icon: "📡", label: "Radiology",             color: "#a855f7" },
+          { icon: "🩸", label: "Blood Bank",            color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "💰", label: "Billing & Insurance",   color: "#10b981" },
+          { icon: "📄", label: "Discharge Summary",     color: "#3b82f6" },
+          { icon: "🗂️", label: "Medical Records",      color: "#8b5cf6" },
+          { icon: "📹", label: "Telemedicine",          color: "#f59e0b" },
+          { icon: "🏭", label: "Operation Theatre",     color: "#06b6d4" },
+          { icon: "❤️", label: "ICU Management",        color: "#ec4899" },
+          { icon: "📝", label: "Nursing Notes",         color: "#14b8a6" },
+          { icon: "👩‍💼", label: "Staff Payroll",       color: "#6366f1" },
+          { icon: "📦", label: "Inventory Control",     color: "#f97316" },
+          { icon: "🚐", label: "Ambulance Tracking",    color: "#a855f7" },
+          { icon: "🧾", label: "Accounts & Finance",    color: "#ef4444" },
+          { icon: "🩺", label: "Mortuary Management",   color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "📱", label: "Mobile App",            color: "#10b981" },
+          { icon: "🔔", label: "SMS Alerts",            color: "#3b82f6" },
+          { icon: "📊", label: "Clinical Analytics",    color: "#8b5cf6" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
+          { icon: "🌐", label: "Multi-Branch",          color: "#06b6d4" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#ec4899" },
+          { icon: "🔒", label: "Data Security",         color: "#14b8a6" },
+          { icon: "📑", label: "Compliance Reports",    color: "#6366f1" },
+          { icon: "💬", label: "Patient Communication", color: "#f97316" },
+          { icon: "🩻", label: "DICOM / PACS Ready",    color: "#a855f7" },
+          { icon: "🔄", label: "HL7 / FHIR Support",   color: "#ef4444" },
+          { icon: "🎯", label: "KPI Dashboard",         color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/hospital" />
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -674,6 +675,53 @@ export default function ShadiHallPage() {
         </div>
       </section>
 
+      <FeatureMarqueeSection
+        accentColor="#db2777"
+        heading="Everything a Shadi Hall Needs"
+        subheading="From booking to billing — every module built for modern banquet halls and wedding venues."
+        row1={[
+          { icon: "💒", label: "Booking Management",    color: "#db2777" },
+          { icon: "📅", label: "Hall Calendar",         color: "#8b5cf6" },
+          { icon: "🎉", label: "Event Scheduling",      color: "#10b981" },
+          { icon: "👥", label: "Guest Management",      color: "#f59e0b" },
+          { icon: "🔒", label: "Advance Booking",       color: "#06b6d4" },
+          { icon: "⚠️", label: "Conflict Prevention",   color: "#ec4899" },
+          { icon: "💬", label: "WhatsApp Alerts",       color: "#14b8a6" },
+          { icon: "👤", label: "Customer Portal",       color: "#6366f1" },
+          { icon: "🍽️", label: "Catering Management",  color: "#f97316" },
+          { icon: "📋", label: "Menu Planning",         color: "#a855f7" },
+          { icon: "👨‍🍳", label: "Chef Assignment",     color: "#ef4444" },
+          { icon: "📦", label: "Inventory Control",     color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "👥", label: "Staff Scheduling",      color: "#10b981" },
+          { icon: "🎀", label: "Decoration Packages",   color: "#3b82f6" },
+          { icon: "🤝", label: "Vendor Management",     color: "#8b5cf6" },
+          { icon: "🧮", label: "Food Costing",          color: "#f59e0b" },
+          { icon: "🧾", label: "Billing & Invoicing",   color: "#06b6d4" },
+          { icon: "💳", label: "Installment Plans",     color: "#ec4899" },
+          { icon: "💰", label: "Payment Tracking",      color: "#14b8a6" },
+          { icon: "🏛️", label: "Multi-Hall",            color: "#6366f1" },
+          { icon: "📊", label: "Event Reports",         color: "#f97316" },
+          { icon: "📷", label: "Photo Gallery",         color: "#a855f7" },
+          { icon: "⭐", label: "Feedback Collection",   color: "#ef4444" },
+          { icon: "🎁", label: "Loyalty Program",       color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "📱", label: "Mobile App",            color: "#10b981" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#3b82f6" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#8b5cf6" },
+          { icon: "🔔", label: "Reminder Automation",   color: "#f59e0b" },
+          { icon: "📑", label: "Contract Generator",    color: "#06b6d4" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#ec4899" },
+          { icon: "🔒", label: "Audit Trail",           color: "#14b8a6" },
+          { icon: "📈", label: "Revenue Analytics",     color: "#6366f1" },
+          { icon: "🎶", label: "Sound & AV Booking",    color: "#f97316" },
+          { icon: "🚗", label: "Parking Management",    color: "#a855f7" },
+          { icon: "🧾", label: "Tax Compliance",        color: "#ef4444" },
+          { icon: "🤖", label: "AI Availability Check", color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/shadi-hall" />
       <Footer />
     </div>

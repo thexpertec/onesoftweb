@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -805,6 +806,53 @@ export default function SchoolPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("School Management ERP")} />
+      <FeatureMarqueeSection
+        accentColor="#1a69c4"
+        heading="Everything a School Needs"
+        subheading="From student enrolment to exam results — every module built for modern schools and academies."
+        row1={[
+          { icon: "🎓", label: "Student Enrolment",     color: "#1a69c4" },
+          { icon: "📋", label: "Attendance Tracking",   color: "#8b5cf6" },
+          { icon: "💳", label: "Fee Management",        color: "#10b981" },
+          { icon: "📝", label: "Exam Scheduling",       color: "#f59e0b" },
+          { icon: "📅", label: "Timetabling",           color: "#06b6d4" },
+          { icon: "👨‍👩‍👦", label: "Parent Portal",       color: "#ec4899" },
+          { icon: "📚", label: "Library Management",    color: "#14b8a6" },
+          { icon: "🏆", label: "Report Cards",          color: "#6366f1" },
+          { icon: "🔔", label: "SMS & Push Alerts",     color: "#f97316" },
+          { icon: "🏫", label: "Multi-Branch",          color: "#a855f7" },
+          { icon: "🚌", label: "Transport Tracking",    color: "#ef4444" },
+          { icon: "🛏️", label: "Hostel Management",    color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "👩‍🏫", label: "Staff Payroll",        color: "#10b981" },
+          { icon: "🗂️", label: "HR Management",        color: "#3b82f6" },
+          { icon: "📢", label: "Notice Board",          color: "#8b5cf6" },
+          { icon: "🏖️", label: "Leave Management",     color: "#f59e0b" },
+          { icon: "🎓", label: "Certificate Printing",  color: "#06b6d4" },
+          { icon: "📊", label: "Academic Analytics",    color: "#ec4899" },
+          { icon: "💻", label: "E-Learning Module",     color: "#14b8a6" },
+          { icon: "🩺", label: "Health Records",        color: "#6366f1" },
+          { icon: "🍱", label: "Canteen Management",    color: "#f97316" },
+          { icon: "🔒", label: "Discipline Module",     color: "#a855f7" },
+          { icon: "🎨", label: "Extracurricular",       color: "#ef4444" },
+          { icon: "🌐", label: "Alumni Portal",         color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "📱", label: "Mobile App",            color: "#10b981" },
+          { icon: "📷", label: "CCTV Integration",      color: "#3b82f6" },
+          { icon: "🗓️", label: "Academic Calendar",    color: "#8b5cf6" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
+          { icon: "📈", label: "Progress Tracking",     color: "#06b6d4" },
+          { icon: "💬", label: "Teacher–Parent Chat",   color: "#ec4899" },
+          { icon: "🧾", label: "Fee Receipts",          color: "#14b8a6" },
+          { icon: "🌍", label: "Multi-Language",        color: "#6366f1" },
+          { icon: "⚙️", label: "Custom Workflows",      color: "#f97316" },
+          { icon: "🔄", label: "Data Import/Export",    color: "#a855f7" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#ef4444" },
+          { icon: "📦", label: "Bulk Operations",       color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/school" />
       <Footer />
     </div>

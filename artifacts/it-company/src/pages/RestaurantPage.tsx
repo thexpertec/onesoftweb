@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -766,6 +767,53 @@ export default function RestaurantPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Restaurant Management ERP")} />
+      <FeatureMarqueeSection
+        accentColor="#ea580c"
+        heading="Everything a Restaurant Needs"
+        subheading="From table orders to kitchen displays — every module built for modern restaurants and food chains."
+        row1={[
+          { icon: "🍽️", label: "Table Management",     color: "#ea580c" },
+          { icon: "🖥️", label: "POS System",           color: "#8b5cf6" },
+          { icon: "📺", label: "Kitchen Display",       color: "#10b981" },
+          { icon: "📱", label: "Online Orders",         color: "#f59e0b" },
+          { icon: "📋", label: "Menu Management",       color: "#06b6d4" },
+          { icon: "📅", label: "Reservations",          color: "#ec4899" },
+          { icon: "🛵", label: "Delivery Tracking",     color: "#14b8a6" },
+          { icon: "🧑‍🍳", label: "Waiter App",          color: "#6366f1" },
+          { icon: "📦", label: "Inventory Control",     color: "#f97316" },
+          { icon: "🧮", label: "Recipe Costing",        color: "#a855f7" },
+          { icon: "🚚", label: "Supplier Orders",       color: "#ef4444" },
+          { icon: "🗑️", label: "Waste Tracking",       color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "⭐", label: "Loyalty Program",       color: "#10b981" },
+          { icon: "👥", label: "Staff Scheduling",      color: "#3b82f6" },
+          { icon: "💵", label: "Payroll",               color: "#8b5cf6" },
+          { icon: "💰", label: "Tips Management",       color: "#f59e0b" },
+          { icon: "🏪", label: "Multi-Branch",          color: "#06b6d4" },
+          { icon: "📊", label: "Sales Reports",         color: "#ec4899" },
+          { icon: "🧾", label: "Tax Management",        color: "#14b8a6" },
+          { icon: "💬", label: "Customer Feedback",     color: "#6366f1" },
+          { icon: "📲", label: "QR Code Menu",          color: "#f97316" },
+          { icon: "🏦", label: "Cash Drawer",           color: "#a855f7" },
+          { icon: "↩️", label: "Void & Refunds",        color: "#ef4444" },
+          { icon: "🌙", label: "Shift Reports",         color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "☁️", label: "Cloud Hosted",          color: "#10b981" },
+          { icon: "🔔", label: "Allergy Alerts",        color: "#3b82f6" },
+          { icon: "🎯", label: "Upsell Prompts",        color: "#8b5cf6" },
+          { icon: "📷", label: "CCTV Integration",      color: "#f59e0b" },
+          { icon: "🧾", label: "Split Billing",         color: "#06b6d4" },
+          { icon: "💳", label: "Multi-Payment",         color: "#ec4899" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#14b8a6" },
+          { icon: "📈", label: "Food Cost Analysis",    color: "#6366f1" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#f97316" },
+          { icon: "🤝", label: "Vendor Portal",         color: "#a855f7" },
+          { icon: "🎁", label: "Promotions Engine",     color: "#ef4444" },
+          { icon: "🔄", label: "Real-Time Sync",        color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/restaurant" />
       <Footer />
     </div>

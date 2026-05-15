@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -752,6 +753,53 @@ export default function DistributorPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Wholesaler & Distributor ERP")} />
+      <FeatureMarqueeSection
+        accentColor="#0891b2"
+        heading="Everything a Distributor Needs"
+        subheading="From sales order to digital proof of delivery — every module built for modern wholesale distribution."
+        row1={[
+          { icon: "📋", label: "Sales Order",           color: "#0891b2" },
+          { icon: "🛒", label: "Purchase Order",        color: "#8b5cf6" },
+          { icon: "📦", label: "Stock Management",      color: "#10b981" },
+          { icon: "🗺️", label: "Route Planning",       color: "#f59e0b" },
+          { icon: "🚗", label: "Driver App",            color: "#06b6d4" },
+          { icon: "✍️", label: "Digital POD",           color: "#ec4899" },
+          { icon: "📒", label: "Customer Ledger",       color: "#14b8a6" },
+          { icon: "💳", label: "Credit Control",        color: "#6366f1" },
+          { icon: "🏪", label: "Van Sales",             color: "#f97316" },
+          { icon: "🏭", label: "Warehouse Management",  color: "#a855f7" },
+          { icon: "📅", label: "Batch & Expiry",        color: "#ef4444" },
+          { icon: "🔄", label: "FEFO Issue",            color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "🔀", label: "Stock Transfer",        color: "#10b981" },
+          { icon: "🔔", label: "Reorder Alerts",        color: "#3b82f6" },
+          { icon: "🤝", label: "Supplier Management",   color: "#8b5cf6" },
+          { icon: "↩️", label: "Return Goods",          color: "#f59e0b" },
+          { icon: "🏢", label: "Multi-Warehouse",       color: "#06b6d4" },
+          { icon: "🚛", label: "Fleet Tracking",        color: "#ec4899" },
+          { icon: "📋", label: "Load Planning",         color: "#14b8a6" },
+          { icon: "💰", label: "Price Lists",           color: "#6366f1" },
+          { icon: "🎁", label: "Scheme Management",     color: "#f97316" },
+          { icon: "💵", label: "Commission Tracking",   color: "#a855f7" },
+          { icon: "📊", label: "Financial Reports",     color: "#ef4444" },
+          { icon: "👤", label: "Customer Portal",       color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "📱", label: "Mobile App",            color: "#10b981" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#3b82f6" },
+          { icon: "🏷️", label: "Barcode Scanning",     color: "#8b5cf6" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
+          { icon: "📈", label: "Demand Forecasting",    color: "#06b6d4" },
+          { icon: "🧾", label: "Tax & VAT",             color: "#ec4899" },
+          { icon: "🔒", label: "Audit Trail",           color: "#14b8a6" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#6366f1" },
+          { icon: "🔗", label: "API Integrations",      color: "#f97316" },
+          { icon: "📉", label: "Shrinkage Control",     color: "#a855f7" },
+          { icon: "🧊", label: "Cold Chain Tracking",   color: "#ef4444" },
+          { icon: "🤖", label: "AI Stock Insights",     color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/distributor" />
       <Footer />
     </div>

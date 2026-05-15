@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
+import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -753,6 +754,53 @@ export default function EcommercePage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("E-commerce Management ERP")} />
+      <FeatureMarqueeSection
+        accentColor="#7c3aed"
+        heading="Everything an Online Store Needs"
+        subheading="From order capture to last-mile delivery — every module built for modern e-commerce brands."
+        row1={[
+          { icon: "🛒", label: "Order Management",      color: "#7c3aed" },
+          { icon: "🔄", label: "Inventory Sync",        color: "#8b5cf6" },
+          { icon: "📡", label: "Multi-Channel Selling", color: "#10b981" },
+          { icon: "📦", label: "Product Catalogue",     color: "#f59e0b" },
+          { icon: "🏷️", label: "Shipping Labels",      color: "#06b6d4" },
+          { icon: "🏭", label: "Warehouse Picking",     color: "#ec4899" },
+          { icon: "↩️", label: "Returns Handling",      color: "#14b8a6" },
+          { icon: "👤", label: "Customer Portal",       color: "#6366f1" },
+          { icon: "📊", label: "Analytics Dashboard",   color: "#f97316" },
+          { icon: "🎟️", label: "Coupons & Discounts",  color: "#a855f7" },
+          { icon: "🛍️", label: "Abandoned Cart",       color: "#ef4444" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#0ea5e9" },
+        ]}
+        row2={[
+          { icon: "💳", label: "Payment Gateway",       color: "#10b981" },
+          { icon: "⭐", label: "Reviews & Ratings",     color: "#3b82f6" },
+          { icon: "🤝", label: "Affiliate Portal",      color: "#8b5cf6" },
+          { icon: "🚚", label: "Supplier Portal",       color: "#f59e0b" },
+          { icon: "📋", label: "Purchase Orders",       color: "#06b6d4" },
+          { icon: "📈", label: "Stock Forecasting",     color: "#ec4899" },
+          { icon: "📷", label: "Barcode Scanning",      color: "#14b8a6" },
+          { icon: "💬", label: "Live Chat",             color: "#6366f1" },
+          { icon: "📧", label: "Email Marketing",       color: "#f97316" },
+          { icon: "🔔", label: "Push Notifications",    color: "#a855f7" },
+          { icon: "🎯", label: "Upsell & Cross-sell",   color: "#ef4444" },
+          { icon: "📱", label: "Mobile App",            color: "#0ea5e9" },
+        ]}
+        row3={[
+          { icon: "☁️", label: "Cloud Hosted",          color: "#10b981" },
+          { icon: "🔒", label: "Fraud Prevention",      color: "#3b82f6" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#8b5cf6" },
+          { icon: "🏪", label: "Multi-Store",           color: "#f59e0b" },
+          { icon: "📦", label: "Dropshipping Ready",    color: "#06b6d4" },
+          { icon: "🔗", label: "API Integrations",      color: "#ec4899" },
+          { icon: "🗂️", label: "Bulk Import/Export",   color: "#14b8a6" },
+          { icon: "📑", label: "Tax Compliance",        color: "#6366f1" },
+          { icon: "🌐", label: "Multi-Language",        color: "#f97316" },
+          { icon: "🎨", label: "Custom Branding",       color: "#a855f7" },
+          { icon: "📉", label: "Margin Tracking",       color: "#ef4444" },
+          { icon: "🤖", label: "AI Recommendations",    color: "#0ea5e9" },
+        ]}
+      />
       <ERPCrossLinks current="/ecommerce" />
       <Footer />
     </div>
