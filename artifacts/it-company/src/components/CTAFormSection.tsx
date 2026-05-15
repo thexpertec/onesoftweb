@@ -26,7 +26,7 @@ const BENEFITS = [
   "Free system demo tailored to your business",
   "Dedicated onboarding & training included",
   "Go live in as little as 2 weeks",
-  "UK-based support team available 24 / 7",
+  "Global support team available 24 / 7",
 ];
 
 export function CTAFormSection() {

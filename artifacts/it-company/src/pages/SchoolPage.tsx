@@ -388,11 +388,11 @@ const flow = [
 
 const testimonials = [
   { quote: "We used to spend the entire first week of term just sorting fee ledgers and attendance registers. With OneSoft, the data is already there on day one. Parents get fee reminders automatically and I haven't chased a single payment manually this term.",
-    name: "Mrs. Anita Sharma", role: "Principal", co: "Bright Futures Academy, Leicester", color: "#1a69c4" },
+    name: "Mrs. Anita Sharma", role: "Principal", co: "Bright Futures Academy, Karachi, Pakistan", color: "#1a69c4" },
   { quote: "The timetable builder alone saved us two full days of admin. It checks conflicts automatically — no more double-booking teachers or rooms. And when we need a substitute, we assign them in seconds.",
-    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Birmingham", color: "#10b981" },
+    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Dubai, UAE", color: "#10b981" },
   { quote: "Parents love the portal. They can see attendance, results, and fee balance from their phone. We've had zero calls asking 'did my child come in today?' since going live. That alone is worth every penny.",
-    name: "Ms. Fatima Al-Rashid", role: "IT & Operations Lead", co: "Crescent Park School, Bradford", color: "#8b5cf6" },
+    name: "Ms. Fatima Al-Rashid", role: "IT & Operations Lead", co: "Crescent Park School, Toronto, Canada", color: "#8b5cf6" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -742,7 +742,7 @@ export default function SchoolPage() {
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Schools Say
             </span>
-            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by schools across the UK.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by schools worldwide.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -797,7 +797,7 @@ export default function SchoolPage() {
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">Used in schools across the UK</span>
+                <span className="text-sm">Used in schools worldwide</span>
               </div>
             </div>
           </motion.div>

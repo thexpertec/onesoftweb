@@ -608,11 +608,11 @@ const flow = [
 
 const testimonials = [
   { quote: "We used to spend 3 days closing the books every month. With OneSoft it takes half a morning. The double-entry is automatic and our accountant has a read-only portal — she doesn't need to email us for reports anymore.",
-    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Leeds", color: "#10b981" },
-  { quote: "The HRM payroll link is a game-changer. Every month payroll runs, every journal posts automatically. I reviewed our PAYE submissions last year and found zero discrepancies for the first time ever.",
-    name: "Ravi Menon", role: "Managing Director", co: "Spice Route Restaurants, Birmingham", color: "#8b5cf6" },
+    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Dubai, UAE", color: "#10b981" },
+  { quote: "The HRM payroll link is a game-changer. Every month payroll runs, every journal posts automatically. I reviewed our payroll submissions last year and found zero discrepancies for the first time ever.",
+    name: "Ravi Menon", role: "Managing Director", co: "Spice Route Restaurants, Singapore", color: "#8b5cf6" },
   { quote: "Our warehouse manager used to message me when stock was low. Now the system raises the PO automatically and I just approve it. Stock value always matches the Balance Sheet — magic.",
-    name: "Tom Ashworth", role: "Operations Director", co: "Northern Star Distribution, Hull", color: "#3b82f6" },
+    name: "Tom Ashworth", role: "Operations Director", co: "Northern Star Distribution, Toronto, Canada", color: "#3b82f6" },
 ];
 
 /* ─────────────────────────── Page ─────────────────────────── */

@@ -383,11 +383,11 @@ function SalesReportDash() {
   const bars = [48,62,55,79,67,91,84,72,98,88,103,115];
   const months = ["J","F","M","A","M","J","J","A","S","O","N","D"];
   const reps = [
-    { name:"Zain Ahmad",    region:"London",     deals:48, rev:"£128K" },
-    { name:"Amara Patel",   region:"Manchester", deals:41, rev:"£109K" },
-    { name:"James Wright",  region:"Hull",       deals:37, rev:"£96K" },
-    { name:"Sadia Hussain", region:"Leeds",      deals:33, rev:"£88K" },
-    { name:"David Osei",    region:"Birmingham", deals:29, rev:"£74K" },
+    { name:"Zain Ahmad",    region:"Dubai",      deals:48, rev:"$128K" },
+    { name:"Amara Patel",   region:"Karachi",    deals:41, rev:"$109K" },
+    { name:"James Wright",  region:"Toronto",    deals:37, rev:"$96K"  },
+    { name:"Sadia Hussain", region:"New York",   deals:33, rev:"$88K"  },
+    { name:"David Osei",    region:"Singapore",  deals:29, rev:"$74K"  },
   ];
   return (
     <div className="w-full h-full bg-[#080f1e] flex flex-col text-white p-3 gap-2.5 overflow-hidden">

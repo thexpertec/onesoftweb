@@ -195,9 +195,9 @@ function DeliverySlide() {
     { id: "Route D", driver: "James Osei",   vehicle: "LCV-04", stops: 9, delivered: 2, pending: 7, status: "En Route"  },
   ];
   const stops = [
-    { stop: 6, party: "Metro Retail Ltd",    address: "14 High St, Leeds",    eta: "14:20", status: "Next Stop" },
-    { stop: 7, party: "Green Leaf Co.",      address: "8 Mill Rd, Leeds",     eta: "14:55", status: "Pending"   },
-    { stop: 8, party: "Sunrise Convenience", address: "32 Park Ave, Bradford", eta: "15:30", status: "Pending"  },
+    { stop: 6, party: "Metro Retail Ltd",    address: "14 Trade St, Zone 3",   eta: "14:20", status: "Next Stop" },
+    { stop: 7, party: "Green Leaf Co.",      address: "8 Mill Rd, District 5", eta: "14:55", status: "Pending"   },
+    { stop: 8, party: "Sunrise Convenience", address: "32 Park Ave, Sector 7", eta: "15:30", status: "Pending"  },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -347,12 +347,12 @@ const flow = [
 ];
 
 const testimonials = [
-  { quote: "We distribute to 400 retailers across Yorkshire. Before OneSoft, tracking who owed what was a nightmare — half our credit limits were being exceeded because the salesmen had no visibility. Now every rep sees the party balance before they take an order and our bad debt has dropped significantly.",
-    name: "Tariq Mahmood",  role: "Managing Director",     co: "TM Foods Distribution, Bradford",     color: "#1a69c4" },
+  { quote: "We distribute to 400 retailers across the region. Before OneSoft, tracking who owed what was a nightmare — half our credit limits were being exceeded because the salesmen had no visibility. Now every rep sees the party balance before they take an order and our bad debt has dropped significantly.",
+    name: "Tariq Mahmood",  role: "Managing Director",     co: "TM Foods Distribution, Karachi, Pakistan", color: "#1a69c4" },
   { quote: "The route planning and digital POD changed everything for our drivers. No more paper delivery notes, no more arguments about whether something was delivered. The customer signs on the tablet, a photo is taken, and it's in the system before the driver leaves the premises.",
-    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Birmingham",   color: "#10b981" },
+    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Dubai, UAE",   color: "#10b981" },
   { quote: "Stock used to go out of date and we'd only find out when we tried to pick it. OneSoft shows us items approaching expiry weeks in advance and automatically prioritises FEFO issue. We've cut our write-off losses by over 70% in the first year.",
-    name: "Imran Sheikh",   role: "Warehouse Director",    co: "Global Foods & Commodities, Manchester",color: "#8b5cf6" },
+    name: "Imran Sheikh",   role: "Warehouse Director",    co: "Global Foods & Commodities, New York, USA", color: "#8b5cf6" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -689,7 +689,7 @@ export default function DistributorPage() {
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Distributors Say
             </span>
-            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by distributors across the UK.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by distributors worldwide.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -744,7 +744,7 @@ export default function DistributorPage() {
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">Distributors across the UK trust OneSoft</span>
+                <span className="text-sm">Distributors worldwide trust OneSoft</span>
               </div>
             </div>
           </motion.div>

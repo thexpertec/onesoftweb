@@ -349,11 +349,11 @@ const flow = [
 
 const testimonials = [
   { quote: "We used to lose around £300 a week in unrecorded items — a bottle of wine here, a dessert there. Since going on OneSoft, every item is tracked from the moment it's ordered and our gross margin has improved by 8 percentage points.",
-    name: "Chef Marco Rossi", role: "Owner & Head Chef", co: "Rossi's Trattoria, Leeds", color: "#1a69c4" },
+    name: "Chef Marco Rossi", role: "Owner & Head Chef", co: "Rossi's Trattoria, Toronto, Canada", color: "#1a69c4" },
   { quote: "The kitchen display system transformed our service speed. Before, our chefs were squinting at handwritten tickets. Now orders appear on screen the second the waiter taps confirm and the table timer tells us exactly when we're falling behind.",
-    name: "Sarah Mitchell", role: "Restaurant Manager", co: "The Harbour Kitchen, Brighton", color: "#ef4444" },
+    name: "Sarah Mitchell", role: "Restaurant Manager", co: "The Harbour Kitchen, Sydney, Australia", color: "#ef4444" },
   { quote: "We run three sites. Previously we had three different systems and no way to compare them. OneSoft shows me a combined report every morning — revenue, top sellers, staff performance across all three — in one view on my phone.",
-    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, Manchester", color: "#10b981" },
+    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, New York, USA", color: "#10b981" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -703,7 +703,7 @@ export default function RestaurantPage() {
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Restaurants Say
             </span>
-            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by restaurants across the UK.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by restaurants worldwide.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -758,7 +758,7 @@ export default function RestaurantPage() {
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">Restaurants across the UK trust OneSoft</span>
+                <span className="text-sm">Restaurants worldwide trust OneSoft</span>
               </div>
             </div>
           </motion.div>

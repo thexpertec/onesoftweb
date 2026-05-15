@@ -245,12 +245,12 @@ export default function Home() {
                   flag: "🇵🇰",
                 },
                 {
-                  quote: "We distribute to over 200 retailers across Yorkshire. Before OneSoft, stock reconciliation alone took two people two days a month. Now it's a 10-minute report. The system paid for itself in the first quarter.",
+                  quote: "We distribute to over 200 retailers across the region. Before OneSoft, stock reconciliation alone took two people two days a month. Now it's a 10-minute report. The system paid for itself in the first quarter.",
                   author: "Tom Ashworth",
                   role: "Operations Director",
-                  company: "Northern Star Distribution, Hull",
+                  company: "Northern Star Distribution, Toronto, Canada",
                   photo: testimonial3,
-                  flag: "🇬🇧",
+                  flag: "🇨🇦",
                 },
               ].map((t, i) => (
                 <motion.div

@@ -358,11 +358,11 @@ const flow = [
 
 const testimonials = [
   { quote: "Before OneSoft, our booking register was a paper diary and our billing was done in Excel. We had double-bookings twice in one season. Now every hall is managed from a single screen and we haven't had a single conflict in two years.",
-    name: "Mr. Tariq Hussain", role: "Owner", co: "Royal Palace Banquets, Birmingham", color: "#db2777" },
+    name: "Mr. Tariq Hussain", role: "Owner", co: "Royal Palace Banquets, Dubai, UAE", color: "#db2777" },
   { quote: "The catering module completely changed how we operate. We know exactly how many guests are expected, which chef is assigned, and what's on the menu for every event three weeks in advance. Wastage is down by 30%.",
-    name: "Mrs. Saima Malik", role: "Operations Manager", co: "Pearl Garden Shadi Hall, Bradford", color: "#8b5cf6" },
+    name: "Mrs. Saima Malik", role: "Operations Manager", co: "Pearl Garden Shadi Hall, Lahore, Pakistan", color: "#8b5cf6" },
   { quote: "Our clients love getting automated confirmation messages and payment reminders on WhatsApp. We used to spend hours calling families — now the system does it. Our team can focus on the event, not the admin.",
-    name: "Mr. Asif Chaudhry", role: "Managing Director", co: "The Grand Marquee, Leicester", color: "#10b981" },
+    name: "Mr. Asif Chaudhry", role: "Managing Director", co: "The Grand Marquee, Toronto, Canada", color: "#10b981" },
 ];
 
 const stats = [
@@ -565,7 +565,7 @@ export default function ShadiHallPage() {
           <div className="text-center mb-14">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: PINK }}>
-              Trusted by Shadi Halls Across the UK
+              Trusted by Shadi Halls Worldwide
             </motion.p>
             <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
               className="text-3xl md:text-4xl font-black">

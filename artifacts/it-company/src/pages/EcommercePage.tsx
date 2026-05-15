@@ -210,10 +210,10 @@ function ChannelsSlide() {
 
 function FulfilmentSlide() {
   const queue = [
-    { id: "#ORD-9841", customer: "James Patel",   items: ["Air Runner BLK/10 x1","Classic Tee M/WHT x2"],  courier: "Royal Mail", label: "Printed", status: "Picking"  },
-    { id: "#ORD-9844", customer: "Tom Wilson",     items: ["Mesh Watch SLV x2","Canvas Tote x3"],            courier: "DPD",        label: "Printed", status: "Packing"  },
-    { id: "#ORD-9846", customer: "David Park",     items: ["Snapback Cap GRN x2","Classic Tee L/BLK x2"],   courier: "Evri",       label: "Pending", status: "Picking"  },
-    { id: "#ORD-9849", customer: "Priya Sharma",   items: ["Air Runner WHT/8 x1"],                            courier: "Royal Mail", label: "Printed", status: "Awaiting" },
+    { id: "#ORD-9841", customer: "James Patel",   items: ["Air Runner BLK/10 x1","Classic Tee M/WHT x2"],  courier: "DHL",   label: "Printed", status: "Picking"  },
+    { id: "#ORD-9844", customer: "Tom Wilson",     items: ["Mesh Watch SLV x2","Canvas Tote x3"],            courier: "FedEx", label: "Printed", status: "Packing"  },
+    { id: "#ORD-9846", customer: "David Park",     items: ["Snapback Cap GRN x2","Classic Tee L/BLK x2"],   courier: "UPS",   label: "Pending", status: "Picking"  },
+    { id: "#ORD-9849", customer: "Priya Sharma",   items: ["Air Runner WHT/8 x1"],                            courier: "DHL",   label: "Printed", status: "Awaiting" },
   ];
   const stats = [
     { label: "To Pick",   value: "22", color: "#f59e0b" },
@@ -320,7 +320,7 @@ const modules = [
     desc: "Track every SKU, variant, and bundle across multiple warehouses — with bin locations.",
     pts: ["Multi-warehouse stock management", "Bin & shelf location tracking", "Bundles & kit-building", "Automatic low-stock reorder triggers"] },
   { icon: Truck,         color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Shipping & Fulfilment",
-    desc: "Courier labels printed in one click — Royal Mail, DPD, Evri, DHL all connected natively.",
+    desc: "Courier labels printed in one click — DHL, FedEx, UPS, Aramex all connected natively.",
     pts: ["Multi-courier label printing", "Batch picking & packing workflows", "Tracking synced back to customer", "Shipping rules by weight / destination"] },
   { icon: Tag,           color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Product Catalogue",
     desc: "Manage thousands of SKUs with variants, images, descriptions, and supplier costs.",
@@ -347,11 +347,11 @@ const flow = [
 
 const testimonials = [
   { quote: "We were selling on four channels with four separate spreadsheets and overselling constantly. OneSoft's inventory sync fixed that on day one. We haven't had a single oversell in seven months and our customer satisfaction score has gone from 3.8 to 4.7.",
-    name: "Aisha Rahman",  role: "Founder & Director",        co: "Zahra Collective, London",           color: "#1a69c4" },
-  { quote: "The multi-courier setup alone saves my warehouse manager two hours every morning. He used to log into Royal Mail, DPD, and Evri separately to book each shipment. Now it's one click per batch and every tracking number goes to the customer automatically.",
-    name: "Mark Stevens",  role: "Operations Manager",         co: "ProKit Sports Equipment, Bristol",   color: "#10b981" },
+    name: "Aisha Rahman",  role: "Founder & Director",        co: "Zahra Collective, Dubai, UAE",       color: "#1a69c4" },
+  { quote: "The multi-courier setup alone saves my warehouse manager two hours every morning. He used to log into DHL, FedEx, and UPS separately to book each shipment. Now it's one click per batch and every tracking number goes to the customer automatically.",
+    name: "Mark Stevens",  role: "Operations Manager",         co: "ProKit Sports Equipment, Toronto, Canada", color: "#10b981" },
   { quote: "Our return rate was high and we had no idea which products were causing it. The analytics showed us straight away — one supplier's sizing was running small. We raised it with them, fixed the listing, and our return rate on that range dropped 60% in a month.",
-    name: "Lucy Chen",     role: "E-commerce Trading Manager", co: "Verdant Homeware, Sheffield",        color: "#8b5cf6" },
+    name: "Lucy Chen",     role: "E-commerce Trading Manager", co: "Verdant Homeware, Sydney, Australia", color: "#8b5cf6" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -690,7 +690,7 @@ export default function EcommercePage() {
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Online Sellers Say
             </span>
-            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by online brands across the UK.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by online brands worldwide.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -745,7 +745,7 @@ export default function EcommercePage() {
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">Online brands across the UK trust OneSoft</span>
+                <span className="text-sm">Online brands worldwide trust OneSoft</span>
               </div>
             </div>
           </motion.div>

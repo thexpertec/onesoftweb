@@ -347,11 +347,11 @@ const flow = [
 
 const testimonials = [
   { quote: "Before OneSoft, our OPD queue was managed on paper and billing took 2 days after discharge. Now the bill is ready the moment we click Discharge and the insurance claim goes out automatically. We've cut billing errors by 90%.",
-    name: "Dr. Khalid Hassan", role: "Medical Director", co: "Crescent Health Hospital, Birmingham", color: "#1a69c4" },
+    name: "Dr. Khalid Hassan", role: "Medical Director", co: "Crescent Health Hospital, Dubai, UAE", color: "#1a69c4" },
   { quote: "Our pharmacy used to run out of drugs without warning. Now the system flags low stock before it's a problem and raises a purchase order automatically. We haven't had a stock-out in over 8 months.",
-    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Manchester", color: "#10b981" },
+    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Lahore, Pakistan", color: "#10b981" },
   { quote: "The lab integration alone changed our workflow entirely. Doctors used to phone the lab for results. Now results appear in the patient record the moment they're entered and the doctor is notified — no calls, no delays.",
-    name: "Dr. Priya Sharma", role: "Head of Pathology", co: "Midland General Hospital, Coventry", color: "#8b5cf6" },
+    name: "Dr. Priya Sharma", role: "Head of Pathology", co: "Midland General Hospital, Singapore", color: "#8b5cf6" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -689,7 +689,7 @@ export default function HospitalPage() {
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Hospitals Say
             </span>
-            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by hospitals across the UK.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by hospitals worldwide.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -744,7 +744,7 @@ export default function HospitalPage() {
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">Used in hospitals across the UK</span>
+                <span className="text-sm">Used in hospitals worldwide</span>
               </div>
             </div>
           </motion.div>
