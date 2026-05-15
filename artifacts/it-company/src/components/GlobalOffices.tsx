@@ -14,7 +14,7 @@ const offices = [
     phone: "+44 1482 611 000",
     email: "uk@powertechsolutions.com",
     skyline: hullSkyline,
-    accent: "#2563eb",
+    accent: "#1E4DA0",
   },
   {
     label: "Gulf Office",
@@ -25,7 +25,7 @@ const offices = [
     phone: "+971 4 427 2800",
     email: "uae@powertechsolutions.com",
     skyline: dubaiSkyline,
-    accent: "#ef4444",
+    accent: "#1E4DA0",
   },
   {
     label: "Pakistan Office",
@@ -36,7 +36,7 @@ const offices = [
     phone: "+92 51 285 4400",
     email: "pk@powertechsolutions.com",
     skyline: islamabadSkyline,
-    accent: "#16a34a",
+    accent: "#4FC6FF",
   },
 ];
 

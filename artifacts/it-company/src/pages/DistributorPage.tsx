@@ -43,12 +43,12 @@ function OrdersSlide() {
     { id: "SO-4826", party: "Green Leaf Wholesaler", items: 15, value: "£7,300", route: "Route B", status: "Picking",          due: "Tomorrow" },
   ];
   const kpis = [
-    { label: "Orders Today",    value: "62",     color: "#1a69c4", Icon: ClipboardList },
-    { label: "Dispatched",      value: "38",     color: "#10b981", Icon: Truck },
-    { label: "Pending",         value: "24",     color: "#f59e0b", Icon: Package },
-    { label: "Today's Value",   value: "£84,200",color: "#8b5cf6", Icon: Receipt },
+    { label: "Orders Today",    value: "62",     color: "#1E4DA0", Icon: ClipboardList },
+    { label: "Dispatched",      value: "38",     color: "#4FC6FF", Icon: Truck },
+    { label: "Pending",         value: "24",     color: "#4FC6FF", Icon: Package },
+    { label: "Today's Value",   value: "£84,200",color: "#1E4DA0", Icon: Receipt },
   ];
-  const stColor = (s: string) => s === "Dispatched" ? "#10b981" : s === "Picking" ? "#1a69c4" : "#f59e0b";
+  const stColor = (s: string) => s === "Dispatched" ? "#4FC6FF" : s === "Picking" ? "#1E4DA0" : "#4FC6FF";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -73,7 +73,7 @@ function OrdersSlide() {
           <tbody>
             {orders.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1a69c4" }}>{r.id}</td>
+                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1E4DA0" }}>{r.id}</td>
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.party}</td>
                 <td className="py-1.5 pr-3 text-white/50">{r.items}</td>
                 <td className="py-1.5 pr-3 text-white/75 font-semibold">{r.value}</td>
@@ -100,9 +100,9 @@ function StockSlide() {
     { sku: "MILK-UHT-1L",   name: "UHT Full Cream Milk 1L", stock: 0,    committed: 0,   avail: 0,   reorder: 200, batch: "—",       expiry: "—"        },
   ];
   const summary = [
-    { label: "Active SKUs",   value: "2,140", color: "#1a69c4" },
-    { label: "Low Stock",     value: "18",    color: "#f59e0b" },
-    { label: "Out of Stock",  value: "5",     color: "#ef4444" },
+    { label: "Active SKUs",   value: "2,140", color: "#1E4DA0" },
+    { label: "Low Stock",     value: "18",    color: "#4FC6FF" },
+    { label: "Out of Stock",  value: "5",     color: "#1E4DA0" },
   ];
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
@@ -123,11 +123,11 @@ function StockSlide() {
           <tbody>
             {items.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-2 font-mono text-[6.5px]" style={{ color: "#1a69c4" }}>{r.sku}</td>
+                <td className="py-1.5 pr-2 font-mono text-[6.5px]" style={{ color: "#1E4DA0" }}>{r.sku}</td>
                 <td className="py-1.5 pr-2 text-white/75">{r.name}</td>
-                <td className="py-1.5 pr-2 font-bold" style={{ color: r.stock === 0 ? "#ef4444" : r.stock <= r.reorder ? "#f59e0b" : "#10b981" }}>{r.stock}</td>
+                <td className="py-1.5 pr-2 font-bold" style={{ color: r.stock === 0 ? "#1E4DA0" : r.stock <= r.reorder ? "#4FC6FF" : "#4FC6FF" }}>{r.stock}</td>
                 <td className="py-1.5 pr-2 text-white/45">{r.committed}</td>
-                <td className="py-1.5 pr-2 font-bold" style={{ color: r.avail === 0 ? "#ef4444" : r.avail < 10 ? "#f59e0b" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
+                <td className="py-1.5 pr-2 font-bold" style={{ color: r.avail === 0 ? "#1E4DA0" : r.avail < 10 ? "#4FC6FF" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
                 <td className="py-1.5 pr-2 text-white/40 font-mono text-[6px]">{r.batch}</td>
                 <td className="py-1.5 text-white/40">{r.expiry}</td>
               </tr>
@@ -148,11 +148,11 @@ function LedgerSlide() {
     { name: "Sunrise Convenience",   limit: "£5,000",  outstanding: "£5,000",  overdue: "£3,200", days: 61, risk: "High"   },
   ];
   const summary = [
-    { label: "Total Receivable", value: "£3,84,600", color: "#1a69c4" },
-    { label: "Overdue",          value: "£42,800",   color: "#ef4444" },
-    { label: "Avg. Collection",  value: "28 days",   color: "#f59e0b" },
+    { label: "Total Receivable", value: "£3,84,600", color: "#1E4DA0" },
+    { label: "Overdue",          value: "£42,800",   color: "#1E4DA0" },
+    { label: "Avg. Collection",  value: "28 days",   color: "#4FC6FF" },
   ];
-  const riskColor = (r: string) => r === "Low" ? "#10b981" : r === "Medium" ? "#f59e0b" : "#ef4444";
+  const riskColor = (r: string) => r === "Low" ? "#4FC6FF" : r === "Medium" ? "#4FC6FF" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
@@ -175,7 +175,7 @@ function LedgerSlide() {
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.name}</td>
                 <td className="py-1.5 pr-3 text-white/45">{r.limit}</td>
                 <td className="py-1.5 pr-3 text-white/70 font-semibold">{r.outstanding}</td>
-                <td className="py-1.5 pr-3 font-bold" style={{ color: r.overdue === "£0" ? "#10b981" : "#ef4444" }}>{r.overdue}</td>
+                <td className="py-1.5 pr-3 font-bold" style={{ color: r.overdue === "£0" ? "#4FC6FF" : "#1E4DA0" }}>{r.overdue}</td>
                 <td className="py-1.5 pr-3 text-white/40">{r.days > 0 ? `${r.days}d` : "—"}</td>
                 <td className="py-1.5">
                   <span className="text-[6.5px] font-bold px-1.5 py-0.5 rounded-full" style={{ color: riskColor(r.risk), background: `${riskColor(r.risk)}18` }}>{r.risk}</span>
@@ -210,9 +210,9 @@ function DeliverySlide() {
             {routes.map((r, i) => (
               <div key={i} className="p-2 rounded-lg" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-[7.5px] font-bold" style={{ color: r.status === "Completed" ? "#10b981" : "#1a69c4" }}>{r.id}</span>
+                  <span className="text-[7.5px] font-bold" style={{ color: r.status === "Completed" ? "#4FC6FF" : "#1E4DA0" }}>{r.id}</span>
                   <span className="text-[6px] font-bold px-1.5 py-0.5 rounded-full"
-                    style={{ background: r.status === "Completed" ? "rgba(16,185,129,0.12)" : "rgba(26,105,196,0.12)", color: r.status === "Completed" ? "#10b981" : "#1a69c4" }}>{r.status}</span>
+                    style={{ background: r.status === "Completed" ? "rgba(79,198,255,0.12)" : "rgba(30,77,160,0.12)", color: r.status === "Completed" ? "#4FC6FF" : "#1E4DA0" }}>{r.status}</span>
                 </div>
                 <p className="text-[7px] text-white/55">{r.driver} · {r.vehicle}</p>
                 <div className="flex gap-2 mt-1">
@@ -233,9 +233,9 @@ function DeliverySlide() {
         <div className="space-y-2">
           {stops.map((s, i) => (
             <div key={i} className="rounded-xl p-2.5 border flex items-center gap-3"
-              style={{ background: s.status === "Next Stop" ? "rgba(26,105,196,0.10)" : "rgba(255,255,255,0.02)", borderColor: s.status === "Next Stop" ? "rgba(26,105,196,0.30)" : "rgba(255,255,255,0.07)" }}>
+              style={{ background: s.status === "Next Stop" ? "rgba(30,77,160,0.10)" : "rgba(255,255,255,0.02)", borderColor: s.status === "Next Stop" ? "rgba(30,77,160,0.30)" : "rgba(255,255,255,0.07)" }}>
               <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-black shrink-0"
-                style={{ background: s.status === "Next Stop" ? "#1a69c4" : "rgba(255,255,255,0.08)", color: s.status === "Next Stop" ? "#fff" : "rgba(255,255,255,0.4)" }}>
+                style={{ background: s.status === "Next Stop" ? "#1E4DA0" : "rgba(255,255,255,0.08)", color: s.status === "Next Stop" ? "#fff" : "rgba(255,255,255,0.4)" }}>
                 {s.stop}
               </div>
               <div className="flex-1 min-w-0">
@@ -243,14 +243,14 @@ function DeliverySlide() {
                 <p className="text-[7px] text-white/40 flex items-center gap-1"><MapPin className="w-2.5 h-2.5" />{s.address}</p>
               </div>
               <div className="text-right shrink-0">
-                <p className="text-[8px] font-bold" style={{ color: s.status === "Next Stop" ? "#1a69c4" : "rgba(255,255,255,0.5)" }}>ETA {s.eta}</p>
-                <p className="text-[6.5px] font-bold" style={{ color: s.status === "Next Stop" ? "#10b981" : "rgba(255,255,255,0.3)" }}>{s.status}</p>
+                <p className="text-[8px] font-bold" style={{ color: s.status === "Next Stop" ? "#1E4DA0" : "rgba(255,255,255,0.5)" }}>ETA {s.eta}</p>
+                <p className="text-[6.5px] font-bold" style={{ color: s.status === "Next Stop" ? "#4FC6FF" : "rgba(255,255,255,0.3)" }}>{s.status}</p>
               </div>
             </div>
           ))}
-          <div className="rounded-xl p-2.5 border" style={{ background: "rgba(16,185,129,0.05)", borderColor: "rgba(16,185,129,0.20)" }}>
+          <div className="rounded-xl p-2.5 border" style={{ background: "rgba(79,198,255,0.05)", borderColor: "rgba(79,198,255,0.20)" }}>
             <div className="flex items-center gap-2">
-              <CheckCheck className="w-4 h-4" style={{ color: "#10b981" }} />
+              <CheckCheck className="w-4 h-4" style={{ color: "#4FC6FF" }} />
               <div>
                 <p className="text-[7.5px] font-bold text-white/60">POD collected at 5 stops</p>
                 <p className="text-[7px] text-white/35">Digital signature + photo captured — auto-synced to party ledger</p>
@@ -280,8 +280,8 @@ function DistributorDashboard() {
     <div className="h-full rounded-2xl overflow-hidden flex flex-col" style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.25)" }}>
-            <Package className="w-3.5 h-3.5" style={{ color: "#1a69c4" }} />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.25)" }}>
+            <Package className="w-3.5 h-3.5" style={{ color: "#1E4DA0" }} />
           </div>
           <span className="font-bold text-white text-[11px]">OneSoft Distributor</span>
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
@@ -290,7 +290,7 @@ function DistributorDashboard() {
           {slides.map((s, i) => (
             <button key={i} onClick={() => setSlide(i)}
               className="text-[9px] px-2.5 py-1 rounded-md font-medium transition-all"
-              style={{ background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
+              style={{ background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
               {s.label}
             </button>
           ))}
@@ -303,7 +303,7 @@ function DistributorDashboard() {
         {slides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.2)" }} />
+            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.2)" }} />
         ))}
       </div>
     </div>
@@ -313,48 +313,48 @@ function DistributorDashboard() {
 /* ─────────────────── Page data ──────────────────────────── */
 
 const modules = [
-  { icon: Package,      color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430", title: "Stock & Inventory",
+  { icon: Package,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Stock & Inventory",
     desc: "Multi-warehouse stock with batch tracking, expiry dates, and real-time committed vs available split.",
     pts: ["Batch & lot number tracking", "Expiry date management & alerts", "Multi-warehouse stock visibility", "FIFO / FEFO issue rules"] },
-  { icon: ClipboardList,color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Sales Order Management",
+  { icon: ClipboardList,color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Sales Order Management",
     desc: "Take orders from retailers, allocate stock, generate invoices, and track fulfilment — all in one flow.",
     pts: ["Order booking from office or field app", "Stock allocation on order confirmation", "Partial delivery & backorder handling", "Invoice auto-generated on dispatch"] },
-  { icon: FileText,     color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "VAT / GST Billing",
+  { icon: FileText,     color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "VAT / GST Billing",
     desc: "Fully compliant invoicing with VAT or GST breakdowns, credit notes, and e-invoice integration.",
     pts: ["VAT / GST invoice generation", "Credit note & debit note management", "E-invoicing & Making Tax Digital ready", "Consolidated tax reports by period"] },
-  { icon: BookOpen,     color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Party Ledger",
+  { icon: BookOpen,     color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Party Ledger",
     desc: "Every customer and supplier account — balances, credit limits, payment history, and aging reports.",
     pts: ["Credit limit alerts on order entry", "Aged debt report (30/60/90 days)", "Payment receipts & allocation", "Statement of account per party"] },
-  { icon: Truck,        color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Route & Delivery",
+  { icon: Truck,        color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Route & Delivery",
     desc: "Plan delivery routes, assign drivers, track progress live, and capture proof of delivery digitally.",
     pts: ["Daily route planning & optimisation", "Driver app with stop-by-stop navigation", "Digital POD — signature & photo", "Deviation & delay alerts"] },
-  { icon: RefreshCw,    color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Purchase & Supplier",
+  { icon: RefreshCw,    color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Purchase & Supplier",
     desc: "Raise purchase orders against reorder levels, receive goods, and track supplier performance.",
     pts: ["Auto purchase order on low stock", "GRN with batch & quantity verification", "Landed cost allocation", "Supplier price history & comparison"] },
-  { icon: UserCheck,    color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Salesman Management",
+  { icon: UserCheck,    color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Salesman Management",
     desc: "Assign territories, set sales targets, track orders per rep, and calculate commissions automatically.",
     pts: ["Territory & route assignment", "Daily order targets vs actuals", "Mobile order-booking app for reps", "Commission calculation & payslip"] },
-  { icon: BarChart3,    color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Reports & Analytics",
+  { icon: BarChart3,    color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
     desc: "Stock movement, party-wise sales, route performance, and margin reports — all exportable.",
     pts: ["Party-wise sales & margin report", "Stock movement & valuation", "Route efficiency analytics", "Monthly P&L by product category"] },
 ];
 
 const flow = [
-  { step: "01", icon: ClipboardList, color: "#1a69c4", title: "Order Booked by Rep or Office",    detail: "Retailer order taken on mobile app or desktop — stock checked and allocated instantly" },
-  { step: "02", icon: Package,       color: "#10b981", title: "Stock Allocated, Picking Starts",   detail: "Warehouse receives the pick list immediately — batch selected by FIFO and items flagged for loading" },
-  { step: "03", icon: FileText,      color: "#8b5cf6", title: "Invoice Auto-Generated",            detail: "Tax-compliant invoice created automatically on dispatch confirmation — no manual invoice entry" },
-  { step: "04", icon: Truck,         color: "#f59e0b", title: "Route Assigned, Driver Dispatched", detail: "Order slotted into the day's route — driver app shows all stops with ETAs and customer details" },
-  { step: "05", icon: CheckCheck,    color: "#ef4444", title: "POD Collected at Delivery",         detail: "Customer signs digitally on driver app — photo of goods captured and synced to the system" },
-  { step: "06", icon: BookOpen,      color: "#06b6d4", title: "Party Ledger Updated Instantly",    detail: "Invoice posted to customer account the moment POD is collected — outstanding balance updates in real time" },
+  { step: "01", icon: ClipboardList, color: "#1E4DA0", title: "Order Booked by Rep or Office",    detail: "Retailer order taken on mobile app or desktop — stock checked and allocated instantly" },
+  { step: "02", icon: Package,       color: "#4FC6FF", title: "Stock Allocated, Picking Starts",   detail: "Warehouse receives the pick list immediately — batch selected by FIFO and items flagged for loading" },
+  { step: "03", icon: FileText,      color: "#1E4DA0", title: "Invoice Auto-Generated",            detail: "Tax-compliant invoice created automatically on dispatch confirmation — no manual invoice entry" },
+  { step: "04", icon: Truck,         color: "#4FC6FF", title: "Route Assigned, Driver Dispatched", detail: "Order slotted into the day's route — driver app shows all stops with ETAs and customer details" },
+  { step: "05", icon: CheckCheck,    color: "#1E4DA0", title: "POD Collected at Delivery",         detail: "Customer signs digitally on driver app — photo of goods captured and synced to the system" },
+  { step: "06", icon: BookOpen,      color: "#4FC6FF", title: "Party Ledger Updated Instantly",    detail: "Invoice posted to customer account the moment POD is collected — outstanding balance updates in real time" },
 ];
 
 const testimonials = [
   { quote: "We distribute to 400 retailers across the region. Before OneSoft, tracking who owed what was a nightmare — half our credit limits were being exceeded because the salesmen had no visibility. Now every rep sees the party balance before they take an order and our bad debt has dropped significantly.",
-    name: "Tariq Mahmood",  role: "Managing Director",     co: "TM Foods Distribution, Karachi, Pakistan", color: "#1a69c4" },
+    name: "Tariq Mahmood",  role: "Managing Director",     co: "TM Foods Distribution, Karachi, Pakistan", color: "#1E4DA0" },
   { quote: "The route planning and digital POD changed everything for our drivers. No more paper delivery notes, no more arguments about whether something was delivered. The customer signs on the tablet, a photo is taken, and it's in the system before the driver leaves the premises.",
-    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Dubai, UAE",   color: "#10b981" },
+    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Dubai, UAE",   color: "#4FC6FF" },
   { quote: "Stock used to go out of date and we'd only find out when we tried to pick it. OneSoft shows us items approaching expiry weeks in advance and automatically prioritises FEFO issue. We've cut our write-off losses by over 70% in the first year.",
-    name: "Imran Sheikh",   role: "Warehouse Director",    co: "Global Foods & Commodities, New York, USA", color: "#8b5cf6" },
+    name: "Imran Sheikh",   role: "Warehouse Director",    co: "Global Foods & Commodities, New York, USA", color: "#1E4DA0" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -387,10 +387,10 @@ export default function DistributorPage() {
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)" }} />
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(26,105,196,0.10)", filter: "blur(90px)" }}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)" }} />
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(30,77,160,0.10)", filter: "blur(90px)" }}
             animate={{ y: [0, -18, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(26,105,196,0.07)", filter: "blur(110px)" }}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(30,77,160,0.07)", filter: "blur(110px)" }}
             animate={{ y: [0, 18, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
         </div>
 
@@ -401,13 +401,13 @@ export default function DistributorPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span style={{ color: t50 }}>Products</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span style={{ color: "#1a69c4", fontWeight: 600 }}>Wholesaler / Distributor</span>
+            <span style={{ color: "#1E4DA0", fontWeight: 600 }}>Wholesaler / Distributor</span>
           </motion.div>
 
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <Package className="w-3.5 h-3.5" />Wholesaler & Distributor ERP
               </span>
             </motion.div>
@@ -415,7 +415,7 @@ export default function DistributorPage() {
             <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.05]"
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }}>
               Your Distribution,{" "}
-              <span style={{ color: "#1a69c4" }}>Under Control.</span>
+              <span style={{ color: "#1E4DA0" }}>Under Control.</span>
             </motion.h1>
 
             <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{ color: t60 }}
@@ -426,7 +426,7 @@ export default function DistributorPage() {
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
               <Button size="lg" className="h-14 px-10 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Wholesaler & Distributor ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -447,10 +447,10 @@ export default function DistributorPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { to: 400,  suf: "+",  label: "Distributors & Wholesalers",   Icon: Store,      color: "#1a69c4" },
-              { to: 10,   suf: "M+", label: "Invoices Generated",           Icon: FileText,   color: "#10b981" },
-              { to: 99.9, suf: "%",  label: "Tax Compliance Rate",          Icon: BadgeCheck, color: "#8b5cf6", d: 1 },
-              { to: 50,   suf: "%",  label: "Faster Delivery Planning",     Icon: Truck,      color: "#f59e0b" },
+              { to: 400,  suf: "+",  label: "Distributors & Wholesalers",   Icon: Store,      color: "#1E4DA0" },
+              { to: 10,   suf: "M+", label: "Invoices Generated",           Icon: FileText,   color: "#4FC6FF" },
+              { to: 99.9, suf: "%",  label: "Tax Compliance Rate",          Icon: BadgeCheck, color: "#1E4DA0", d: 1 },
+              { to: 50,   suf: "%",  label: "Faster Delivery Planning",     Icon: Truck,      color: "#4FC6FF" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -471,12 +471,12 @@ export default function DistributorPage() {
       {/* ═══ FLOW ═══════════════════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Sparkles className="w-3.5 h-3.5" />Order to Ledger in One Flow
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Order booked.<br />Delivered, invoiced, and posted.</h2>
@@ -518,7 +518,7 @@ export default function DistributorPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Package className="w-3.5 h-3.5" />8 Core Modules
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Stock to ledger.<br />Warehouse to doorstep.</h2>
@@ -565,13 +565,13 @@ export default function DistributorPage() {
       {/* ═══ PARTY LEDGER DEEP-DIVE ══════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div className="flex-1"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <BookOpen className="w-3.5 h-3.5" />Know Exactly Who Owes You What
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">No more chasing payments<br />in a spreadsheet.</h2>
@@ -581,16 +581,16 @@ export default function DistributorPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: AlertTriangle, color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30",
+                  { icon: AlertTriangle, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
                     title: "Credit limits enforced at the point of order",
                     sub: "Rep tries to book an order for a customer who's over their limit — system blocks it and shows the outstanding balance instantly" },
-                  { icon: FileText,      color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430",
+                  { icon: FileText,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Aged debt report always up to date",
                     sub: "See every customer broken into 0–30, 31–60, 61–90, and 90+ day buckets — in one report, any time" },
-                  { icon: Wallet,        color: "#10b981", bg: "#052e1c", border: "#10b98130",
+                  { icon: Wallet,        color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
                     title: "Payments received and allocated in seconds",
                     sub: "Record a payment, select which invoices to knock off — partial payments handled correctly with running balance updated immediately" },
-                  { icon: CheckCheck,    color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630",
+                  { icon: CheckCheck,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
                     title: "Statement of account sent to customer in one click",
                     sub: "Generate a branded PDF statement per customer showing all invoices, payments, and outstanding balance — email it directly from the system" },
                 ].map((item, i) => (
@@ -612,7 +612,7 @@ export default function DistributorPage() {
               </div>
 
               <Button size="lg" className="h-13 px-8 text-base font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Wholesaler & Distributor ERP")}>
                 See Ledger Demo <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -624,19 +624,19 @@ export default function DistributorPage() {
               <div className="rounded-2xl overflow-hidden" style={{ background: tableBg, border: `1px solid ${dividerColor}`, boxShadow: "0 30px 60px rgba(0,0,0,0.12)" }}>
                 <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${dividerColor}` }}>
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.15)" }}>
-                      <BookOpen className="w-4 h-4" style={{ color: "#1a69c4" }} />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)" }}>
+                      <BookOpen className="w-4 h-4" style={{ color: "#1E4DA0" }} />
                     </div>
                     <span className="font-bold text-sm">City Supermarkets — Ledger</span>
                   </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(239,68,68,0.12)", color: "#ef4444" }}>Over Limit</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.12)", color: "#1E4DA0" }}>Over Limit</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-px" style={{ background: dividerColor }}>
                   {[
-                    { label: "Credit Limit",  value: "£50,000", color: "#1a69c4" },
-                    { label: "Outstanding",   value: "£48,900", color: "#f59e0b" },
-                    { label: "Overdue 42d",   value: "£12,400", color: "#ef4444" },
+                    { label: "Credit Limit",  value: "£50,000", color: "#1E4DA0" },
+                    { label: "Outstanding",   value: "£48,900", color: "#4FC6FF" },
+                    { label: "Overdue 42d",   value: "£12,400", color: "#1E4DA0" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
                       <p className="text-[10px] mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -648,26 +648,26 @@ export default function DistributorPage() {
                 <div className="p-4 space-y-2">
                   <p className="text-xs font-semibold mb-2" style={{ color: t55 }}>Recent Transactions</p>
                   {[
-                    { date: "12 May", ref: "INV-8421", desc: "Sales Invoice",   amount: "+£9,840", color: "#ef4444"  },
-                    { date: "10 May", ref: "RCP-0812", desc: "Payment Received",amount: "-£15,000",color: "#10b981" },
-                    { date: "08 May", ref: "INV-8386", desc: "Sales Invoice",   amount: "+£7,200", color: "#ef4444"  },
-                    { date: "05 May", ref: "CN-0041",  desc: "Credit Note",     amount: "-£640",   color: "#10b981" },
-                    { date: "03 May", ref: "INV-8341", desc: "Sales Invoice",   amount: "+£11,300",color: "#ef4444"  },
+                    { date: "12 May", ref: "INV-8421", desc: "Sales Invoice",   amount: "+£9,840", color: "#1E4DA0"  },
+                    { date: "10 May", ref: "RCP-0812", desc: "Payment Received",amount: "-£15,000",color: "#4FC6FF" },
+                    { date: "08 May", ref: "INV-8386", desc: "Sales Invoice",   amount: "+£7,200", color: "#1E4DA0"  },
+                    { date: "05 May", ref: "CN-0041",  desc: "Credit Note",     amount: "-£640",   color: "#4FC6FF" },
+                    { date: "03 May", ref: "INV-8341", desc: "Sales Invoice",   amount: "+£11,300",color: "#1E4DA0"  },
                   ].map((tx, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 px-3 rounded-lg"
-                      style={{ background: isLight ? "#f8fafc" : "rgba(255,255,255,0.025)", borderBottom: `1px solid ${dividerColor}` }}>
+                      style={{ background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.025)", borderBottom: `1px solid ${dividerColor}` }}>
                       <span className="text-[10px]" style={{ color: t45 }}>{tx.date}</span>
-                      <span className="text-[10px] font-mono" style={{ color: "#1a69c4" }}>{tx.ref}</span>
+                      <span className="text-[10px] font-mono" style={{ color: "#1E4DA0" }}>{tx.ref}</span>
                       <span className="text-[10px]" style={{ color: t55 }}>{tx.desc}</span>
                       <span className="text-[11px] font-bold" style={{ color: tx.color }}>{tx.amount}</span>
                     </div>
                   ))}
 
                   <div className="mt-3 rounded-xl p-3 flex items-start gap-2"
-                    style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.22)" }}>
-                    <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#ef4444" }} />
+                    style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.22)" }}>
+                    <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#1E4DA0" }} />
                     <div>
-                      <p className="text-xs font-bold mb-0.5" style={{ color: "#ef4444" }}>New Order Blocked</p>
+                      <p className="text-xs font-bold mb-0.5" style={{ color: "#1E4DA0" }}>New Order Blocked</p>
                       <p className="text-[11px]" style={{ color: t45 }}>SO-4829 (£6,200) — customer is £2,500 above credit limit. Approval required before dispatch.</p>
                     </div>
                   </div>
@@ -684,7 +684,7 @@ export default function DistributorPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Distributors Say
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by distributors worldwide.</h2>
@@ -720,23 +720,23 @@ export default function DistributorPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Lock className="w-3.5 h-3.5" />No card required · Free 30-day trial
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Know your stock.<br />
-              <span style={{ color: "#1a69c4" }}>Know your money. Always.</span>
+              <span style={{ color: "#1E4DA0" }}>Know your money. Always.</span>
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: t55 }}>
               Join 400+ distributors and wholesalers running their entire operation on OneSoft. Go live in days, not months.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Wholesaler & Distributor ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -751,53 +751,53 @@ export default function DistributorPage() {
 
       <CTAStrip onCTA={() => openCTAModal("Wholesaler & Distributor ERP")} />
       <FeatureMarqueeSection
-        accentColor="#0891b2"
+        accentColor="#4FC6FF"
         heading="Everything a Distributor Needs"
         subheading="From sales order to digital proof of delivery — every module built for modern wholesale distribution."
         row1={[
-          { icon: "📋", label: "Sales Order",           color: "#0891b2" },
-          { icon: "🛒", label: "Purchase Order",        color: "#8b5cf6" },
-          { icon: "📦", label: "Stock Management",      color: "#10b981" },
-          { icon: "🗺️", label: "Route Planning",       color: "#f59e0b" },
-          { icon: "🚗", label: "Driver App",            color: "#06b6d4" },
-          { icon: "✍️", label: "Digital POD",           color: "#ec4899" },
-          { icon: "📒", label: "Customer Ledger",       color: "#14b8a6" },
-          { icon: "💳", label: "Credit Control",        color: "#6366f1" },
-          { icon: "🏪", label: "Van Sales",             color: "#f97316" },
-          { icon: "🏭", label: "Warehouse Management",  color: "#a855f7" },
-          { icon: "📅", label: "Batch & Expiry",        color: "#ef4444" },
-          { icon: "🔄", label: "FEFO Issue",            color: "#0ea5e9" },
+          { icon: "📋", label: "Sales Order",           color: "#4FC6FF" },
+          { icon: "🛒", label: "Purchase Order",        color: "#1E4DA0" },
+          { icon: "📦", label: "Stock Management",      color: "#4FC6FF" },
+          { icon: "🗺️", label: "Route Planning",       color: "#4FC6FF" },
+          { icon: "🚗", label: "Driver App",            color: "#4FC6FF" },
+          { icon: "✍️", label: "Digital POD",           color: "#4FC6FF" },
+          { icon: "📒", label: "Customer Ledger",       color: "#4FC6FF" },
+          { icon: "💳", label: "Credit Control",        color: "#1E4DA0" },
+          { icon: "🏪", label: "Van Sales",             color: "#1E4DA0" },
+          { icon: "🏭", label: "Warehouse Management",  color: "#1E4DA0" },
+          { icon: "📅", label: "Batch & Expiry",        color: "#1E4DA0" },
+          { icon: "🔄", label: "FEFO Issue",            color: "#4FC6FF" },
         ]}
         row2={[
-          { icon: "🔀", label: "Stock Transfer",        color: "#10b981" },
-          { icon: "🔔", label: "Reorder Alerts",        color: "#3b82f6" },
-          { icon: "🤝", label: "Supplier Management",   color: "#8b5cf6" },
-          { icon: "↩️", label: "Return Goods",          color: "#f59e0b" },
-          { icon: "🏢", label: "Multi-Warehouse",       color: "#06b6d4" },
-          { icon: "🚛", label: "Fleet Tracking",        color: "#ec4899" },
-          { icon: "📋", label: "Load Planning",         color: "#14b8a6" },
-          { icon: "💰", label: "Price Lists",           color: "#6366f1" },
-          { icon: "🎁", label: "Scheme Management",     color: "#f97316" },
-          { icon: "💵", label: "Commission Tracking",   color: "#a855f7" },
-          { icon: "📊", label: "Financial Reports",     color: "#ef4444" },
-          { icon: "👤", label: "Customer Portal",       color: "#0ea5e9" },
+          { icon: "🔀", label: "Stock Transfer",        color: "#4FC6FF" },
+          { icon: "🔔", label: "Reorder Alerts",        color: "#1E4DA0" },
+          { icon: "🤝", label: "Supplier Management",   color: "#1E4DA0" },
+          { icon: "↩️", label: "Return Goods",          color: "#4FC6FF" },
+          { icon: "🏢", label: "Multi-Warehouse",       color: "#4FC6FF" },
+          { icon: "🚛", label: "Fleet Tracking",        color: "#4FC6FF" },
+          { icon: "📋", label: "Load Planning",         color: "#4FC6FF" },
+          { icon: "💰", label: "Price Lists",           color: "#1E4DA0" },
+          { icon: "🎁", label: "Scheme Management",     color: "#1E4DA0" },
+          { icon: "💵", label: "Commission Tracking",   color: "#1E4DA0" },
+          { icon: "📊", label: "Financial Reports",     color: "#1E4DA0" },
+          { icon: "👤", label: "Customer Portal",       color: "#4FC6FF" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#10b981" },
-          { icon: "☁️", label: "Cloud Hosted",          color: "#3b82f6" },
-          { icon: "🏷️", label: "Barcode Scanning",     color: "#8b5cf6" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
-          { icon: "📈", label: "Demand Forecasting",    color: "#06b6d4" },
-          { icon: "🧾", label: "Tax & VAT",             color: "#ec4899" },
-          { icon: "🔒", label: "Audit Trail",           color: "#14b8a6" },
-          { icon: "🌍", label: "Multi-Currency",        color: "#6366f1" },
-          { icon: "🔗", label: "API Integrations",      color: "#f97316" },
-          { icon: "📉", label: "Shrinkage Control",     color: "#a855f7" },
-          { icon: "🧊", label: "Cold Chain Tracking",   color: "#ef4444" },
-          { icon: "🤖", label: "AI Stock Insights",     color: "#0ea5e9" },
+          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
+          { icon: "🏷️", label: "Barcode Scanning",     color: "#1E4DA0" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
+          { icon: "📈", label: "Demand Forecasting",    color: "#4FC6FF" },
+          { icon: "🧾", label: "Tax & VAT",             color: "#4FC6FF" },
+          { icon: "🔒", label: "Audit Trail",           color: "#4FC6FF" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#1E4DA0" },
+          { icon: "🔗", label: "API Integrations",      color: "#1E4DA0" },
+          { icon: "📉", label: "Shrinkage Control",     color: "#1E4DA0" },
+          { icon: "🧊", label: "Cold Chain Tracking",   color: "#1E4DA0" },
+          { icon: "🤖", label: "AI Stock Insights",     color: "#4FC6FF" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#0891b2" productName="Distributor ERP" />
+      <CustomSolutionsSection accentColor="#4FC6FF" productName="Distributor ERP" />
       <ERPCrossLinks current="/distributor" />
       <Footer />
     </div>

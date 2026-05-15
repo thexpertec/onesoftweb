@@ -42,12 +42,12 @@ function OPDSlide() {
     { token: "OPD-045", name: "Emma Clarke",       age: 41, dept: "Dermatology", status: "Registered",      wait: "45 min" },
   ];
   const kpis = [
-    { label: "Today's OPD",    value: "84",   color: "#1a69c4", Icon: Users },
-    { label: "In Consultation",value: "6",    color: "#10b981", Icon: Stethoscope },
-    { label: "Avg Wait Time",  value: "18m",  color: "#f59e0b", Icon: Clock },
-    { label: "Appointments",   value: "112",  color: "#8b5cf6", Icon: Calendar },
+    { label: "Today's OPD",    value: "84",   color: "#1E4DA0", Icon: Users },
+    { label: "In Consultation",value: "6",    color: "#4FC6FF", Icon: Stethoscope },
+    { label: "Avg Wait Time",  value: "18m",  color: "#4FC6FF", Icon: Clock },
+    { label: "Appointments",   value: "112",  color: "#1E4DA0", Icon: Calendar },
   ];
-  const statusColor = (s: string) => s === "In Consultation" ? "#10b981" : s === "Waiting" ? "#f59e0b" : "#94a3b8";
+  const statusColor = (s: string) => s === "In Consultation" ? "#4FC6FF" : s === "Waiting" ? "#4FC6FF" : "#94a3b8";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -91,12 +91,12 @@ function OPDSlide() {
 
 function WardSlide() {
   const wards = [
-    { name: "General Ward A", total: 24, occupied: 21, available: 3, color: "#1a69c4" },
-    { name: "Cardiology",     total: 16, occupied: 14, available: 2, color: "#ef4444" },
-    { name: "Orthopaedics",   total: 12, occupied: 8,  available: 4, color: "#f59e0b" },
-    { name: "Maternity",      total: 10, occupied: 7,  available: 3, color: "#10b981" },
-    { name: "ICU",            total: 8,  occupied: 8,  available: 0, color: "#8b5cf6" },
-    { name: "Paediatrics",    total: 14, occupied: 9,  available: 5, color: "#06b6d4" },
+    { name: "General Ward A", total: 24, occupied: 21, available: 3, color: "#1E4DA0" },
+    { name: "Cardiology",     total: 16, occupied: 14, available: 2, color: "#1E4DA0" },
+    { name: "Orthopaedics",   total: 12, occupied: 8,  available: 4, color: "#4FC6FF" },
+    { name: "Maternity",      total: 10, occupied: 7,  available: 3, color: "#4FC6FF" },
+    { name: "ICU",            total: 8,  occupied: 8,  available: 0, color: "#1E4DA0" },
+    { name: "Paediatrics",    total: 14, occupied: 9,  available: 5, color: "#4FC6FF" },
   ];
   const inpatients = [
     { name: "Mr. Ahmed Khan",   ward: "Cardiology",   bed: "C-04", days: 3, doctor: "Dr. Smith",   status: "Stable" },
@@ -116,7 +116,7 @@ function WardSlide() {
                 <span className="text-[7px] font-semibold text-white/70">{w.occupied}/{w.total}</span>
               </div>
               <div className="h-1.5 bg-white/8 rounded-full">
-                <div className="h-full rounded-full" style={{ width: `${(w.occupied/w.total)*100}%`, background: w.occupied === w.total ? "#ef4444" : w.color }} />
+                <div className="h-full rounded-full" style={{ width: `${(w.occupied/w.total)*100}%`, background: w.occupied === w.total ? "#1E4DA0" : w.color }} />
               </div>
               {w.available === 0 && <p className="text-[6px] text-red-400 font-bold mt-0.5">FULL</p>}
             </div>
@@ -158,11 +158,11 @@ function PharmacySlide() {
     { id: "RX-0295", patient: "Emma Clarke",       drug: "Cetirizine 10mg",   qty: 28, status: "Dispensed",  dr: "Dr. Smith"  },
   ];
   const stock = [
-    { name: "Paracetamol 500mg", stock: 1240, min: 200, color: "#10b981" },
-    { name: "Amoxicillin 250mg", stock: 84,   min: 100, color: "#ef4444" },
-    { name: "Metformin 500mg",   stock: 620,  min: 150, color: "#10b981" },
-    { name: "Aspirin 75mg",      stock: 940,  min: 200, color: "#10b981" },
-    { name: "Omeprazole 20mg",   stock: 112,  min: 150, color: "#f59e0b" },
+    { name: "Paracetamol 500mg", stock: 1240, min: 200, color: "#4FC6FF" },
+    { name: "Amoxicillin 250mg", stock: 84,   min: 100, color: "#1E4DA0" },
+    { name: "Metformin 500mg",   stock: 620,  min: 150, color: "#4FC6FF" },
+    { name: "Aspirin 75mg",      stock: 940,  min: 200, color: "#4FC6FF" },
+    { name: "Omeprazole 20mg",   stock: 112,  min: 150, color: "#4FC6FF" },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -174,7 +174,7 @@ function PharmacySlide() {
               <div key={i}>
                 <div className="flex justify-between mb-0.5">
                   <span className="text-[7px] text-white/60 truncate pr-1">{s.name}</span>
-                  <span className="text-[7px] font-semibold shrink-0" style={{ color: s.stock < s.min ? "#ef4444" : s.stock < s.min * 1.5 ? "#f59e0b" : "#10b981" }}>{s.stock}</span>
+                  <span className="text-[7px] font-semibold shrink-0" style={{ color: s.stock < s.min ? "#1E4DA0" : s.stock < s.min * 1.5 ? "#4FC6FF" : "#4FC6FF" }}>{s.stock}</span>
                 </div>
                 <div className="h-1 bg-white/8 rounded-full">
                   <div className="h-full rounded-full" style={{ width: `${Math.min((s.stock / 1400) * 100, 100)}%`, background: s.color }} />
@@ -182,7 +182,7 @@ function PharmacySlide() {
               </div>
             ))}
           </div>
-          <div className="mt-2 p-2 rounded-lg" style={{ background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.25)" }}>
+          <div className="mt-2 p-2 rounded-lg" style={{ background: "rgba(30,77,160,0.12)", border: "1px solid rgba(30,77,160,0.25)" }}>
             <p className="text-[7px] text-red-400 font-bold">⚠ 2 drugs below minimum</p>
           </div>
         </div>
@@ -196,7 +196,7 @@ function PharmacySlide() {
           <tbody>
             {prescriptions.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1a69c4" }}>{r.id}</td>
+                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1E4DA0" }}>{r.id}</td>
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.patient}</td>
                 <td className="py-1.5 pr-3 text-white/60">{r.drug}</td>
                 <td className="py-1.5 pr-3 text-white/50">{r.qty}</td>
@@ -222,9 +222,9 @@ function BillingSlide() {
     { id: "INV-0845", patient: "Sarah Thompson",    type: "OPD + Lab",   amount: "£340",   insurer: "Self-Pay",   status: "Paid"     },
   ];
   const summary = [
-    { label: "Today's Revenue",    value: "£18,420", color: "#10b981" },
-    { label: "Insurance Claims",   value: "£14,640", color: "#1a69c4" },
-    { label: "Pending Collection", value: "£8,200",  color: "#f59e0b" },
+    { label: "Today's Revenue",    value: "£18,420", color: "#4FC6FF" },
+    { label: "Insurance Claims",   value: "£14,640", color: "#1E4DA0" },
+    { label: "Pending Collection", value: "£8,200",  color: "#4FC6FF" },
   ];
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
@@ -245,7 +245,7 @@ function BillingSlide() {
           <tbody>
             {invoices.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1a69c4" }}>{r.id}</td>
+                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1E4DA0" }}>{r.id}</td>
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.patient}</td>
                 <td className="py-1.5 pr-3 text-white/50">{r.type}</td>
                 <td className="py-1.5 pr-3 text-white/75 font-semibold">{r.amount}</td>
@@ -279,8 +279,8 @@ function HospitalDashboard() {
     <div className="h-full rounded-2xl overflow-hidden flex flex-col" style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.25)" }}>
-            <Stethoscope className="w-3.5 h-3.5" style={{ color: "#1a69c4" }} />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.25)" }}>
+            <Stethoscope className="w-3.5 h-3.5" style={{ color: "#1E4DA0" }} />
           </div>
           <span className="font-bold text-white text-[11px]">OneSoft Hospital</span>
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
@@ -289,7 +289,7 @@ function HospitalDashboard() {
           {slides.map((s, i) => (
             <button key={i} onClick={() => setSlide(i)}
               className="text-[9px] px-2.5 py-1 rounded-md font-medium transition-all"
-              style={{ background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
+              style={{ background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
               {s.label}
             </button>
           ))}
@@ -302,7 +302,7 @@ function HospitalDashboard() {
         {slides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.2)" }} />
+            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.2)" }} />
         ))}
       </div>
     </div>
@@ -312,48 +312,48 @@ function HospitalDashboard() {
 /* ─────────────────── Page data ──────────────────────────── */
 
 const modules = [
-  { icon: Users,        color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430", title: "Patient Management",
+  { icon: Users,        color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Patient Management",
     desc: "Complete patient lifecycle — registration, history, allergies, and records accessible in seconds.",
     pts: ["One-click patient registration", "Full medical history & allergy records", "Linked family / GP records", "Patient portal for online booking"] },
-  { icon: Calendar,     color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Appointment Scheduling",
+  { icon: Calendar,     color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Appointment Scheduling",
     desc: "Online and walk-in appointment booking with doctor calendars, reminders, and no-show tracking.",
     pts: ["Doctor availability calendars", "Online & reception booking", "Automated appointment reminders", "No-show & cancellation tracking"] },
-  { icon: BedDouble,    color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "Inpatient (IPD) Management",
+  { icon: BedDouble,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Inpatient (IPD) Management",
     desc: "Bed allocation, ward rounds, transfer tracking, and discharge summaries — all linked to billing.",
     pts: ["Real-time bed occupancy map", "Ward transfer & escalation alerts", "Nursing notes per shift", "Discharge summary auto-generated"] },
-  { icon: Pill,         color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Pharmacy & Dispensing",
+  { icon: Pill,         color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Pharmacy & Dispensing",
     desc: "Prescriptions auto-sent from doctor to pharmacy, with stock control and low-drug alerts.",
     pts: ["Digital prescription workflow", "Drug stock with reorder alerts", "Dispensing records & audit trail", "Controlled drug compliance log"] },
-  { icon: FlaskConical, color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Laboratory (LIS)",
+  { icon: FlaskConical, color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Laboratory (LIS)",
     desc: "Lab test requests from doctors, result entry by technicians, and instant delivery to patient records.",
     pts: ["Doctor-raised test requests", "Sample tracking & barcode labels", "Result entry with reference ranges", "Results auto-linked to patient file"] },
-  { icon: Receipt,      color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Billing & Insurance",
+  { icon: Receipt,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Billing & Insurance",
     desc: "Auto-generated invoices from OPD, IPD, lab, and pharmacy — with direct insurance claim submission.",
     pts: ["Auto-billing from all departments", "Insurance pre-auth & claim filing", "Co-pay & self-pay management", "Outstanding & aged debt reports"] },
-  { icon: UserCog,      color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Staff & Doctor Management",
+  { icon: UserCog,      color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Staff & Doctor Management",
     desc: "Doctor schedules, nurse shift rosters, HR records, and payroll — all in one place.",
     pts: ["Doctor & nurse scheduling", "Shift roster with leave management", "Staff HR profiles & contracts", "Integrated payroll processing"] },
-  { icon: BarChart3,    color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Reports & Analytics",
+  { icon: BarChart3,    color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
     desc: "Live dashboards for OPD load, bed occupancy, revenue, and clinical KPIs — always up to date.",
     pts: ["Real-time OPD & IPD dashboards", "Revenue & collections analytics", "Clinical quality indicators", "Exportable management reports"] },
 ];
 
 const flow = [
-  { step: "01", icon: Users,        color: "#1a69c4", title: "Patient Arrives & Registers",     detail: "Patient registered once — all subsequent visits pre-fill automatically from their record" },
-  { step: "02", icon: Stethoscope,  color: "#10b981", title: "Doctor Consults & Prescribes",    detail: "Prescription is digitally sent to pharmacy the moment the doctor saves — zero paper" },
-  { step: "03", icon: FlaskConical, color: "#ef4444", title: "Lab Tests Ordered Instantly",     detail: "Lab receives test requests electronically — results post to the patient record when ready" },
-  { step: "04", icon: BedDouble,    color: "#8b5cf6", title: "Bed Assigned — Ward Notified",    detail: "Ward occupancy map updates in real time — nursing team alerted before patient arrives" },
-  { step: "05", icon: Receipt,      color: "#06b6d4", title: "Invoice Auto-Generated",          detail: "All OPD, pharmacy, lab, and ward charges compile into one final bill automatically" },
-  { step: "06", icon: CheckCheck,   color: "#f59e0b", title: "Insurance Claim Submitted",       detail: "Claim sent directly to insurer the moment the bill is finalised — no manual paperwork" },
+  { step: "01", icon: Users,        color: "#1E4DA0", title: "Patient Arrives & Registers",     detail: "Patient registered once — all subsequent visits pre-fill automatically from their record" },
+  { step: "02", icon: Stethoscope,  color: "#4FC6FF", title: "Doctor Consults & Prescribes",    detail: "Prescription is digitally sent to pharmacy the moment the doctor saves — zero paper" },
+  { step: "03", icon: FlaskConical, color: "#1E4DA0", title: "Lab Tests Ordered Instantly",     detail: "Lab receives test requests electronically — results post to the patient record when ready" },
+  { step: "04", icon: BedDouble,    color: "#1E4DA0", title: "Bed Assigned — Ward Notified",    detail: "Ward occupancy map updates in real time — nursing team alerted before patient arrives" },
+  { step: "05", icon: Receipt,      color: "#4FC6FF", title: "Invoice Auto-Generated",          detail: "All OPD, pharmacy, lab, and ward charges compile into one final bill automatically" },
+  { step: "06", icon: CheckCheck,   color: "#4FC6FF", title: "Insurance Claim Submitted",       detail: "Claim sent directly to insurer the moment the bill is finalised — no manual paperwork" },
 ];
 
 const testimonials = [
   { quote: "Before OneSoft, our OPD queue was managed on paper and billing took 2 days after discharge. Now the bill is ready the moment we click Discharge and the insurance claim goes out automatically. We've cut billing errors by 90%.",
-    name: "Dr. Khalid Hassan", role: "Medical Director", co: "Crescent Health Hospital, Dubai, UAE", color: "#1a69c4" },
+    name: "Dr. Khalid Hassan", role: "Medical Director", co: "Crescent Health Hospital, Dubai, UAE", color: "#1E4DA0" },
   { quote: "Our pharmacy used to run out of drugs without warning. Now the system flags low stock before it's a problem and raises a purchase order automatically. We haven't had a stock-out in over 8 months.",
-    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Lahore, Pakistan", color: "#10b981" },
+    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Lahore, Pakistan", color: "#4FC6FF" },
   { quote: "The lab integration alone changed our workflow entirely. Doctors used to phone the lab for results. Now results appear in the patient record the moment they're entered and the doctor is notified — no calls, no delays.",
-    name: "Dr. Priya Sharma", role: "Head of Pathology", co: "Midland General Hospital, Singapore", color: "#8b5cf6" },
+    name: "Dr. Priya Sharma", role: "Head of Pathology", co: "Midland General Hospital, Singapore", color: "#1E4DA0" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -387,10 +387,10 @@ export default function HospitalPage() {
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)" }} />
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(26,105,196,0.10)", filter: "blur(90px)" }}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)" }} />
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(30,77,160,0.10)", filter: "blur(90px)" }}
             animate={{ y: [0, -18, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(26,105,196,0.07)", filter: "blur(110px)" }}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(30,77,160,0.07)", filter: "blur(110px)" }}
             animate={{ y: [0, 18, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
         </div>
 
@@ -402,14 +402,14 @@ export default function HospitalPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span style={{ color: t50 }}>Products</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span style={{ color: "#1a69c4", fontWeight: 600 }}>Hospital Management</span>
+            <span style={{ color: "#1E4DA0", fontWeight: 600 }}>Hospital Management</span>
           </motion.div>
 
           {/* headline */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <Stethoscope className="w-3.5 h-3.5" />Hospital Management ERP
               </span>
             </motion.div>
@@ -417,7 +417,7 @@ export default function HospitalPage() {
             <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.05]"
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }}>
               Your Hospital,{" "}
-              <span style={{ color: "#1a69c4" }}>Fully Connected.</span>
+              <span style={{ color: "#1E4DA0" }}>Fully Connected.</span>
             </motion.h1>
 
             <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{ color: t60 }}
@@ -428,7 +428,7 @@ export default function HospitalPage() {
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
               <Button size="lg" className="h-14 px-10 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Hospital Management ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -449,10 +449,10 @@ export default function HospitalPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { to: 200,  suf: "+",  label: "Hospitals on Platform",    Icon: Building2,  color: "#1a69c4" },
-              { to: 500,  suf: "K+", label: "Patients Managed",         Icon: Users,      color: "#10b981" },
-              { to: 99,   suf: ".5%",label: "Billing Accuracy",         Icon: ShieldCheck,color: "#8b5cf6", d: 0 },
-              { to: 60,   suf: "%",  label: "Faster Discharge Process", Icon: TrendingUp, color: "#f59e0b" },
+              { to: 200,  suf: "+",  label: "Hospitals on Platform",    Icon: Building2,  color: "#1E4DA0" },
+              { to: 500,  suf: "K+", label: "Patients Managed",         Icon: Users,      color: "#4FC6FF" },
+              { to: 99,   suf: ".5%",label: "Billing Accuracy",         Icon: ShieldCheck,color: "#1E4DA0", d: 0 },
+              { to: 60,   suf: "%",  label: "Faster Discharge Process", Icon: TrendingUp, color: "#4FC6FF" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -473,12 +473,12 @@ export default function HospitalPage() {
       {/* ═══ FLOW ═══════════════════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Sparkles className="w-3.5 h-3.5" />Every Department Connected
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Patient arrives once.<br />Everything flows automatically.</h2>
@@ -520,7 +520,7 @@ export default function HospitalPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <HeartPulse className="w-3.5 h-3.5" />8 Core Modules
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Every department.<br />One connected system.</h2>
@@ -567,13 +567,13 @@ export default function HospitalPage() {
       {/* ═══ BILLING & INSURANCE DEEP-DIVE ══════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div className="flex-1"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <Receipt className="w-3.5 h-3.5" />Zero Revenue Leakage
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Every service billed.<br />Every claim filed.</h2>
@@ -583,16 +583,16 @@ export default function HospitalPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: Zap,          color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430",
+                  { icon: Zap,          color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "All department charges auto-compiled on discharge",
                     sub: "OPD, pharmacy, lab, theatre, and ward charges merge into one invoice automatically" },
-                  { icon: ShieldCheck,  color: "#10b981", bg: "#052e1c", border: "#10b98130",
+                  { icon: ShieldCheck,  color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
                     title: "Insurance pre-authorisation tracked in real time",
                     sub: "Pre-auth requests, approvals, and limits tracked per patient — no manual follow-up needed" },
-                  { icon: Receipt,      color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30",
+                  { icon: Receipt,      color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
                     title: "Claims submitted to insurers electronically",
                     sub: "Claim forms auto-populated from the patient's invoice and sent direct to the insurer" },
-                  { icon: AlertCircle,  color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630",
+                  { icon: AlertCircle,  color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
                     title: "Rejected claims flagged with resubmission prompts",
                     sub: "System identifies rejected claims and guides billing staff through the correction and resubmit process" },
                 ].map((item, i) => (
@@ -614,7 +614,7 @@ export default function HospitalPage() {
               </div>
 
               <Button size="lg" className="h-13 px-8 text-base font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Hospital Management ERP")}>
                 See Billing Demo <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -626,19 +626,19 @@ export default function HospitalPage() {
               <div className="rounded-2xl overflow-hidden" style={{ background: tableBg, border: `1px solid ${dividerColor}`, boxShadow: "0 30px 60px rgba(0,0,0,0.12)" }}>
                 <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${dividerColor}` }}>
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.15)" }}>
-                      <Receipt className="w-4 h-4" style={{ color: "#1a69c4" }} />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)" }}>
+                      <Receipt className="w-4 h-4" style={{ color: "#1E4DA0" }} />
                     </div>
                     <span className="font-bold text-sm">Discharge Bill — Mr. Ahmed Khan</span>
                   </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(16,185,129,0.12)", color: "#10b981" }}>Auto-Generated</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(79,198,255,0.12)", color: "#4FC6FF" }}>Auto-Generated</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-px" style={{ background: gridLine }}>
                   {[
-                    { label: "Ward (3 nights)", value: "£1,800", color: "#1a69c4" },
-                    { label: "OPD & Procedures", value: "£960",  color: "#10b981" },
-                    { label: "Pharmacy & Lab",   value: "£420",  color: "#f59e0b" },
+                    { label: "Ward (3 nights)", value: "£1,800", color: "#1E4DA0" },
+                    { label: "OPD & Procedures", value: "£960",  color: "#4FC6FF" },
+                    { label: "Pharmacy & Lab",   value: "£420",  color: "#4FC6FF" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
                       <p className="text-[10px] mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -662,13 +662,13 @@ export default function HospitalPage() {
                   ))}
 
                   <div className="mt-4 rounded-xl p-3 flex items-center justify-between"
-                    style={{ background: "rgba(26,105,196,0.08)", border: "1px solid rgba(26,105,196,0.20)" }}>
+                    style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.20)" }}>
                     <div>
                       <p className="text-xs font-semibold" style={{ color: t65 }}>Insurance Claim Status</p>
-                      <p className="text-base font-black" style={{ color: "#1a69c4" }}>Submitted to BUPA</p>
+                      <p className="text-base font-black" style={{ color: "#1E4DA0" }}>Submitted to BUPA</p>
                       <p className="text-[10px]" style={{ color: t45 }}>Sent automatically at discharge · Ref: BUPA-2026-08841</p>
                     </div>
-                    <CheckCheck className="w-6 h-6 shrink-0" style={{ color: "#10b981" }} />
+                    <CheckCheck className="w-6 h-6 shrink-0" style={{ color: "#4FC6FF" }} />
                   </div>
                 </div>
               </div>
@@ -683,7 +683,7 @@ export default function HospitalPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Hospitals Say
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by hospitals worldwide.</h2>
@@ -719,23 +719,23 @@ export default function HospitalPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Lock className="w-3.5 h-3.5" />No card required · Free 30-day trial
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Better care starts with<br />
-              <span style={{ color: "#1a69c4" }}>better systems.</span>
+              <span style={{ color: "#1E4DA0" }}>better systems.</span>
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: t55 }}>
               Join 200+ hospitals running their entire operation on OneSoft. Go live in weeks, not months.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Hospital Management ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -750,53 +750,53 @@ export default function HospitalPage() {
 
       <CTAStrip onCTA={() => openCTAModal("Hospital Management ERP")} />
       <FeatureMarqueeSection
-        accentColor="#1a69c4"
+        accentColor="#1E4DA0"
         heading="Everything a Hospital Needs"
         subheading="From OPD queues to insurance claims — every module built for modern hospitals and clinics."
         row1={[
-          { icon: "🏥", label: "OPD Management",        color: "#1a69c4" },
-          { icon: "🛏️", label: "IPD Management",       color: "#8b5cf6" },
-          { icon: "🚑", label: "Emergency Care",        color: "#ef4444" },
-          { icon: "📋", label: "Patient Registration",  color: "#10b981" },
-          { icon: "🏨", label: "Ward Management",       color: "#f59e0b" },
-          { icon: "🛌", label: "Bed Allocation",        color: "#06b6d4" },
-          { icon: "👨‍⚕️", label: "Doctor Scheduling",  color: "#ec4899" },
-          { icon: "📅", label: "Appointment Booking",   color: "#14b8a6" },
-          { icon: "💊", label: "Pharmacy",              color: "#6366f1" },
-          { icon: "🔬", label: "Laboratory",            color: "#f97316" },
-          { icon: "📡", label: "Radiology",             color: "#a855f7" },
-          { icon: "🩸", label: "Blood Bank",            color: "#0ea5e9" },
+          { icon: "🏥", label: "OPD Management",        color: "#1E4DA0" },
+          { icon: "🛏️", label: "IPD Management",       color: "#1E4DA0" },
+          { icon: "🚑", label: "Emergency Care",        color: "#1E4DA0" },
+          { icon: "📋", label: "Patient Registration",  color: "#4FC6FF" },
+          { icon: "🏨", label: "Ward Management",       color: "#4FC6FF" },
+          { icon: "🛌", label: "Bed Allocation",        color: "#4FC6FF" },
+          { icon: "👨‍⚕️", label: "Doctor Scheduling",  color: "#4FC6FF" },
+          { icon: "📅", label: "Appointment Booking",   color: "#4FC6FF" },
+          { icon: "💊", label: "Pharmacy",              color: "#1E4DA0" },
+          { icon: "🔬", label: "Laboratory",            color: "#1E4DA0" },
+          { icon: "📡", label: "Radiology",             color: "#1E4DA0" },
+          { icon: "🩸", label: "Blood Bank",            color: "#4FC6FF" },
         ]}
         row2={[
-          { icon: "💰", label: "Billing & Insurance",   color: "#10b981" },
-          { icon: "📄", label: "Discharge Summary",     color: "#3b82f6" },
-          { icon: "🗂️", label: "Medical Records",      color: "#8b5cf6" },
-          { icon: "📹", label: "Telemedicine",          color: "#f59e0b" },
-          { icon: "🏭", label: "Operation Theatre",     color: "#06b6d4" },
-          { icon: "❤️", label: "ICU Management",        color: "#ec4899" },
-          { icon: "📝", label: "Nursing Notes",         color: "#14b8a6" },
-          { icon: "👩‍💼", label: "Staff Payroll",       color: "#6366f1" },
-          { icon: "📦", label: "Inventory Control",     color: "#f97316" },
-          { icon: "🚐", label: "Ambulance Tracking",    color: "#a855f7" },
-          { icon: "🧾", label: "Accounts & Finance",    color: "#ef4444" },
-          { icon: "🩺", label: "Mortuary Management",   color: "#0ea5e9" },
+          { icon: "💰", label: "Billing & Insurance",   color: "#4FC6FF" },
+          { icon: "📄", label: "Discharge Summary",     color: "#1E4DA0" },
+          { icon: "🗂️", label: "Medical Records",      color: "#1E4DA0" },
+          { icon: "📹", label: "Telemedicine",          color: "#4FC6FF" },
+          { icon: "🏭", label: "Operation Theatre",     color: "#4FC6FF" },
+          { icon: "❤️", label: "ICU Management",        color: "#4FC6FF" },
+          { icon: "📝", label: "Nursing Notes",         color: "#4FC6FF" },
+          { icon: "👩‍💼", label: "Staff Payroll",       color: "#1E4DA0" },
+          { icon: "📦", label: "Inventory Control",     color: "#1E4DA0" },
+          { icon: "🚐", label: "Ambulance Tracking",    color: "#1E4DA0" },
+          { icon: "🧾", label: "Accounts & Finance",    color: "#1E4DA0" },
+          { icon: "🩺", label: "Mortuary Management",   color: "#4FC6FF" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#10b981" },
-          { icon: "🔔", label: "SMS Alerts",            color: "#3b82f6" },
-          { icon: "📊", label: "Clinical Analytics",    color: "#8b5cf6" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
-          { icon: "🌐", label: "Multi-Branch",          color: "#06b6d4" },
-          { icon: "☁️", label: "Cloud Hosted",          color: "#ec4899" },
-          { icon: "🔒", label: "Data Security",         color: "#14b8a6" },
-          { icon: "📑", label: "Compliance Reports",    color: "#6366f1" },
-          { icon: "💬", label: "Patient Communication", color: "#f97316" },
-          { icon: "🩻", label: "DICOM / PACS Ready",    color: "#a855f7" },
-          { icon: "🔄", label: "HL7 / FHIR Support",   color: "#ef4444" },
-          { icon: "🎯", label: "KPI Dashboard",         color: "#0ea5e9" },
+          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "🔔", label: "SMS Alerts",            color: "#1E4DA0" },
+          { icon: "📊", label: "Clinical Analytics",    color: "#1E4DA0" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
+          { icon: "🌐", label: "Multi-Branch",          color: "#4FC6FF" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#4FC6FF" },
+          { icon: "🔒", label: "Data Security",         color: "#4FC6FF" },
+          { icon: "📑", label: "Compliance Reports",    color: "#1E4DA0" },
+          { icon: "💬", label: "Patient Communication", color: "#1E4DA0" },
+          { icon: "🩻", label: "DICOM / PACS Ready",    color: "#1E4DA0" },
+          { icon: "🔄", label: "HL7 / FHIR Support",   color: "#1E4DA0" },
+          { icon: "🎯", label: "KPI Dashboard",         color: "#4FC6FF" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#1a69c4" productName="Hospital ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="Hospital ERP" />
       <ERPCrossLinks current="/hospital" />
       <Footer />
     </div>

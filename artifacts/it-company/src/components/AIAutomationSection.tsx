@@ -27,14 +27,14 @@ const capabilities = [
     title: "Document Intelligence",
     desc: "Automatically extract, classify, and summarise data from invoices, medical records, admission forms, purchase orders, and contracts — without manual entry.",
     examples: ["Invoice auto-processing", "Patient record extraction", "Contract clause detection"],
-    color: "#7c3aed",
+    color: "#1E4DA0",
   },
   {
     icon: Workflow,
     title: "Business Process Automation",
     desc: "Replace multi-step manual workflows with trigger-based automation pipelines. From lead follow-up emails to report generation — if it's repetitive, we automate it.",
     examples: ["Auto fee reminder sequences", "Inventory low-stock alerts", "Monthly report generation"],
-    color: "#0891b2",
+    color: "#4FC6FF",
   },
   {
     icon: BarChart3,
@@ -48,24 +48,24 @@ const capabilities = [
     title: "RAG Knowledge Systems",
     desc: "Build private AI knowledge bases from your own documents, manuals, and policies. Staff can query them instantly — no hallucinations, always sourced from your data.",
     examples: ["Hospital policy assistant", "School curriculum Q&A", "Supplier catalogue search"],
-    color: "#ea580c",
+    color: "#1E4DA0",
   },
   {
     icon: ScanLine,
     title: "OCR & Data Extraction",
     desc: "Convert scanned documents, handwritten forms, and image-based PDFs into structured digital data — automatically fed into your ERP or database.",
     examples: ["Handwritten fee slips", "Lab report scanning", "Delivery note digitisation"],
-    color: "#db2777",
+    color: "#1E4DA0",
   },
 ];
 
 const useCases = [
   { sector: "Schools",     icon: "🎓", color: "#2563eb", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
   { sector: "Hospitals",   icon: "🏥", color: "#16a34a", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
-  { sector: "Restaurants", icon: "🍽️", color: "#ea580c", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
-  { sector: "Distributors",icon: "📦", color: "#0891b2", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
-  { sector: "E-commerce",  icon: "🛒", color: "#7c3aed", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
-  { sector: "Event Halls", icon: "💒", color: "#db2777", task: "Intelligent booking assistant that checks availability, quotes packages, and sends contracts — all without human involvement." },
+  { sector: "Restaurants", icon: "🍽️", color: "#1E4DA0", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
+  { sector: "Distributors",icon: "📦", color: "#4FC6FF", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
+  { sector: "E-commerce",  icon: "🛒", color: "#1E4DA0", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
+  { sector: "Event Halls", icon: "💒", color: "#1E4DA0", task: "Intelligent booking assistant that checks availability, quotes packages, and sends contracts — all without human involvement." },
 ];
 
 const stack = [
@@ -78,7 +78,7 @@ export function AIAutomationSection() {
   return (
     <section id="ai-automation" className="py-28 relative overflow-hidden">
       {/* Subtle blue tint top stripe */}
-      <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#1a69c4" }} />
+      <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#1E4DA0" }} />
 
       <div className="container mx-auto px-4 relative z-10">
 
@@ -92,7 +92,7 @@ export function AIAutomationSection() {
         >
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-            style={{ border: "1.5px solid #1a69c440", background: "#1a69c412", color: "#1a69c4" }}
+            style={{ border: "1.5px solid #1E4DA040", background: "#1E4DA012", color: "#1E4DA0" }}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -104,7 +104,7 @@ export function AIAutomationSection() {
 
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6" style={{ color: "#0f172a" }}>
             Put your business on{" "}
-            <span style={{ color: "#1a69c4" }}>autopilot</span>
+            <span style={{ color: "#1E4DA0" }}>autopilot</span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             We build AI systems that replace manual, repetitive work with intelligent automation — saving your team hours every day and eliminating human error at scale.
@@ -168,7 +168,7 @@ export function AIAutomationSection() {
           <div className="flex items-center gap-3 mb-8">
             <div className="h-px flex-1 bg-slate-200" />
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3" style={{ color: "#64748b" }}>
-              <Bot className="w-4 h-4" style={{ color: "#1a69c4" }} />
+              <Bot className="w-4 h-4" style={{ color: "#1E4DA0" }} />
               Real-world automation use cases
             </div>
             <div className="h-px flex-1 bg-slate-200" />
@@ -236,16 +236,16 @@ export function AIAutomationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          style={{ background: "#ffffff", border: "1.5px solid #1a69c430", boxShadow: "0 4px 24px #1a69c410" }}
+          style={{ background: "#ffffff", border: "1.5px solid #1E4DA030", boxShadow: "0 4px 24px #1E4DA010" }}
         >
           {/* Blue left accent panel */}
-          <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-3xl" style={{ background: "#1a69c4" }} />
+          <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-3xl" style={{ background: "#1E4DA0" }} />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 px-10 py-12">
             <div className="text-center lg:text-left">
               <div className="flex items-center gap-2 justify-center lg:justify-start mb-3">
-                <Zap className="w-4 h-4" style={{ color: "#1a69c4" }} />
-                <span className="text-sm font-semibold" style={{ color: "#1a69c4" }}>Free AI Readiness Audit</span>
+                <Zap className="w-4 h-4" style={{ color: "#1E4DA0" }} />
+                <span className="text-sm font-semibold" style={{ color: "#1E4DA0" }}>Free AI Readiness Audit</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight" style={{ color: "#0f172a" }}>
                 See exactly where AI can save<br className="hidden md:block" /> your business 10+ hours a week
@@ -258,9 +258,9 @@ export function AIAutomationSection() {
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm transition-all duration-200"
-                style={{ background: "#1a69c4", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", color: "#ffffff" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#1558a8")}
-                onMouseLeave={e => (e.currentTarget.style.background = "#1a69c4")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#1E4DA0")}
               >
                 <BrainCircuit className="w-4 h-4" />
                 Book AI Audit
@@ -268,9 +268,9 @@ export function AIAutomationSection() {
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-200"
-                style={{ border: "1.5px solid #1a69c450", color: "#1a69c4", background: "transparent" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#1a69c410"; e.currentTarget.style.borderColor = "#1a69c480"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "#1a69c450"; }}
+                style={{ border: "1.5px solid #1E4DA050", color: "#1E4DA0", background: "transparent" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#1E4DA010"; e.currentTarget.style.borderColor = "#1E4DA080"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "#1E4DA050"; }}
               >
                 View Case Studies <ArrowRight className="w-4 h-4" />
               </a>

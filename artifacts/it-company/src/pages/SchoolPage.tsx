@@ -36,16 +36,16 @@ const TABS = ["Overview", "Fees", "Timetable", "Results"];
 
 function DashboardOverview() {
   const kpis = [
-    { label: "Total Students", value: "1,284", delta: "+38 this term", up: true, color: "#1a69c4", Icon: Users },
-    { label: "Attendance Today", value: "96.4%", delta: "+1.2% vs yesterday", up: true, color: "#10b981", Icon: UserCheck },
-    { label: "Fees Collected", value: "£84.2K", delta: "£12.4K outstanding", up: false, color: "#f59e0b", Icon: Wallet },
-    { label: "Exams This Week", value: "6", delta: "3 results pending", up: true, color: "#8b5cf6", Icon: ClipboardList },
+    { label: "Total Students", value: "1,284", delta: "+38 this term", up: true, color: "#1E4DA0", Icon: Users },
+    { label: "Attendance Today", value: "96.4%", delta: "+1.2% vs yesterday", up: true, color: "#4FC6FF", Icon: UserCheck },
+    { label: "Fees Collected", value: "£84.2K", delta: "£12.4K outstanding", up: false, color: "#4FC6FF", Icon: Wallet },
+    { label: "Exams This Week", value: "6", delta: "3 results pending", up: true, color: "#1E4DA0", Icon: ClipboardList },
   ];
   const notices = [
-    { type: "Fee", msg: "Term 2 fee due — 142 students", color: "#f59e0b", time: "Today" },
-    { type: "Exam", msg: "Maths Yr 10 results uploaded", color: "#1a69c4", time: "2h ago" },
-    { type: "Absent", msg: "18 students marked absent", color: "#ef4444", time: "9:15 AM" },
-    { type: "New", msg: "3 new admissions approved", color: "#10b981", time: "Yesterday" },
+    { type: "Fee", msg: "Term 2 fee due — 142 students", color: "#4FC6FF", time: "Today" },
+    { type: "Exam", msg: "Maths Yr 10 results uploaded", color: "#1E4DA0", time: "2h ago" },
+    { type: "Absent", msg: "18 students marked absent", color: "#1E4DA0", time: "9:15 AM" },
+    { type: "New", msg: "3 new admissions approved", color: "#4FC6FF", time: "Yesterday" },
   ];
   const classes = [
     { name: "Year 7A", students: 28, teacher: "Mrs. Ahmed", present: 27 },
@@ -120,10 +120,10 @@ function FeeSlide() {
   const collected = [62, 70, 58, 80, 75, 90, 85, 88, 82, 95, 90, 98];
   const outstanding = [18, 12, 22, 10, 15, 8, 12, 9, 14, 7, 10, 6];
   const feeBreakdown = [
-    { name: "Tuition Fees",   amount: "£54,200", pct: 90, color: "#1a69c4" },
-    { name: "Transport",      amount: "£12,800", pct: 65, color: "#10b981" },
-    { name: "Library & Lab",  amount: "£6,400",  pct: 45, color: "#8b5cf6" },
-    { name: "Sports & Trips", amount: "£4,200",  pct: 30, color: "#f59e0b" },
+    { name: "Tuition Fees",   amount: "£54,200", pct: 90, color: "#1E4DA0" },
+    { name: "Transport",      amount: "£12,800", pct: 65, color: "#4FC6FF" },
+    { name: "Library & Lab",  amount: "£6,400",  pct: 45, color: "#1E4DA0" },
+    { name: "Sports & Trips", amount: "£4,200",  pct: 30, color: "#4FC6FF" },
   ];
   const pending = [
     { student: "Amir Hassan",    class: "Yr 9B",  amount: "£1,200", due: "3 days", overdue: false },
@@ -137,7 +137,7 @@ function FeeSlide() {
         <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1">
           <div className="flex items-center justify-between mb-2">
             <p className="text-[8px] font-semibold text-white/50">Fee Collection</p>
-            <span className="text-[8px] font-black" style={{ color: "#1a69c4" }}>£84,200</span>
+            <span className="text-[8px] font-black" style={{ color: "#1E4DA0" }}>£84,200</span>
           </div>
           {feeBreakdown.map((r, i) => (
             <div key={i} className="mb-2">
@@ -148,7 +148,7 @@ function FeeSlide() {
               <div className="h-1 bg-white/8 rounded-full"><div className="h-full rounded-full" style={{ width: `${r.pct}%`, background: r.color }} /></div>
             </div>
           ))}
-          <div className="mt-2 rounded-lg px-2 py-1.5 border" style={{ background: "rgba(26,105,196,0.15)", borderColor: "rgba(26,105,196,0.3)" }}>
+          <div className="mt-2 rounded-lg px-2 py-1.5 border" style={{ background: "rgba(30,77,160,0.15)", borderColor: "rgba(30,77,160,0.3)" }}>
             <p className="text-[7px] text-white/60 font-semibold">Outstanding</p>
             <p className="text-[14px] font-black text-white">£12,400</p>
           </div>
@@ -160,15 +160,15 @@ function FeeSlide() {
           {months.map((m, i) => (
             <div key={i} className="flex flex-col items-center gap-0.5">
               <div className="w-full flex flex-col-reverse gap-px">
-                <div className="w-full rounded-sm" style={{ height: `${(collected[i]/98)*36}px`, background: "#1a69c4" }} />
-                <div className="w-full rounded-sm" style={{ height: `${(outstanding[i]/22)*12}px`, background: "#f59e0b88" }} />
+                <div className="w-full rounded-sm" style={{ height: `${(collected[i]/98)*36}px`, background: "#1E4DA0" }} />
+                <div className="w-full rounded-sm" style={{ height: `${(outstanding[i]/22)*12}px`, background: "#4FC6FF88" }} />
               </div>
               <span className="text-[5px] text-white/20">{m}</span>
             </div>
           ))}
         </div>
         <div className="flex gap-3 mb-3">
-          {[["Collected","#1a69c4"],["Outstanding","#f59e0b"]].map(([l,c])=>(
+          {[["Collected","#1E4DA0"],["Outstanding","#4FC6FF"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[7px] text-white/35">{l}</span></div>
           ))}
         </div>
@@ -197,13 +197,13 @@ function TimetableSlide() {
   const days = ["Mon","Tue","Wed","Thu","Fri"];
   const periods = ["8:30","9:30","10:30","11:30","12:30","1:30","2:30"];
   const subjects: Record<string,{label:string;color:string}> = {
-    maths:   { label: "Maths",    color: "#1a69c4" },
-    eng:     { label: "English",  color: "#10b981" },
-    sci:     { label: "Science",  color: "#8b5cf6" },
-    hist:    { label: "History",  color: "#f59e0b" },
-    geo:     { label: "Geography",color: "#ef4444" },
-    pe:      { label: "PE",       color: "#06b6d4" },
-    art:     { label: "Art",      color: "#ec4899" },
+    maths:   { label: "Maths",    color: "#1E4DA0" },
+    eng:     { label: "English",  color: "#4FC6FF" },
+    sci:     { label: "Science",  color: "#1E4DA0" },
+    hist:    { label: "History",  color: "#4FC6FF" },
+    geo:     { label: "Geography",color: "#1E4DA0" },
+    pe:      { label: "PE",       color: "#4FC6FF" },
+    art:     { label: "Art",      color: "#4FC6FF" },
     break:   { label: "Break",    color: "" },
     lunch:   { label: "Lunch",    color: "" },
   };
@@ -218,7 +218,7 @@ function TimetableSlide() {
     <div className="flex flex-col flex-1 min-h-0">
       <div className="flex items-center justify-between mb-2">
         <p className="text-[8.5px] font-semibold text-white/50">Year 9A — Weekly Timetable</p>
-        <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(26,105,196,0.2)", color: "#1a69c4" }}>Current Week</span>
+        <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(30,77,160,0.2)", color: "#1E4DA0" }}>Current Week</span>
       </div>
       <div className="flex-1 min-h-0 overflow-auto">
         <table className="w-full text-[7px] border-collapse">
@@ -267,14 +267,14 @@ function ResultsSlide() {
     { name: "Emma Clarke",    maths: 88, eng: 94, sci: 80, hist: 92, avg: 88.5, grade: "A"  },
     { name: "Ravi Menon",     maths: 71, eng: 68, sci: 74, hist: 65, avg: 69.5, grade: "C+" },
   ];
-  const gradeColor = (g: string) => g.startsWith("A") ? "#10b981" : g.startsWith("B") ? "#1a69c4" : "#f59e0b";
+  const gradeColor = (g: string) => g.startsWith("A") ? "#4FC6FF" : g.startsWith("B") ? "#1E4DA0" : "#4FC6FF";
   return (
     <div className="flex flex-col flex-1 min-h-0">
       <div className="flex items-center justify-between mb-2">
         <p className="text-[8.5px] font-semibold text-white/50">Year 9A — Term 2 Results</p>
         <div className="flex gap-2">
           <span className="text-[7px] text-emerald-400 font-semibold">Class Avg: 81.4%</span>
-          <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(26,105,196,0.2)", color: "#1a69c4" }}>Published</span>
+          <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(30,77,160,0.2)", color: "#1E4DA0" }}>Published</span>
         </div>
       </div>
       <table className="w-full text-[7.5px] flex-1">
@@ -290,7 +290,7 @@ function ResultsSlide() {
             <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
               <td className="py-2 pr-3 font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>{s.name}</td>
               {[s.maths,s.eng,s.sci,s.hist].map((m,j)=>(
-                <td key={j} className="py-2 pr-3" style={{ color: m>=90?"#10b981":m>=75?"rgba(255,255,255,0.7)":"#f59e0b" }}>{m}%</td>
+                <td key={j} className="py-2 pr-3" style={{ color: m>=90?"#4FC6FF":m>=75?"rgba(255,255,255,0.7)":"#4FC6FF" }}>{m}%</td>
               ))}
               <td className="py-2 pr-3 font-bold" style={{ color: "rgba(255,255,255,0.9)" }}>{s.avg}%</td>
               <td className="py-2">
@@ -321,8 +321,8 @@ function SchoolDashboard() {
     <div className="h-full rounded-2xl overflow-hidden flex flex-col" style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.25)" }}>
-            <GraduationCap className="w-3.5 h-3.5" style={{ color: "#1a69c4" }} />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.25)" }}>
+            <GraduationCap className="w-3.5 h-3.5" style={{ color: "#1E4DA0" }} />
           </div>
           <span className="font-bold text-white text-[11px]">OneSoft School</span>
         </div>
@@ -330,7 +330,7 @@ function SchoolDashboard() {
           {slides.map((s, i) => (
             <button key={i} onClick={() => setSlide(i)}
               className="text-[9px] px-2.5 py-1 rounded-md font-medium transition-all"
-              style={{ background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
+              style={{ background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
               {s.label}
             </button>
           ))}
@@ -343,7 +343,7 @@ function SchoolDashboard() {
         {slides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.2)" }} />
+            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.2)" }} />
         ))}
       </div>
     </div>
@@ -353,48 +353,48 @@ function SchoolDashboard() {
 /* ─────────────────── Page data ──────────────────────────── */
 
 const modules = [
-  { icon: Users,        color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430", title: "Student Management",
+  { icon: Users,        color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Student Management",
     desc: "Complete student lifecycle from application to graduation — profiles, documents, and history in one place.",
     pts: ["Online admissions & enrolment", "Student profiles with document vault", "Class & section assignment", "Alumni & leavers tracking"] },
-  { icon: Wallet,       color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Fee Management",
+  { icon: Wallet,       color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Fee Management",
     desc: "Automated fee schedules, instant receipts, outstanding trackers, and parent payment portals.",
     pts: ["Flexible fee structures per class", "Automated due date reminders", "Online & cash payment recording", "Aged debtors & collection reports"] },
-  { icon: UserCheck,    color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "Attendance Tracking",
+  { icon: UserCheck,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Attendance Tracking",
     desc: "Mark attendance in seconds, auto-notify parents of absences, and generate compliance reports.",
     pts: ["One-click class-wise attendance", "Automated parent SMS/email alerts", "Monthly attendance registers", "Biometric & RFID integration ready"] },
-  { icon: Calendar,     color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Timetable & Scheduling",
+  { icon: Calendar,     color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Timetable & Scheduling",
     desc: "Drag-and-drop timetable builder that auto-checks conflicts across teachers, rooms, and subjects.",
     pts: ["Conflict-free schedule builder", "Substitute teacher assignment", "Room & lab allocation", "Exportable weekly timetables"] },
-  { icon: ClipboardList,color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Exams & Results",
+  { icon: ClipboardList,color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Exams & Results",
     desc: "Schedule exams, enter marks, auto-calculate grades, and publish result cards to parents instantly.",
     pts: ["Configurable grading schemes", "Auto-calculated averages & ranks", "Result cards generated instantly", "Parent portal result access"] },
-  { icon: Library,      color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Library Management",
+  { icon: Library,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Library Management",
     desc: "Catalogue books, manage checkouts, track overdue returns, and enforce borrowing limits automatically.",
     pts: ["Book catalogue with ISBN scan", "Student checkout & return tracking", "Overdue notices auto-sent", "Stock audit & procurement reports"] },
-  { icon: Bus,          color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Transport Management",
+  { icon: Bus,          color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Transport Management",
     desc: "Define routes and stops, assign students to buses, and give parents live departure tracking.",
     pts: ["Route & stop management", "Student bus assignment", "Driver & vehicle records", "Parent transport notifications"] },
-  { icon: Bell,         color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Communication Hub",
+  { icon: Bell,         color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Communication Hub",
     desc: "Send notices, circulars, and announcements to parents and staff via SMS, email, or in-app push.",
     pts: ["Bulk SMS & email to parents", "Notice board & circular archive", "Parent-teacher message threads", "Event & holiday calendar"] },
 ];
 
 const flow = [
-  { step: "01", icon: Users,        color: "#1a69c4", title: "Student Enrolled",            detail: "Admission form submitted online — profile, class & fee schedule created automatically" },
-  { step: "02", icon: UserCheck,    color: "#10b981", title: "Attendance Marked",            detail: "Teacher marks attendance in one click — absent students' parents notified instantly" },
-  { step: "03", icon: Wallet,       color: "#f59e0b", title: "Fee Due — Reminder Sent",     detail: "System detects upcoming due dates and sends automated payment reminders to parents" },
-  { step: "04", icon: ClipboardList,color: "#8b5cf6", title: "Exams Completed",             detail: "Marks entered once — averages, ranks, and grade cards generated automatically" },
-  { step: "05", icon: FileText,     color: "#ef4444", title: "Result Cards Published",       detail: "Parents receive result cards on their portal the moment the teacher clicks 'Publish'" },
-  { step: "06", icon: BarChart3,    color: "#06b6d4", title: "Admin Gets Full Picture",      detail: "Live dashboards show fees, attendance, results, and staff — no manual reports needed" },
+  { step: "01", icon: Users,        color: "#1E4DA0", title: "Student Enrolled",            detail: "Admission form submitted online — profile, class & fee schedule created automatically" },
+  { step: "02", icon: UserCheck,    color: "#4FC6FF", title: "Attendance Marked",            detail: "Teacher marks attendance in one click — absent students' parents notified instantly" },
+  { step: "03", icon: Wallet,       color: "#4FC6FF", title: "Fee Due — Reminder Sent",     detail: "System detects upcoming due dates and sends automated payment reminders to parents" },
+  { step: "04", icon: ClipboardList,color: "#1E4DA0", title: "Exams Completed",             detail: "Marks entered once — averages, ranks, and grade cards generated automatically" },
+  { step: "05", icon: FileText,     color: "#1E4DA0", title: "Result Cards Published",       detail: "Parents receive result cards on their portal the moment the teacher clicks 'Publish'" },
+  { step: "06", icon: BarChart3,    color: "#4FC6FF", title: "Admin Gets Full Picture",      detail: "Live dashboards show fees, attendance, results, and staff — no manual reports needed" },
 ];
 
 const testimonials = [
   { quote: "We used to spend the entire first week of term just sorting fee ledgers and attendance registers. With OneSoft, the data is already there on day one. Parents get fee reminders automatically and I haven't chased a single payment manually this term.",
-    name: "Mrs. Anita Sharma", role: "Principal", co: "Bright Futures Academy, Karachi, Pakistan", color: "#1a69c4" },
+    name: "Mrs. Anita Sharma", role: "Principal", co: "Bright Futures Academy, Karachi, Pakistan", color: "#1E4DA0" },
   { quote: "The timetable builder alone saved us two full days of admin. It checks conflicts automatically — no more double-booking teachers or rooms. And when we need a substitute, we assign them in seconds.",
-    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Dubai, UAE", color: "#10b981" },
+    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Dubai, UAE", color: "#4FC6FF" },
   { quote: "Parents love the portal. They can see attendance, results, and fee balance from their phone. We've had zero calls asking 'did my child come in today?' since going live. That alone is worth every penny.",
-    name: "Ms. Fatima Al-Rashid", role: "IT & Operations Lead", co: "Crescent Park School, Toronto, Canada", color: "#8b5cf6" },
+    name: "Ms. Fatima Al-Rashid", role: "IT & Operations Lead", co: "Crescent Park School, Toronto, Canada", color: "#1E4DA0" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -428,10 +428,10 @@ export default function SchoolPage() {
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)" }} />
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(26,105,196,0.10)", filter: "blur(90px)" }}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)" }} />
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(30,77,160,0.10)", filter: "blur(90px)" }}
             animate={{ y: [0, -18, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(26,105,196,0.07)", filter: "blur(110px)" }}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(30,77,160,0.07)", filter: "blur(110px)" }}
             animate={{ y: [0, 18, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
         </div>
 
@@ -443,14 +443,14 @@ export default function SchoolPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span style={{ color: t50 }}>Products</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span style={{ color: "#1a69c4", fontWeight: 600 }}>School Management</span>
+            <span style={{ color: "#1E4DA0", fontWeight: 600 }}>School Management</span>
           </motion.div>
 
           {/* headline */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <GraduationCap className="w-3.5 h-3.5" />School Management ERP
               </span>
             </motion.div>
@@ -458,7 +458,7 @@ export default function SchoolPage() {
             <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.05]"
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }}>
               Your School,{" "}
-              <span style={{ color: "#1a69c4" }}>Fully Managed.</span>
+              <span style={{ color: "#1E4DA0" }}>Fully Managed.</span>
             </motion.h1>
 
             <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{ color: t60 }}
@@ -469,7 +469,7 @@ export default function SchoolPage() {
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
               <Button size="lg" className="h-14 px-10 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("School Management ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -490,10 +490,10 @@ export default function SchoolPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { to: 500,  suf: "+",  label: "Schools on Platform",      Icon: Building2,  color: "#1a69c4" },
-              { to: 200,  suf: "K+", label: "Students Managed",         Icon: Users,      color: "#10b981" },
-              { to: 98,   suf: "%",  label: "Average Fee Collection",   Icon: Wallet,     color: "#8b5cf6" },
-              { to: 3,    suf: "hrs",label: "Admin Saved Per Day",      Icon: Clock,      color: "#f59e0b" },
+              { to: 500,  suf: "+",  label: "Schools on Platform",      Icon: Building2,  color: "#1E4DA0" },
+              { to: 200,  suf: "K+", label: "Students Managed",         Icon: Users,      color: "#4FC6FF" },
+              { to: 98,   suf: "%",  label: "Average Fee Collection",   Icon: Wallet,     color: "#1E4DA0" },
+              { to: 3,    suf: "hrs",label: "Admin Saved Per Day",      Icon: Clock,      color: "#4FC6FF" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -514,12 +514,12 @@ export default function SchoolPage() {
       {/* ═══ FLOW ═══════════════════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Sparkles className="w-3.5 h-3.5" />Everything Connected
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Enrol once. Everything follows.</h2>
@@ -561,7 +561,7 @@ export default function SchoolPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <BookOpen className="w-3.5 h-3.5" />8 Core Modules
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Everything your school needs,<br />in one system.</h2>
@@ -608,13 +608,13 @@ export default function SchoolPage() {
       {/* ═══ PARENT PORTAL DEEP-DIVE ═════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div className="flex-1"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <MessageSquare className="w-3.5 h-3.5" />Parent Portal & Communication
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Parents always<br />in the picture.</h2>
@@ -624,16 +624,16 @@ export default function SchoolPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: UserCheck,    color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430",
+                  { icon: UserCheck,    color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Absence alert sent within 60 seconds",
                     sub: "If a student is marked absent, parents receive an automated SMS and app notification instantly" },
-                  { icon: Wallet,       color: "#10b981", bg: "#052e1c", border: "#10b98130",
+                  { icon: Wallet,       color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
                     title: "Fee reminders auto-sent 7 days before due date",
                     sub: "Parents receive payment reminders automatically — no staff intervention needed" },
-                  { icon: Award,        color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30",
+                  { icon: Award,        color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
                     title: "Results visible to parents the moment they're published",
                     sub: "No waiting for report cards — parents see marks and grades on their portal instantly" },
-                  { icon: Bell,         color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630",
+                  { icon: Bell,         color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
                     title: "Notices, events & circulars pushed to all parents",
                     sub: "Replace printed letters with instant digital notifications to every parent simultaneously" },
                 ].map((item, i) => (
@@ -655,7 +655,7 @@ export default function SchoolPage() {
               </div>
 
               <Button size="lg" className="h-13 px-8 text-base font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("School Management ERP")}>
                 See Parent Portal Demo <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -667,8 +667,8 @@ export default function SchoolPage() {
               <div className="rounded-2xl overflow-hidden" style={{ background: tableBg, border: `1px solid ${dividerColor}`, boxShadow: "0 30px 60px rgba(0,0,0,0.12)" }}>
                 <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${dividerColor}` }}>
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.15)" }}>
-                      <GraduationCap className="w-4 h-4" style={{ color: "#1a69c4" }} />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)" }}>
+                      <GraduationCap className="w-4 h-4" style={{ color: "#1E4DA0" }} />
                     </div>
                     <span className="font-bold text-sm">Parent Portal — Aisha Rahman</span>
                   </div>
@@ -680,9 +680,9 @@ export default function SchoolPage() {
 
                 <div className="grid grid-cols-3 gap-px" style={{ background: gridLine }}>
                   {[
-                    { label: "Attendance", value: "97.2%", color: "#10b981" },
-                    { label: "Class Rank",  value: "2nd",  color: "#1a69c4" },
-                    { label: "Fee Balance", value: "£0",   color: "#f59e0b" },
+                    { label: "Attendance", value: "97.2%", color: "#4FC6FF" },
+                    { label: "Class Rank",  value: "2nd",  color: "#1E4DA0" },
+                    { label: "Fee Balance", value: "£0",   color: "#4FC6FF" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
                       <p className="text-xs mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -695,11 +695,11 @@ export default function SchoolPage() {
                   <p className="text-xs font-semibold mb-3" style={{ color: t45 }}>Recent Subjects — Term 2</p>
                   <div className="space-y-3">
                     {[
-                      { subject: "Mathematics",  mark: 94, grade: "A*", color: "#1a69c4" },
-                      { subject: "English",       mark: 88, grade: "A",  color: "#10b981" },
-                      { subject: "Science",       mark: 91, grade: "A*", color: "#8b5cf6" },
-                      { subject: "History",       mark: 85, grade: "A",  color: "#f59e0b" },
-                      { subject: "Geography",     mark: 79, grade: "B+", color: "#ef4444" },
+                      { subject: "Mathematics",  mark: 94, grade: "A*", color: "#1E4DA0" },
+                      { subject: "English",       mark: 88, grade: "A",  color: "#4FC6FF" },
+                      { subject: "Science",       mark: 91, grade: "A*", color: "#1E4DA0" },
+                      { subject: "History",       mark: 85, grade: "A",  color: "#4FC6FF" },
+                      { subject: "Geography",     mark: 79, grade: "B+", color: "#1E4DA0" },
                     ].map((r, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <span className="text-xs w-28 shrink-0" style={{ color: t65 }}>{r.subject}</span>
@@ -711,14 +711,14 @@ export default function SchoolPage() {
                     ))}
                   </div>
 
-                  <div className="mt-4 rounded-xl p-3" style={{ background: "rgba(26,105,196,0.08)", border: "1px solid rgba(26,105,196,0.20)" }}>
+                  <div className="mt-4 rounded-xl p-3" style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.20)" }}>
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs font-semibold" style={{ color: t65 }}>Next Fee Due</p>
-                        <p className="text-base font-black" style={{ color: "#1a69c4" }}>£1,200 — Term 3</p>
+                        <p className="text-base font-black" style={{ color: "#1E4DA0" }}>£1,200 — Term 3</p>
                         <p className="text-[10px]" style={{ color: t45 }}>Due: 1 September 2026</p>
                       </div>
-                      <button className="text-xs font-bold px-3 py-1.5 rounded-lg" style={{ background: "#1a69c4", color: "#ffffff" }}>
+                      <button className="text-xs font-bold px-3 py-1.5 rounded-lg" style={{ background: "#1E4DA0", color: "#ffffff" }}>
                         Pay Now
                       </button>
                     </div>
@@ -736,7 +736,7 @@ export default function SchoolPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Schools Say
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by schools worldwide.</h2>
@@ -772,23 +772,23 @@ export default function SchoolPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Lock className="w-3.5 h-3.5" />No card required · Free 30-day trial
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Less admin.<br />
-              <span style={{ color: "#1a69c4" }}>More education.</span>
+              <span style={{ color: "#1E4DA0" }}>More education.</span>
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: t55 }}>
               Join 500+ schools that run their entire operation on OneSoft. Set up in a week, fully live in a term.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("School Management ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -803,53 +803,53 @@ export default function SchoolPage() {
 
       <CTAStrip onCTA={() => openCTAModal("School Management ERP")} />
       <FeatureMarqueeSection
-        accentColor="#1a69c4"
+        accentColor="#1E4DA0"
         heading="Everything a School Needs"
         subheading="From student enrolment to exam results — every module built for modern schools and academies."
         row1={[
-          { icon: "🎓", label: "Student Enrolment",     color: "#1a69c4" },
-          { icon: "📋", label: "Attendance Tracking",   color: "#8b5cf6" },
-          { icon: "💳", label: "Fee Management",        color: "#10b981" },
-          { icon: "📝", label: "Exam Scheduling",       color: "#f59e0b" },
-          { icon: "📅", label: "Timetabling",           color: "#06b6d4" },
-          { icon: "👨‍👩‍👦", label: "Parent Portal",       color: "#ec4899" },
-          { icon: "📚", label: "Library Management",    color: "#14b8a6" },
-          { icon: "🏆", label: "Report Cards",          color: "#6366f1" },
-          { icon: "🔔", label: "SMS & Push Alerts",     color: "#f97316" },
-          { icon: "🏫", label: "Multi-Branch",          color: "#a855f7" },
-          { icon: "🚌", label: "Transport Tracking",    color: "#ef4444" },
-          { icon: "🛏️", label: "Hostel Management",    color: "#0ea5e9" },
+          { icon: "🎓", label: "Student Enrolment",     color: "#1E4DA0" },
+          { icon: "📋", label: "Attendance Tracking",   color: "#1E4DA0" },
+          { icon: "💳", label: "Fee Management",        color: "#4FC6FF" },
+          { icon: "📝", label: "Exam Scheduling",       color: "#4FC6FF" },
+          { icon: "📅", label: "Timetabling",           color: "#4FC6FF" },
+          { icon: "👨‍👩‍👦", label: "Parent Portal",       color: "#4FC6FF" },
+          { icon: "📚", label: "Library Management",    color: "#4FC6FF" },
+          { icon: "🏆", label: "Report Cards",          color: "#1E4DA0" },
+          { icon: "🔔", label: "SMS & Push Alerts",     color: "#1E4DA0" },
+          { icon: "🏫", label: "Multi-Branch",          color: "#1E4DA0" },
+          { icon: "🚌", label: "Transport Tracking",    color: "#1E4DA0" },
+          { icon: "🛏️", label: "Hostel Management",    color: "#4FC6FF" },
         ]}
         row2={[
-          { icon: "👩‍🏫", label: "Staff Payroll",        color: "#10b981" },
-          { icon: "🗂️", label: "HR Management",        color: "#3b82f6" },
-          { icon: "📢", label: "Notice Board",          color: "#8b5cf6" },
-          { icon: "🏖️", label: "Leave Management",     color: "#f59e0b" },
-          { icon: "🎓", label: "Certificate Printing",  color: "#06b6d4" },
-          { icon: "📊", label: "Academic Analytics",    color: "#ec4899" },
-          { icon: "💻", label: "E-Learning Module",     color: "#14b8a6" },
-          { icon: "🩺", label: "Health Records",        color: "#6366f1" },
-          { icon: "🍱", label: "Canteen Management",    color: "#f97316" },
-          { icon: "🔒", label: "Discipline Module",     color: "#a855f7" },
-          { icon: "🎨", label: "Extracurricular",       color: "#ef4444" },
-          { icon: "🌐", label: "Alumni Portal",         color: "#0ea5e9" },
+          { icon: "👩‍🏫", label: "Staff Payroll",        color: "#4FC6FF" },
+          { icon: "🗂️", label: "HR Management",        color: "#1E4DA0" },
+          { icon: "📢", label: "Notice Board",          color: "#1E4DA0" },
+          { icon: "🏖️", label: "Leave Management",     color: "#4FC6FF" },
+          { icon: "🎓", label: "Certificate Printing",  color: "#4FC6FF" },
+          { icon: "📊", label: "Academic Analytics",    color: "#4FC6FF" },
+          { icon: "💻", label: "E-Learning Module",     color: "#4FC6FF" },
+          { icon: "🩺", label: "Health Records",        color: "#1E4DA0" },
+          { icon: "🍱", label: "Canteen Management",    color: "#1E4DA0" },
+          { icon: "🔒", label: "Discipline Module",     color: "#1E4DA0" },
+          { icon: "🎨", label: "Extracurricular",       color: "#1E4DA0" },
+          { icon: "🌐", label: "Alumni Portal",         color: "#4FC6FF" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#10b981" },
-          { icon: "📷", label: "CCTV Integration",      color: "#3b82f6" },
-          { icon: "🗓️", label: "Academic Calendar",    color: "#8b5cf6" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#f59e0b" },
-          { icon: "📈", label: "Progress Tracking",     color: "#06b6d4" },
-          { icon: "💬", label: "Teacher–Parent Chat",   color: "#ec4899" },
-          { icon: "🧾", label: "Fee Receipts",          color: "#14b8a6" },
-          { icon: "🌍", label: "Multi-Language",        color: "#6366f1" },
-          { icon: "⚙️", label: "Custom Workflows",      color: "#f97316" },
-          { icon: "🔄", label: "Data Import/Export",    color: "#a855f7" },
-          { icon: "☁️", label: "Cloud Hosted",          color: "#ef4444" },
-          { icon: "📦", label: "Bulk Operations",       color: "#0ea5e9" },
+          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "📷", label: "CCTV Integration",      color: "#1E4DA0" },
+          { icon: "🗓️", label: "Academic Calendar",    color: "#1E4DA0" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
+          { icon: "📈", label: "Progress Tracking",     color: "#4FC6FF" },
+          { icon: "💬", label: "Teacher–Parent Chat",   color: "#4FC6FF" },
+          { icon: "🧾", label: "Fee Receipts",          color: "#4FC6FF" },
+          { icon: "🌍", label: "Multi-Language",        color: "#1E4DA0" },
+          { icon: "⚙️", label: "Custom Workflows",      color: "#1E4DA0" },
+          { icon: "🔄", label: "Data Import/Export",    color: "#1E4DA0" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
+          { icon: "📦", label: "Bulk Operations",       color: "#4FC6FF" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#1a69c4" productName="School ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="School ERP" />
       <ERPCrossLinks current="/school" />
       <Footer />
     </div>

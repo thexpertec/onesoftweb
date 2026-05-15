@@ -17,17 +17,17 @@ import { useCTAModal } from "@/context/CTAModalContext";
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const erpProducts = [
-  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#1a69c4", href: "/school" },
-  { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#1a69c4", href: "/hospital" },
-  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "/restaurant" },
-  { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#7c3aed", href: "/ecommerce" },
-  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#0891b2", href: "/distributor" },
-  { icon: Heart,           label: "Shadi Hall ERP",           desc: "Bookings, catering, billing & vendors",   color: "#db2777", href: "/shadi-hall" },
-  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#10b981", href: "/accounting" },
+  { icon: GraduationCap,   label: "School ERP",              desc: "Admissions, fees, timetables & results",  color: "#1E4DA0", href: "/school" },
+  { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#1E4DA0", href: "/hospital" },
+  { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#1E4DA0", href: "/restaurant" },
+  { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#1E4DA0", href: "/ecommerce" },
+  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#4FC6FF", href: "/distributor" },
+  { icon: Heart,           label: "Shadi Hall ERP",           desc: "Bookings, catering, billing & vendors",   color: "#1E4DA0", href: "/shadi-hall" },
+  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#4FC6FF", href: "/accounting" },
 ];
 
 const themeProducts = [
-  { icon: Palette, label: "OneSites",  desc: "Custom websites built for any business", color: "#1a69c4", href: "/onethemes" },
+  { icon: Palette, label: "OneSites",  desc: "Custom websites built for any business", color: "#1E4DA0", href: "/onethemes" },
 ];
 
 const allServices = [
@@ -46,7 +46,7 @@ const allServices = [
     label: "Custom Software",
     desc: "Bespoke desktop & web applications",
     tags: ["Web Apps", "Desktop Apps", "API Integration"],
-    color: "#7c3aed",
+    color: "#1E4DA0",
     grad: "from-violet-600/20 to-violet-500/5",
     border: "border-violet-500/20",
     href: "#services",
@@ -56,7 +56,7 @@ const allServices = [
     label: "AI Automation",
     desc: "Intelligent workflows that work for you",
     tags: ["Chatbots", "RAG Pipelines", "Predictive AI"],
-    color: "#8b5cf6",
+    color: "#1E4DA0",
     grad: "from-purple-600/20 to-fuchsia-500/5",
     border: "border-purple-500/20",
     href: "#ai-automation",
@@ -67,7 +67,7 @@ const allServices = [
     label: "Ad Creatives",
     desc: "High-conversion visuals & video ads",
     tags: ["Google Ads", "Meta Ads", "Video Creatives"],
-    color: "#f97316",
+    color: "#1E4DA0",
     grad: "from-orange-600/20 to-orange-500/5",
     border: "border-orange-500/20",
     href: "#services",
@@ -87,7 +87,7 @@ const allServices = [
     label: "SEO Optimization",
     desc: "Rank higher and drive organic traffic",
     tags: ["Technical SEO", "On-page", "Link Building"],
-    color: "#10b981",
+    color: "#4FC6FF",
     grad: "from-emerald-600/20 to-teal-500/5",
     border: "border-emerald-500/20",
     href: "#services",

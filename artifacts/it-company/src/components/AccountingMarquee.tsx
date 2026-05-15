@@ -16,48 +16,48 @@ type FeatureItem = {
 };
 
 const row1: FeatureItem[] = [
-  { Icon: BookOpen,      label: "General Ledger",         color: "#10b981" },
-  { Icon: Receipt,       label: "Invoicing",               color: "#3b82f6" },
-  { Icon: Landmark,      label: "Bank Reconciliation",     color: "#8b5cf6" },
-  { Icon: TrendingUp,    label: "Accounts Receivable",     color: "#06b6d4" },
-  { Icon: Wallet,        label: "Accounts Payable",        color: "#f59e0b" },
-  { Icon: CreditCard,    label: "Expense Tracking",        color: "#ec4899" },
-  { Icon: Scale,         label: "Trial Balance",           color: "#14b8a6" },
-  { Icon: PenLine,       label: "Journal Entries",         color: "#6366f1" },
-  { Icon: ShoppingCart,  label: "Purchase Orders",         color: "#f97316" },
-  { Icon: LayoutList,    label: "Chart of Accounts",       color: "#a855f7" },
-  { Icon: FileX,         label: "Credit Notes",            color: "#ef4444" },
-  { Icon: Globe2,        label: "Multi-Currency",          color: "#0ea5e9" },
+  { Icon: BookOpen,      label: "General Ledger",         color: "#4FC6FF" },
+  { Icon: Receipt,       label: "Invoicing",               color: "#1E4DA0" },
+  { Icon: Landmark,      label: "Bank Reconciliation",     color: "#1E4DA0" },
+  { Icon: TrendingUp,    label: "Accounts Receivable",     color: "#4FC6FF" },
+  { Icon: Wallet,        label: "Accounts Payable",        color: "#4FC6FF" },
+  { Icon: CreditCard,    label: "Expense Tracking",        color: "#4FC6FF" },
+  { Icon: Scale,         label: "Trial Balance",           color: "#4FC6FF" },
+  { Icon: PenLine,       label: "Journal Entries",         color: "#1E4DA0" },
+  { Icon: ShoppingCart,  label: "Purchase Orders",         color: "#1E4DA0" },
+  { Icon: LayoutList,    label: "Chart of Accounts",       color: "#1E4DA0" },
+  { Icon: FileX,         label: "Credit Notes",            color: "#1E4DA0" },
+  { Icon: Globe2,        label: "Multi-Currency",          color: "#4FC6FF" },
 ];
 
 const row2: FeatureItem[] = [
-  { Icon: BarChart3,     label: "P&L Statement",          color: "#10b981" },
-  { Icon: LineChart,     label: "Balance Sheet",           color: "#3b82f6" },
-  { Icon: Waves,         label: "Cash Flow",               color: "#8b5cf6" },
-  { Icon: FileCheck,     label: "Tax Returns",             color: "#f59e0b" },
-  { Icon: Building,      label: "Corporate Tax",           color: "#06b6d4" },
-  { Icon: FileText,      label: "Tax Filing",              color: "#ec4899" },
-  { Icon: ClipboardCheck,label: "Compliance Reporting",    color: "#14b8a6" },
-  { Icon: Activity,      label: "Audit Trail",             color: "#6366f1" },
-  { Icon: BarChart2,     label: "Financial Reporting",     color: "#f97316" },
-  { Icon: Target,        label: "Budgeting",               color: "#a855f7" },
-  { Icon: TrendingDown,  label: "Forecasting",             color: "#ef4444" },
-  { Icon: Layers,        label: "Management Accounts",     color: "#0ea5e9" },
+  { Icon: BarChart3,     label: "P&L Statement",          color: "#4FC6FF" },
+  { Icon: LineChart,     label: "Balance Sheet",           color: "#1E4DA0" },
+  { Icon: Waves,         label: "Cash Flow",               color: "#1E4DA0" },
+  { Icon: FileCheck,     label: "Tax Returns",             color: "#4FC6FF" },
+  { Icon: Building,      label: "Corporate Tax",           color: "#4FC6FF" },
+  { Icon: FileText,      label: "Tax Filing",              color: "#4FC6FF" },
+  { Icon: ClipboardCheck,label: "Compliance Reporting",    color: "#4FC6FF" },
+  { Icon: Activity,      label: "Audit Trail",             color: "#1E4DA0" },
+  { Icon: BarChart2,     label: "Financial Reporting",     color: "#1E4DA0" },
+  { Icon: Target,        label: "Budgeting",               color: "#1E4DA0" },
+  { Icon: TrendingDown,  label: "Forecasting",             color: "#1E4DA0" },
+  { Icon: Layers,        label: "Management Accounts",     color: "#4FC6FF" },
 ];
 
 const row3: FeatureItem[] = [
-  { Icon: Users,         label: "Payroll Processing",      color: "#10b981" },
-  { Icon: BadgeCheck,    label: "Payroll Tax",              color: "#3b82f6" },
-  { Icon: Heart,         label: "Pension & Benefits",      color: "#8b5cf6" },
-  { Icon: PiggyBank,     label: "Fixed Assets",            color: "#f59e0b" },
-  { Icon: Calculator,    label: "Depreciation",            color: "#06b6d4" },
-  { Icon: Briefcase,     label: "Project Costing",         color: "#ec4899" },
-  { Icon: FolderTree,    label: "Cost Centres",            color: "#14b8a6" },
-  { Icon: Boxes,         label: "Stock Valuation",         color: "#6366f1" },
-  { Icon: PackageSearch, label: "COGS Tracking",           color: "#f97316" },
-  { Icon: Truck,         label: "Supplier Management",     color: "#a855f7" },
-  { Icon: HandCoins,     label: "Debt Collection",         color: "#ef4444" },
-  { Icon: Banknote,      label: "Direct Debit",            color: "#0ea5e9" },
+  { Icon: Users,         label: "Payroll Processing",      color: "#4FC6FF" },
+  { Icon: BadgeCheck,    label: "Payroll Tax",              color: "#1E4DA0" },
+  { Icon: Heart,         label: "Pension & Benefits",      color: "#1E4DA0" },
+  { Icon: PiggyBank,     label: "Fixed Assets",            color: "#4FC6FF" },
+  { Icon: Calculator,    label: "Depreciation",            color: "#4FC6FF" },
+  { Icon: Briefcase,     label: "Project Costing",         color: "#4FC6FF" },
+  { Icon: FolderTree,    label: "Cost Centres",            color: "#4FC6FF" },
+  { Icon: Boxes,         label: "Stock Valuation",         color: "#1E4DA0" },
+  { Icon: PackageSearch, label: "COGS Tracking",           color: "#1E4DA0" },
+  { Icon: Truck,         label: "Supplier Management",     color: "#1E4DA0" },
+  { Icon: HandCoins,     label: "Debt Collection",         color: "#1E4DA0" },
+  { Icon: Banknote,      label: "Direct Debit",            color: "#4FC6FF" },
 ];
 
 function MarqueeRow({
@@ -121,7 +121,7 @@ export function AccountingMarquee() {
       <div className="container mx-auto px-4 mb-10 text-center relative z-10">
         <span
           className="text-xs font-semibold uppercase tracking-[0.22em] mb-3 block"
-          style={{ color: "#10b981" }}
+          style={{ color: "#4FC6FF" }}
         >
           Complete Feature Suite
         </span>

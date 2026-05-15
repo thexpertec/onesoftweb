@@ -48,12 +48,12 @@ function DashboardSlide() {
   const expenses = [28,36,32,40,35,50,46,56,51,60,55,68];
   const months   = ["J","F","M","A","M","J","J","A","S","O","N","D"];
   const kpis = [
-    { label:"Monthly Revenue",   value:"$118K",  delta:"+21.6%",  up:true,  color:"#10b981", icon:CircleDollarSign },
-    { label:"Outstanding AR",    value:"$24.8K", delta:"−3.2%",   up:false, color:"#3b82f6", icon:Receipt },
-    { label:"Monthly Payroll",   value:"$38.4K", delta:"+4 hires",up:true,  color:"#8b5cf6", icon:Users },
-    { label:"Inventory Value",   value:"$67.2K", delta:"+8.4%",   up:true,  color:"#f59e0b", icon:Boxes },
-    { label:"Accounts Payable",  value:"$18.2K", delta:"Due 30d", up:false, color:"#ef4444", icon:Briefcase },
-    { label:"Cash & Bank",       value:"$52.8K", delta:"+$4.2K",  up:true,  color:"#06b6d4", icon:Wallet },
+    { label:"Monthly Revenue",   value:"$118K",  delta:"+21.6%",  up:true,  color:"#4FC6FF", icon:CircleDollarSign },
+    { label:"Outstanding AR",    value:"$24.8K", delta:"−3.2%",   up:false, color:"#1E4DA0", icon:Receipt },
+    { label:"Monthly Payroll",   value:"$38.4K", delta:"+4 hires",up:true,  color:"#1E4DA0", icon:Users },
+    { label:"Inventory Value",   value:"$67.2K", delta:"+8.4%",   up:true,  color:"#4FC6FF", icon:Boxes },
+    { label:"Accounts Payable",  value:"$18.2K", delta:"Due 30d", up:false, color:"#1E4DA0", icon:Briefcase },
+    { label:"Cash & Bank",       value:"$52.8K", delta:"+$4.2K",  up:true,  color:"#4FC6FF", icon:Wallet },
   ];
   const ledger = [
     { date:"15 May", ref:"INV-0291", account:"Accounts Receivable",debit:"$8,400", credit:"—",     type:"Dr" },
@@ -86,19 +86,19 @@ function DashboardSlide() {
             <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-400/10 px-1 py-0.5 rounded-full">+21.6%</span>
           </div>
           <div className="flex-1 relative min-h-0">
-            <AreaChart data={revenue} color="#10b981" w={168} h={46}/>
-            <div className="absolute inset-0 opacity-50"><AreaChart data={expenses} color="#818cf8" w={168} h={46}/></div>
+            <AreaChart data={revenue} color="#4FC6FF" w={168} h={46}/>
+            <div className="absolute inset-0 opacity-50"><AreaChart data={expenses} color="#1E4DA0" w={168} h={46}/></div>
           </div>
           <div className="grid grid-cols-12 gap-px mt-1">
             {months.map((m,i) => (
               <div key={i} className="flex flex-col items-center gap-0.5">
-                <div className="w-full rounded-sm" style={{height:`${(revenue[i]/118)*12}px`,background:"#10b98120"}}/>
+                <div className="w-full rounded-sm" style={{height:`${(revenue[i]/118)*12}px`,background:"#4FC6FF20"}}/>
                 <span className="text-[4.5px] text-white/15">{m}</span>
               </div>
             ))}
           </div>
           <div className="flex gap-2 mt-1">
-            {[["Revenue","#10b981"],["Expenses","#818cf8"]].map(([l,c])=>(
+            {[["Revenue","#4FC6FF"],["Expenses","#1E4DA0"]].map(([l,c])=>(
               <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[6.5px] text-white/30">{l}</span></div>
             ))}
           </div>
@@ -158,17 +158,17 @@ function PLSlide() {
   const revenueData = [42,55,48,70,63,85,78,95,88,102,97,118];
   const months  = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const income  = [
-    { name:"Sales Revenue",       amount:"$284,400", pct:88, color:"#10b981" },
-    { name:"Service Revenue",     amount:"$32,800",  pct:55, color:"#34d399" },
-    { name:"Subscription Income", amount:"$12,600",  pct:32, color:"#6ee7b7" },
-    { name:"Other Income",        amount:"$4,200",   pct:18, color:"#a7f3d0" },
+    { name:"Sales Revenue",       amount:"$284,400", pct:88, color:"#4FC6FF" },
+    { name:"Service Revenue",     amount:"$32,800",  pct:55, color:"#4FC6FF" },
+    { name:"Subscription Income", amount:"$12,600",  pct:32, color:"#4FC6FF" },
+    { name:"Other Income",        amount:"$4,200",   pct:18, color:"#4FC6FF" },
   ];
   const expenses = [
-    { name:"Cost of Goods Sold",  amount:"$112,600", pct:80, color:"#f59e0b" },
-    { name:"Salaries & Wages",    amount:"$68,400",  pct:58, color:"#8b5cf6" },
-    { name:"Rent & Utilities",    amount:"$18,200",  pct:24, color:"#3b82f6" },
-    { name:"Marketing & Ads",     amount:"$9,800",   pct:14, color:"#ec4899" },
-    { name:"Admin & Software",    amount:"$6,400",   pct: 9, color:"#06b6d4" },
+    { name:"Cost of Goods Sold",  amount:"$112,600", pct:80, color:"#4FC6FF" },
+    { name:"Salaries & Wages",    amount:"$68,400",  pct:58, color:"#1E4DA0" },
+    { name:"Rent & Utilities",    amount:"$18,200",  pct:24, color:"#1E4DA0" },
+    { name:"Marketing & Ads",     amount:"$9,800",   pct:14, color:"#4FC6FF" },
+    { name:"Admin & Software",    amount:"$6,400",   pct: 9, color:"#4FC6FF" },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -204,11 +204,11 @@ function PLSlide() {
           <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-400/10 px-1.5 py-0.5 rounded-full">+34.2% YoY</span>
         </div>
         <div className="relative flex-1 min-h-0">
-          <AreaChart data={revenueData} color="#3b82f6" w={340} h={52}/>
-          <div className="absolute inset-0 opacity-80"><AreaChart data={netData} color="#10b981" w={340} h={52}/></div>
+          <AreaChart data={revenueData} color="#1E4DA0" w={340} h={52}/>
+          <div className="absolute inset-0 opacity-80"><AreaChart data={netData} color="#4FC6FF" w={340} h={52}/></div>
         </div>
         <div className="flex gap-2 mb-1">
-          {[["Revenue","#3b82f6"],["Net Profit","#10b981"]].map(([l,c])=>(
+          {[["Revenue","#1E4DA0"],["Net Profit","#4FC6FF"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[6px] text-white/30">{l}</span></div>
           ))}
         </div>
@@ -217,10 +217,10 @@ function PLSlide() {
         </div>
         <div className="grid grid-cols-4 gap-1.5 pt-1.5 border-t border-white/8">
           {[
-            { label:"Total Revenue",  value:"$334,000", color:"#3b82f6" },
-            { label:"Total Expenses", value:"$215,400", color:"#f59e0b" },
-            { label:"Net Profit",     value:"$118,600", color:"#10b981" },
-            { label:"Tax Provision",  value:"$23,720",  color:"#8b5cf6" },
+            { label:"Total Revenue",  value:"$334,000", color:"#1E4DA0" },
+            { label:"Total Expenses", value:"$215,400", color:"#4FC6FF" },
+            { label:"Net Profit",     value:"$118,600", color:"#4FC6FF" },
+            { label:"Tax Provision",  value:"$23,720",  color:"#1E4DA0" },
           ].map((s,i) => (
             <div key={i} className="rounded-lg p-1.5" style={{background:`${s.color}12`}}>
               <p className="text-[6px] text-white/35 mb-0.5">{s.label}</p>
@@ -232,11 +232,11 @@ function PLSlide() {
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 w-32 shrink-0 flex flex-col">
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Profit Margins</p>
         {[
-          { label:"Gross Margin",     value:"64.9%", color:"#10b981", bar:65 },
-          { label:"Operating Margin", value:"38.2%", color:"#3b82f6", bar:38 },
-          { label:"Net Margin",       value:"35.5%", color:"#8b5cf6", bar:36 },
-          { label:"EBITDA Margin",    value:"41.5%", color:"#f59e0b", bar:42 },
-          { label:"ROE",              value:"28.4%", color:"#ec4899", bar:28 },
+          { label:"Gross Margin",     value:"64.9%", color:"#4FC6FF", bar:65 },
+          { label:"Operating Margin", value:"38.2%", color:"#1E4DA0", bar:38 },
+          { label:"Net Margin",       value:"35.5%", color:"#1E4DA0", bar:36 },
+          { label:"EBITDA Margin",    value:"41.5%", color:"#4FC6FF", bar:42 },
+          { label:"ROE",              value:"28.4%", color:"#4FC6FF", bar:28 },
         ].map((m,i) => (
           <div key={i} className="mb-1.5">
             <div className="flex justify-between mb-0.5">
@@ -269,10 +269,10 @@ function InvoicesSlide() {
     { num:"INV-0285", customer:"BlueSky Pharma Ltd",      date:"28 Apr", due:"12 May", amount:"$4,800",  status:"Sent"    },
   ];
   const aging = [
-    { label:"Current (0–30d)",  amount:"$13,200", pct:55, color:"#10b981" },
-    { label:"31–60 days",       amount:"$5,600",  pct:28, color:"#f59e0b" },
-    { label:"61–90 days",       amount:"$3,200",  pct:16, color:"#f97316" },
-    { label:"90+ days overdue", amount:"$2,100",  pct:11, color:"#ef4444" },
+    { label:"Current (0–30d)",  amount:"$13,200", pct:55, color:"#4FC6FF" },
+    { label:"31–60 days",       amount:"$5,600",  pct:28, color:"#4FC6FF" },
+    { label:"61–90 days",       amount:"$3,200",  pct:16, color:"#1E4DA0" },
+    { label:"90+ days overdue", amount:"$2,100",  pct:11, color:"#1E4DA0" },
   ];
   const sc = (s:string) => s==="Paid"?"text-emerald-400 bg-emerald-400/10":s==="Overdue"?"text-red-400 bg-red-400/10":"text-blue-400 bg-blue-400/10";
   return (
@@ -281,7 +281,7 @@ function InvoicesSlide() {
         <div className="flex items-center justify-between mb-1.5">
           <p className="text-[8px] font-semibold text-white/50">Sales Invoices — May 2026</p>
           <div className="flex gap-1">
-            {[["Sent","#3b82f6"],["Overdue","#ef4444"],["Paid","#10b981"]].map(([s,c])=>(
+            {[["Sent","#1E4DA0"],["Overdue","#1E4DA0"],["Paid","#4FC6FF"]].map(([s,c])=>(
               <span key={s} className="text-[6px] font-bold px-1.5 py-0.5 rounded-full" style={{color:c,background:`${c}18`}}>{s}</span>
             ))}
           </div>
@@ -305,10 +305,10 @@ function InvoicesSlide() {
         </table>
         <div className="mt-auto pt-1.5 border-t border-white/8 grid grid-cols-4 gap-1.5">
           {[
-            { label:"Sent",           value:"$13,200", color:"#3b82f6" },
-            { label:"Overdue",        value:"$5,300",  color:"#ef4444" },
-            { label:"Paid (MTD)",     value:"$27,650", color:"#10b981" },
-            { label:"Avg Days DSO",   value:"19 days", color:"#f59e0b" },
+            { label:"Sent",           value:"$13,200", color:"#1E4DA0" },
+            { label:"Overdue",        value:"$5,300",  color:"#1E4DA0" },
+            { label:"Paid (MTD)",     value:"$27,650", color:"#4FC6FF" },
+            { label:"Avg Days DSO",   value:"19 days", color:"#4FC6FF" },
           ].map((s,i) => (
             <div key={i} className="rounded-lg p-1" style={{background:`${s.color}12`}}>
               <p className="text-[6px] text-white/35">{s.label}</p>
@@ -355,16 +355,16 @@ function HRMSlide() {
     { name:"Kiran Patel",    dept:"Sales",      salary:"$3,400", days:21, leave:1, ok:true  },
   ];
   const depts = [
-    { name:"Finance",    count:2, cost:"$9,000", color:"#8b5cf6", pct:65 },
-    { name:"Operations", count:1, cost:"$3,600", color:"#3b82f6", pct:27 },
-    { name:"Sales",      count:2, cost:"$6,600", color:"#ec4899", pct:50 },
-    { name:"Warehouse",  count:1, cost:"$2,800", color:"#f59e0b", pct:21 },
+    { name:"Finance",    count:2, cost:"$9,000", color:"#1E4DA0", pct:65 },
+    { name:"Operations", count:1, cost:"$3,600", color:"#1E4DA0", pct:27 },
+    { name:"Sales",      count:2, cost:"$6,600", color:"#4FC6FF", pct:50 },
+    { name:"Warehouse",  count:1, cost:"$2,800", color:"#4FC6FF", pct:21 },
   ];
   const payBreakdown = [
-    { label:"Base Salaries",   amount:"$32,400", color:"#8b5cf6", pct:84 },
-    { label:"Overtime",        amount:"$2,800",  color:"#3b82f6", pct:13 },
-    { label:"Bonuses",         amount:"$1,600",  color:"#10b981", pct: 8 },
-    { label:"Employer Tax",    amount:"$3,840",  color:"#f59e0b", pct:10 },
+    { label:"Base Salaries",   amount:"$32,400", color:"#1E4DA0", pct:84 },
+    { label:"Overtime",        amount:"$2,800",  color:"#1E4DA0", pct:13 },
+    { label:"Bonuses",         amount:"$1,600",  color:"#4FC6FF", pct: 8 },
+    { label:"Employer Tax",    amount:"$3,840",  color:"#4FC6FF", pct:10 },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -427,27 +427,27 @@ function HRMSlide() {
 
 function BalanceSheetSlide() {
   const assets = [
-    { name:"Cash & Bank",           value:"$52,800",   color:"#10b981" },
-    { name:"Accounts Receivable",   value:"$24,800",   color:"#3b82f6" },
-    { name:"Inventory",             value:"$67,200",   color:"#f59e0b" },
-    { name:"Prepaid Expenses",      value:"$3,400",    color:"#06b6d4" },
-    { name:"Property & Equipment",  value:"$148,000",  color:"#8b5cf6" },
-    { name:"Less: Depreciation",    value:"($22,400)", color:"#ef4444" },
+    { name:"Cash & Bank",           value:"$52,800",   color:"#4FC6FF" },
+    { name:"Accounts Receivable",   value:"$24,800",   color:"#1E4DA0" },
+    { name:"Inventory",             value:"$67,200",   color:"#4FC6FF" },
+    { name:"Prepaid Expenses",      value:"$3,400",    color:"#4FC6FF" },
+    { name:"Property & Equipment",  value:"$148,000",  color:"#1E4DA0" },
+    { name:"Less: Depreciation",    value:"($22,400)", color:"#1E4DA0" },
   ];
   const liabilities = [
-    { name:"Accounts Payable",  value:"$18,200",  color:"#f97316" },
-    { name:"Tax Payable",       value:"$6,400",   color:"#ec4899" },
-    { name:"Salaries Payable",  value:"$14,400",  color:"#8b5cf6" },
-    { name:"Bank Loan (LT)",    value:"$80,000",  color:"#ef4444" },
+    { name:"Accounts Payable",  value:"$18,200",  color:"#1E4DA0" },
+    { name:"Tax Payable",       value:"$6,400",   color:"#4FC6FF" },
+    { name:"Salaries Payable",  value:"$14,400",  color:"#1E4DA0" },
+    { name:"Bank Loan (LT)",    value:"$80,000",  color:"#1E4DA0" },
   ];
   const equity = [
-    { name:"Retained Earnings", value:"$106,000", color:"#10b981" },
-    { name:"Share Capital",     value:"$48,800",  color:"#3b82f6" },
+    { name:"Retained Earnings", value:"$106,000", color:"#4FC6FF" },
+    { name:"Share Capital",     value:"$48,800",  color:"#1E4DA0" },
   ];
   const ratios = [
-    { label:"Current Ratio",  value:"2.4×",  color:"#10b981" },
-    { label:"Debt Ratio",     value:"0.43",  color:"#f59e0b" },
-    { label:"Equity Ratio",   value:"0.57",  color:"#3b82f6" },
+    { label:"Current Ratio",  value:"2.4×",  color:"#4FC6FF" },
+    { label:"Debt Ratio",     value:"0.43",  color:"#4FC6FF" },
+    { label:"Equity Ratio",   value:"0.57",  color:"#1E4DA0" },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -496,9 +496,9 @@ function BalanceSheetSlide() {
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Summary</p>
         <div className="space-y-1.5">
           {[
-            { label:"Total Assets",      value:"$273,800", color:"#10b981" },
-            { label:"Total Liabilities", value:"$119,000", color:"#ef4444" },
-            { label:"Total Equity",      value:"$154,800", color:"#3b82f6" },
+            { label:"Total Assets",      value:"$273,800", color:"#4FC6FF" },
+            { label:"Total Liabilities", value:"$119,000", color:"#1E4DA0" },
+            { label:"Total Equity",      value:"$154,800", color:"#1E4DA0" },
           ].map((s,i)=>(
             <div key={i} className="rounded-lg p-1.5" style={{background:`${s.color}12`}}>
               <p className="text-[6px] text-white/35">{s.label}</p>
@@ -551,9 +551,9 @@ function CashFlowSlide() {
     <div className="flex gap-2 flex-1 min-h-0">
       <div className="flex flex-col gap-1.5 shrink-0" style={{width:"200px"}}>
         {[
-          { title:"Operating Activities",  items:operating,  total:"$130,200", color:"#10b981" },
-          { title:"Investing Activities",  items:investing,  total:"($23,600)",color:"#f59e0b" },
-          { title:"Financing Activities",  items:financing,  total:"($20,000)",color:"#3b82f6" },
+          { title:"Operating Activities",  items:operating,  total:"$130,200", color:"#4FC6FF" },
+          { title:"Investing Activities",  items:investing,  total:"($23,600)",color:"#4FC6FF" },
+          { title:"Financing Activities",  items:financing,  total:"($20,000)",color:"#1E4DA0" },
         ].map((sec,si)=>(
           <div key={si} className="bg-white/[0.03] rounded-xl p-2 border border-white/8 flex-1">
             <div className="flex justify-between items-center mb-1">
@@ -582,12 +582,12 @@ function CashFlowSlide() {
               <div key={i} className="flex-1 flex flex-col items-center justify-end gap-0.5">
                 {pos ? (
                   <>
-                    <div className="w-full rounded-t-sm" style={{height:`${h}%`,background:"#10b981",opacity:0.7+i*0.02}}/>
+                    <div className="w-full rounded-t-sm" style={{height:`${h}%`,background:"#4FC6FF",opacity:0.7+i*0.02}}/>
                     <span className="text-[4.5px] text-white/20">{mLabels[i]}</span>
                   </>
                 ) : (
                   <>
-                    <div className="w-full rounded-b-sm" style={{height:`${h}%`,background:"#ef4444",opacity:0.7}}/>
+                    <div className="w-full rounded-b-sm" style={{height:`${h}%`,background:"#1E4DA0",opacity:0.7}}/>
                     <span className="text-[4.5px] text-white/20">{mLabels[i]}</span>
                   </>
                 )}
@@ -596,7 +596,7 @@ function CashFlowSlide() {
           })}
         </div>
         <div className="flex gap-2 mt-1">
-          {[["Positive","#10b981"],["Negative","#ef4444"]].map(([l,c])=>(
+          {[["Positive","#4FC6FF"],["Negative","#1E4DA0"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-sm" style={{background:c}}/><span className="text-[6px] text-white/30">{l}</span></div>
           ))}
         </div>
@@ -604,11 +604,11 @@ function CashFlowSlide() {
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 w-32 shrink-0 flex flex-col">
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Cash Summary</p>
         {[
-          { label:"Opening Balance",  value:"$44,600",  color:"#3b82f6" },
-          { label:"Operating CF",     value:"+$130.2K", color:"#10b981" },
-          { label:"Investing CF",     value:"−$23.6K",  color:"#f59e0b" },
-          { label:"Financing CF",     value:"−$20.0K",  color:"#8b5cf6" },
-          { label:"Closing Balance",  value:"$131.2K",  color:"#10b981" },
+          { label:"Opening Balance",  value:"$44,600",  color:"#1E4DA0" },
+          { label:"Operating CF",     value:"+$130.2K", color:"#4FC6FF" },
+          { label:"Investing CF",     value:"−$23.6K",  color:"#4FC6FF" },
+          { label:"Financing CF",     value:"−$20.0K",  color:"#1E4DA0" },
+          { label:"Closing Balance",  value:"$131.2K",  color:"#4FC6FF" },
         ].map((r,i)=>(
           <div key={i} className="flex justify-between py-1 border-b border-white/[0.04]">
             <span className="text-[6.5px] text-white/40">{r.label}</span>
@@ -629,12 +629,12 @@ function CashFlowSlide() {
 
 function ExpensesSlide() {
   const categories = [
-    { name:"COGS",               amount:"$112,600", pct:52, color:"#f59e0b" },
-    { name:"Salaries & Wages",   amount:"$68,400",  pct:36, color:"#8b5cf6" },
-    { name:"Rent & Utilities",   amount:"$18,200",  pct:22, color:"#3b82f6" },
-    { name:"Marketing",          amount:"$9,800",   pct:14, color:"#ec4899" },
-    { name:"Software & Tools",   amount:"$6,400",   pct: 9, color:"#06b6d4" },
-    { name:"Travel & Expenses",  amount:"$3,200",   pct: 5, color:"#10b981" },
+    { name:"COGS",               amount:"$112,600", pct:52, color:"#4FC6FF" },
+    { name:"Salaries & Wages",   amount:"$68,400",  pct:36, color:"#1E4DA0" },
+    { name:"Rent & Utilities",   amount:"$18,200",  pct:22, color:"#1E4DA0" },
+    { name:"Marketing",          amount:"$9,800",   pct:14, color:"#4FC6FF" },
+    { name:"Software & Tools",   amount:"$6,400",   pct: 9, color:"#4FC6FF" },
+    { name:"Travel & Expenses",  amount:"$3,200",   pct: 5, color:"#4FC6FF" },
   ];
   const bills = [
     { supplier:"Global Cloud Inc",      ref:"BILL-0112", due:"20 May", amount:"$2,400",  status:"Approved" },
@@ -686,9 +686,9 @@ function ExpensesSlide() {
         </table>
         <div className="mt-auto pt-1.5 border-t border-white/8 grid grid-cols-3 gap-1.5">
           {[
-            { label:"Paid (MTD)",    value:"$8,000",  color:"#10b981" },
-            { label:"Pending AP",    value:"$4,900",  color:"#f59e0b" },
-            { label:"Overdue AP",    value:"$1,640",  color:"#ef4444" },
+            { label:"Paid (MTD)",    value:"$8,000",  color:"#4FC6FF" },
+            { label:"Pending AP",    value:"$4,900",  color:"#4FC6FF" },
+            { label:"Overdue AP",    value:"$1,640",  color:"#1E4DA0" },
           ].map((s,i)=>(
             <div key={i} className="rounded-lg p-1.5" style={{background:`${s.color}12`}}>
               <p className="text-[6px] text-white/35">{s.label}</p>
@@ -838,7 +838,7 @@ function AccountingDashboard() {
         {/* top bar */}
         <div className="flex items-center justify-between px-3 pt-2.5 pb-2 border-b border-white/8 shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{background:"linear-gradient(135deg,#10b981,#059669)"}}>
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{background:"linear-gradient(135deg,#4FC6FF,#059669)"}}>
               <Calculator className="w-3.5 h-3.5 text-white"/>
             </div>
             <div>
@@ -855,7 +855,7 @@ function AccountingDashboard() {
                     ? "text-emerald-300 font-bold border border-emerald-500/30"
                     : "text-white/30 hover:text-white/55 hover:bg-white/[0.04]"
                 }`}
-                style={i===slide?{background:"rgba(16,185,129,0.12)"}:{}}>
+                style={i===slide?{background:"rgba(79,198,255,0.12)"}:{}}>
                 {t}
               </button>
             ))}
@@ -889,7 +889,7 @@ function AccountingDashboard() {
         {TABS.map((_,i) => (
           <button key={i} onClick={() => go(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{width:i===slide?20:5, background:i===slide?"#10b981":"rgba(255,255,255,0.18)"}}/>
+            style={{width:i===slide?20:5, background:i===slide?"#4FC6FF":"rgba(255,255,255,0.18)"}}/>
         ))}
       </div>
     </div>
@@ -912,48 +912,48 @@ function CountUp({ to, suffix = "", decimals = 0, duration = 2 }: { to: number; 
 /* ─────────────────── page data ─────────────────────────────── */
 
 const modules = [
-  { icon: BookOpen,   color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Double-Entry Bookkeeping",
+  { icon: BookOpen,   color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Double-Entry Bookkeeping",
     desc: "Every transaction auto-posts debit & credit entries simultaneously — GAAP and IFRS compliant.",
     pts: ["Auto journal entries on every transaction", "Trial balance & reconciliation in one click", "Multi-currency with live FX rates", "Full audit trail on every change"] },
-  { icon: Users,      color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "HRM & Payroll",
+  { icon: Users,      color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "HRM & Payroll",
     desc: "Full workforce management connected directly to accounts — every payroll run auto-journals instantly.",
     pts: ["Employee contracts & document vault", "Attendance, leave & overtime tracking", "Automated payroll with tax & NI calc", "Payslips generated & emailed automatically"] },
-  { icon: Package,    color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Products & Services",
+  { icon: Package,    color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Products & Services",
     desc: "Define unlimited products and service lines with pricing tiers, tax codes, and units of measure.",
     pts: ["Product & service catalogue management", "Custom pricing tiers per customer", "Auto VAT / tax on every invoice line", "Service billing & timesheet integration"] },
-  { icon: Boxes,      color: "#3b82f6", bg: "#0a1f3e", border: "#3b82f630", title: "Inventory Management",
+  { icon: Boxes,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Inventory Management",
     desc: "Real-time stock levels across multiple warehouses with automated reorder and full cost valuation.",
     pts: ["Multi-warehouse stock tracking", "Low-stock alerts & auto purchase orders", "FIFO / LIFO / weighted average costing", "Stock valuation live on balance sheet"] },
-  { icon: Receipt,    color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Invoicing & AR / AP",
+  { icon: Receipt,    color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Invoicing & AR / AP",
     desc: "Professional invoices, payment tracking, automated chasers, and full payables management.",
     pts: ["Branded invoice & quote templates", "Recurring & subscription invoices", "Automated overdue payment chasers", "Aged debtors & creditors reports"] },
-  { icon: BarChart3,  color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Financial Reporting",
+  { icon: BarChart3,  color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Financial Reporting",
     desc: "Live P&L, Balance Sheet, Cash Flow, and 40+ custom reports exportable to PDF or Excel.",
     pts: ["Real-time P&L & Balance Sheet", "Cash flow forecasting dashboard", "Budget vs actuals variance reports", "Read-only accountant portal access"] },
-  { icon: Briefcase,  color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Expense Management",
+  { icon: Briefcase,  color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Expense Management",
     desc: "Mobile expense submission, multi-level approvals, and auto-posting to the general ledger.",
     pts: ["Mobile app receipt capture", "Configurable approval workflows", "Per-diem & mileage rules", "Auto debit posting to ledger"] },
-  { icon: RefreshCw,  color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Everything Connected",
+  { icon: RefreshCw,  color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Everything Connected",
     desc: "Sales → Inventory → AR → Ledger → Payroll → Reports. One live system, zero manual re-entry.",
     pts: ["Real-time cross-module sync", "Single source of financial truth", "Role-based access control", "Open API for third-party apps"] },
 ];
 
 const flow = [
-  { step: "01", icon: FileText,   color: "#10b981", title: "Sales Invoice Raised",         detail: "Sales team raises invoice in seconds using the product catalogue" },
-  { step: "02", icon: Boxes,      color: "#3b82f6", title: "Inventory Auto-Deducted",       detail: "Stock levels drop instantly — no warehouse team update needed" },
-  { step: "03", icon: BookOpen,   color: "#8b5cf6", title: "Ledger Auto-Journaled",         detail: "Debit AR, credit Revenue posted automatically — double-entry complete" },
-  { step: "04", icon: TrendingUp, color: "#f59e0b", title: "P&L Updates in Real Time",      detail: "Gross margin and revenue charts refresh the moment the invoice saves" },
-  { step: "05", icon: Users,      color: "#ec4899", title: "Payroll Linked to Accounts",    detail: "Every salary run debits wages expense and credits bank automatically" },
-  { step: "06", icon: BarChart3,  color: "#06b6d4", title: "Reports Always Accurate",       detail: "No month-end close needed — your Balance Sheet is live 24/7" },
+  { step: "01", icon: FileText,   color: "#4FC6FF", title: "Sales Invoice Raised",         detail: "Sales team raises invoice in seconds using the product catalogue" },
+  { step: "02", icon: Boxes,      color: "#1E4DA0", title: "Inventory Auto-Deducted",       detail: "Stock levels drop instantly — no warehouse team update needed" },
+  { step: "03", icon: BookOpen,   color: "#1E4DA0", title: "Ledger Auto-Journaled",         detail: "Debit AR, credit Revenue posted automatically — double-entry complete" },
+  { step: "04", icon: TrendingUp, color: "#4FC6FF", title: "P&L Updates in Real Time",      detail: "Gross margin and revenue charts refresh the moment the invoice saves" },
+  { step: "05", icon: Users,      color: "#4FC6FF", title: "Payroll Linked to Accounts",    detail: "Every salary run debits wages expense and credits bank automatically" },
+  { step: "06", icon: BarChart3,  color: "#4FC6FF", title: "Reports Always Accurate",       detail: "No month-end close needed — your Balance Sheet is live 24/7" },
 ];
 
 const testimonials = [
   { quote: "We used to spend 3 days closing the books every month. With OneSoft it takes half a morning. The double-entry is automatic and our accountant has a read-only portal — she doesn't need to email us for reports anymore.",
-    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Dubai, UAE", color: "#10b981" },
+    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Dubai, UAE", color: "#4FC6FF" },
   { quote: "The HRM payroll link is a game-changer. Every month payroll runs, every journal posts automatically. I reviewed our payroll submissions last year and found zero discrepancies for the first time ever.",
-    name: "Ravi Menon", role: "Managing Director", co: "Spice Route Restaurants, Singapore", color: "#8b5cf6" },
+    name: "Ravi Menon", role: "Managing Director", co: "Spice Route Restaurants, Singapore", color: "#1E4DA0" },
   { quote: "Our warehouse manager used to message me when stock was low. Now the system raises the PO automatically and I just approve it. Stock value always matches the Balance Sheet — magic.",
-    name: "Tom Ashworth", role: "Operations Director", co: "Northern Star Distribution, Toronto, Canada", color: "#3b82f6" },
+    name: "Tom Ashworth", role: "Operations Director", co: "Northern Star Distribution, Toronto, Canada", color: "#1E4DA0" },
 ];
 
 /* ─────────────────────────── Page ─────────────────────────── */
@@ -989,10 +989,10 @@ export default function AccountingPage() {
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         {/* background glows */}
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{background:"radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)"}}/>
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{background:"rgba(26,105,196,0.10)",filter:"blur(90px)"}}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{background:"radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)"}}/>
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{background:"rgba(30,77,160,0.10)",filter:"blur(90px)"}}
             animate={{y:[0,-18,0]}} transition={{duration:8,repeat:Infinity,ease:"easeInOut"}}/>
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{background:"rgba(26,105,196,0.07)",filter:"blur(110px)"}}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{background:"rgba(30,77,160,0.07)",filter:"blur(110px)"}}
             animate={{y:[0,18,0]}} transition={{duration:10,repeat:Infinity,ease:"easeInOut",delay:2}}/>
         </div>
 
@@ -1004,21 +1004,21 @@ export default function AccountingPage() {
             <ChevronRight className="w-3.5 h-3.5"/>
             <span style={{color:t50}}>Products</span>
             <ChevronRight className="w-3.5 h-3.5"/>
-            <span style={{color:"#1a69c4",fontWeight:600}}>Accounting & Bookkeeping</span>
+            <span style={{color:"#1E4DA0",fontWeight:600}}>Accounting & Bookkeeping</span>
           </motion.div>
 
           {/* headline */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+                style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
                 <Calculator className="w-3.5 h-3.5"/>Accounting & Bookkeeping ERP
               </span>
             </motion.div>
             <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.08]"
               initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.65,delay:0.1}}>
               Your Finances,{" "}
-              <span style={{color:"#1a69c4"}}>
+              <span style={{color:"#1E4DA0"}}>
                 Fully Automated.
               </span>
             </motion.h1>
@@ -1029,7 +1029,7 @@ export default function AccountingPage() {
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:0.6,delay:0.3}}>
               <Button size="lg" className="h-14 px-10 text-lg font-semibold"
-                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
+                style={{background:"#1E4DA0",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
@@ -1050,10 +1050,10 @@ export default function AccountingPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              {to:40,  suf:"+", label:"Accounting Modules",     Icon:Layers,     color:"#1a69c4"},
-              {to:300, suf:"+", label:"Businesses on Platform",  Icon:Building2,  color:"#3b82f6"},
-              {to:99.9,suf:"%", label:"Data Accuracy",           Icon:ShieldCheck,color:"#8b5cf6",d:1},
-              {to:80,  suf:"%", label:"Time Saved on Bookkeeping",Icon:Clock,     color:"#f59e0b"},
+              {to:40,  suf:"+", label:"Accounting Modules",     Icon:Layers,     color:"#1E4DA0"},
+              {to:300, suf:"+", label:"Businesses on Platform",  Icon:Building2,  color:"#1E4DA0"},
+              {to:99.9,suf:"%", label:"Data Accuracy",           Icon:ShieldCheck,color:"#1E4DA0",d:1},
+              {to:80,  suf:"%", label:"Time Saved on Bookkeeping",Icon:Clock,     color:"#4FC6FF"},
             ].map((s,i)=>(
               <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}}
                 viewport={{once:true}} transition={{delay:i*0.1,duration:0.5}}>
@@ -1074,12 +1074,12 @@ export default function AccountingPage() {
       {/* ═══ FLOW — how it all connects ═════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{background:"radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)"}}/>
+          style={{background:"radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.07), transparent)"}}/>
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+              style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
               <Sparkles className="w-3.5 h-3.5"/>Zero Manual Work
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">One action. Six systems update.</h2>
@@ -1123,7 +1123,7 @@ export default function AccountingPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+              style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
               <Layers className="w-3.5 h-3.5"/>8 Core Modules
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Everything You Need,<br/>Nothing You Don't.</h2>
@@ -1170,14 +1170,14 @@ export default function AccountingPage() {
       {/* ═══ INVENTORY DEEP-DIVE ════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{background:"radial-gradient(ellipse 60% 60% at 80% 50%, rgba(59,130,246,0.09), transparent)"}}/>
+          style={{background:"radial-gradient(ellipse 60% 60% at 80% 50%, rgba(30,77,160,0.09), transparent)"}}/>
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             {/* text side */}
             <motion.div className="flex-1"
               initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.65}}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+                style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
                 <Boxes className="w-3.5 h-3.5"/>Inventory + Accounting
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Stock that talks<br/>to your books.</h2>
@@ -1187,16 +1187,16 @@ export default function AccountingPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: ArrowUpRight, color: "#10b981", bg: "#052e1c", border: "#10b98130",
+                  { icon: ArrowUpRight, color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
                     title: "Purchase order → auto inventory receipt → auto AP journal",
                     sub: "Every goods receipt auto-debits inventory and credits your payables account" },
-                  { icon: ArrowDownRight, color: "#3b82f6", bg: "#0a1f3e", border: "#3b82f630",
+                  { icon: ArrowDownRight, color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Sales invoice → inventory deduction → revenue posting",
                     sub: "Selling one unit auto-reduces stock and books COGS vs Revenue immediately" },
-                  { icon: Zap, color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30",
+                  { icon: Zap, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
                     title: "Low-stock alert → automated reorder PO to supplier",
                     sub: "Configurable thresholds trigger purchase orders without human intervention" },
-                  { icon: BarChart3, color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630",
+                  { icon: BarChart3, color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
                     title: "Real-time stock valuation always on your Balance Sheet",
                     sub: "FIFO, LIFO, or weighted average — your choice, applied automatically" },
                 ].map((item,i)=>(
@@ -1218,7 +1218,7 @@ export default function AccountingPage() {
               </div>
 
               <Button size="lg" className="h-13 px-8 text-base font-semibold"
-                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
+                style={{background:"#1E4DA0",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 See Inventory Demo <ArrowRight className="ml-2 w-4 h-4"/>
               </Button>
@@ -1231,7 +1231,7 @@ export default function AccountingPage() {
                 {/* header */}
                 <div className="flex items-center justify-between px-5 py-4" style={{borderBottom:`1px solid ${dividerColor}`}}>
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{background:"rgba(59,130,246,0.2)"}}>
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{background:"rgba(30,77,160,0.2)"}}>
                       <Boxes className="w-4 h-4 text-blue-400"/>
                     </div>
                     <span className="font-bold text-sm">Inventory Status</span>
@@ -1244,9 +1244,9 @@ export default function AccountingPage() {
                 {/* summary row */}
                 <div className="grid grid-cols-3 gap-px" style={{background:gridLine}}>
                   {[
-                    {label:"Total Items",value:"847",color:"#60a5fa"},
-                    {label:"Total Value",value:"£67.2K",color:"#34d399"},
-                    {label:"Low / Out",value:"3 items",color:"#fbbf24"},
+                    {label:"Total Items",value:"847",color:"#1E4DA0"},
+                    {label:"Total Value",value:"£67.2K",color:"#4FC6FF"},
+                    {label:"Low / Out",value:"3 items",color:"#4FC6FF"},
                   ].map(s=>(
                     <div key={s.label} className="px-4 py-3" style={{background:tableBg}}>
                       <p className="text-xs mb-1" style={{color:t45}}>{s.label}</p>
@@ -1276,7 +1276,7 @@ export default function AccountingPage() {
                         <tr key={i} style={{borderBottom:"1px solid rgba(255,255,255,0.04)"}}>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.8)"}}>{r.name}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.35)"}}>{r.sku}</td>
-                          <td className="py-2.5 pr-4 font-semibold" style={{color:r.qty===0?"#ef4444":r.qty<r.min?"#fbbf24":"rgba(255,255,255,0.7)"}}>{r.qty}</td>
+                          <td className="py-2.5 pr-4 font-semibold" style={{color:r.qty===0?"#1E4DA0":r.qty<r.min?"#4FC6FF":"rgba(255,255,255,0.7)"}}>{r.qty}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.3)"}}>{r.min}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.6)"}}>{r.val}</td>
                           <td className="py-2.5">
@@ -1302,7 +1302,7 @@ export default function AccountingPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+              style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
               <Star className="w-3.5 h-3.5 fill-current"/>What Customers Say
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Real results from real businesses.</h2>
@@ -1338,16 +1338,16 @@ export default function AccountingPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{background:"radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)"}}/>
+          style={{background:"radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)"}}/>
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7}}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{background:"rgba(26,105,196,0.10)",border:"1px solid rgba(26,105,196,0.30)",color:"#1a69c4"}}>
+              style={{background:"rgba(30,77,160,0.10)",border:"1px solid rgba(30,77,160,0.30)",color:"#1E4DA0"}}>
               <Lock className="w-3.5 h-3.5"/>No card required · Free 30-day trial
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Your books, finally<br/>
-              <span style={{color:"#1a69c4"}}>
+              <span style={{color:"#1E4DA0"}}>
                 under control.
               </span>
             </h2>
@@ -1356,7 +1356,7 @@ export default function AccountingPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
-                style={{background:"#1a69c4",border:"none",color:"#ffffff"}}
+                style={{background:"#1E4DA0",border:"none",color:"#ffffff"}}
                 onClick={() => openCTAModal("Accounting & Bookkeeping ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
@@ -1370,7 +1370,7 @@ export default function AccountingPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Accounting & Bookkeeping ERP")}/>
-      <CustomSolutionsSection accentColor="#10b981" productName="Accounting ERP" />
+      <CustomSolutionsSection accentColor="#4FC6FF" productName="Accounting ERP" />
       <ERPCrossLinks current="/accounting" />
       <Footer />
     </div>

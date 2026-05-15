@@ -43,12 +43,12 @@ function BookingsSlide() {
     { id: "BK-1046", hall: "Pearl Suite",    client: "Chaudhry Party",  date: "21 Jun 2026", pax: 180, advance: "£1,800", status: "Enquiry",    event: "Nikah"  },
   ];
   const kpis = [
-    { label: "Events This Month", value: "24",    color: "#db2777", Icon: Calendar },
-    { label: "Hall Occupancy",    value: "87%",   color: "#10b981", Icon: Building2 },
-    { label: "Revenue MTD",       value: "£84K",  color: "#f59e0b", Icon: Wallet    },
-    { label: "Pending Enquiries", value: "9",     color: "#8b5cf6", Icon: Bell      },
+    { label: "Events This Month", value: "24",    color: "#1E4DA0", Icon: Calendar },
+    { label: "Hall Occupancy",    value: "87%",   color: "#4FC6FF", Icon: Building2 },
+    { label: "Revenue MTD",       value: "£84K",  color: "#4FC6FF", Icon: Wallet    },
+    { label: "Pending Enquiries", value: "9",     color: "#1E4DA0", Icon: Bell      },
   ];
-  const stColor = (s: string) => s === "Confirmed" ? "#10b981" : s === "Pending" ? "#f59e0b" : "#8b5cf6";
+  const stColor = (s: string) => s === "Confirmed" ? "#4FC6FF" : s === "Pending" ? "#4FC6FF" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -73,7 +73,7 @@ function BookingsSlide() {
           <tbody>
             {bookings.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-2 font-mono" style={{ color: "#db2777" }}>{r.id}</td>
+                <td className="py-1.5 pr-2 font-mono" style={{ color: "#1E4DA0" }}>{r.id}</td>
                 <td className="py-1.5 pr-2 text-white/60">{r.hall}</td>
                 <td className="py-1.5 pr-2 text-white/85 font-semibold">{r.client}</td>
                 <td className="py-1.5 pr-2 text-white/55">{r.date}</td>
@@ -96,7 +96,7 @@ function CalendarSlide() {
   const days = ["Mon 18", "Tue 19", "Wed 20", "Thu 21", "Fri 22", "Sat 23", "Sun 24"];
   const halls = ["Grand Ballroom", "Rose Garden", "Pearl Suite"];
   const colorMap: Record<string, string> = {
-    Walima: "#db2777", Nikah: "#8b5cf6", Mehndi: "#f59e0b", Baraat: "#10b981", Corporate: "#1a69c4",
+    Walima: "#1E4DA0", Nikah: "#1E4DA0", Mehndi: "#4FC6FF", Baraat: "#4FC6FF", Corporate: "#1E4DA0",
   };
   const schedule: Record<string, Record<string, { event: string; client: string } | null>> = {
     "Grand Ballroom": {
@@ -131,7 +131,7 @@ function CalendarSlide() {
     <div className="flex flex-col flex-1 min-h-0">
       <div className="flex items-center justify-between mb-2">
         <p className="text-[8.5px] font-semibold text-white/50">Hall Availability — Week of 18 May</p>
-        <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(219,39,119,0.2)", color: "#db2777" }}>Live View</span>
+        <span className="text-[7px] px-2 py-0.5 rounded-full font-semibold" style={{ background: "rgba(30,77,160,0.2)", color: "#1E4DA0" }}>Live View</span>
       </div>
       <div className="flex-1 min-h-0 overflow-auto">
         <table className="w-full text-[7px] border-collapse">
@@ -174,10 +174,10 @@ function CalendarSlide() {
 
 function CateringSlide() {
   const menus = [
-    { name: "Platinum Package",  price: "£55/head", items: 14, desc: "BBQ + Karahi + Desserts", color: "#db2777" },
-    { name: "Gold Package",      price: "£38/head", items: 10, desc: "Karahi + Biryani + Sweets", color: "#f59e0b" },
+    { name: "Platinum Package",  price: "£55/head", items: 14, desc: "BBQ + Karahi + Desserts", color: "#1E4DA0" },
+    { name: "Gold Package",      price: "£38/head", items: 10, desc: "Karahi + Biryani + Sweets", color: "#4FC6FF" },
     { name: "Silver Package",    price: "£25/head", items: 7,  desc: "Biryani + Raita + Drinks",  color: "#6b7280" },
-    { name: "Custom Package",    price: "Quote",    items: 0,  desc: "Bespoke menu selection",    color: "#8b5cf6" },
+    { name: "Custom Package",    price: "Quote",    items: 0,  desc: "Bespoke menu selection",    color: "#1E4DA0" },
   ];
   const orders = [
     { event: "Malik Walima",   date: "18 May", pkg: "Platinum", pax: 450, chef: "Chef Aziz",   status: "Confirmed" },
@@ -185,7 +185,7 @@ function CateringSlide() {
     { event: "Khan Mehndi",    date: "31 May", pkg: "Silver",   pax: 600, chef: "Chef Aziz",   status: "Pending"   },
     { event: "Siddiqui Baraat",date: "07 Jun", pkg: "Custom",   pax: 150, chef: "TBC",         status: "Enquiry"   },
   ];
-  const stColor = (s: string) => s === "Confirmed" ? "#10b981" : s === "Prep" ? "#1a69c4" : s === "Pending" ? "#f59e0b" : "#8b5cf6";
+  const stColor = (s: string) => s === "Confirmed" ? "#4FC6FF" : s === "Prep" ? "#1E4DA0" : s === "Pending" ? "#4FC6FF" : "#1E4DA0";
   return (
     <div className="flex gap-2 flex-1 min-h-0">
       <div className="flex flex-col gap-2 shrink-0" style={{ width: "195px" }}>
@@ -234,10 +234,10 @@ function BillingSlide() {
     { inv: "INV-2040", client: "Chaudhry Party",  event: "Baraat",  total: "£11,200", paid: "£8,000",  balance: "£3,200", due: "02 May", overdue: true  },
   ];
   const summary = [
-    { label: "Total Invoiced",  value: "£184,200", color: "#db2777" },
-    { label: "Collected",       value: "£152,400", color: "#10b981" },
-    { label: "Outstanding",     value: "£31,800",  color: "#f59e0b" },
-    { label: "Overdue",         value: "£8,400",   color: "#ef4444" },
+    { label: "Total Invoiced",  value: "£184,200", color: "#1E4DA0" },
+    { label: "Collected",       value: "£152,400", color: "#4FC6FF" },
+    { label: "Outstanding",     value: "£31,800",  color: "#4FC6FF" },
+    { label: "Overdue",         value: "£8,400",   color: "#1E4DA0" },
   ];
   return (
     <div className="flex flex-col flex-1 min-h-0">
@@ -258,7 +258,7 @@ function BillingSlide() {
           <tbody>
             {invoices.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-3 font-mono" style={{ color: "#db2777" }}>{r.inv}</td>
+                <td className="py-1.5 pr-3 font-mono" style={{ color: "#1E4DA0" }}>{r.inv}</td>
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.client}</td>
                 <td className="py-1.5 pr-3 text-white/50">{r.event}</td>
                 <td className="py-1.5 pr-3 text-white/70 font-semibold">{r.total}</td>
@@ -291,8 +291,8 @@ function ShadiDashboard() {
     <div className="h-full rounded-2xl overflow-hidden flex flex-col" style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(219,39,119,0.25)" }}>
-            <Heart className="w-3.5 h-3.5" style={{ color: "#db2777" }} />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.25)" }}>
+            <Heart className="w-3.5 h-3.5" style={{ color: "#1E4DA0" }} />
           </div>
           <span className="font-bold text-white text-[11px]">OneSoft Shadi Hall</span>
         </div>
@@ -300,7 +300,7 @@ function ShadiDashboard() {
           {slides.map((s, i) => (
             <button key={i} onClick={() => setSlide(i)}
               className="text-[9px] px-2.5 py-1 rounded-md font-medium transition-all"
-              style={{ background: i === slide ? "#db2777" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
+              style={{ background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
               {s.label}
             </button>
           ))}
@@ -313,7 +313,7 @@ function ShadiDashboard() {
         {slides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#db2777" : "rgba(255,255,255,0.2)" }} />
+            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.2)" }} />
         ))}
       </div>
     </div>
@@ -323,48 +323,48 @@ function ShadiDashboard() {
 /* ─────────────────── Page data ──────────────────────────── */
 
 const modules = [
-  { icon: Calendar,    color: "#db2777", bg: "#2d0a1a", border: "#db277730", title: "Booking Management",
+  { icon: Calendar,    color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Booking Management",
     desc: "Handle enquiries, confirm hall bookings, and manage date availability across multiple venues in real time.",
     pts: ["Multi-hall availability calendar", "Online enquiry & booking forms", "Advance deposit tracking", "Auto booking confirmation SMS/email"] },
-  { icon: Building2,   color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "Venue & Hall Setup",
+  { icon: Building2,   color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Venue & Hall Setup",
     desc: "Configure halls, seating capacities, décor packages, and amenities to match every event type.",
     pts: ["Multiple hall profiles & layouts", "Seating capacity configuration", "Décor & furniture packages", "Hall conflict prevention"] },
-  { icon: Utensils,    color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Catering Management",
+  { icon: Utensils,    color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Catering Management",
     desc: "Create menu packages, assign chefs, track food orders, and manage kitchen prep for each event.",
     pts: ["Tiered catering package builder", "Per-head cost calculation", "Chef & kitchen staff assignment", "Dietary requirement tracking"] },
-  { icon: Wallet,      color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Billing & Invoicing",
+  { icon: Wallet,      color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Billing & Invoicing",
     desc: "Generate itemised invoices, track advance payments, send payment reminders, and close accounts instantly.",
     pts: ["Auto-generated event invoices", "Advance & balance payment tracking", "Overdue payment alerts", "Receipt printing & PDF export"] },
-  { icon: Users,       color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430", title: "Client CRM",
+  { icon: Users,       color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Client CRM",
     desc: "Keep a complete record of every client — bookings history, preferences, payments, and follow-up notes.",
     pts: ["Client profiles with booking history", "Follow-up reminders & notes", "Repeat client discounts", "WhatsApp & SMS communication log"] },
-  { icon: UserCheck,   color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Staff Management",
+  { icon: UserCheck,   color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Staff Management",
     desc: "Roster waiters, managers, and decorators per event, track duty hours, and process payroll automatically.",
     pts: ["Per-event staff assignment", "Duty roster & shift planning", "Attendance & overtime tracking", "Payroll calculation per event"] },
-  { icon: Camera,      color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Vendor Coordination",
+  { icon: Camera,      color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Vendor Coordination",
     desc: "Link photographers, florists, decorators, and DJs to each booking and manage their payments in one place.",
     pts: ["Vendor directory & profiles", "Per-event vendor assignment", "Vendor payment & commission tracking", "Vendor performance ratings"] },
-  { icon: BarChart3,   color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Reports & Analytics",
+  { icon: BarChart3,   color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
     desc: "Track revenue by hall, event type, and month. Spot booking trends and plan capacity like never before.",
     pts: ["Revenue by hall & event type", "Occupancy rate dashboards", "Monthly & annual P&L summary", "Peak season demand forecasting"] },
 ];
 
 const flow = [
-  { step: "01", icon: Phone,      color: "#db2777", title: "Enquiry Received",          detail: "Client calls or submits a booking enquiry — their details, event type, and preferred dates are logged instantly" },
-  { step: "02", icon: Calendar,   color: "#8b5cf6", title: "Availability Checked",       detail: "The system checks hall availability in real time — no double-bookings, no manual checks across registers" },
-  { step: "03", icon: FileText,   color: "#f59e0b", title: "Booking Confirmed",          detail: "Quote sent, advance payment recorded, and hall blocked — client receives an automatic confirmation message" },
-  { step: "04", icon: Utensils,   color: "#10b981", title: "Catering & Vendors Assigned",detail: "Catering package selected, chef assigned, and vendors linked — everything attached to one event record" },
-  { step: "05", icon: CheckCheck, color: "#1a69c4", title: "Event Runs Smoothly",        detail: "Staff rostered, kitchen prepped, décor set — your team works from the same live event plan on any device" },
-  { step: "06", icon: Receipt,    color: "#06b6d4", title: "Invoice Settled",            detail: "Balance invoice generated automatically after the event — paid, receipted, and filed with zero paperwork" },
+  { step: "01", icon: Phone,      color: "#1E4DA0", title: "Enquiry Received",          detail: "Client calls or submits a booking enquiry — their details, event type, and preferred dates are logged instantly" },
+  { step: "02", icon: Calendar,   color: "#1E4DA0", title: "Availability Checked",       detail: "The system checks hall availability in real time — no double-bookings, no manual checks across registers" },
+  { step: "03", icon: FileText,   color: "#4FC6FF", title: "Booking Confirmed",          detail: "Quote sent, advance payment recorded, and hall blocked — client receives an automatic confirmation message" },
+  { step: "04", icon: Utensils,   color: "#4FC6FF", title: "Catering & Vendors Assigned",detail: "Catering package selected, chef assigned, and vendors linked — everything attached to one event record" },
+  { step: "05", icon: CheckCheck, color: "#1E4DA0", title: "Event Runs Smoothly",        detail: "Staff rostered, kitchen prepped, décor set — your team works from the same live event plan on any device" },
+  { step: "06", icon: Receipt,    color: "#4FC6FF", title: "Invoice Settled",            detail: "Balance invoice generated automatically after the event — paid, receipted, and filed with zero paperwork" },
 ];
 
 const testimonials = [
   { quote: "Before OneSoft, our booking register was a paper diary and our billing was done in Excel. We had double-bookings twice in one season. Now every hall is managed from a single screen and we haven't had a single conflict in two years.",
-    name: "Mr. Tariq Hussain", role: "Owner", co: "Royal Palace Banquets, Dubai, UAE", color: "#db2777" },
+    name: "Mr. Tariq Hussain", role: "Owner", co: "Royal Palace Banquets, Dubai, UAE", color: "#1E4DA0" },
   { quote: "The catering module completely changed how we operate. We know exactly how many guests are expected, which chef is assigned, and what's on the menu for every event three weeks in advance. Wastage is down by 30%.",
-    name: "Mrs. Saima Malik", role: "Operations Manager", co: "Pearl Garden Shadi Hall, Lahore, Pakistan", color: "#8b5cf6" },
+    name: "Mrs. Saima Malik", role: "Operations Manager", co: "Pearl Garden Shadi Hall, Lahore, Pakistan", color: "#1E4DA0" },
   { quote: "Our clients love getting automated confirmation messages and payment reminders on WhatsApp. We used to spend hours calling families — now the system does it. Our team can focus on the event, not the admin.",
-    name: "Mr. Asif Chaudhry", role: "Managing Director", co: "The Grand Marquee, Toronto, Canada", color: "#10b981" },
+    name: "Mr. Asif Chaudhry", role: "Managing Director", co: "The Grand Marquee, Toronto, Canada", color: "#4FC6FF" },
 ];
 
 const stats = [
@@ -394,7 +394,7 @@ export default function ShadiHallPage() {
   const cardBg       = isLight ? "#ffffff"             : "rgba(255,255,255,0.03)";
   const cardBorder   = isLight ? "rgba(0,0,0,0.08)"   : "rgba(255,255,255,0.08)";
 
-  const PINK = "#db2777";
+  const PINK = "#1E4DA0";
 
   return (
     <div className="min-h-screen" style={{ background: pageBg }}>
@@ -672,53 +672,53 @@ export default function ShadiHallPage() {
       </section>
 
       <FeatureMarqueeSection
-        accentColor="#db2777"
+        accentColor="#1E4DA0"
         heading="Everything a Shadi Hall Needs"
         subheading="From booking to billing — every module built for modern banquet halls and wedding venues."
         row1={[
-          { icon: "💒", label: "Booking Management",    color: "#db2777" },
-          { icon: "📅", label: "Hall Calendar",         color: "#8b5cf6" },
-          { icon: "🎉", label: "Event Scheduling",      color: "#10b981" },
-          { icon: "👥", label: "Guest Management",      color: "#f59e0b" },
-          { icon: "🔒", label: "Advance Booking",       color: "#06b6d4" },
-          { icon: "⚠️", label: "Conflict Prevention",   color: "#ec4899" },
-          { icon: "💬", label: "WhatsApp Alerts",       color: "#14b8a6" },
-          { icon: "👤", label: "Customer Portal",       color: "#6366f1" },
-          { icon: "🍽️", label: "Catering Management",  color: "#f97316" },
-          { icon: "📋", label: "Menu Planning",         color: "#a855f7" },
-          { icon: "👨‍🍳", label: "Chef Assignment",     color: "#ef4444" },
-          { icon: "📦", label: "Inventory Control",     color: "#0ea5e9" },
+          { icon: "💒", label: "Booking Management",    color: "#1E4DA0" },
+          { icon: "📅", label: "Hall Calendar",         color: "#1E4DA0" },
+          { icon: "🎉", label: "Event Scheduling",      color: "#4FC6FF" },
+          { icon: "👥", label: "Guest Management",      color: "#4FC6FF" },
+          { icon: "🔒", label: "Advance Booking",       color: "#4FC6FF" },
+          { icon: "⚠️", label: "Conflict Prevention",   color: "#4FC6FF" },
+          { icon: "💬", label: "WhatsApp Alerts",       color: "#4FC6FF" },
+          { icon: "👤", label: "Customer Portal",       color: "#1E4DA0" },
+          { icon: "🍽️", label: "Catering Management",  color: "#1E4DA0" },
+          { icon: "📋", label: "Menu Planning",         color: "#1E4DA0" },
+          { icon: "👨‍🍳", label: "Chef Assignment",     color: "#1E4DA0" },
+          { icon: "📦", label: "Inventory Control",     color: "#4FC6FF" },
         ]}
         row2={[
-          { icon: "👥", label: "Staff Scheduling",      color: "#10b981" },
-          { icon: "🎀", label: "Decoration Packages",   color: "#3b82f6" },
-          { icon: "🤝", label: "Vendor Management",     color: "#8b5cf6" },
-          { icon: "🧮", label: "Food Costing",          color: "#f59e0b" },
-          { icon: "🧾", label: "Billing & Invoicing",   color: "#06b6d4" },
-          { icon: "💳", label: "Installment Plans",     color: "#ec4899" },
-          { icon: "💰", label: "Payment Tracking",      color: "#14b8a6" },
-          { icon: "🏛️", label: "Multi-Hall",            color: "#6366f1" },
-          { icon: "📊", label: "Event Reports",         color: "#f97316" },
-          { icon: "📷", label: "Photo Gallery",         color: "#a855f7" },
-          { icon: "⭐", label: "Feedback Collection",   color: "#ef4444" },
-          { icon: "🎁", label: "Loyalty Program",       color: "#0ea5e9" },
+          { icon: "👥", label: "Staff Scheduling",      color: "#4FC6FF" },
+          { icon: "🎀", label: "Decoration Packages",   color: "#1E4DA0" },
+          { icon: "🤝", label: "Vendor Management",     color: "#1E4DA0" },
+          { icon: "🧮", label: "Food Costing",          color: "#4FC6FF" },
+          { icon: "🧾", label: "Billing & Invoicing",   color: "#4FC6FF" },
+          { icon: "💳", label: "Installment Plans",     color: "#4FC6FF" },
+          { icon: "💰", label: "Payment Tracking",      color: "#4FC6FF" },
+          { icon: "🏛️", label: "Multi-Hall",            color: "#1E4DA0" },
+          { icon: "📊", label: "Event Reports",         color: "#1E4DA0" },
+          { icon: "📷", label: "Photo Gallery",         color: "#1E4DA0" },
+          { icon: "⭐", label: "Feedback Collection",   color: "#1E4DA0" },
+          { icon: "🎁", label: "Loyalty Program",       color: "#4FC6FF" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#10b981" },
-          { icon: "☁️", label: "Cloud Hosted",          color: "#3b82f6" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#8b5cf6" },
-          { icon: "🔔", label: "Reminder Automation",   color: "#f59e0b" },
-          { icon: "📑", label: "Contract Generator",    color: "#06b6d4" },
-          { icon: "🌍", label: "Multi-Currency",        color: "#ec4899" },
-          { icon: "🔒", label: "Audit Trail",           color: "#14b8a6" },
-          { icon: "📈", label: "Revenue Analytics",     color: "#6366f1" },
-          { icon: "🎶", label: "Sound & AV Booking",    color: "#f97316" },
-          { icon: "🚗", label: "Parking Management",    color: "#a855f7" },
-          { icon: "🧾", label: "Tax Compliance",        color: "#ef4444" },
-          { icon: "🤖", label: "AI Availability Check", color: "#0ea5e9" },
+          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
+          { icon: "🔔", label: "Reminder Automation",   color: "#4FC6FF" },
+          { icon: "📑", label: "Contract Generator",    color: "#4FC6FF" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#4FC6FF" },
+          { icon: "🔒", label: "Audit Trail",           color: "#4FC6FF" },
+          { icon: "📈", label: "Revenue Analytics",     color: "#1E4DA0" },
+          { icon: "🎶", label: "Sound & AV Booking",    color: "#1E4DA0" },
+          { icon: "🚗", label: "Parking Management",    color: "#1E4DA0" },
+          { icon: "🧾", label: "Tax Compliance",        color: "#1E4DA0" },
+          { icon: "🤖", label: "AI Availability Check", color: "#4FC6FF" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#db2777" productName="Shadi Hall ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="Shadi Hall ERP" />
       <ERPCrossLinks current="/shadi-hall" />
       <Footer />
     </div>

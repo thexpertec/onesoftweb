@@ -48,13 +48,13 @@ function FloorSlide() {
     { id: "T11", seats: 2, status: "Occupied",   name: "Walk-in",       covers: 1, mins: 9  },
     { id: "T12", seats: 4, status: "Available",  name: "",              covers: 0, mins: 0  },
   ];
-  const statusColor = (s: string) => s === "Occupied" ? "#1a69c4" : s === "Reserved" ? "#f59e0b" : s === "Cleaning" ? "#ef4444" : "#10b981";
-  const statusBg    = (s: string) => s === "Occupied" ? "rgba(26,105,196,0.18)" : s === "Reserved" ? "rgba(245,158,11,0.15)" : s === "Cleaning" ? "rgba(239,68,68,0.15)" : "rgba(16,185,129,0.15)";
+  const statusColor = (s: string) => s === "Occupied" ? "#1E4DA0" : s === "Reserved" ? "#4FC6FF" : s === "Cleaning" ? "#1E4DA0" : "#4FC6FF";
+  const statusBg    = (s: string) => s === "Occupied" ? "rgba(30,77,160,0.18)" : s === "Reserved" ? "rgba(79,198,255,0.15)" : s === "Cleaning" ? "rgba(30,77,160,0.15)" : "rgba(79,198,255,0.15)";
   const kpis = [
-    { label: "Tables Occupied", value: "6/12",  color: "#1a69c4", Icon: UtensilsCrossed },
-    { label: "Covers Today",    value: "84",    color: "#10b981", Icon: Users },
-    { label: "Avg Table Time",  value: "38m",   color: "#f59e0b", Icon: Clock },
-    { label: "Today's Revenue", value: "£1,840",color: "#8b5cf6", Icon: Receipt },
+    { label: "Tables Occupied", value: "6/12",  color: "#1E4DA0", Icon: UtensilsCrossed },
+    { label: "Covers Today",    value: "84",    color: "#4FC6FF", Icon: Users },
+    { label: "Avg Table Time",  value: "38m",   color: "#4FC6FF", Icon: Clock },
+    { label: "Today's Revenue", value: "£1,840",color: "#1E4DA0", Icon: Receipt },
   ];
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
@@ -96,14 +96,14 @@ function KitchenSlide() {
     { id: "#145", table: "T11", items: ["Soup of Day x1", "Garlic Bread x1"],       mins: 4,  status: "Ready",    priority: "normal" },
     { id: "#146", table: "T05", items: ["Chicken Tikka x2", "Naan x4"],             mins: 2,  status: "Pending",  priority: "high"   },
   ];
-  const sColor = (s: string) => s === "Ready" ? "#10b981" : s === "Cooking" ? "#f59e0b" : "#94a3b8";
+  const sColor = (s: string) => s === "Ready" ? "#4FC6FF" : s === "Cooking" ? "#4FC6FF" : "#94a3b8";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
         {[
           { label: "Pending Tickets", value: "3",   color: "#94a3b8" },
-          { label: "Cooking Now",     value: "2",   color: "#f59e0b" },
-          { label: "Ready to Serve",  value: "1",   color: "#10b981" },
+          { label: "Cooking Now",     value: "2",   color: "#4FC6FF" },
+          { label: "Ready to Serve",  value: "1",   color: "#4FC6FF" },
         ].map((k, i) => (
           <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8 text-center">
             <p className="text-[7.5px] text-white/40 uppercase tracking-wider mb-1">{k.label}</p>
@@ -120,7 +120,7 @@ function KitchenSlide() {
               <span className="text-[8px] font-bold text-white/50">{t.table}</span>
             </div>
             {t.priority === "high" && (
-              <span className="text-[6px] font-bold px-1.5 py-0.5 rounded-full mb-1.5 self-start" style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444" }}>PRIORITY</span>
+              <span className="text-[6px] font-bold px-1.5 py-0.5 rounded-full mb-1.5 self-start" style={{ background: "rgba(30,77,160,0.15)", color: "#1E4DA0" }}>PRIORITY</span>
             )}
             <div className="space-y-1 flex-1">
               {t.items.map((item, j) => (
@@ -168,7 +168,7 @@ function SalesSlide() {
           <div className="flex items-end gap-1 h-16">
             {hourly.map((h, i) => (
               <div key={i} className="flex flex-col items-center gap-0.5 flex-1">
-                <div className="w-full rounded-sm" style={{ height: `${(h.rev / max) * 100}%`, background: "rgba(26,105,196,0.7)", minHeight: 2 }} />
+                <div className="w-full rounded-sm" style={{ height: `${(h.rev / max) * 100}%`, background: "rgba(30,77,160,0.7)", minHeight: 2 }} />
                 <span className="text-[6px] text-white/30">{h.h}</span>
               </div>
             ))}
@@ -176,10 +176,10 @@ function SalesSlide() {
         </div>
         <div className="grid grid-cols-2 gap-2 shrink-0">
           {[
-            { label: "Total Revenue", value: "£3,810", color: "#1a69c4" },
-            { label: "Orders",        value: "134",    color: "#10b981" },
-            { label: "Avg. Bill",     value: "£28.4",  color: "#f59e0b" },
-            { label: "Covers",        value: "211",    color: "#8b5cf6" },
+            { label: "Total Revenue", value: "£3,810", color: "#1E4DA0" },
+            { label: "Orders",        value: "134",    color: "#4FC6FF" },
+            { label: "Avg. Bill",     value: "£28.4",  color: "#4FC6FF" },
+            { label: "Covers",        value: "211",    color: "#1E4DA0" },
           ].map((s, i) => (
             <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8">
               <p className="text-[7px] text-white/40 mb-1">{s.label}</p>
@@ -198,7 +198,7 @@ function SalesSlide() {
                 <span className="text-[7px] font-bold text-white/50 shrink-0">{item.rev}</span>
               </div>
               <div className="h-1.5 bg-white/8 rounded-full">
-                <div className="h-full rounded-full" style={{ width: `${item.pct}%`, background: "#1a69c4" }} />
+                <div className="h-full rounded-full" style={{ width: `${item.pct}%`, background: "#1E4DA0" }} />
               </div>
               <p className="text-[6px] text-white/30 mt-0.5">{item.qty} sold</p>
             </div>
@@ -218,14 +218,14 @@ function ReservationsSlide() {
     { ref: "RES-085", name: "Walk-in, 3 pax",  covers: 3, time: "19:45", table: "T06", status: "Seated",    notes: "" },
     { ref: "RES-086", name: "Brown Family",    covers: 5, time: "20:00", table: "T03", status: "Confirmed", notes: "" },
   ];
-  const sColor = (s: string) => s === "Confirmed" ? "#10b981" : s === "Seated" ? "#1a69c4" : "#f59e0b";
+  const sColor = (s: string) => s === "Confirmed" ? "#4FC6FF" : s === "Seated" ? "#1E4DA0" : "#4FC6FF";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
         {[
-          { label: "Today's Reservations", value: "18", color: "#1a69c4", Icon: Calendar },
-          { label: "Confirmed",            value: "14", color: "#10b981", Icon: CheckCheck },
-          { label: "Covers Expected",      value: "64", color: "#f59e0b", Icon: Users },
+          { label: "Today's Reservations", value: "18", color: "#1E4DA0", Icon: Calendar },
+          { label: "Confirmed",            value: "14", color: "#4FC6FF", Icon: CheckCheck },
+          { label: "Covers Expected",      value: "64", color: "#4FC6FF", Icon: Users },
         ].map((k, i) => (
           <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8">
             <div className="flex items-center justify-between mb-1">
@@ -245,7 +245,7 @@ function ReservationsSlide() {
           <tbody>
             {bookings.map((r, i) => (
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-1.5 pr-2 font-mono" style={{ color: "#1a69c4" }}>{r.ref}</td>
+                <td className="py-1.5 pr-2 font-mono" style={{ color: "#1E4DA0" }}>{r.ref}</td>
                 <td className="py-1.5 pr-2 text-white/80 font-semibold">{r.name}</td>
                 <td className="py-1.5 pr-2 text-white/50">{r.covers}</td>
                 <td className="py-1.5 pr-2 text-white/65 font-semibold">{r.time}</td>
@@ -281,8 +281,8 @@ function RestaurantDashboard() {
     <div className="h-full rounded-2xl overflow-hidden flex flex-col" style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(26,105,196,0.25)" }}>
-            <UtensilsCrossed className="w-3.5 h-3.5" style={{ color: "#1a69c4" }} />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.25)" }}>
+            <UtensilsCrossed className="w-3.5 h-3.5" style={{ color: "#1E4DA0" }} />
           </div>
           <span className="font-bold text-white text-[11px]">OneSoft Restaurant</span>
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
@@ -291,7 +291,7 @@ function RestaurantDashboard() {
           {slides.map((s, i) => (
             <button key={i} onClick={() => setSlide(i)}
               className="text-[9px] px-2.5 py-1 rounded-md font-medium transition-all"
-              style={{ background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
+              style={{ background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.06)", color: i === slide ? "#fff" : "rgba(255,255,255,0.45)" }}>
               {s.label}
             </button>
           ))}
@@ -304,7 +304,7 @@ function RestaurantDashboard() {
         {slides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1a69c4" : "rgba(255,255,255,0.2)" }} />
+            style={{ width: i === slide ? 24 : 6, background: i === slide ? "#1E4DA0" : "rgba(255,255,255,0.2)" }} />
         ))}
       </div>
     </div>
@@ -314,48 +314,48 @@ function RestaurantDashboard() {
 /* ─────────────────── Page data ──────────────────────────── */
 
 const modules = [
-  { icon: Monitor,       color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430", title: "Point of Sale (POS)",
+  { icon: Monitor,       color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Point of Sale (POS)",
     desc: "Fast, touch-friendly till for dine-in, takeaway, and delivery — all from the same screen.",
     pts: ["Table, counter & drive-through modes", "Split bills & partial payments", "Cash, card & contactless", "Offline mode — never goes down"] },
-  { icon: UtensilsCrossed, color: "#10b981", bg: "#052e1c", border: "#10b98130", title: "Table Management",
+  { icon: UtensilsCrossed, color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Table Management",
     desc: "Visual floor plan with real-time table status — occupied, reserved, available, or being cleaned.",
     pts: ["Drag-and-drop floor plan editor", "Multi-area & multi-floor support", "Table timer & cover count", "Walk-in & reservation assignment"] },
-  { icon: ChefHat,       color: "#ef4444", bg: "#2e0a0a", border: "#ef444430", title: "Kitchen Display (KDS)",
+  { icon: ChefHat,       color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Kitchen Display (KDS)",
     desc: "Orders appear on kitchen screens the instant they're placed — no printed tickets, no lost orders.",
     pts: ["Course-by-course firing", "Ticket priority & allergy alerts", "Item-level status (cooking / ready)", "Bump screen confirmation"] },
-  { icon: ClipboardList, color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30", title: "Menu Management",
+  { icon: ClipboardList, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Menu Management",
     desc: "Build and update your menu from the back office — items, categories, modifiers, and pricing.",
     pts: ["Modifier groups & add-ons", "Time-based & seasonal menus", "Item availability toggles", "Nutritional & allergen info"] },
-  { icon: Package,       color: "#8b5cf6", bg: "#1a0b38", border: "#8b5cf630", title: "Inventory & Stock",
+  { icon: Package,       color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Inventory & Stock",
     desc: "Track ingredients down to the gram — wastage logging, low-stock alerts, and supplier orders.",
     pts: ["Recipe-linked stock deduction", "Wastage & spoilage tracking", "Supplier purchase orders", "Low-stock & reorder alerts"] },
-  { icon: Calendar,      color: "#06b6d4", bg: "#011e26", border: "#06b6d430", title: "Reservations & Booking",
+  { icon: Calendar,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Reservations & Booking",
     desc: "Online and phone reservations with table assignment, confirmation emails, and no-show tracking.",
     pts: ["Online booking widget", "Automated confirmation & reminders", "Deposit & pre-payment support", "No-show & cancellation tracking"] },
-  { icon: Users,         color: "#ec4899", bg: "#2d0a1a", border: "#ec489930", title: "Staff & Shift Management",
+  { icon: Users,         color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Staff & Shift Management",
     desc: "Rosters, clock-in/out, tip pooling, and payroll export — all linked to your team schedule.",
     pts: ["Weekly rota builder", "Clock-in / clock-out with PIN", "Tips tracking & pooling", "Payroll export (CSV / Xero)"] },
-  { icon: BarChart3,     color: "#14b8a6", bg: "#021f1c", border: "#14b8a630", title: "Reports & Analytics",
+  { icon: BarChart3,     color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
     desc: "Revenue by hour, best-selling items, staff performance, and wastage — all on one dashboard.",
     pts: ["Hourly & daily revenue charts", "Top items & category sales", "Staff sales performance", "Wastage cost by day / week"] },
 ];
 
 const flow = [
-  { step: "01", icon: Users,         color: "#1a69c4", title: "Guest Seated at Table",         detail: "Table assigned from the live floor plan — status flips to Occupied in real time" },
-  { step: "02", icon: ClipboardList, color: "#10b981", title: "Waiter Takes Order on Tablet",  detail: "Order entered via tablet POS — sent instantly to the kitchen display, no paper ticket" },
-  { step: "03", icon: ChefHat,       color: "#ef4444", title: "Kitchen Cooks by Course",       detail: "Each course fires to the screen in sequence — chef confirms each item as it's ready" },
-  { step: "04", icon: Utensils,      color: "#f59e0b", title: "Food Served — KDS Cleared",     detail: "Server bumps the ticket when food leaves the pass — timing logged for every cover" },
-  { step: "05", icon: Receipt,       color: "#8b5cf6", title: "Bill Auto-Generated",           detail: "Every item from every round compiled into one itemised bill — split it any way needed" },
-  { step: "06", icon: Wallet,        color: "#06b6d4", title: "Payment Taken, Stock Updated",  detail: "Payment recorded; ingredient stock deducted by recipe and wastage flagged if over-usage detected" },
+  { step: "01", icon: Users,         color: "#1E4DA0", title: "Guest Seated at Table",         detail: "Table assigned from the live floor plan — status flips to Occupied in real time" },
+  { step: "02", icon: ClipboardList, color: "#4FC6FF", title: "Waiter Takes Order on Tablet",  detail: "Order entered via tablet POS — sent instantly to the kitchen display, no paper ticket" },
+  { step: "03", icon: ChefHat,       color: "#1E4DA0", title: "Kitchen Cooks by Course",       detail: "Each course fires to the screen in sequence — chef confirms each item as it's ready" },
+  { step: "04", icon: Utensils,      color: "#4FC6FF", title: "Food Served — KDS Cleared",     detail: "Server bumps the ticket when food leaves the pass — timing logged for every cover" },
+  { step: "05", icon: Receipt,       color: "#1E4DA0", title: "Bill Auto-Generated",           detail: "Every item from every round compiled into one itemised bill — split it any way needed" },
+  { step: "06", icon: Wallet,        color: "#4FC6FF", title: "Payment Taken, Stock Updated",  detail: "Payment recorded; ingredient stock deducted by recipe and wastage flagged if over-usage detected" },
 ];
 
 const testimonials = [
   { quote: "We used to lose around £300 a week in unrecorded items — a bottle of wine here, a dessert there. Since going on OneSoft, every item is tracked from the moment it's ordered and our gross margin has improved by 8 percentage points.",
-    name: "Chef Marco Rossi", role: "Owner & Head Chef", co: "Rossi's Trattoria, Toronto, Canada", color: "#1a69c4" },
+    name: "Chef Marco Rossi", role: "Owner & Head Chef", co: "Rossi's Trattoria, Toronto, Canada", color: "#1E4DA0" },
   { quote: "The kitchen display system transformed our service speed. Before, our chefs were squinting at handwritten tickets. Now orders appear on screen the second the waiter taps confirm and the table timer tells us exactly when we're falling behind.",
-    name: "Sarah Mitchell", role: "Restaurant Manager", co: "The Harbour Kitchen, Sydney, Australia", color: "#ef4444" },
+    name: "Sarah Mitchell", role: "Restaurant Manager", co: "The Harbour Kitchen, Sydney, Australia", color: "#1E4DA0" },
   { quote: "We run three sites. Previously we had three different systems and no way to compare them. OneSoft shows me a combined report every morning — revenue, top sellers, staff performance across all three — in one view on my phone.",
-    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, New York, USA", color: "#10b981" },
+    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, New York, USA", color: "#4FC6FF" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -389,10 +389,10 @@ export default function RestaurantPage() {
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)" }} />
-          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(26,105,196,0.10)", filter: "blur(90px)" }}
+          <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)" }} />
+          <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(30,77,160,0.10)", filter: "blur(90px)" }}
             animate={{ y: [0, -18, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(26,105,196,0.07)", filter: "blur(110px)" }}
+          <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full" style={{ background: "rgba(30,77,160,0.07)", filter: "blur(110px)" }}
             animate={{ y: [0, 18, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
         </div>
 
@@ -404,14 +404,14 @@ export default function RestaurantPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span style={{ color: t50 }}>Products</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span style={{ color: "#1a69c4", fontWeight: 600 }}>Restaurant Management</span>
+            <span style={{ color: "#1E4DA0", fontWeight: 600 }}>Restaurant Management</span>
           </motion.div>
 
           {/* headline */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <UtensilsCrossed className="w-3.5 h-3.5" />Restaurant Management ERP
               </span>
             </motion.div>
@@ -419,7 +419,7 @@ export default function RestaurantPage() {
             <motion.h1 className="text-6xl md:text-8xl font-black tracking-tight mb-6 leading-[1.05]"
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }}>
               Your Restaurant,{" "}
-              <span style={{ color: "#1a69c4" }}>Running Smoothly.</span>
+              <span style={{ color: "#1E4DA0" }}>Running Smoothly.</span>
             </motion.h1>
 
             <motion.p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed" style={{ color: t60 }}
@@ -430,7 +430,7 @@ export default function RestaurantPage() {
             <motion.div className="flex flex-col sm:flex-row items-center gap-4 justify-center"
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
               <Button size="lg" className="h-14 px-10 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Restaurant Management ERP")}>
                 Book a Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -451,10 +451,10 @@ export default function RestaurantPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { to: 300,  suf: "+",  label: "Restaurants on Platform",       Icon: UtensilsCrossed, color: "#1a69c4" },
-              { to: 2,    suf: "M+", label: "Orders Processed",              Icon: Receipt,         color: "#10b981" },
-              { to: 45,   suf: "s",  label: "Avg. Order to Kitchen Time",    Icon: Clock,           color: "#f59e0b" },
-              { to: 30,   suf: "%",  label: "Reduction in Food Wastage",     Icon: TrendingUp,      color: "#8b5cf6" },
+              { to: 300,  suf: "+",  label: "Restaurants on Platform",       Icon: UtensilsCrossed, color: "#1E4DA0" },
+              { to: 2,    suf: "M+", label: "Orders Processed",              Icon: Receipt,         color: "#4FC6FF" },
+              { to: 45,   suf: "s",  label: "Avg. Order to Kitchen Time",    Icon: Clock,           color: "#4FC6FF" },
+              { to: 30,   suf: "%",  label: "Reduction in Food Wastage",     Icon: TrendingUp,      color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -475,12 +475,12 @@ export default function RestaurantPage() {
       {/* ═══ FLOW ═══════════════════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Sparkles className="w-3.5 h-3.5" />Every Station Connected
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Table to kitchen to payment.<br />All automatic.</h2>
@@ -522,7 +522,7 @@ export default function RestaurantPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <ChefHat className="w-3.5 h-3.5" />8 Core Modules
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Front of house.<br />Back of house. All of house.</h2>
@@ -569,13 +569,13 @@ export default function RestaurantPage() {
       {/* ═══ KDS DEEP-DIVE ═══════════════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(239,68,68,0.06), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(30,77,160,0.06), transparent)" }} />
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div className="flex-1"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
                 <ChefHat className="w-3.5 h-3.5" />Kitchen Display System
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">No more paper tickets.<br />No more shouted orders.</h2>
@@ -585,16 +585,16 @@ export default function RestaurantPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: Zap,          color: "#1a69c4", bg: "#0a1f3e", border: "#1a69c430",
+                  { icon: Zap,          color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Orders appear on kitchen screen in under 2 seconds",
                     sub: "No printer jams, no lost tickets, no shouting across a pass — the screen updates the moment the order is confirmed" },
-                  { icon: AlertTriangle,color: "#ef4444", bg: "#2e0a0a", border: "#ef444430",
+                  { icon: AlertTriangle,color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030",
                     title: "Allergy alerts highlighted automatically",
                     sub: "Any allergen flagged during ordering is shown in red on the kitchen ticket — before the chef starts cooking" },
-                  { icon: Clock,        color: "#f59e0b", bg: "#2d1f00", border: "#f59e0b30",
+                  { icon: Clock,        color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
                     title: "Live ticket timer — see which orders are running late",
                     sub: "Each ticket shows how long it's been waiting — tickets turn amber at 10 minutes and red at 15" },
-                  { icon: CheckCheck,   color: "#10b981", bg: "#052e1c", border: "#10b98130",
+                  { icon: CheckCheck,   color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
                     title: "Bump confirmation sends 'ready' signal to the floor",
                     sub: "When the chef bumps the ticket, waitstaff on the floor are notified the food is at the pass — no more guessing" },
                 ].map((item, i) => (
@@ -616,7 +616,7 @@ export default function RestaurantPage() {
               </div>
 
               <Button size="lg" className="h-13 px-8 text-base font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Restaurant Management ERP")}>
                 See KDS in Action <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -628,8 +628,8 @@ export default function RestaurantPage() {
               <div className="rounded-2xl overflow-hidden" style={{ background: tableBg, border: `1px solid ${dividerColor}`, boxShadow: "0 30px 60px rgba(0,0,0,0.12)" }}>
                 <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${dividerColor}` }}>
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(239,68,68,0.15)" }}>
-                      <ChefHat className="w-4 h-4" style={{ color: "#ef4444" }} />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)" }}>
+                      <ChefHat className="w-4 h-4" style={{ color: "#1E4DA0" }} />
                     </div>
                     <span className="font-bold text-sm">Kitchen Display — Hot Section</span>
                   </div>
@@ -647,22 +647,22 @@ export default function RestaurantPage() {
                   ].map((ticket, i) => (
                     <div key={i} className="rounded-xl p-3.5 transition-all"
                       style={{
-                        background: ticket.status === "ready" ? "rgba(16,185,129,0.08)" : ticket.late ? "rgba(239,68,68,0.08)" : `${isLight ? "#f1f5f9" : "rgba(255,255,255,0.03)"}`,
-                        border: `1.5px solid ${ticket.status === "ready" ? "rgba(16,185,129,0.30)" : ticket.late ? "rgba(239,68,68,0.30)" : dividerColor}`,
+                        background: ticket.status === "ready" ? "rgba(79,198,255,0.08)" : ticket.late ? "rgba(30,77,160,0.08)" : `${isLight ? "#f1f5f9" : "rgba(255,255,255,0.03)"}`,
+                        border: `1.5px solid ${ticket.status === "ready" ? "rgba(79,198,255,0.30)" : ticket.late ? "rgba(30,77,160,0.30)" : dividerColor}`,
                       }}>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-black" style={{ color: ticket.status === "ready" ? "#10b981" : ticket.late ? "#ef4444" : "#1a69c4" }}>{ticket.id}</span>
+                          <span className="text-sm font-black" style={{ color: ticket.status === "ready" ? "#4FC6FF" : ticket.late ? "#1E4DA0" : "#1E4DA0" }}>{ticket.id}</span>
                           <span className="text-xs font-semibold" style={{ color: t55 }}>Table {ticket.table}</span>
-                          {ticket.late && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444" }}>LATE</span>}
-                          {ticket.status === "ready" && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(16,185,129,0.15)", color: "#10b981" }}>READY</span>}
+                          {ticket.late && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.15)", color: "#1E4DA0" }}>LATE</span>}
+                          {ticket.status === "ready" && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(79,198,255,0.15)", color: "#4FC6FF" }}>READY</span>}
                         </div>
-                        <span className="text-xs font-bold" style={{ color: ticket.late ? "#ef4444" : t45 }}>{ticket.mins}m</span>
+                        <span className="text-xs font-bold" style={{ color: ticket.late ? "#1E4DA0" : t45 }}>{ticket.mins}m</span>
                       </div>
                       {ticket.allergy && (
-                        <div className="flex items-center gap-1 mb-2 px-2 py-1 rounded-md" style={{ background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.25)" }}>
-                          <AlertTriangle className="w-3 h-3" style={{ color: "#ef4444" }} />
-                          <span className="text-[10px] font-bold" style={{ color: "#ef4444" }}>ALLERGY: {ticket.allergy}</span>
+                        <div className="flex items-center gap-1 mb-2 px-2 py-1 rounded-md" style={{ background: "rgba(30,77,160,0.12)", border: "1px solid rgba(30,77,160,0.25)" }}>
+                          <AlertTriangle className="w-3 h-3" style={{ color: "#1E4DA0" }} />
+                          <span className="text-[10px] font-bold" style={{ color: "#1E4DA0" }}>ALLERGY: {ticket.allergy}</span>
                         </div>
                       )}
                       <div className="space-y-1">
@@ -676,13 +676,13 @@ export default function RestaurantPage() {
 
                 <div className="px-4 pb-4">
                   <div className="rounded-xl p-3 flex items-center justify-between"
-                    style={{ background: "rgba(26,105,196,0.08)", border: "1px solid rgba(26,105,196,0.20)" }}>
+                    style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.20)" }}>
                     <div>
                       <p className="text-xs font-semibold" style={{ color: t65 }}>Next ticket fires in</p>
-                      <p className="text-lg font-black" style={{ color: "#1a69c4" }}>00:35</p>
+                      <p className="text-lg font-black" style={{ color: "#1E4DA0" }}>00:35</p>
                       <p className="text-[10px]" style={{ color: t45 }}>Table T07 — course 2 — 4 mains</p>
                     </div>
-                    <Clock className="w-7 h-7 shrink-0" style={{ color: "#1a69c4" }} />
+                    <Clock className="w-7 h-7 shrink-0" style={{ color: "#1E4DA0" }} />
                   </div>
                 </div>
               </div>
@@ -697,7 +697,7 @@ export default function RestaurantPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Star className="w-3.5 h-3.5 fill-current" />What Restaurants Say
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Trusted by restaurants worldwide.</h2>
@@ -733,23 +733,23 @@ export default function RestaurantPage() {
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: "#1E4DA0" }}>
               <Lock className="w-3.5 h-3.5" />No card required · Free 30-day trial
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Less chaos in service.<br />
-              <span style={{ color: "#1a69c4" }}>More money at closing.</span>
+              <span style={{ color: "#1E4DA0" }}>More money at closing.</span>
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: t55 }}>
               Join 300+ restaurants running their entire operation on OneSoft. Set up in a day, earning more by the weekend.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
-                style={{ background: "#1a69c4", border: "none", color: "#ffffff" }}
+                style={{ background: "#1E4DA0", border: "none", color: "#ffffff" }}
                 onClick={() => openCTAModal("Restaurant Management ERP")}>
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -764,53 +764,53 @@ export default function RestaurantPage() {
 
       <CTAStrip onCTA={() => openCTAModal("Restaurant Management ERP")} />
       <FeatureMarqueeSection
-        accentColor="#ea580c"
+        accentColor="#1E4DA0"
         heading="Everything a Restaurant Needs"
         subheading="From table orders to kitchen displays — every module built for modern restaurants and food chains."
         row1={[
-          { icon: "🍽️", label: "Table Management",     color: "#ea580c" },
-          { icon: "🖥️", label: "POS System",           color: "#8b5cf6" },
-          { icon: "📺", label: "Kitchen Display",       color: "#10b981" },
-          { icon: "📱", label: "Online Orders",         color: "#f59e0b" },
-          { icon: "📋", label: "Menu Management",       color: "#06b6d4" },
-          { icon: "📅", label: "Reservations",          color: "#ec4899" },
-          { icon: "🛵", label: "Delivery Tracking",     color: "#14b8a6" },
-          { icon: "🧑‍🍳", label: "Waiter App",          color: "#6366f1" },
-          { icon: "📦", label: "Inventory Control",     color: "#f97316" },
-          { icon: "🧮", label: "Recipe Costing",        color: "#a855f7" },
-          { icon: "🚚", label: "Supplier Orders",       color: "#ef4444" },
-          { icon: "🗑️", label: "Waste Tracking",       color: "#0ea5e9" },
+          { icon: "🍽️", label: "Table Management",     color: "#1E4DA0" },
+          { icon: "🖥️", label: "POS System",           color: "#1E4DA0" },
+          { icon: "📺", label: "Kitchen Display",       color: "#4FC6FF" },
+          { icon: "📱", label: "Online Orders",         color: "#4FC6FF" },
+          { icon: "📋", label: "Menu Management",       color: "#4FC6FF" },
+          { icon: "📅", label: "Reservations",          color: "#4FC6FF" },
+          { icon: "🛵", label: "Delivery Tracking",     color: "#4FC6FF" },
+          { icon: "🧑‍🍳", label: "Waiter App",          color: "#1E4DA0" },
+          { icon: "📦", label: "Inventory Control",     color: "#1E4DA0" },
+          { icon: "🧮", label: "Recipe Costing",        color: "#1E4DA0" },
+          { icon: "🚚", label: "Supplier Orders",       color: "#1E4DA0" },
+          { icon: "🗑️", label: "Waste Tracking",       color: "#4FC6FF" },
         ]}
         row2={[
-          { icon: "⭐", label: "Loyalty Program",       color: "#10b981" },
-          { icon: "👥", label: "Staff Scheduling",      color: "#3b82f6" },
-          { icon: "💵", label: "Payroll",               color: "#8b5cf6" },
-          { icon: "💰", label: "Tips Management",       color: "#f59e0b" },
-          { icon: "🏪", label: "Multi-Branch",          color: "#06b6d4" },
-          { icon: "📊", label: "Sales Reports",         color: "#ec4899" },
-          { icon: "🧾", label: "Tax Management",        color: "#14b8a6" },
-          { icon: "💬", label: "Customer Feedback",     color: "#6366f1" },
-          { icon: "📲", label: "QR Code Menu",          color: "#f97316" },
-          { icon: "🏦", label: "Cash Drawer",           color: "#a855f7" },
-          { icon: "↩️", label: "Void & Refunds",        color: "#ef4444" },
-          { icon: "🌙", label: "Shift Reports",         color: "#0ea5e9" },
+          { icon: "⭐", label: "Loyalty Program",       color: "#4FC6FF" },
+          { icon: "👥", label: "Staff Scheduling",      color: "#1E4DA0" },
+          { icon: "💵", label: "Payroll",               color: "#1E4DA0" },
+          { icon: "💰", label: "Tips Management",       color: "#4FC6FF" },
+          { icon: "🏪", label: "Multi-Branch",          color: "#4FC6FF" },
+          { icon: "📊", label: "Sales Reports",         color: "#4FC6FF" },
+          { icon: "🧾", label: "Tax Management",        color: "#4FC6FF" },
+          { icon: "💬", label: "Customer Feedback",     color: "#1E4DA0" },
+          { icon: "📲", label: "QR Code Menu",          color: "#1E4DA0" },
+          { icon: "🏦", label: "Cash Drawer",           color: "#1E4DA0" },
+          { icon: "↩️", label: "Void & Refunds",        color: "#1E4DA0" },
+          { icon: "🌙", label: "Shift Reports",         color: "#4FC6FF" },
         ]}
         row3={[
-          { icon: "☁️", label: "Cloud Hosted",          color: "#10b981" },
-          { icon: "🔔", label: "Allergy Alerts",        color: "#3b82f6" },
-          { icon: "🎯", label: "Upsell Prompts",        color: "#8b5cf6" },
-          { icon: "📷", label: "CCTV Integration",      color: "#f59e0b" },
-          { icon: "🧾", label: "Split Billing",         color: "#06b6d4" },
-          { icon: "💳", label: "Multi-Payment",         color: "#ec4899" },
-          { icon: "🌍", label: "Multi-Currency",        color: "#14b8a6" },
-          { icon: "📈", label: "Food Cost Analysis",    color: "#6366f1" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#f97316" },
-          { icon: "🤝", label: "Vendor Portal",         color: "#a855f7" },
-          { icon: "🎁", label: "Promotions Engine",     color: "#ef4444" },
-          { icon: "🔄", label: "Real-Time Sync",        color: "#0ea5e9" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#4FC6FF" },
+          { icon: "🔔", label: "Allergy Alerts",        color: "#1E4DA0" },
+          { icon: "🎯", label: "Upsell Prompts",        color: "#1E4DA0" },
+          { icon: "📷", label: "CCTV Integration",      color: "#4FC6FF" },
+          { icon: "🧾", label: "Split Billing",         color: "#4FC6FF" },
+          { icon: "💳", label: "Multi-Payment",         color: "#4FC6FF" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#4FC6FF" },
+          { icon: "📈", label: "Food Cost Analysis",    color: "#1E4DA0" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
+          { icon: "🤝", label: "Vendor Portal",         color: "#1E4DA0" },
+          { icon: "🎁", label: "Promotions Engine",     color: "#1E4DA0" },
+          { icon: "🔄", label: "Real-Time Sync",        color: "#4FC6FF" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#ea580c" productName="Restaurant ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="Restaurant ERP" />
       <ERPCrossLinks current="/restaurant" />
       <Footer />
     </div>
