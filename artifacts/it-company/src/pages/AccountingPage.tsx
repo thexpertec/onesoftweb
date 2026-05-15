@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
 import { useTheme } from "@/context/ThemeContext";
 import { AccountingMarquee } from "@/components/AccountingMarquee";
+import { CustomSolutionsSection } from "@/components/CustomSolutionsSection";
 import {
   ArrowRight, CheckCircle2, BookOpen, Users, Package,
   BarChart3, RefreshCw, ShieldCheck, Layers, TrendingUp,
@@ -1034,6 +1035,7 @@ export default function AccountingPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Accounting & Bookkeeping ERP")}/>
+      <CustomSolutionsSection accentColor="#10b981" productName="Accounting ERP" />
       <ERPCrossLinks current="/accounting" />
       <Footer />
     </div>

@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
+import { CustomSolutionsSection } from "@/components/CustomSolutionsSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -800,6 +801,7 @@ export default function HospitalPage() {
           { icon: "🎯", label: "KPI Dashboard",         color: "#0ea5e9" },
         ]}
       />
+      <CustomSolutionsSection accentColor="#1a69c4" productName="Hospital ERP" />
       <ERPCrossLinks current="/hospital" />
       <Footer />
     </div>

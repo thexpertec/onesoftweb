@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
+import { CustomSolutionsSection } from "@/components/CustomSolutionsSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -722,6 +723,7 @@ export default function ShadiHallPage() {
           { icon: "🤖", label: "AI Availability Check", color: "#0ea5e9" },
         ]}
       />
+      <CustomSolutionsSection accentColor="#db2777" productName="Shadi Hall ERP" />
       <ERPCrossLinks current="/shadi-hall" />
       <Footer />
     </div>

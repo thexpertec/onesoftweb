@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ERPCrossLinks } from "@/components/ERPCrossLinks";
 import { FeatureMarqueeSection } from "@/components/FeatureMarqueeSection";
+import { CustomSolutionsSection } from "@/components/CustomSolutionsSection";
 import { CTAStrip } from "@/components/CTAStrip";
 import { Button } from "@/components/ui/button";
 import { useCTAModal } from "@/context/CTAModalContext";
@@ -800,6 +801,7 @@ export default function DistributorPage() {
           { icon: "🤖", label: "AI Stock Insights",     color: "#0ea5e9" },
         ]}
       />
+      <CustomSolutionsSection accentColor="#0891b2" productName="Distributor ERP" />
       <ERPCrossLinks current="/distributor" />
       <Footer />
     </div>
