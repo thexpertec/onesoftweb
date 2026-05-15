@@ -190,7 +190,7 @@ export default function OneThemesPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span style={{ color: t50 }}>Products</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span style={{ color: ACCENT, fontWeight: 600 }}>OneThemes — Custom Websites</span>
+            <span style={{ color: ACCENT, fontWeight: 600 }}>OneSites — Custom Website Development</span>
           </motion.div>
 
           {/* two-column hero */}
@@ -199,8 +199,8 @@ export default function OneThemesPage() {
             <div className="flex-1 max-w-2xl">
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                  style={{ background: "rgba(245,158,11,0.10)", border: "1px solid rgba(245,158,11,0.30)", color: ACCENT }}>
-                  <Palette className="w-3.5 h-3.5" />Custom Website Development
+                  style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: ACCENT }}>
+                  <Palette className="w-3.5 h-3.5" />OneSites — Custom Website Development
                 </span>
               </motion.div>
 
@@ -219,7 +219,7 @@ export default function OneThemesPage() {
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
                 <Button size="lg" className="h-14 px-10 text-lg font-semibold"
                   style={{ background: ACCENT, border: "none", color: "#ffffff" }}
-                  onClick={() => openCTAModal("OneThemes — Custom Website")}>
+                  onClick={() => openCTAModal("OneSites — Custom Website")}>
                   Discuss Your Website <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <button className="h-14 px-8 text-base rounded-lg font-medium transition-all duration-200"
@@ -452,7 +452,7 @@ export default function OneThemesPage() {
                 <div className="px-6 pb-6">
                   <button className="w-full py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
                     style={{ background: ACCENT, color: "#fff" }}
-                    onClick={() => openCTAModal("OneThemes — Custom Website")}>
+                    onClick={() => openCTAModal("OneSites — Custom Website")}>
                     Get a Free Quote Today <ArrowRight className="inline ml-1.5 w-4 h-4" />
                   </button>
                 </div>
@@ -548,7 +548,7 @@ export default function OneThemesPage() {
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
               <Button size="lg" className="h-14 px-12 text-lg font-semibold"
                 style={{ background: ACCENT, border: "none", color: "#ffffff" }}
-                onClick={() => openCTAModal("OneThemes — Custom Website")}>
+                onClick={() => openCTAModal("OneSites — Custom Website")}>
                 Book a Free Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <div className="flex items-center gap-2" style={{ color: t45 }}>
@@ -560,7 +560,7 @@ export default function OneThemesPage() {
         </div>
       </div>
 
-      <CTAStrip onCTA={() => openCTAModal("OneThemes — Custom Website")} />
+      <CTAStrip onCTA={() => openCTAModal("OneSites — Custom Website")} />
       <FeatureMarqueeSection
         accentColor={ACCENT}
         heading="What We Build For You"
@@ -608,7 +608,7 @@ export default function OneThemesPage() {
           { icon: "📬", label: "Email / SMTP Setup",      color: "#a855f7" },
         ]}
       />
-      <CustomSolutionsSection accentColor={ACCENT} productName="OneThemes" />
+      <CustomSolutionsSection accentColor={ACCENT} productName="OneSites" />
       <Footer />
     </div>
   );
