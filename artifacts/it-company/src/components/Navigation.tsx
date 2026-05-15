@@ -8,6 +8,7 @@ import {
   Wrench, BrainCircuit, Megaphone, SearchCheck, ImagePlay,
   ArrowRight, Sparkles, Phone,
   Pill, Hotel, Home, Dumbbell, Shirt, Truck, Calculator, Heart,
+  MonitorSmartphone, Bot, Brush, TrendingUp, BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,21 +30,68 @@ const themeProducts = [
   { icon: Palette, label: "OneThemes",  desc: "Premium website templates for SMEs", color: "#f59e0b", href: "#themes" },
 ];
 
-const devServices = [
-  { icon: Globe,          label: "Website Development",    desc: "React, Next.js, WordPress", color: "#2563eb", href: "#services" },
-  { icon: ShoppingBag,    label: "Shopify Stores",         desc: "Custom themes & apps",      color: "#16a34a", href: "#services" },
-  { icon: Webhook,        label: "API Development",        desc: "REST, GraphQL, Swagger",    color: "#0891b2", href: "#services" },
-  { icon: Code2,          label: "Custom Software",        desc: "Desktop & web apps",        color: "#7c3aed", href: "#services" },
-  { icon: Users,          label: "CRM Systems",            desc: "Leads, pipeline, reporting",color: "#db2777", href: "#services" },
-  { icon: LayoutDashboard,label: "ERP Implementation",    desc: "All 6 industry modules",    color: "#ea580c", href: "#services" },
-  { icon: Wrench,         label: "Custom Development",     desc: "Unique, complex builds",    color: "#0284c7", href: "#services" },
-  { icon: BrainCircuit,   label: "AI & Automation",        desc: "Chatbots, RAG, workflows",  color: "#6d28d9", href: "#ai-automation" },
-];
-
-const marketingServices = [
-  { icon: Megaphone,    label: "Social Media Marketing", desc: "Instagram, LinkedIn, TikTok", color: "#e11d48", href: "#services" },
-  { icon: SearchCheck,  label: "SEO",                    desc: "Technical & on-page SEO",     color: "#15803d", href: "#services" },
-  { icon: ImagePlay,    label: "Ad Creatives",           desc: "Google, Meta, video ads",     color: "#b45309", href: "#services" },
+const allServices = [
+  {
+    icon: MonitorSmartphone,
+    label: "Website Development",
+    desc: "Fast, modern websites built to convert",
+    tags: ["React & Next.js", "WordPress", "Landing Pages"],
+    color: "#2563eb",
+    grad: "from-blue-600/20 to-blue-500/5",
+    border: "border-blue-500/20",
+    href: "#services",
+  },
+  {
+    icon: Code2,
+    label: "Custom Software",
+    desc: "Bespoke desktop & web applications",
+    tags: ["Web Apps", "Desktop Apps", "API Integration"],
+    color: "#7c3aed",
+    grad: "from-violet-600/20 to-violet-500/5",
+    border: "border-violet-500/20",
+    href: "#services",
+  },
+  {
+    icon: Bot,
+    label: "AI Automation",
+    desc: "Intelligent workflows that work for you",
+    tags: ["Chatbots", "RAG Pipelines", "Predictive AI"],
+    color: "#8b5cf6",
+    grad: "from-purple-600/20 to-fuchsia-500/5",
+    border: "border-purple-500/20",
+    href: "#ai-automation",
+    badge: "New",
+  },
+  {
+    icon: Brush,
+    label: "Ad Creatives",
+    desc: "High-conversion visuals & video ads",
+    tags: ["Google Ads", "Meta Ads", "Video Creatives"],
+    color: "#f97316",
+    grad: "from-orange-600/20 to-orange-500/5",
+    border: "border-orange-500/20",
+    href: "#services",
+  },
+  {
+    icon: Megaphone,
+    label: "Social Media Marketing",
+    desc: "Grow your audience across every platform",
+    tags: ["Instagram", "LinkedIn", "TikTok & X"],
+    color: "#e11d48",
+    grad: "from-rose-600/20 to-pink-500/5",
+    border: "border-rose-500/20",
+    href: "#services",
+  },
+  {
+    icon: BarChart3,
+    label: "SEO Optimization",
+    desc: "Rank higher and drive organic traffic",
+    tags: ["Technical SEO", "On-page", "Link Building"],
+    color: "#10b981",
+    grad: "from-emerald-600/20 to-teal-500/5",
+    border: "border-emerald-500/20",
+    href: "#services",
+  },
 ];
 
 /* ─── Mega menu panel content ───────────────────────────────── */
@@ -110,61 +158,93 @@ function ProductsMega({ close }: { close: () => void }) {
 function ServicesMega({ close }: { close: () => void }) {
   const { openCTAModal } = useCTAModal();
   return (
-    <div className="grid grid-cols-[1fr_190px] gap-0 min-w-[660px] max-h-[calc(100vh-90px)] overflow-y-auto">
-      {/* Left: Dev + Marketing */}
-      <div className="p-4 border-r border-white/8">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Software & Development</p>
-        <div className="grid grid-cols-2 gap-0.5 mb-3">
-          {devServices.map(s => (
-            <a key={s.label} href={s.href} onClick={close}
-              className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
-              <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `${s.color}18`, border: `1px solid ${s.color}28` }}>
-                <s.icon className="w-3 h-3" style={{ color: s.color }} />
-              </div>
-              <div>
-                <p className="text-[12px] font-medium text-white/85 group-hover:text-white leading-tight">{s.label}</p>
-                <p className="text-[10px] text-white/38">{s.desc}</p>
-              </div>
-            </a>
-          ))}
+    <div className="grid grid-cols-[1fr_196px] gap-0 min-w-[780px] max-h-[calc(100vh-90px)] overflow-y-auto">
+
+      {/* Left: 3×2 service cards */}
+      <div className="p-5 border-r border-white/8">
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white/35">Our Services</p>
+          <span className="text-[9px] text-white/25">6 capabilities</span>
         </div>
-        <div className="h-px bg-white/8 mb-2" />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Digital Marketing</p>
-        <div className="grid grid-cols-3 gap-0.5">
-          {marketingServices.map(s => (
+        <div className="grid grid-cols-3 gap-2.5">
+          {allServices.map(s => (
             <a key={s.label} href={s.href} onClick={close}
-              className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
-              <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `${s.color}18`, border: `1px solid ${s.color}28` }}>
-                <s.icon className="w-3 h-3" style={{ color: s.color }} />
+              className={`group relative flex flex-col gap-2 p-3 rounded-xl border transition-all duration-200 hover:scale-[1.02] bg-gradient-to-br ${s.grad} ${s.border} hover:border-opacity-60 hover:shadow-lg`}
+              style={{ ["--hover-shadow" as string]: `${s.color}20` }}>
+
+              {/* Badge */}
+              {"badge" in s && s.badge && (
+                <span className="absolute top-2 right-2 text-[8px] font-bold px-1.5 py-0.5 rounded-full"
+                  style={{ background: `${s.color}30`, color: s.color }}>
+                  {s.badge}
+                </span>
+              )}
+
+              {/* Icon */}
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: `${s.color}18`, border: `1px solid ${s.color}35` }}>
+                <s.icon className="w-4.5 h-4.5" style={{ color: s.color, width: 18, height: 18 }} />
               </div>
-              <p className="text-[12px] font-medium text-white/80 group-hover:text-white leading-tight">{s.label}</p>
+
+              {/* Text */}
+              <div>
+                <p className="text-[12.5px] font-semibold text-white/90 group-hover:text-white leading-tight mb-0.5">{s.label}</p>
+                <p className="text-[10.5px] text-white/42 leading-tight">{s.desc}</p>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1 mt-0.5">
+                {s.tags.map(tag => (
+                  <span key={tag} className="text-[8.5px] font-medium px-1.5 py-0.5 rounded-full"
+                    style={{ background: `${s.color}15`, color: `${s.color}`, opacity: 0.85 }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Hover arrow */}
+              <ArrowRight className="absolute bottom-3 right-3 w-3 h-3 opacity-0 group-hover:opacity-60 transition-all -translate-x-1 group-hover:translate-x-0"
+                style={{ color: s.color }} />
             </a>
           ))}
         </div>
       </div>
 
-      {/* Right: CTA */}
-      <div className="p-4 flex flex-col justify-between bg-white/[0.02]">
+      {/* Right: AI CTA panel */}
+      <div className="p-5 flex flex-col justify-between"
+        style={{ background: "linear-gradient(160deg,rgba(109,40,217,0.08) 0%,rgba(139,92,246,0.03) 100%)" }}>
         <div>
-          <div className="flex items-center gap-1.5 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-violet-400">AI-Powered</span>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+            style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.35)" }}>
+            <Sparkles className="w-5 h-5 text-violet-400" />
           </div>
-          <p className="text-sm font-bold text-white mb-1">Every service AI-ready</p>
-          <p className="text-xs text-white/50 leading-relaxed">
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="text-[9px] font-bold uppercase tracking-wider text-violet-400">AI-Powered</span>
+          </div>
+          <p className="text-[14px] font-bold text-white leading-snug mb-2">Every service AI-ready</p>
+          <p className="text-[11.5px] text-white/48 leading-relaxed">
             We layer AI automation into every product we build — chatbots, document AI, predictive analytics.
           </p>
+
+          {/* Capability pills */}
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {["GPT-4", "RAG", "Agents", "Vision AI"].map(pill => (
+              <span key={pill} className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/20">
+                {pill}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="mt-4 space-y-2">
+
+        <div className="mt-5 space-y-3">
+          <div className="h-px bg-white/8" />
           <a href="#ai-automation" onClick={close}
-            className="flex items-center gap-1.5 text-xs font-semibold text-violet-400 hover:underline">
-            Explore AI <ArrowRight className="w-3.5 h-3.5" />
+            className="flex items-center gap-1.5 text-[12px] font-semibold text-violet-400 hover:text-violet-300 transition-colors group">
+            Explore AI <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
           <button onClick={() => { close(); openCTAModal(); }}
-            className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
-            Get a Quote <ArrowRight className="w-3.5 h-3.5" />
+            className="flex items-center gap-1.5 text-[12px] font-semibold text-primary hover:text-blue-300 transition-colors group">
+            Get a Quote <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
       </div>
@@ -178,7 +258,7 @@ type MegaKey = "products" | "services" | null;
 
 const PANEL_WIDTH: Record<string, number> = {
   products: 860,
-  services: 700,
+  services: 820,
 };
 
 function MegaNavItem({
@@ -315,21 +395,18 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               Services <ChevronDown className={`w-4 h-4 transition-transform ${expanded === "services" ? "rotate-180" : ""}`} />
             </button>
             {expanded === "services" && (
-              <div className="pl-3 py-2 space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 py-1">Software & Development</p>
-                {devServices.map(s => (
+              <div className="pl-3 py-2 space-y-0.5">
+                {allServices.map(s => (
                   <a key={s.label} href={s.href} onClick={onClose}
-                    className="flex items-center gap-3 py-2 text-sm text-white/70 hover:text-white">
-                    <s.icon className="w-4 h-4 shrink-0" style={{ color: s.color }} />
-                    {s.label}
-                  </a>
-                ))}
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 py-1 pt-3">Digital Marketing</p>
-                {marketingServices.map(s => (
-                  <a key={s.label} href={s.href} onClick={onClose}
-                    className="flex items-center gap-3 py-2 text-sm text-white/70 hover:text-white">
-                    <s.icon className="w-4 h-4 shrink-0" style={{ color: s.color }} />
-                    {s.label}
+                    className="flex items-center gap-3 py-2 rounded-lg hover:bg-white/[0.05] transition-colors group">
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: `${s.color}18`, border: `1px solid ${s.color}30` }}>
+                      <s.icon className="w-3.5 h-3.5" style={{ color: s.color }} />
+                    </div>
+                    <div>
+                      <p className="text-sm text-white/80 group-hover:text-white font-medium leading-tight">{s.label}</p>
+                      <p className="text-[10px] text-white/35 leading-tight">{s.desc}</p>
+                    </div>
                   </a>
                 ))}
               </div>
