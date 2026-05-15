@@ -42,7 +42,7 @@ export function HowWeWork() {
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5">
             How our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
               ERP delivery
             </span>{" "}
             process works

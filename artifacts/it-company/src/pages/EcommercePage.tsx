@@ -44,12 +44,12 @@ function OrdersSlide() {
   ];
   const kpis = [
     { label: "Orders Today",    value: "148",    color: "#1E4DA0", Icon: ShoppingCart },
-    { label: "Awaiting Pick",   value: "34",     color: "#4FC6FF", Icon: Package },
-    { label: "Dispatched",      value: "112",    color: "#4FC6FF", Icon: Truck },
+    { label: "Awaiting Pick",   value: "34",     color: "#1E4DA0", Icon: Package },
+    { label: "Dispatched",      value: "112",    color: "#1E4DA0", Icon: Truck },
     { label: "Today's Revenue", value: "£6,840", color: "#1E4DA0", Icon: Receipt },
   ];
-  const chColor = (c: string) => c === "Shopify" ? "#4FC6FF" : c === "Amazon" ? "#4FC6FF" : c === "eBay" ? "#1E4DA0" : "#1E4DA0";
-  const stColor = (s: string) => s === "Dispatched" ? "#4FC6FF" : s === "Packing" ? "#1E4DA0" : "#4FC6FF";
+  const chColor = (c: string) => c === "Shopify" ? "#1E4DA0" : c === "Amazon" ? "#1E4DA0" : c === "eBay" ? "#1E4DA0" : "#1E4DA0";
+  const stColor = (s: string) => s === "Dispatched" ? "#1E4DA0" : s === "Packing" ? "#1E4DA0" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -104,7 +104,7 @@ function InventorySlide() {
   ];
   const summary = [
     { label: "Total SKUs",     value: "1,842", color: "#1E4DA0" },
-    { label: "Low Stock",      value: "23",    color: "#4FC6FF" },
+    { label: "Low Stock",      value: "23",    color: "#1E4DA0" },
     { label: "Out of Stock",   value: "7",     color: "#1E4DA0" },
   ];
   return (
@@ -128,9 +128,9 @@ function InventorySlide() {
               <tr key={i} className="border-t border-white/[0.04]">
                 <td className="py-1.5 pr-3 font-mono text-[6.5px]" style={{ color: "#1E4DA0" }}>{r.sku}</td>
                 <td className="py-1.5 pr-3 text-white/75">{r.name}</td>
-                <td className="py-1.5 pr-3 font-bold" style={{ color: r.stock === 0 ? "#1E4DA0" : r.stock <= r.reorder ? "#4FC6FF" : "#4FC6FF" }}>{r.stock}</td>
+                <td className="py-1.5 pr-3 font-bold" style={{ color: r.stock === 0 ? "#1E4DA0" : r.stock <= r.reorder ? "#1E4DA0" : "#1E4DA0" }}>{r.stock}</td>
                 <td className="py-1.5 pr-3 text-white/45">{r.committed}</td>
-                <td className="py-1.5 pr-3 font-bold" style={{ color: r.avail === 0 ? "#1E4DA0" : r.avail < 3 ? "#4FC6FF" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
+                <td className="py-1.5 pr-3 font-bold" style={{ color: r.avail === 0 ? "#1E4DA0" : r.avail < 3 ? "#1E4DA0" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
                 <td className="py-1.5 flex gap-1 flex-wrap">
                   {r.channels.map(ch => <span key={ch} className="text-[6px] px-1 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.5)" }}>{ch}</span>)}
                 </td>
@@ -145,8 +145,8 @@ function InventorySlide() {
 
 function ChannelsSlide() {
   const channels = [
-    { name: "Shopify",  orders: 62, revenue: "£2,940", pct: 100, color: "#4FC6FF" },
-    { name: "Amazon",   orders: 44, revenue: "£2,100", pct: 71,  color: "#4FC6FF" },
+    { name: "Shopify",  orders: 62, revenue: "£2,940", pct: 100, color: "#1E4DA0" },
+    { name: "Amazon",   orders: 44, revenue: "£2,100", pct: 71,  color: "#1E4DA0" },
     { name: "Website",  orders: 28, revenue: "£1,180", pct: 40,  color: "#1E4DA0" },
     { name: "eBay",     orders: 14, revenue: "£620",   pct: 21,  color: "#1E4DA0" },
   ];
@@ -199,7 +199,7 @@ function ChannelsSlide() {
                 <td className="py-1.5 pr-3 text-white/55">{r.sold}</td>
                 <td className="py-1.5 pr-3 text-white/70 font-semibold">{r.revenue}</td>
                 <td className="py-1.5">
-                  <span className="font-bold" style={{ color: r.trend.startsWith("+") ? "#4FC6FF" : "#1E4DA0" }}>{r.trend}</span>
+                  <span className="font-bold" style={{ color: r.trend.startsWith("+") ? "#1E4DA0" : "#1E4DA0" }}>{r.trend}</span>
                 </td>
               </tr>
             ))}
@@ -218,9 +218,9 @@ function FulfilmentSlide() {
     { id: "#ORD-9849", customer: "Priya Sharma",   items: ["Air Runner WHT/8 x1"],                            courier: "DHL",   label: "Printed", status: "Awaiting" },
   ];
   const stats = [
-    { label: "To Pick",   value: "22", color: "#4FC6FF" },
+    { label: "To Pick",   value: "22", color: "#1E4DA0" },
     { label: "Packing",   value: "8",  color: "#1E4DA0" },
-    { label: "Ready",     value: "14", color: "#4FC6FF" },
+    { label: "Ready",     value: "14", color: "#1E4DA0" },
   ];
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
@@ -245,10 +245,10 @@ function FulfilmentSlide() {
                 <div className="flex items-center gap-1.5">
                   <span className="text-[6.5px] px-1.5 py-0.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.45)" }}>{r.courier}</span>
                   <span className="text-[6.5px] font-bold px-1.5 py-0.5 rounded-full"
-                    style={{ background: r.label === "Printed" ? "rgba(79,198,255,0.12)" : "rgba(79,198,255,0.12)", color: r.label === "Printed" ? "#4FC6FF" : "#4FC6FF" }}>{r.label}</span>
+                    style={{ background: r.label === "Printed" ? "rgba(30,77,160,0.12)" : "rgba(30,77,160,0.12)", color: r.label === "Printed" ? "#1E4DA0" : "#1E4DA0" }}>{r.label}</span>
                   <span className="text-[6.5px] font-bold px-1.5 py-0.5 rounded-full"
-                    style={{ background: r.status === "Packing" ? "rgba(30,77,160,0.12)" : r.status === "Picking" ? "rgba(79,198,255,0.12)" : "rgba(255,255,255,0.06)",
-                      color: r.status === "Packing" ? "#1E4DA0" : r.status === "Picking" ? "#4FC6FF" : "rgba(255,255,255,0.4)" }}>{r.status}</span>
+                    style={{ background: r.status === "Packing" ? "rgba(30,77,160,0.12)" : r.status === "Picking" ? "rgba(30,77,160,0.12)" : "rgba(255,255,255,0.06)",
+                      color: r.status === "Packing" ? "#1E4DA0" : r.status === "Picking" ? "#1E4DA0" : "rgba(255,255,255,0.4)" }}>{r.status}</span>
                 </div>
               </div>
               <div className="flex gap-2 flex-wrap">
@@ -315,43 +315,43 @@ const modules = [
   { icon: ShoppingCart,  color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Order Management",
     desc: "Every order from every channel — in one place, with status tracked from payment to delivery.",
     pts: ["Unified inbox across all channels", "Auto order-routing by warehouse/courier", "Fraud detection & payment verification", "Returns & exchange management"] },
-  { icon: Layers,        color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Multi-Channel Sync",
+  { icon: Layers,        color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Multi-Channel Sync",
     desc: "Sell on Shopify, Amazon, eBay, and your own website — inventory stays perfectly in sync.",
     pts: ["Real-time stock sync across channels", "Channel-specific pricing & promotions", "Listing management from one place", "Channel performance comparison"] },
   { icon: Warehouse,     color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Inventory & Warehousing",
     desc: "Track every SKU, variant, and bundle across multiple warehouses — with bin locations.",
     pts: ["Multi-warehouse stock management", "Bin & shelf location tracking", "Bundles & kit-building", "Automatic low-stock reorder triggers"] },
-  { icon: Truck,         color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Shipping & Fulfilment",
+  { icon: Truck,         color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Shipping & Fulfilment",
     desc: "Courier labels printed in one click — DHL, FedEx, UPS, Aramex all connected natively.",
     pts: ["Multi-courier label printing", "Batch picking & packing workflows", "Tracking synced back to customer", "Shipping rules by weight / destination"] },
   { icon: Tag,           color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Product Catalogue",
     desc: "Manage thousands of SKUs with variants, images, descriptions, and supplier costs.",
     pts: ["Unlimited SKUs & variants", "Bulk import & export via CSV", "Supplier cost vs. sell price tracking", "Barcode & QR code generation"] },
-  { icon: Users,         color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Customer Management",
+  { icon: Users,         color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Customer Management",
     desc: "Full CRM — order history, lifetime value, loyalty points, and marketing segmentation.",
     pts: ["Customer lifetime value tracking", "Loyalty & rewards programme", "Purchase history & preferences", "Email list segmentation"] },
-  { icon: RefreshCw,     color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Purchasing & Suppliers",
+  { icon: RefreshCw,     color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Purchasing & Suppliers",
     desc: "Raise purchase orders when stock hits reorder level — automatically, to the right supplier.",
     pts: ["Auto-generated purchase orders", "Supplier lead time tracking", "GRN & stock-in workflows", "Supplier pricing history"] },
-  { icon: BarChart3,     color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
+  { icon: BarChart3,     color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Reports & Analytics",
     desc: "Revenue by channel, bestsellers, return rates, and margin analysis — all in one dashboard.",
     pts: ["Channel revenue comparison", "Product margin & profitability", "Return rate by product / channel", "Inventory turnover & velocity"] },
 ];
 
 const flow = [
   { step: "01", icon: ShoppingCart, color: "#1E4DA0", title: "Order Placed on Any Channel",      detail: "Shopify, Amazon, eBay, or your own website — every order arrives in one unified inbox immediately" },
-  { step: "02", icon: Warehouse,    color: "#4FC6FF", title: "Stock Reserved Instantly",          detail: "Inventory committed the moment the order is confirmed — no overselling across any channel" },
+  { step: "02", icon: Warehouse,    color: "#1E4DA0", title: "Stock Reserved Instantly",          detail: "Inventory committed the moment the order is confirmed — no overselling across any channel" },
   { step: "03", icon: ScanLine,     color: "#1E4DA0", title: "Picking List Auto-Generated",      detail: "Warehouse staff receive a consolidated pick list — optimised by bin location for fastest pick" },
-  { step: "04", icon: Package,      color: "#4FC6FF", title: "Packed & Labelled in One Click",   detail: "Courier label printed automatically at the right service rate — no manual booking with couriers" },
+  { step: "04", icon: Package,      color: "#1E4DA0", title: "Packed & Labelled in One Click",   detail: "Courier label printed automatically at the right service rate — no manual booking with couriers" },
   { step: "05", icon: Truck,        color: "#1E4DA0", title: "Dispatched — Tracking Auto-Sent",  detail: "Tracking number synced back to the channel and emailed to the customer automatically" },
-  { step: "06", icon: RotateCcw,    color: "#4FC6FF", title: "Returns Processed & Stock Updated",detail: "Return labels issued, stock reinstated on receipt, and refund triggered — all without manual steps" },
+  { step: "06", icon: RotateCcw,    color: "#1E4DA0", title: "Returns Processed & Stock Updated",detail: "Return labels issued, stock reinstated on receipt, and refund triggered — all without manual steps" },
 ];
 
 const testimonials = [
   { quote: "We were selling on four channels with four separate spreadsheets and overselling constantly. OneSoft's inventory sync fixed that on day one. We haven't had a single oversell in seven months and our customer satisfaction score has gone from 3.8 to 4.7.",
     name: "Aisha Rahman",  role: "Founder & Director",        co: "Zahra Collective, Dubai, UAE",       color: "#1E4DA0" },
   { quote: "The multi-courier setup alone saves my warehouse manager two hours every morning. He used to log into DHL, FedEx, and UPS separately to book each shipment. Now it's one click per batch and every tracking number goes to the customer automatically.",
-    name: "Mark Stevens",  role: "Operations Manager",         co: "ProKit Sports Equipment, Toronto, Canada", color: "#4FC6FF" },
+    name: "Mark Stevens",  role: "Operations Manager",         co: "ProKit Sports Equipment, Toronto, Canada", color: "#1E4DA0" },
   { quote: "Our return rate was high and we had no idea which products were causing it. The analytics showed us straight away — one supplier's sizing was running small. We raised it with them, fixed the listing, and our return rate on that range dropped 60% in a month.",
     name: "Lucy Chen",     role: "E-commerce Trading Manager", co: "Verdant Homeware, Sydney, Australia", color: "#1E4DA0" },
 ];
@@ -447,9 +447,9 @@ export default function EcommercePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 500,  suf: "+",  label: "Online Stores",              Icon: Store,        color: "#1E4DA0" },
-              { to: 5,    suf: "M+", label: "Orders Processed",           Icon: ShoppingCart, color: "#4FC6FF" },
+              { to: 5,    suf: "M+", label: "Orders Processed",           Icon: ShoppingCart, color: "#1E4DA0" },
               { to: 99.8, suf: "%",  label: "Order Accuracy Rate",        Icon: BadgeCheck,   color: "#1E4DA0", d: 1 },
-              { to: 40,   suf: "%",  label: "Faster Fulfilment",          Icon: Truck,        color: "#4FC6FF" },
+              { to: 40,   suf: "%",  label: "Faster Fulfilment",          Icon: Truck,        color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -583,10 +583,10 @@ export default function EcommercePage() {
                   { icon: RefreshCw,    color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Stock syncs across all channels in real time",
                     sub: "A sale on Amazon reduces available inventory on Shopify, eBay, and your website simultaneously — no lag" },
-                  { icon: AlertTriangle,color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: AlertTriangle,color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Low-stock warnings push to all channels automatically",
                     sub: "When stock drops below your threshold, listings are automatically updated to reflect true availability" },
-                  { icon: Tag,          color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: Tag,          color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Channel-specific pricing without duplication",
                     sub: "Set different prices for Amazon vs Shopify vs your own site — one product record, multiple price rules" },
                   { icon: BarChart3,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
@@ -628,15 +628,15 @@ export default function EcommercePage() {
                     </div>
                     <span className="font-bold text-sm">Air Runner — Black/UK10</span>
                   </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(79,198,255,0.12)", color: "#4FC6FF" }}>Low Stock</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.12)", color: "#1E4DA0" }}>Low Stock</span>
                 </div>
 
                 <div className="p-5 space-y-3">
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { label: "Total Stock",  value: "4",  color: "#4FC6FF" },
+                      { label: "Total Stock",  value: "4",  color: "#1E4DA0" },
                       { label: "Committed",    value: "3",  color: "#1E4DA0" },
-                      { label: "Available",    value: "1",  color: "#4FC6FF" },
+                      { label: "Available",    value: "1",  color: "#1E4DA0" },
                     ].map((s, i) => (
                       <div key={i} className="rounded-xl p-3 text-center" style={{ background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.04)", border: `1px solid ${dividerColor}` }}>
                         <p className="text-[9px] mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -648,10 +648,10 @@ export default function EcommercePage() {
                   <div className="space-y-2.5">
                     <p className="text-xs font-semibold" style={{ color: t55 }}>Live Channel Stock</p>
                     {[
-                      { ch: "Shopify",  stock: 1, color: "#4FC6FF" },
+                      { ch: "Shopify",  stock: 1, color: "#1E4DA0" },
                       { ch: "Amazon",   stock: 0, color: "#1E4DA0" },
-                      { ch: "eBay",     stock: 1, color: "#4FC6FF" },
-                      { ch: "Website",  stock: 1, color: "#4FC6FF" },
+                      { ch: "eBay",     stock: 1, color: "#1E4DA0" },
+                      { ch: "Website",  stock: 1, color: "#1E4DA0" },
                     ].map((ch, i) => (
                       <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg" style={{ background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.03)", border: `1px solid ${dividerColor}` }}>
                         <span className="text-sm font-semibold" style={{ color: t65 }}>{ch.ch}</span>
@@ -663,11 +663,11 @@ export default function EcommercePage() {
                     ))}
                   </div>
 
-                  <div className="rounded-xl p-3" style={{ background: "rgba(79,198,255,0.08)", border: "1px solid rgba(79,198,255,0.25)" }}>
+                  <div className="rounded-xl p-3" style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.25)" }}>
                     <div className="flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#4FC6FF" }} />
+                      <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#1E4DA0" }} />
                       <div>
-                        <p className="text-xs font-bold mb-0.5" style={{ color: "#4FC6FF" }}>Purchase Order Raised</p>
+                        <p className="text-xs font-bold mb-0.5" style={{ color: "#1E4DA0" }}>Purchase Order Raised</p>
                         <p className="text-[11px]" style={{ color: t45 }}>PO-0284 sent to Supplier: FootCore Ltd · 48 units · ETA 5 days</p>
                       </div>
                     </div>
@@ -758,44 +758,44 @@ export default function EcommercePage() {
         row1={[
           { icon: "🛒", label: "Order Management",      color: "#1E4DA0" },
           { icon: "🔄", label: "Inventory Sync",        color: "#1E4DA0" },
-          { icon: "📡", label: "Multi-Channel Selling", color: "#4FC6FF" },
-          { icon: "📦", label: "Product Catalogue",     color: "#4FC6FF" },
-          { icon: "🏷️", label: "Shipping Labels",      color: "#4FC6FF" },
-          { icon: "🏭", label: "Warehouse Picking",     color: "#4FC6FF" },
-          { icon: "↩️", label: "Returns Handling",      color: "#4FC6FF" },
+          { icon: "📡", label: "Multi-Channel Selling", color: "#1E4DA0" },
+          { icon: "📦", label: "Product Catalogue",     color: "#1E4DA0" },
+          { icon: "🏷️", label: "Shipping Labels",      color: "#1E4DA0" },
+          { icon: "🏭", label: "Warehouse Picking",     color: "#1E4DA0" },
+          { icon: "↩️", label: "Returns Handling",      color: "#1E4DA0" },
           { icon: "👤", label: "Customer Portal",       color: "#1E4DA0" },
           { icon: "📊", label: "Analytics Dashboard",   color: "#1E4DA0" },
           { icon: "🎟️", label: "Coupons & Discounts",  color: "#1E4DA0" },
           { icon: "🛍️", label: "Abandoned Cart",       color: "#1E4DA0" },
-          { icon: "🌍", label: "Multi-Currency",        color: "#4FC6FF" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#1E4DA0" },
         ]}
         row2={[
-          { icon: "💳", label: "Payment Gateway",       color: "#4FC6FF" },
+          { icon: "💳", label: "Payment Gateway",       color: "#1E4DA0" },
           { icon: "⭐", label: "Reviews & Ratings",     color: "#1E4DA0" },
           { icon: "🤝", label: "Affiliate Portal",      color: "#1E4DA0" },
-          { icon: "🚚", label: "Supplier Portal",       color: "#4FC6FF" },
-          { icon: "📋", label: "Purchase Orders",       color: "#4FC6FF" },
-          { icon: "📈", label: "Stock Forecasting",     color: "#4FC6FF" },
-          { icon: "📷", label: "Barcode Scanning",      color: "#4FC6FF" },
+          { icon: "🚚", label: "Supplier Portal",       color: "#1E4DA0" },
+          { icon: "📋", label: "Purchase Orders",       color: "#1E4DA0" },
+          { icon: "📈", label: "Stock Forecasting",     color: "#1E4DA0" },
+          { icon: "📷", label: "Barcode Scanning",      color: "#1E4DA0" },
           { icon: "💬", label: "Live Chat",             color: "#1E4DA0" },
           { icon: "📧", label: "Email Marketing",       color: "#1E4DA0" },
           { icon: "🔔", label: "Push Notifications",    color: "#1E4DA0" },
           { icon: "🎯", label: "Upsell & Cross-sell",   color: "#1E4DA0" },
-          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "📱", label: "Mobile App",            color: "#1E4DA0" },
         ]}
         row3={[
-          { icon: "☁️", label: "Cloud Hosted",          color: "#4FC6FF" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
           { icon: "🔒", label: "Fraud Prevention",      color: "#1E4DA0" },
           { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
-          { icon: "🏪", label: "Multi-Store",           color: "#4FC6FF" },
-          { icon: "📦", label: "Dropshipping Ready",    color: "#4FC6FF" },
-          { icon: "🔗", label: "API Integrations",      color: "#4FC6FF" },
-          { icon: "🗂️", label: "Bulk Import/Export",   color: "#4FC6FF" },
+          { icon: "🏪", label: "Multi-Store",           color: "#1E4DA0" },
+          { icon: "📦", label: "Dropshipping Ready",    color: "#1E4DA0" },
+          { icon: "🔗", label: "API Integrations",      color: "#1E4DA0" },
+          { icon: "🗂️", label: "Bulk Import/Export",   color: "#1E4DA0" },
           { icon: "📑", label: "Tax Compliance",        color: "#1E4DA0" },
           { icon: "🌐", label: "Multi-Language",        color: "#1E4DA0" },
           { icon: "🎨", label: "Custom Branding",       color: "#1E4DA0" },
           { icon: "📉", label: "Margin Tracking",       color: "#1E4DA0" },
-          { icon: "🤖", label: "AI Recommendations",    color: "#4FC6FF" },
+          { icon: "🤖", label: "AI Recommendations",    color: "#1E4DA0" },
         ]}
       />
       <CustomSolutionsSection accentColor="#1E4DA0" productName="E-commerce ERP" />

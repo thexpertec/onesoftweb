@@ -43,11 +43,11 @@ function OPDSlide() {
   ];
   const kpis = [
     { label: "Today's OPD",    value: "84",   color: "#1E4DA0", Icon: Users },
-    { label: "In Consultation",value: "6",    color: "#4FC6FF", Icon: Stethoscope },
-    { label: "Avg Wait Time",  value: "18m",  color: "#4FC6FF", Icon: Clock },
+    { label: "In Consultation",value: "6",    color: "#1E4DA0", Icon: Stethoscope },
+    { label: "Avg Wait Time",  value: "18m",  color: "#1E4DA0", Icon: Clock },
     { label: "Appointments",   value: "112",  color: "#1E4DA0", Icon: Calendar },
   ];
-  const statusColor = (s: string) => s === "In Consultation" ? "#4FC6FF" : s === "Waiting" ? "#4FC6FF" : "rgba(0,0,0,0.35)";
+  const statusColor = (s: string) => s === "In Consultation" ? "#1E4DA0" : s === "Waiting" ? "#1E4DA0" : "rgba(0,0,0,0.35)";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -93,10 +93,10 @@ function WardSlide() {
   const wards = [
     { name: "General Ward A", total: 24, occupied: 21, available: 3, color: "#1E4DA0" },
     { name: "Cardiology",     total: 16, occupied: 14, available: 2, color: "#1E4DA0" },
-    { name: "Orthopaedics",   total: 12, occupied: 8,  available: 4, color: "#4FC6FF" },
-    { name: "Maternity",      total: 10, occupied: 7,  available: 3, color: "#4FC6FF" },
+    { name: "Orthopaedics",   total: 12, occupied: 8,  available: 4, color: "#1E4DA0" },
+    { name: "Maternity",      total: 10, occupied: 7,  available: 3, color: "#1E4DA0" },
     { name: "ICU",            total: 8,  occupied: 8,  available: 0, color: "#1E4DA0" },
-    { name: "Paediatrics",    total: 14, occupied: 9,  available: 5, color: "#4FC6FF" },
+    { name: "Paediatrics",    total: 14, occupied: 9,  available: 5, color: "#1E4DA0" },
   ];
   const inpatients = [
     { name: "Mr. Ahmed Khan",   ward: "Cardiology",   bed: "C-04", days: 3, doctor: "Dr. Smith",   status: "Stable" },
@@ -158,11 +158,11 @@ function PharmacySlide() {
     { id: "RX-0295", patient: "Emma Clarke",       drug: "Cetirizine 10mg",   qty: 28, status: "Dispensed",  dr: "Dr. Smith"  },
   ];
   const stock = [
-    { name: "Paracetamol 500mg", stock: 1240, min: 200, color: "#4FC6FF" },
+    { name: "Paracetamol 500mg", stock: 1240, min: 200, color: "#1E4DA0" },
     { name: "Amoxicillin 250mg", stock: 84,   min: 100, color: "#1E4DA0" },
-    { name: "Metformin 500mg",   stock: 620,  min: 150, color: "#4FC6FF" },
-    { name: "Aspirin 75mg",      stock: 940,  min: 200, color: "#4FC6FF" },
-    { name: "Omeprazole 20mg",   stock: 112,  min: 150, color: "#4FC6FF" },
+    { name: "Metformin 500mg",   stock: 620,  min: 150, color: "#1E4DA0" },
+    { name: "Aspirin 75mg",      stock: 940,  min: 200, color: "#1E4DA0" },
+    { name: "Omeprazole 20mg",   stock: 112,  min: 150, color: "#1E4DA0" },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -174,7 +174,7 @@ function PharmacySlide() {
               <div key={i}>
                 <div className="flex justify-between mb-0.5">
                   <span className="text-[7px] text-white/60 truncate pr-1">{s.name}</span>
-                  <span className="text-[7px] font-semibold shrink-0" style={{ color: s.stock < s.min ? "#1E4DA0" : s.stock < s.min * 1.5 ? "#4FC6FF" : "#4FC6FF" }}>{s.stock}</span>
+                  <span className="text-[7px] font-semibold shrink-0" style={{ color: s.stock < s.min ? "#1E4DA0" : s.stock < s.min * 1.5 ? "#1E4DA0" : "#1E4DA0" }}>{s.stock}</span>
                 </div>
                 <div className="h-1 bg-white/8 rounded-full">
                   <div className="h-full rounded-full" style={{ width: `${Math.min((s.stock / 1400) * 100, 100)}%`, background: s.color }} />
@@ -222,9 +222,9 @@ function BillingSlide() {
     { id: "INV-0845", patient: "Sarah Thompson",    type: "OPD + Lab",   amount: "£340",   insurer: "Self-Pay",   status: "Paid"     },
   ];
   const summary = [
-    { label: "Today's Revenue",    value: "£18,420", color: "#4FC6FF" },
+    { label: "Today's Revenue",    value: "£18,420", color: "#1E4DA0" },
     { label: "Insurance Claims",   value: "£14,640", color: "#1E4DA0" },
-    { label: "Pending Collection", value: "£8,200",  color: "#4FC6FF" },
+    { label: "Pending Collection", value: "£8,200",  color: "#1E4DA0" },
   ];
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
@@ -251,7 +251,7 @@ function BillingSlide() {
                 <td className="py-1.5 pr-3 text-white/75 font-semibold">{r.amount}</td>
                 <td className="py-1.5 pr-3 text-white/40">{r.insurer}</td>
                 <td className="py-1.5">
-                  <span className={`text-[6.5px] font-bold px-1.5 py-0.5 rounded-full ${r.status === "Paid" ? "text-emerald-400 bg-emerald-400/10" : r.status === "Claimed" ? "text-blue-400 bg-blue-400/10" : "text-amber-400 bg-amber-400/10"}`}>{r.status}</span>
+                  <span className={`text-[6.5px] font-bold px-1.5 py-0.5 rounded-full ${r.status === "Paid" ? "text-emerald-400 bg-emerald-400/10" : r.status === "Claimed" ? "text-[#1E4DA0] bg-[#1E4DA0]/10" : "text-amber-400 bg-amber-400/10"}`}>{r.status}</span>
                 </td>
               </tr>
             ))}
@@ -315,43 +315,43 @@ const modules = [
   { icon: Users,        color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Patient Management",
     desc: "Complete patient lifecycle — registration, history, allergies, and records accessible in seconds.",
     pts: ["One-click patient registration", "Full medical history & allergy records", "Linked family / GP records", "Patient portal for online booking"] },
-  { icon: Calendar,     color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Appointment Scheduling",
+  { icon: Calendar,     color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Appointment Scheduling",
     desc: "Online and walk-in appointment booking with doctor calendars, reminders, and no-show tracking.",
     pts: ["Doctor availability calendars", "Online & reception booking", "Automated appointment reminders", "No-show & cancellation tracking"] },
   { icon: BedDouble,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Inpatient (IPD) Management",
     desc: "Bed allocation, ward rounds, transfer tracking, and discharge summaries — all linked to billing.",
     pts: ["Real-time bed occupancy map", "Ward transfer & escalation alerts", "Nursing notes per shift", "Discharge summary auto-generated"] },
-  { icon: Pill,         color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Pharmacy & Dispensing",
+  { icon: Pill,         color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Pharmacy & Dispensing",
     desc: "Prescriptions auto-sent from doctor to pharmacy, with stock control and low-drug alerts.",
     pts: ["Digital prescription workflow", "Drug stock with reorder alerts", "Dispensing records & audit trail", "Controlled drug compliance log"] },
   { icon: FlaskConical, color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Laboratory (LIS)",
     desc: "Lab test requests from doctors, result entry by technicians, and instant delivery to patient records.",
     pts: ["Doctor-raised test requests", "Sample tracking & barcode labels", "Result entry with reference ranges", "Results auto-linked to patient file"] },
-  { icon: Receipt,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Billing & Insurance",
+  { icon: Receipt,      color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Billing & Insurance",
     desc: "Auto-generated invoices from OPD, IPD, lab, and pharmacy — with direct insurance claim submission.",
     pts: ["Auto-billing from all departments", "Insurance pre-auth & claim filing", "Co-pay & self-pay management", "Outstanding & aged debt reports"] },
-  { icon: UserCog,      color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Staff & Doctor Management",
+  { icon: UserCog,      color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Staff & Doctor Management",
     desc: "Doctor schedules, nurse shift rosters, HR records, and payroll — all in one place.",
     pts: ["Doctor & nurse scheduling", "Shift roster with leave management", "Staff HR profiles & contracts", "Integrated payroll processing"] },
-  { icon: BarChart3,    color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
+  { icon: BarChart3,    color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Reports & Analytics",
     desc: "Live dashboards for OPD load, bed occupancy, revenue, and clinical KPIs — always up to date.",
     pts: ["Real-time OPD & IPD dashboards", "Revenue & collections analytics", "Clinical quality indicators", "Exportable management reports"] },
 ];
 
 const flow = [
   { step: "01", icon: Users,        color: "#1E4DA0", title: "Patient Arrives & Registers",     detail: "Patient registered once — all subsequent visits pre-fill automatically from their record" },
-  { step: "02", icon: Stethoscope,  color: "#4FC6FF", title: "Doctor Consults & Prescribes",    detail: "Prescription is digitally sent to pharmacy the moment the doctor saves — zero paper" },
+  { step: "02", icon: Stethoscope,  color: "#1E4DA0", title: "Doctor Consults & Prescribes",    detail: "Prescription is digitally sent to pharmacy the moment the doctor saves — zero paper" },
   { step: "03", icon: FlaskConical, color: "#1E4DA0", title: "Lab Tests Ordered Instantly",     detail: "Lab receives test requests electronically — results post to the patient record when ready" },
   { step: "04", icon: BedDouble,    color: "#1E4DA0", title: "Bed Assigned — Ward Notified",    detail: "Ward occupancy map updates in real time — nursing team alerted before patient arrives" },
-  { step: "05", icon: Receipt,      color: "#4FC6FF", title: "Invoice Auto-Generated",          detail: "All OPD, pharmacy, lab, and ward charges compile into one final bill automatically" },
-  { step: "06", icon: CheckCheck,   color: "#4FC6FF", title: "Insurance Claim Submitted",       detail: "Claim sent directly to insurer the moment the bill is finalised — no manual paperwork" },
+  { step: "05", icon: Receipt,      color: "#1E4DA0", title: "Invoice Auto-Generated",          detail: "All OPD, pharmacy, lab, and ward charges compile into one final bill automatically" },
+  { step: "06", icon: CheckCheck,   color: "#1E4DA0", title: "Insurance Claim Submitted",       detail: "Claim sent directly to insurer the moment the bill is finalised — no manual paperwork" },
 ];
 
 const testimonials = [
   { quote: "Before OneSoft, our OPD queue was managed on paper and billing took 2 days after discharge. Now the bill is ready the moment we click Discharge and the insurance claim goes out automatically. We've cut billing errors by 90%.",
     name: "Dr. Khalid Hassan", role: "Medical Director", co: "Crescent Health Hospital, Dubai, UAE", color: "#1E4DA0" },
   { quote: "Our pharmacy used to run out of drugs without warning. Now the system flags low stock before it's a problem and raises a purchase order automatically. We haven't had a stock-out in over 8 months.",
-    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Lahore, Pakistan", color: "#4FC6FF" },
+    name: "Ms. Rebecca Osei", role: "Pharmacy Manager", co: "North City Medical Centre, Lahore, Pakistan", color: "#1E4DA0" },
   { quote: "The lab integration alone changed our workflow entirely. Doctors used to phone the lab for results. Now results appear in the patient record the moment they're entered and the doctor is notified — no calls, no delays.",
     name: "Dr. Priya Sharma", role: "Head of Pathology", co: "Midland General Hospital, Singapore", color: "#1E4DA0" },
 ];
@@ -450,9 +450,9 @@ export default function HospitalPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 200,  suf: "+",  label: "Hospitals on Platform",    Icon: Building2,  color: "#1E4DA0" },
-              { to: 500,  suf: "K+", label: "Patients Managed",         Icon: Users,      color: "#4FC6FF" },
+              { to: 500,  suf: "K+", label: "Patients Managed",         Icon: Users,      color: "#1E4DA0" },
               { to: 99,   suf: ".5%",label: "Billing Accuracy",         Icon: ShieldCheck,color: "#1E4DA0", d: 0 },
-              { to: 60,   suf: "%",  label: "Faster Discharge Process", Icon: TrendingUp, color: "#4FC6FF" },
+              { to: 60,   suf: "%",  label: "Faster Discharge Process", Icon: TrendingUp, color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -586,10 +586,10 @@ export default function HospitalPage() {
                   { icon: Zap,          color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "All department charges auto-compiled on discharge",
                     sub: "OPD, pharmacy, lab, theatre, and ward charges merge into one invoice automatically" },
-                  { icon: ShieldCheck,  color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: ShieldCheck,  color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Insurance pre-authorisation tracked in real time",
                     sub: "Pre-auth requests, approvals, and limits tracked per patient — no manual follow-up needed" },
-                  { icon: Receipt,      color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: Receipt,      color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Claims submitted to insurers electronically",
                     sub: "Claim forms auto-populated from the patient's invoice and sent direct to the insurer" },
                   { icon: AlertCircle,  color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
@@ -631,14 +631,14 @@ export default function HospitalPage() {
                     </div>
                     <span className="font-bold text-sm">Discharge Bill — Mr. Ahmed Khan</span>
                   </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(79,198,255,0.12)", color: "#4FC6FF" }}>Auto-Generated</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.12)", color: "#1E4DA0" }}>Auto-Generated</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-px" style={{ background: gridLine }}>
                   {[
                     { label: "Ward (3 nights)", value: "£1,800", color: "#1E4DA0" },
-                    { label: "OPD & Procedures", value: "£960",  color: "#4FC6FF" },
-                    { label: "Pharmacy & Lab",   value: "£420",  color: "#4FC6FF" },
+                    { label: "OPD & Procedures", value: "£960",  color: "#1E4DA0" },
+                    { label: "Pharmacy & Lab",   value: "£420",  color: "#1E4DA0" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
                       <p className="text-[10px] mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -668,7 +668,7 @@ export default function HospitalPage() {
                       <p className="text-base font-black" style={{ color: "#1E4DA0" }}>Submitted to BUPA</p>
                       <p className="text-[10px]" style={{ color: t45 }}>Sent automatically at discharge · Ref: BUPA-2026-08841</p>
                     </div>
-                    <CheckCheck className="w-6 h-6 shrink-0" style={{ color: "#4FC6FF" }} />
+                    <CheckCheck className="w-6 h-6 shrink-0" style={{ color: "#1E4DA0" }} />
                   </div>
                 </div>
               </div>
@@ -757,43 +757,43 @@ export default function HospitalPage() {
           { icon: "🏥", label: "OPD Management",        color: "#1E4DA0" },
           { icon: "🛏️", label: "IPD Management",       color: "#1E4DA0" },
           { icon: "🚑", label: "Emergency Care",        color: "#1E4DA0" },
-          { icon: "📋", label: "Patient Registration",  color: "#4FC6FF" },
-          { icon: "🏨", label: "Ward Management",       color: "#4FC6FF" },
-          { icon: "🛌", label: "Bed Allocation",        color: "#4FC6FF" },
-          { icon: "👨‍⚕️", label: "Doctor Scheduling",  color: "#4FC6FF" },
-          { icon: "📅", label: "Appointment Booking",   color: "#4FC6FF" },
+          { icon: "📋", label: "Patient Registration",  color: "#1E4DA0" },
+          { icon: "🏨", label: "Ward Management",       color: "#1E4DA0" },
+          { icon: "🛌", label: "Bed Allocation",        color: "#1E4DA0" },
+          { icon: "👨‍⚕️", label: "Doctor Scheduling",  color: "#1E4DA0" },
+          { icon: "📅", label: "Appointment Booking",   color: "#1E4DA0" },
           { icon: "💊", label: "Pharmacy",              color: "#1E4DA0" },
           { icon: "🔬", label: "Laboratory",            color: "#1E4DA0" },
           { icon: "📡", label: "Radiology",             color: "#1E4DA0" },
-          { icon: "🩸", label: "Blood Bank",            color: "#4FC6FF" },
+          { icon: "🩸", label: "Blood Bank",            color: "#1E4DA0" },
         ]}
         row2={[
-          { icon: "💰", label: "Billing & Insurance",   color: "#4FC6FF" },
+          { icon: "💰", label: "Billing & Insurance",   color: "#1E4DA0" },
           { icon: "📄", label: "Discharge Summary",     color: "#1E4DA0" },
           { icon: "🗂️", label: "Medical Records",      color: "#1E4DA0" },
-          { icon: "📹", label: "Telemedicine",          color: "#4FC6FF" },
-          { icon: "🏭", label: "Operation Theatre",     color: "#4FC6FF" },
-          { icon: "❤️", label: "ICU Management",        color: "#4FC6FF" },
-          { icon: "📝", label: "Nursing Notes",         color: "#4FC6FF" },
+          { icon: "📹", label: "Telemedicine",          color: "#1E4DA0" },
+          { icon: "🏭", label: "Operation Theatre",     color: "#1E4DA0" },
+          { icon: "❤️", label: "ICU Management",        color: "#1E4DA0" },
+          { icon: "📝", label: "Nursing Notes",         color: "#1E4DA0" },
           { icon: "👩‍💼", label: "Staff Payroll",       color: "#1E4DA0" },
           { icon: "📦", label: "Inventory Control",     color: "#1E4DA0" },
           { icon: "🚐", label: "Ambulance Tracking",    color: "#1E4DA0" },
           { icon: "🧾", label: "Accounts & Finance",    color: "#1E4DA0" },
-          { icon: "🩺", label: "Mortuary Management",   color: "#4FC6FF" },
+          { icon: "🩺", label: "Mortuary Management",   color: "#1E4DA0" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "📱", label: "Mobile App",            color: "#1E4DA0" },
           { icon: "🔔", label: "SMS Alerts",            color: "#1E4DA0" },
           { icon: "📊", label: "Clinical Analytics",    color: "#1E4DA0" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
-          { icon: "🌐", label: "Multi-Branch",          color: "#4FC6FF" },
-          { icon: "☁️", label: "Cloud Hosted",          color: "#4FC6FF" },
-          { icon: "🔒", label: "Data Security",         color: "#4FC6FF" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
+          { icon: "🌐", label: "Multi-Branch",          color: "#1E4DA0" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
+          { icon: "🔒", label: "Data Security",         color: "#1E4DA0" },
           { icon: "📑", label: "Compliance Reports",    color: "#1E4DA0" },
           { icon: "💬", label: "Patient Communication", color: "#1E4DA0" },
           { icon: "🩻", label: "DICOM / PACS Ready",    color: "#1E4DA0" },
           { icon: "🔄", label: "HL7 / FHIR Support",   color: "#1E4DA0" },
-          { icon: "🎯", label: "KPI Dashboard",         color: "#4FC6FF" },
+          { icon: "🎯", label: "KPI Dashboard",         color: "#1E4DA0" },
         ]}
       />
       <CustomSolutionsSection accentColor="#1E4DA0" productName="Hospital ERP" />

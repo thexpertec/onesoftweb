@@ -48,12 +48,12 @@ function FloorSlide() {
     { id: "T11", seats: 2, status: "Occupied",   name: "Walk-in",       covers: 1, mins: 9  },
     { id: "T12", seats: 4, status: "Available",  name: "",              covers: 0, mins: 0  },
   ];
-  const statusColor = (s: string) => s === "Occupied" ? "#1E4DA0" : s === "Reserved" ? "#4FC6FF" : s === "Cleaning" ? "#1E4DA0" : "#4FC6FF";
-  const statusBg    = (s: string) => s === "Occupied" ? "rgba(30,77,160,0.18)" : s === "Reserved" ? "rgba(79,198,255,0.15)" : s === "Cleaning" ? "rgba(30,77,160,0.15)" : "rgba(79,198,255,0.15)";
+  const statusColor = (s: string) => s === "Occupied" ? "#1E4DA0" : s === "Reserved" ? "#1E4DA0" : s === "Cleaning" ? "#1E4DA0" : "#1E4DA0";
+  const statusBg    = (s: string) => s === "Occupied" ? "rgba(30,77,160,0.18)" : s === "Reserved" ? "rgba(30,77,160,0.15)" : s === "Cleaning" ? "rgba(30,77,160,0.15)" : "rgba(30,77,160,0.15)";
   const kpis = [
     { label: "Tables Occupied", value: "6/12",  color: "#1E4DA0", Icon: UtensilsCrossed },
-    { label: "Covers Today",    value: "84",    color: "#4FC6FF", Icon: Users },
-    { label: "Avg Table Time",  value: "38m",   color: "#4FC6FF", Icon: Clock },
+    { label: "Covers Today",    value: "84",    color: "#1E4DA0", Icon: Users },
+    { label: "Avg Table Time",  value: "38m",   color: "#1E4DA0", Icon: Clock },
     { label: "Today's Revenue", value: "£1,840",color: "#1E4DA0", Icon: Receipt },
   ];
   return (
@@ -96,14 +96,14 @@ function KitchenSlide() {
     { id: "#145", table: "T11", items: ["Soup of Day x1", "Garlic Bread x1"],       mins: 4,  status: "Ready",    priority: "normal" },
     { id: "#146", table: "T05", items: ["Chicken Tikka x2", "Naan x4"],             mins: 2,  status: "Pending",  priority: "high"   },
   ];
-  const sColor = (s: string) => s === "Ready" ? "#4FC6FF" : s === "Cooking" ? "#4FC6FF" : "rgba(0,0,0,0.35)";
+  const sColor = (s: string) => s === "Ready" ? "#1E4DA0" : s === "Cooking" ? "#1E4DA0" : "rgba(0,0,0,0.35)";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
         {[
           { label: "Pending Tickets", value: "3",   color: "rgba(0,0,0,0.35)" },
-          { label: "Cooking Now",     value: "2",   color: "#4FC6FF" },
-          { label: "Ready to Serve",  value: "1",   color: "#4FC6FF" },
+          { label: "Cooking Now",     value: "2",   color: "#1E4DA0" },
+          { label: "Ready to Serve",  value: "1",   color: "#1E4DA0" },
         ].map((k, i) => (
           <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8 text-center">
             <p className="text-[7.5px] text-white/40 uppercase tracking-wider mb-1">{k.label}</p>
@@ -177,8 +177,8 @@ function SalesSlide() {
         <div className="grid grid-cols-2 gap-2 shrink-0">
           {[
             { label: "Total Revenue", value: "£3,810", color: "#1E4DA0" },
-            { label: "Orders",        value: "134",    color: "#4FC6FF" },
-            { label: "Avg. Bill",     value: "£28.4",  color: "#4FC6FF" },
+            { label: "Orders",        value: "134",    color: "#1E4DA0" },
+            { label: "Avg. Bill",     value: "£28.4",  color: "#1E4DA0" },
             { label: "Covers",        value: "211",    color: "#1E4DA0" },
           ].map((s, i) => (
             <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8">
@@ -218,14 +218,14 @@ function ReservationsSlide() {
     { ref: "RES-085", name: "Walk-in, 3 pax",  covers: 3, time: "19:45", table: "T06", status: "Seated",    notes: "" },
     { ref: "RES-086", name: "Brown Family",    covers: 5, time: "20:00", table: "T03", status: "Confirmed", notes: "" },
   ];
-  const sColor = (s: string) => s === "Confirmed" ? "#4FC6FF" : s === "Seated" ? "#1E4DA0" : "#4FC6FF";
+  const sColor = (s: string) => s === "Confirmed" ? "#1E4DA0" : s === "Seated" ? "#1E4DA0" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
         {[
           { label: "Today's Reservations", value: "18", color: "#1E4DA0", Icon: Calendar },
-          { label: "Confirmed",            value: "14", color: "#4FC6FF", Icon: CheckCheck },
-          { label: "Covers Expected",      value: "64", color: "#4FC6FF", Icon: Users },
+          { label: "Confirmed",            value: "14", color: "#1E4DA0", Icon: CheckCheck },
+          { label: "Covers Expected",      value: "64", color: "#1E4DA0", Icon: Users },
         ].map((k, i) => (
           <div key={i} className="bg-white/[0.04] rounded-xl p-2 border border-white/8">
             <div className="flex items-center justify-between mb-1">
@@ -317,36 +317,36 @@ const modules = [
   { icon: Monitor,       color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Point of Sale (POS)",
     desc: "Fast, touch-friendly till for dine-in, takeaway, and delivery — all from the same screen.",
     pts: ["Table, counter & drive-through modes", "Split bills & partial payments", "Cash, card & contactless", "Offline mode — never goes down"] },
-  { icon: UtensilsCrossed, color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Table Management",
+  { icon: UtensilsCrossed, color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Table Management",
     desc: "Visual floor plan with real-time table status — occupied, reserved, available, or being cleaned.",
     pts: ["Drag-and-drop floor plan editor", "Multi-area & multi-floor support", "Table timer & cover count", "Walk-in & reservation assignment"] },
   { icon: ChefHat,       color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Kitchen Display (KDS)",
     desc: "Orders appear on kitchen screens the instant they're placed — no printed tickets, no lost orders.",
     pts: ["Course-by-course firing", "Ticket priority & allergy alerts", "Item-level status (cooking / ready)", "Bump screen confirmation"] },
-  { icon: ClipboardList, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Menu Management",
+  { icon: ClipboardList, color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Menu Management",
     desc: "Build and update your menu from the back office — items, categories, modifiers, and pricing.",
     pts: ["Modifier groups & add-ons", "Time-based & seasonal menus", "Item availability toggles", "Nutritional & allergen info"] },
   { icon: Package,       color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Inventory & Stock",
     desc: "Track ingredients down to the gram — wastage logging, low-stock alerts, and supplier orders.",
     pts: ["Recipe-linked stock deduction", "Wastage & spoilage tracking", "Supplier purchase orders", "Low-stock & reorder alerts"] },
-  { icon: Calendar,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Reservations & Booking",
+  { icon: Calendar,      color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Reservations & Booking",
     desc: "Online and phone reservations with table assignment, confirmation emails, and no-show tracking.",
     pts: ["Online booking widget", "Automated confirmation & reminders", "Deposit & pre-payment support", "No-show & cancellation tracking"] },
-  { icon: Users,         color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Staff & Shift Management",
+  { icon: Users,         color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Staff & Shift Management",
     desc: "Rosters, clock-in/out, tip pooling, and payroll export — all linked to your team schedule.",
     pts: ["Weekly rota builder", "Clock-in / clock-out with PIN", "Tips tracking & pooling", "Payroll export (CSV / Xero)"] },
-  { icon: BarChart3,     color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
+  { icon: BarChart3,     color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Reports & Analytics",
     desc: "Revenue by hour, best-selling items, staff performance, and wastage — all on one dashboard.",
     pts: ["Hourly & daily revenue charts", "Top items & category sales", "Staff sales performance", "Wastage cost by day / week"] },
 ];
 
 const flow = [
   { step: "01", icon: Users,         color: "#1E4DA0", title: "Guest Seated at Table",         detail: "Table assigned from the live floor plan — status flips to Occupied in real time" },
-  { step: "02", icon: ClipboardList, color: "#4FC6FF", title: "Waiter Takes Order on Tablet",  detail: "Order entered via tablet POS — sent instantly to the kitchen display, no paper ticket" },
+  { step: "02", icon: ClipboardList, color: "#1E4DA0", title: "Waiter Takes Order on Tablet",  detail: "Order entered via tablet POS — sent instantly to the kitchen display, no paper ticket" },
   { step: "03", icon: ChefHat,       color: "#1E4DA0", title: "Kitchen Cooks by Course",       detail: "Each course fires to the screen in sequence — chef confirms each item as it's ready" },
-  { step: "04", icon: Utensils,      color: "#4FC6FF", title: "Food Served — KDS Cleared",     detail: "Server bumps the ticket when food leaves the pass — timing logged for every cover" },
+  { step: "04", icon: Utensils,      color: "#1E4DA0", title: "Food Served — KDS Cleared",     detail: "Server bumps the ticket when food leaves the pass — timing logged for every cover" },
   { step: "05", icon: Receipt,       color: "#1E4DA0", title: "Bill Auto-Generated",           detail: "Every item from every round compiled into one itemised bill — split it any way needed" },
-  { step: "06", icon: Wallet,        color: "#4FC6FF", title: "Payment Taken, Stock Updated",  detail: "Payment recorded; ingredient stock deducted by recipe and wastage flagged if over-usage detected" },
+  { step: "06", icon: Wallet,        color: "#1E4DA0", title: "Payment Taken, Stock Updated",  detail: "Payment recorded; ingredient stock deducted by recipe and wastage flagged if over-usage detected" },
 ];
 
 const testimonials = [
@@ -355,7 +355,7 @@ const testimonials = [
   { quote: "The kitchen display system transformed our service speed. Before, our chefs were squinting at handwritten tickets. Now orders appear on screen the second the waiter taps confirm and the table timer tells us exactly when we're falling behind.",
     name: "Sarah Mitchell", role: "Restaurant Manager", co: "The Harbour Kitchen, Sydney, Australia", color: "#1E4DA0" },
   { quote: "We run three sites. Previously we had three different systems and no way to compare them. OneSoft shows me a combined report every morning — revenue, top sellers, staff performance across all three — in one view on my phone.",
-    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, New York, USA", color: "#4FC6FF" },
+    name: "David Park", role: "Multi-Site Operations Director", co: "Park Hospitality Group, New York, USA", color: "#1E4DA0" },
 ];
 
 /* ─────────────────── Page ───────────────────────────────── */
@@ -452,8 +452,8 @@ export default function RestaurantPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 300,  suf: "+",  label: "Restaurants on Platform",       Icon: UtensilsCrossed, color: "#1E4DA0" },
-              { to: 2,    suf: "M+", label: "Orders Processed",              Icon: Receipt,         color: "#4FC6FF" },
-              { to: 45,   suf: "s",  label: "Avg. Order to Kitchen Time",    Icon: Clock,           color: "#4FC6FF" },
+              { to: 2,    suf: "M+", label: "Orders Processed",              Icon: Receipt,         color: "#1E4DA0" },
+              { to: 45,   suf: "s",  label: "Avg. Order to Kitchen Time",    Icon: Clock,           color: "#1E4DA0" },
               { to: 30,   suf: "%",  label: "Reduction in Food Wastage",     Icon: TrendingUp,      color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -591,10 +591,10 @@ export default function RestaurantPage() {
                   { icon: AlertTriangle,color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030",
                     title: "Allergy alerts highlighted automatically",
                     sub: "Any allergen flagged during ordering is shown in red on the kitchen ticket — before the chef starts cooking" },
-                  { icon: Clock,        color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: Clock,        color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Live ticket timer — see which orders are running late",
                     sub: "Each ticket shows how long it's been waiting — tickets turn amber at 10 minutes and red at 15" },
-                  { icon: CheckCheck,   color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: CheckCheck,   color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Bump confirmation sends 'ready' signal to the floor",
                     sub: "When the chef bumps the ticket, waitstaff on the floor are notified the food is at the pass — no more guessing" },
                 ].map((item, i) => (
@@ -647,15 +647,15 @@ export default function RestaurantPage() {
                   ].map((ticket, i) => (
                     <div key={i} className="rounded-xl p-3.5 transition-all"
                       style={{
-                        background: ticket.status === "ready" ? "rgba(79,198,255,0.08)" : ticket.late ? "rgba(30,77,160,0.08)" : `${isLight ? "#F5F5F5" : "rgba(255,255,255,0.03)"}`,
-                        border: `1.5px solid ${ticket.status === "ready" ? "rgba(79,198,255,0.30)" : ticket.late ? "rgba(30,77,160,0.30)" : dividerColor}`,
+                        background: ticket.status === "ready" ? "rgba(30,77,160,0.08)" : ticket.late ? "rgba(30,77,160,0.08)" : `${isLight ? "#F5F5F5" : "rgba(255,255,255,0.03)"}`,
+                        border: `1.5px solid ${ticket.status === "ready" ? "rgba(30,77,160,0.30)" : ticket.late ? "rgba(30,77,160,0.30)" : dividerColor}`,
                       }}>
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-black" style={{ color: ticket.status === "ready" ? "#4FC6FF" : ticket.late ? "#1E4DA0" : "#1E4DA0" }}>{ticket.id}</span>
+                          <span className="text-sm font-black" style={{ color: ticket.status === "ready" ? "#1E4DA0" : ticket.late ? "#1E4DA0" : "#1E4DA0" }}>{ticket.id}</span>
                           <span className="text-xs font-semibold" style={{ color: t55 }}>Table {ticket.table}</span>
                           {ticket.late && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.15)", color: "#1E4DA0" }}>LATE</span>}
-                          {ticket.status === "ready" && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(79,198,255,0.15)", color: "#4FC6FF" }}>READY</span>}
+                          {ticket.status === "ready" && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(30,77,160,0.15)", color: "#1E4DA0" }}>READY</span>}
                         </div>
                         <span className="text-xs font-bold" style={{ color: ticket.late ? "#1E4DA0" : t45 }}>{ticket.mins}m</span>
                       </div>
@@ -770,44 +770,44 @@ export default function RestaurantPage() {
         row1={[
           { icon: "🍽️", label: "Table Management",     color: "#1E4DA0" },
           { icon: "🖥️", label: "POS System",           color: "#1E4DA0" },
-          { icon: "📺", label: "Kitchen Display",       color: "#4FC6FF" },
-          { icon: "📱", label: "Online Orders",         color: "#4FC6FF" },
-          { icon: "📋", label: "Menu Management",       color: "#4FC6FF" },
-          { icon: "📅", label: "Reservations",          color: "#4FC6FF" },
-          { icon: "🛵", label: "Delivery Tracking",     color: "#4FC6FF" },
+          { icon: "📺", label: "Kitchen Display",       color: "#1E4DA0" },
+          { icon: "📱", label: "Online Orders",         color: "#1E4DA0" },
+          { icon: "📋", label: "Menu Management",       color: "#1E4DA0" },
+          { icon: "📅", label: "Reservations",          color: "#1E4DA0" },
+          { icon: "🛵", label: "Delivery Tracking",     color: "#1E4DA0" },
           { icon: "🧑‍🍳", label: "Waiter App",          color: "#1E4DA0" },
           { icon: "📦", label: "Inventory Control",     color: "#1E4DA0" },
           { icon: "🧮", label: "Recipe Costing",        color: "#1E4DA0" },
           { icon: "🚚", label: "Supplier Orders",       color: "#1E4DA0" },
-          { icon: "🗑️", label: "Waste Tracking",       color: "#4FC6FF" },
+          { icon: "🗑️", label: "Waste Tracking",       color: "#1E4DA0" },
         ]}
         row2={[
-          { icon: "⭐", label: "Loyalty Program",       color: "#4FC6FF" },
+          { icon: "⭐", label: "Loyalty Program",       color: "#1E4DA0" },
           { icon: "👥", label: "Staff Scheduling",      color: "#1E4DA0" },
           { icon: "💵", label: "Payroll",               color: "#1E4DA0" },
-          { icon: "💰", label: "Tips Management",       color: "#4FC6FF" },
-          { icon: "🏪", label: "Multi-Branch",          color: "#4FC6FF" },
-          { icon: "📊", label: "Sales Reports",         color: "#4FC6FF" },
-          { icon: "🧾", label: "Tax Management",        color: "#4FC6FF" },
+          { icon: "💰", label: "Tips Management",       color: "#1E4DA0" },
+          { icon: "🏪", label: "Multi-Branch",          color: "#1E4DA0" },
+          { icon: "📊", label: "Sales Reports",         color: "#1E4DA0" },
+          { icon: "🧾", label: "Tax Management",        color: "#1E4DA0" },
           { icon: "💬", label: "Customer Feedback",     color: "#1E4DA0" },
           { icon: "📲", label: "QR Code Menu",          color: "#1E4DA0" },
           { icon: "🏦", label: "Cash Drawer",           color: "#1E4DA0" },
           { icon: "↩️", label: "Void & Refunds",        color: "#1E4DA0" },
-          { icon: "🌙", label: "Shift Reports",         color: "#4FC6FF" },
+          { icon: "🌙", label: "Shift Reports",         color: "#1E4DA0" },
         ]}
         row3={[
-          { icon: "☁️", label: "Cloud Hosted",          color: "#4FC6FF" },
+          { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
           { icon: "🔔", label: "Allergy Alerts",        color: "#1E4DA0" },
           { icon: "🎯", label: "Upsell Prompts",        color: "#1E4DA0" },
-          { icon: "📷", label: "CCTV Integration",      color: "#4FC6FF" },
-          { icon: "🧾", label: "Split Billing",         color: "#4FC6FF" },
-          { icon: "💳", label: "Multi-Payment",         color: "#4FC6FF" },
-          { icon: "🌍", label: "Multi-Currency",        color: "#4FC6FF" },
+          { icon: "📷", label: "CCTV Integration",      color: "#1E4DA0" },
+          { icon: "🧾", label: "Split Billing",         color: "#1E4DA0" },
+          { icon: "💳", label: "Multi-Payment",         color: "#1E4DA0" },
+          { icon: "🌍", label: "Multi-Currency",        color: "#1E4DA0" },
           { icon: "📈", label: "Food Cost Analysis",    color: "#1E4DA0" },
           { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
           { icon: "🤝", label: "Vendor Portal",         color: "#1E4DA0" },
           { icon: "🎁", label: "Promotions Engine",     color: "#1E4DA0" },
-          { icon: "🔄", label: "Real-Time Sync",        color: "#4FC6FF" },
+          { icon: "🔄", label: "Real-Time Sync",        color: "#1E4DA0" },
         ]}
       />
       <CustomSolutionsSection accentColor="#1E4DA0" productName="Restaurant ERP" />

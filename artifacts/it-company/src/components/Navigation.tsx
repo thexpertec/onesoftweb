@@ -21,9 +21,9 @@ const erpProducts = [
   { icon: Stethoscope,     label: "Hospital ERP",             desc: "OPD, IPD, pharmacy & lab management",     color: "#1E4DA0", href: "/hospital" },
   { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#1E4DA0", href: "/restaurant" },
   { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#1E4DA0", href: "/ecommerce" },
-  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#4FC6FF", href: "/distributor" },
+  { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#1E4DA0", href: "/distributor" },
   { icon: Heart,           label: "Shadi Hall ERP",           desc: "Bookings, catering, billing & vendors",   color: "#1E4DA0", href: "/shadi-hall" },
-  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#4FC6FF", href: "/accounting" },
+  { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#1E4DA0", href: "/accounting" },
 ];
 
 const themeProducts = [
@@ -37,8 +37,8 @@ const allServices = [
     desc: "Fast, modern websites built to convert",
     tags: ["React & Next.js", "WordPress", "Landing Pages"],
     color: "#1E4DA0",
-    grad: "from-blue-600/20 to-blue-500/5",
-    border: "border-blue-500/20",
+    grad: "from-[#1E4DA0]/20 to-[#1E4DA0]/5",
+    border: "border-[#1E4DA0]/20",
     href: "#services",
   },
   {
@@ -87,7 +87,7 @@ const allServices = [
     label: "SEO Optimization",
     desc: "Rank higher and drive organic traffic",
     tags: ["Technical SEO", "On-page", "Link Building"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
     grad: "from-emerald-600/20 to-teal-500/5",
     border: "border-emerald-500/20",
     href: "#services",
@@ -374,9 +374,9 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               { label: "About Us", href: "/about" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
-                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).blue ? "text-blue-400" : "text-white"}`}>
+                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).blue ? "text-[#1E4DA0]" : "text-white"}`}>
                 {item.violet && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse mr-2 mt-1.5" />}
-                {(item as any).blue && <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse mr-2 mt-1.5" />}
+                {(item as any).blue && <span className="w-1.5 h-1.5 rounded-full bg-[#1E4DA0] animate-pulse mr-2 mt-1.5" />}
                 {item.label}
               </a>
             ))}

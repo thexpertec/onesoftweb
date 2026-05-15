@@ -36,7 +36,7 @@ const offices = [
     phone: "+92 333 41 99 233",
     email: "info@onesoft.org.uk",
     skyline: islamabadSkyline,
-    accent: "#4FC6FF",
+    accent: "#1E4DA0",
   },
 ];
 

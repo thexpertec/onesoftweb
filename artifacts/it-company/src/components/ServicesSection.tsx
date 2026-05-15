@@ -35,14 +35,14 @@ const devServices: Service[] = [
     title: "Shopify Stores",
     desc: "End-to-end Shopify builds including custom themes, app integrations, payment setup, and multi-currency storefronts.",
     tags: ["Shopify Plus", "Liquid", "Custom Apps", "Multi-currency"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: Webhook,
     title: "API Development",
     desc: "RESTful and GraphQL APIs engineered for reliability — with auth, rate limiting, versioning, and full documentation.",
     tags: ["REST", "GraphQL", "Node.js", "Swagger"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: Code2,
@@ -70,7 +70,7 @@ const devServices: Service[] = [
     title: "Custom Development",
     desc: "Have something specific in mind? We take on unique, complex builds that off-the-shelf tools simply can't handle.",
     tags: ["Scoping", "Architecture", "Build", "Deploy"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: BrainCircuit,
@@ -94,7 +94,7 @@ const marketingServices: Service[] = [
     title: "SEO",
     desc: "Technical SEO audits, keyword strategy, on-page optimisation, and link building that actually moves rankings.",
     tags: ["On-page", "Technical", "Backlinks", "Local SEO"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: ImagePlay,

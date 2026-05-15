@@ -34,14 +34,14 @@ const capabilities = [
     title: "Business Process Automation",
     desc: "Replace multi-step manual workflows with trigger-based automation pipelines. From lead follow-up emails to report generation — if it's repetitive, we automate it.",
     examples: ["Auto fee reminder sequences", "Inventory low-stock alerts", "Monthly report generation"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: BarChart3,
     title: "Predictive Analytics & Reporting",
     desc: "LLM-powered dashboards that don't just show numbers — they explain them. Ask questions in plain English and get instant insights from your business data.",
     examples: ["Sales trend forecasting", "Student performance prediction", "Demand planning for distributors"],
-    color: "#4FC6FF",
+    color: "#1E4DA0",
   },
   {
     icon: Database,
@@ -61,9 +61,9 @@ const capabilities = [
 
 const useCases = [
   { sector: "Schools",     icon: "🎓", color: "#1E4DA0", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
-  { sector: "Hospitals",   icon: "🏥", color: "#4FC6FF", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
+  { sector: "Hospitals",   icon: "🏥", color: "#1E4DA0", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
   { sector: "Restaurants", icon: "🍽️", color: "#1E4DA0", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
-  { sector: "Distributors",icon: "📦", color: "#4FC6FF", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
+  { sector: "Distributors",icon: "📦", color: "#1E4DA0", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
   { sector: "E-commerce",  icon: "🛒", color: "#1E4DA0", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
   { sector: "Event Halls", icon: "💒", color: "#1E4DA0", task: "Intelligent booking assistant that checks availability, quotes packages, and sends contracts — all without human involvement." },
 ];

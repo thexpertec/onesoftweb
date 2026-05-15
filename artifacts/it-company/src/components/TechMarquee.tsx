@@ -32,7 +32,7 @@ const row2: TechItem[] = [
   { Icon: SiPhp,           name: "PHP",          color: "#777BB4" },
   { Icon: SiMongodb,       name: "MongoDB",      color: "#47A248" },
   { Icon: SiGraphql,       name: "GraphQL",      color: "#E10098" },
-  { Icon: SiTailwindcss,   name: "Tailwind",     color: "#4FC6FF" },
+  { Icon: SiTailwindcss,   name: "Tailwind",     color: "#1E4DA0" },
   { Icon: SiGit,           name: "Git",          color: "#F05032" },
   { Icon: SiLinux,         name: "Linux",        color: "#FCC624" },
   { Icon: SiKubernetes,    name: "Kubernetes",   color: "#326CE5" },

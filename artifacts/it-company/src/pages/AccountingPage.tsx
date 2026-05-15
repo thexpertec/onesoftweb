@@ -48,12 +48,12 @@ function DashboardSlide() {
   const expenses = [28,36,32,40,35,50,46,56,51,60,55,68];
   const months   = ["J","F","M","A","M","J","J","A","S","O","N","D"];
   const kpis = [
-    { label:"Monthly Revenue",   value:"$118K",  delta:"+21.6%",  up:true,  color:"#4FC6FF", icon:CircleDollarSign },
+    { label:"Monthly Revenue",   value:"$118K",  delta:"+21.6%",  up:true,  color:"#1E4DA0", icon:CircleDollarSign },
     { label:"Outstanding AR",    value:"$24.8K", delta:"−3.2%",   up:false, color:"#1E4DA0", icon:Receipt },
     { label:"Monthly Payroll",   value:"$38.4K", delta:"+4 hires",up:true,  color:"#1E4DA0", icon:Users },
-    { label:"Inventory Value",   value:"$67.2K", delta:"+8.4%",   up:true,  color:"#4FC6FF", icon:Boxes },
+    { label:"Inventory Value",   value:"$67.2K", delta:"+8.4%",   up:true,  color:"#1E4DA0", icon:Boxes },
     { label:"Accounts Payable",  value:"$18.2K", delta:"Due 30d", up:false, color:"#1E4DA0", icon:Briefcase },
-    { label:"Cash & Bank",       value:"$52.8K", delta:"+$4.2K",  up:true,  color:"#4FC6FF", icon:Wallet },
+    { label:"Cash & Bank",       value:"$52.8K", delta:"+$4.2K",  up:true,  color:"#1E4DA0", icon:Wallet },
   ];
   const ledger = [
     { date:"15 May", ref:"INV-0291", account:"Accounts Receivable",debit:"$8,400", credit:"—",     type:"Dr" },
@@ -86,19 +86,19 @@ function DashboardSlide() {
             <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-400/10 px-1 py-0.5 rounded-full">+21.6%</span>
           </div>
           <div className="flex-1 relative min-h-0">
-            <AreaChart data={revenue} color="#4FC6FF" w={168} h={46}/>
+            <AreaChart data={revenue} color="#1E4DA0" w={168} h={46}/>
             <div className="absolute inset-0 opacity-50"><AreaChart data={expenses} color="#1E4DA0" w={168} h={46}/></div>
           </div>
           <div className="grid grid-cols-12 gap-px mt-1">
             {months.map((m,i) => (
               <div key={i} className="flex flex-col items-center gap-0.5">
-                <div className="w-full rounded-sm" style={{height:`${(revenue[i]/118)*12}px`,background:"#4FC6FF20"}}/>
+                <div className="w-full rounded-sm" style={{height:`${(revenue[i]/118)*12}px`,background:"#1E4DA020"}}/>
                 <span className="text-[4.5px] text-white/15">{m}</span>
               </div>
             ))}
           </div>
           <div className="flex gap-2 mt-1">
-            {[["Revenue","#4FC6FF"],["Expenses","#1E4DA0"]].map(([l,c])=>(
+            {[["Revenue","#1E4DA0"],["Expenses","#1E4DA0"]].map(([l,c])=>(
               <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[6.5px] text-white/30">{l}</span></div>
             ))}
           </div>
@@ -116,7 +116,7 @@ function DashboardSlide() {
               {ledger.map((r,i)=>(
                 <tr key={i} className="border-t border-white/[0.04]">
                   <td className="py-1 text-white/30 pr-2 whitespace-nowrap">{r.date}</td>
-                  <td className="py-1 text-blue-400 pr-2 whitespace-nowrap font-mono">{r.ref}</td>
+                  <td className="py-1 text-[#1E4DA0] pr-2 whitespace-nowrap font-mono">{r.ref}</td>
                   <td className="py-1 text-white/75 pr-2 whitespace-nowrap">{r.account}</td>
                   <td className="py-1 text-emerald-400 pr-2 whitespace-nowrap font-semibold">{r.debit}</td>
                   <td className="py-1 text-red-400 pr-2 whitespace-nowrap font-semibold">{r.credit}</td>
@@ -158,17 +158,17 @@ function PLSlide() {
   const revenueData = [42,55,48,70,63,85,78,95,88,102,97,118];
   const months  = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const income  = [
-    { name:"Sales Revenue",       amount:"$284,400", pct:88, color:"#4FC6FF" },
-    { name:"Service Revenue",     amount:"$32,800",  pct:55, color:"#4FC6FF" },
-    { name:"Subscription Income", amount:"$12,600",  pct:32, color:"#4FC6FF" },
-    { name:"Other Income",        amount:"$4,200",   pct:18, color:"#4FC6FF" },
+    { name:"Sales Revenue",       amount:"$284,400", pct:88, color:"#1E4DA0" },
+    { name:"Service Revenue",     amount:"$32,800",  pct:55, color:"#1E4DA0" },
+    { name:"Subscription Income", amount:"$12,600",  pct:32, color:"#1E4DA0" },
+    { name:"Other Income",        amount:"$4,200",   pct:18, color:"#1E4DA0" },
   ];
   const expenses = [
-    { name:"Cost of Goods Sold",  amount:"$112,600", pct:80, color:"#4FC6FF" },
+    { name:"Cost of Goods Sold",  amount:"$112,600", pct:80, color:"#1E4DA0" },
     { name:"Salaries & Wages",    amount:"$68,400",  pct:58, color:"#1E4DA0" },
     { name:"Rent & Utilities",    amount:"$18,200",  pct:24, color:"#1E4DA0" },
-    { name:"Marketing & Ads",     amount:"$9,800",   pct:14, color:"#4FC6FF" },
-    { name:"Admin & Software",    amount:"$6,400",   pct: 9, color:"#4FC6FF" },
+    { name:"Marketing & Ads",     amount:"$9,800",   pct:14, color:"#1E4DA0" },
+    { name:"Admin & Software",    amount:"$6,400",   pct: 9, color:"#1E4DA0" },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -205,10 +205,10 @@ function PLSlide() {
         </div>
         <div className="relative flex-1 min-h-0">
           <AreaChart data={revenueData} color="#1E4DA0" w={340} h={52}/>
-          <div className="absolute inset-0 opacity-80"><AreaChart data={netData} color="#4FC6FF" w={340} h={52}/></div>
+          <div className="absolute inset-0 opacity-80"><AreaChart data={netData} color="#1E4DA0" w={340} h={52}/></div>
         </div>
         <div className="flex gap-2 mb-1">
-          {[["Revenue","#1E4DA0"],["Net Profit","#4FC6FF"]].map(([l,c])=>(
+          {[["Revenue","#1E4DA0"],["Net Profit","#1E4DA0"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[6px] text-white/30">{l}</span></div>
           ))}
         </div>
@@ -218,8 +218,8 @@ function PLSlide() {
         <div className="grid grid-cols-4 gap-1.5 pt-1.5 border-t border-white/8">
           {[
             { label:"Total Revenue",  value:"$334,000", color:"#1E4DA0" },
-            { label:"Total Expenses", value:"$215,400", color:"#4FC6FF" },
-            { label:"Net Profit",     value:"$118,600", color:"#4FC6FF" },
+            { label:"Total Expenses", value:"$215,400", color:"#1E4DA0" },
+            { label:"Net Profit",     value:"$118,600", color:"#1E4DA0" },
             { label:"Tax Provision",  value:"$23,720",  color:"#1E4DA0" },
           ].map((s,i) => (
             <div key={i} className="rounded-lg p-1.5" style={{background:`${s.color}12`}}>
@@ -232,11 +232,11 @@ function PLSlide() {
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 w-32 shrink-0 flex flex-col">
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Profit Margins</p>
         {[
-          { label:"Gross Margin",     value:"64.9%", color:"#4FC6FF", bar:65 },
+          { label:"Gross Margin",     value:"64.9%", color:"#1E4DA0", bar:65 },
           { label:"Operating Margin", value:"38.2%", color:"#1E4DA0", bar:38 },
           { label:"Net Margin",       value:"35.5%", color:"#1E4DA0", bar:36 },
-          { label:"EBITDA Margin",    value:"41.5%", color:"#4FC6FF", bar:42 },
-          { label:"ROE",              value:"28.4%", color:"#4FC6FF", bar:28 },
+          { label:"EBITDA Margin",    value:"41.5%", color:"#1E4DA0", bar:42 },
+          { label:"ROE",              value:"28.4%", color:"#1E4DA0", bar:28 },
         ].map((m,i) => (
           <div key={i} className="mb-1.5">
             <div className="flex justify-between mb-0.5">
@@ -269,19 +269,19 @@ function InvoicesSlide() {
     { num:"INV-0285", customer:"BlueSky Pharma Ltd",      date:"28 Apr", due:"12 May", amount:"$4,800",  status:"Sent"    },
   ];
   const aging = [
-    { label:"Current (0–30d)",  amount:"$13,200", pct:55, color:"#4FC6FF" },
-    { label:"31–60 days",       amount:"$5,600",  pct:28, color:"#4FC6FF" },
+    { label:"Current (0–30d)",  amount:"$13,200", pct:55, color:"#1E4DA0" },
+    { label:"31–60 days",       amount:"$5,600",  pct:28, color:"#1E4DA0" },
     { label:"61–90 days",       amount:"$3,200",  pct:16, color:"#1E4DA0" },
     { label:"90+ days overdue", amount:"$2,100",  pct:11, color:"#1E4DA0" },
   ];
-  const sc = (s:string) => s==="Paid"?"text-emerald-400 bg-emerald-400/10":s==="Overdue"?"text-red-400 bg-red-400/10":"text-blue-400 bg-blue-400/10";
+  const sc = (s:string) => s==="Paid"?"text-emerald-400 bg-emerald-400/10":s==="Overdue"?"text-red-400 bg-red-400/10":"text-[#1E4DA0] bg-[#1E4DA0]/10";
   return (
     <div className="flex gap-2 flex-1 min-h-0">
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1 min-w-0 flex flex-col">
         <div className="flex items-center justify-between mb-1.5">
           <p className="text-[8px] font-semibold text-white/50">Sales Invoices — May 2026</p>
           <div className="flex gap-1">
-            {[["Sent","#1E4DA0"],["Overdue","#1E4DA0"],["Paid","#4FC6FF"]].map(([s,c])=>(
+            {[["Sent","#1E4DA0"],["Overdue","#1E4DA0"],["Paid","#1E4DA0"]].map(([s,c])=>(
               <span key={s} className="text-[6px] font-bold px-1.5 py-0.5 rounded-full" style={{color:c,background:`${c}18`}}>{s}</span>
             ))}
           </div>
@@ -293,7 +293,7 @@ function InvoicesSlide() {
           <tbody>
             {invoices.map((r,i)=>(
               <tr key={i} className="border-t border-white/[0.04]">
-                <td className="py-0.5 text-blue-400 pr-2 whitespace-nowrap font-mono">{r.num}</td>
+                <td className="py-0.5 text-[#1E4DA0] pr-2 whitespace-nowrap font-mono">{r.num}</td>
                 <td className="py-0.5 text-white/80 pr-2 whitespace-nowrap">{r.customer}</td>
                 <td className="py-0.5 text-white/30 pr-2 whitespace-nowrap">{r.date}</td>
                 <td className="py-0.5 text-white/30 pr-2 whitespace-nowrap">{r.due}</td>
@@ -307,8 +307,8 @@ function InvoicesSlide() {
           {[
             { label:"Sent",           value:"$13,200", color:"#1E4DA0" },
             { label:"Overdue",        value:"$5,300",  color:"#1E4DA0" },
-            { label:"Paid (MTD)",     value:"$27,650", color:"#4FC6FF" },
-            { label:"Avg Days DSO",   value:"19 days", color:"#4FC6FF" },
+            { label:"Paid (MTD)",     value:"$27,650", color:"#1E4DA0" },
+            { label:"Avg Days DSO",   value:"19 days", color:"#1E4DA0" },
           ].map((s,i) => (
             <div key={i} className="rounded-lg p-1" style={{background:`${s.color}12`}}>
               <p className="text-[6px] text-white/35">{s.label}</p>
@@ -333,8 +333,8 @@ function InvoicesSlide() {
           <div className="h-1.5 bg-white/8 rounded-full mb-0.5"><div className="h-full rounded-full bg-emerald-400" style={{width:"84%"}}/></div>
           <span className="text-[7.5px] font-bold text-emerald-400">84% on-time</span>
         </div>
-        <div className="mt-auto rounded-lg px-1.5 py-1.5 bg-blue-500/12 border border-blue-500/20">
-          <p className="text-[6px] text-blue-300 font-semibold">Total Outstanding</p>
+        <div className="mt-auto rounded-lg px-1.5 py-1.5 bg-[#1E4DA0]/12 border border-[#1E4DA0]/20">
+          <p className="text-[6px] text-[#1E4DA0] font-semibold">Total Outstanding</p>
           <p className="text-[12px] font-black text-white">$24,100</p>
           <p className="text-[6px] text-white/35">Across 4 invoices</p>
         </div>
@@ -357,14 +357,14 @@ function HRMSlide() {
   const depts = [
     { name:"Finance",    count:2, cost:"$9,000", color:"#1E4DA0", pct:65 },
     { name:"Operations", count:1, cost:"$3,600", color:"#1E4DA0", pct:27 },
-    { name:"Sales",      count:2, cost:"$6,600", color:"#4FC6FF", pct:50 },
-    { name:"Warehouse",  count:1, cost:"$2,800", color:"#4FC6FF", pct:21 },
+    { name:"Sales",      count:2, cost:"$6,600", color:"#1E4DA0", pct:50 },
+    { name:"Warehouse",  count:1, cost:"$2,800", color:"#1E4DA0", pct:21 },
   ];
   const payBreakdown = [
     { label:"Base Salaries",   amount:"$32,400", color:"#1E4DA0", pct:84 },
     { label:"Overtime",        amount:"$2,800",  color:"#1E4DA0", pct:13 },
-    { label:"Bonuses",         amount:"$1,600",  color:"#4FC6FF", pct: 8 },
-    { label:"Employer Tax",    amount:"$3,840",  color:"#4FC6FF", pct:10 },
+    { label:"Bonuses",         amount:"$1,600",  color:"#1E4DA0", pct: 8 },
+    { label:"Employer Tax",    amount:"$3,840",  color:"#1E4DA0", pct:10 },
   ];
   return (
     <div className="flex gap-2 flex-1 min-h-0">
@@ -427,26 +427,26 @@ function HRMSlide() {
 
 function BalanceSheetSlide() {
   const assets = [
-    { name:"Cash & Bank",           value:"$52,800",   color:"#4FC6FF" },
+    { name:"Cash & Bank",           value:"$52,800",   color:"#1E4DA0" },
     { name:"Accounts Receivable",   value:"$24,800",   color:"#1E4DA0" },
-    { name:"Inventory",             value:"$67,200",   color:"#4FC6FF" },
-    { name:"Prepaid Expenses",      value:"$3,400",    color:"#4FC6FF" },
+    { name:"Inventory",             value:"$67,200",   color:"#1E4DA0" },
+    { name:"Prepaid Expenses",      value:"$3,400",    color:"#1E4DA0" },
     { name:"Property & Equipment",  value:"$148,000",  color:"#1E4DA0" },
     { name:"Less: Depreciation",    value:"($22,400)", color:"#1E4DA0" },
   ];
   const liabilities = [
     { name:"Accounts Payable",  value:"$18,200",  color:"#1E4DA0" },
-    { name:"Tax Payable",       value:"$6,400",   color:"#4FC6FF" },
+    { name:"Tax Payable",       value:"$6,400",   color:"#1E4DA0" },
     { name:"Salaries Payable",  value:"$14,400",  color:"#1E4DA0" },
     { name:"Bank Loan (LT)",    value:"$80,000",  color:"#1E4DA0" },
   ];
   const equity = [
-    { name:"Retained Earnings", value:"$106,000", color:"#4FC6FF" },
+    { name:"Retained Earnings", value:"$106,000", color:"#1E4DA0" },
     { name:"Share Capital",     value:"$48,800",  color:"#1E4DA0" },
   ];
   const ratios = [
-    { label:"Current Ratio",  value:"2.4×",  color:"#4FC6FF" },
-    { label:"Debt Ratio",     value:"0.43",  color:"#4FC6FF" },
+    { label:"Current Ratio",  value:"2.4×",  color:"#1E4DA0" },
+    { label:"Debt Ratio",     value:"0.43",  color:"#1E4DA0" },
     { label:"Equity Ratio",   value:"0.57",  color:"#1E4DA0" },
   ];
   return (
@@ -489,14 +489,14 @@ function BalanceSheetSlide() {
         </div>
         <div className="flex justify-between mt-1 pt-1 border-t border-white/15">
           <span className="text-[7.5px] font-bold text-white/65">Total L&E</span>
-          <span className="text-[7.5px] font-black text-blue-400">$273,800</span>
+          <span className="text-[7.5px] font-black text-[#1E4DA0]">$273,800</span>
         </div>
       </div>
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 w-36 shrink-0 flex flex-col">
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Summary</p>
         <div className="space-y-1.5">
           {[
-            { label:"Total Assets",      value:"$273,800", color:"#4FC6FF" },
+            { label:"Total Assets",      value:"$273,800", color:"#1E4DA0" },
             { label:"Total Liabilities", value:"$119,000", color:"#1E4DA0" },
             { label:"Total Equity",      value:"$154,800", color:"#1E4DA0" },
           ].map((s,i)=>(
@@ -551,8 +551,8 @@ function CashFlowSlide() {
     <div className="flex gap-2 flex-1 min-h-0">
       <div className="flex flex-col gap-1.5 shrink-0" style={{width:"200px"}}>
         {[
-          { title:"Operating Activities",  items:operating,  total:"$130,200", color:"#4FC6FF" },
-          { title:"Investing Activities",  items:investing,  total:"($23,600)",color:"#4FC6FF" },
+          { title:"Operating Activities",  items:operating,  total:"$130,200", color:"#1E4DA0" },
+          { title:"Investing Activities",  items:investing,  total:"($23,600)",color:"#1E4DA0" },
           { title:"Financing Activities",  items:financing,  total:"($20,000)",color:"#1E4DA0" },
         ].map((sec,si)=>(
           <div key={si} className="bg-white/[0.03] rounded-xl p-2 border border-white/8 flex-1">
@@ -582,7 +582,7 @@ function CashFlowSlide() {
               <div key={i} className="flex-1 flex flex-col items-center justify-end gap-0.5">
                 {pos ? (
                   <>
-                    <div className="w-full rounded-t-sm" style={{height:`${h}%`,background:"#4FC6FF",opacity:0.7+i*0.02}}/>
+                    <div className="w-full rounded-t-sm" style={{height:`${h}%`,background:"#1E4DA0",opacity:0.7+i*0.02}}/>
                     <span className="text-[4.5px] text-white/20">{mLabels[i]}</span>
                   </>
                 ) : (
@@ -596,7 +596,7 @@ function CashFlowSlide() {
           })}
         </div>
         <div className="flex gap-2 mt-1">
-          {[["Positive","#4FC6FF"],["Negative","#1E4DA0"]].map(([l,c])=>(
+          {[["Positive","#1E4DA0"],["Negative","#1E4DA0"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-sm" style={{background:c}}/><span className="text-[6px] text-white/30">{l}</span></div>
           ))}
         </div>
@@ -605,10 +605,10 @@ function CashFlowSlide() {
         <p className="text-[8px] font-semibold text-white/50 mb-1.5">Cash Summary</p>
         {[
           { label:"Opening Balance",  value:"$44,600",  color:"#1E4DA0" },
-          { label:"Operating CF",     value:"+$130.2K", color:"#4FC6FF" },
-          { label:"Investing CF",     value:"−$23.6K",  color:"#4FC6FF" },
+          { label:"Operating CF",     value:"+$130.2K", color:"#1E4DA0" },
+          { label:"Investing CF",     value:"−$23.6K",  color:"#1E4DA0" },
           { label:"Financing CF",     value:"−$20.0K",  color:"#1E4DA0" },
-          { label:"Closing Balance",  value:"$131.2K",  color:"#4FC6FF" },
+          { label:"Closing Balance",  value:"$131.2K",  color:"#1E4DA0" },
         ].map((r,i)=>(
           <div key={i} className="flex justify-between py-1 border-b border-white/[0.04]">
             <span className="text-[6.5px] text-white/40">{r.label}</span>
@@ -629,12 +629,12 @@ function CashFlowSlide() {
 
 function ExpensesSlide() {
   const categories = [
-    { name:"COGS",               amount:"$112,600", pct:52, color:"#4FC6FF" },
+    { name:"COGS",               amount:"$112,600", pct:52, color:"#1E4DA0" },
     { name:"Salaries & Wages",   amount:"$68,400",  pct:36, color:"#1E4DA0" },
     { name:"Rent & Utilities",   amount:"$18,200",  pct:22, color:"#1E4DA0" },
-    { name:"Marketing",          amount:"$9,800",   pct:14, color:"#4FC6FF" },
-    { name:"Software & Tools",   amount:"$6,400",   pct: 9, color:"#4FC6FF" },
-    { name:"Travel & Expenses",  amount:"$3,200",   pct: 5, color:"#4FC6FF" },
+    { name:"Marketing",          amount:"$9,800",   pct:14, color:"#1E4DA0" },
+    { name:"Software & Tools",   amount:"$6,400",   pct: 9, color:"#1E4DA0" },
+    { name:"Travel & Expenses",  amount:"$3,200",   pct: 5, color:"#1E4DA0" },
   ];
   const bills = [
     { supplier:"Global Cloud Inc",      ref:"BILL-0112", due:"20 May", amount:"$2,400",  status:"Approved" },
@@ -643,7 +643,7 @@ function ExpensesSlide() {
     { supplier:"Apex Freight Ltd",      ref:"BILL-0109", due:"12 May", amount:"$1,640",  status:"Overdue"  },
     { supplier:"MediaReach Agency",     ref:"BILL-0108", due:"10 May", amount:"$3,200",  status:"Paid"     },
   ];
-  const sc = (s:string)=>s==="Paid"?"text-emerald-400 bg-emerald-400/10":s==="Overdue"?"text-red-400 bg-red-400/10":s==="Approved"?"text-blue-400 bg-blue-400/10":"text-amber-400 bg-amber-400/10";
+  const sc = (s:string)=>s==="Paid"?"text-emerald-400 bg-emerald-400/10":s==="Overdue"?"text-red-400 bg-red-400/10":s==="Approved"?"text-[#1E4DA0] bg-[#1E4DA0]/10":"text-amber-400 bg-amber-400/10";
   return (
     <div className="flex gap-2 flex-1 min-h-0">
       <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 w-44 shrink-0 flex flex-col">
@@ -676,7 +676,7 @@ function ExpensesSlide() {
             {bills.map((r,i)=>(
               <tr key={i} className="border-t border-white/[0.04]">
                 <td className="py-1 text-white/80 pr-2 whitespace-nowrap">{r.supplier}</td>
-                <td className="py-1 text-blue-400 pr-2 whitespace-nowrap font-mono">{r.ref}</td>
+                <td className="py-1 text-[#1E4DA0] pr-2 whitespace-nowrap font-mono">{r.ref}</td>
                 <td className="py-1 text-white/30 pr-2 whitespace-nowrap">{r.due}</td>
                 <td className="py-1 text-white/90 font-semibold pr-2 whitespace-nowrap">{r.amount}</td>
                 <td className="py-1"><span className={`text-[6px] font-bold px-1.5 py-0.5 rounded-full ${sc(r.status)}`}>{r.status}</span></td>
@@ -686,8 +686,8 @@ function ExpensesSlide() {
         </table>
         <div className="mt-auto pt-1.5 border-t border-white/8 grid grid-cols-3 gap-1.5">
           {[
-            { label:"Paid (MTD)",    value:"$8,000",  color:"#4FC6FF" },
-            { label:"Pending AP",    value:"$4,900",  color:"#4FC6FF" },
+            { label:"Paid (MTD)",    value:"$8,000",  color:"#1E4DA0" },
+            { label:"Pending AP",    value:"$4,900",  color:"#1E4DA0" },
             { label:"Overdue AP",    value:"$1,640",  color:"#1E4DA0" },
           ].map((s,i)=>(
             <div key={i} className="rounded-lg p-1.5" style={{background:`${s.color}12`}}>
@@ -784,7 +784,7 @@ function BankRecSlide() {
               <tr key={i} className="border-t border-white/[0.04]">
                 <td className="py-1 text-white/75 pr-2 whitespace-nowrap">{a.name}</td>
                 <td className="py-1 text-emerald-400 font-semibold pr-2 whitespace-nowrap">{a.bank}</td>
-                <td className="py-1 text-blue-400 font-semibold pr-2 whitespace-nowrap">{a.ledger}</td>
+                <td className="py-1 text-[#1E4DA0] font-semibold pr-2 whitespace-nowrap">{a.ledger}</td>
                 <td className={`py-1 pr-2 whitespace-nowrap font-bold text-[7px] ${a.ok?"text-white/25":"text-amber-400"}`}>{a.diff}</td>
                 <td className="py-1"><span className={`text-[6px] font-bold px-1.5 py-0.5 rounded-full ${a.ok?"text-emerald-400 bg-emerald-400/10":"text-amber-400 bg-amber-400/10"}`}>{a.ok?"Reconciled":"Review"}</span></td>
               </tr>
@@ -838,7 +838,7 @@ function AccountingDashboard() {
         {/* top bar */}
         <div className="flex items-center justify-between px-3 pt-2.5 pb-2 border-b border-white/8 shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{background:"linear-gradient(135deg,#4FC6FF,#059669)"}}>
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{background:"linear-gradient(135deg,#1E4DA0,#059669)"}}>
               <Calculator className="w-3.5 h-3.5 text-white"/>
             </div>
             <div>
@@ -855,7 +855,7 @@ function AccountingDashboard() {
                     ? "text-emerald-300 font-bold border border-emerald-500/30"
                     : "text-white/30 hover:text-white/55 hover:bg-white/[0.04]"
                 }`}
-                style={i===slide?{background:"rgba(79,198,255,0.12)"}:{}}>
+                style={i===slide?{background:"rgba(30,77,160,0.12)"}:{}}>
                 {t}
               </button>
             ))}
@@ -889,7 +889,7 @@ function AccountingDashboard() {
         {TABS.map((_,i) => (
           <button key={i} onClick={() => go(i)}
             className="h-1.5 rounded-full transition-all duration-300"
-            style={{width:i===slide?20:5, background:i===slide?"#4FC6FF":"rgba(255,255,255,0.18)"}}/>
+            style={{width:i===slide?20:5, background:i===slide?"#1E4DA0":"rgba(255,255,255,0.18)"}}/>
         ))}
       </div>
     </div>
@@ -912,13 +912,13 @@ function CountUp({ to, suffix = "", decimals = 0, duration = 2 }: { to: number; 
 /* ─────────────────── page data ─────────────────────────────── */
 
 const modules = [
-  { icon: BookOpen,   color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Double-Entry Bookkeeping",
+  { icon: BookOpen,   color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Double-Entry Bookkeeping",
     desc: "Every transaction auto-posts debit & credit entries simultaneously — GAAP and IFRS compliant.",
     pts: ["Auto journal entries on every transaction", "Trial balance & reconciliation in one click", "Multi-currency with live FX rates", "Full audit trail on every change"] },
   { icon: Users,      color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "HRM & Payroll",
     desc: "Full workforce management connected directly to accounts — every payroll run auto-journals instantly.",
     pts: ["Employee contracts & document vault", "Attendance, leave & overtime tracking", "Automated payroll with tax & NI calc", "Payslips generated & emailed automatically"] },
-  { icon: Package,    color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Products & Services",
+  { icon: Package,    color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Products & Services",
     desc: "Define unlimited products and service lines with pricing tiers, tax codes, and units of measure.",
     pts: ["Product & service catalogue management", "Custom pricing tiers per customer", "Auto VAT / tax on every invoice line", "Service billing & timesheet integration"] },
   { icon: Boxes,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Inventory Management",
@@ -927,29 +927,29 @@ const modules = [
   { icon: Receipt,    color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Invoicing & AR / AP",
     desc: "Professional invoices, payment tracking, automated chasers, and full payables management.",
     pts: ["Branded invoice & quote templates", "Recurring & subscription invoices", "Automated overdue payment chasers", "Aged debtors & creditors reports"] },
-  { icon: BarChart3,  color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Financial Reporting",
+  { icon: BarChart3,  color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Financial Reporting",
     desc: "Live P&L, Balance Sheet, Cash Flow, and 40+ custom reports exportable to PDF or Excel.",
     pts: ["Real-time P&L & Balance Sheet", "Cash flow forecasting dashboard", "Budget vs actuals variance reports", "Read-only accountant portal access"] },
-  { icon: Briefcase,  color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Expense Management",
+  { icon: Briefcase,  color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Expense Management",
     desc: "Mobile expense submission, multi-level approvals, and auto-posting to the general ledger.",
     pts: ["Mobile app receipt capture", "Configurable approval workflows", "Per-diem & mileage rules", "Auto debit posting to ledger"] },
-  { icon: RefreshCw,  color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Everything Connected",
+  { icon: RefreshCw,  color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Everything Connected",
     desc: "Sales → Inventory → AR → Ledger → Payroll → Reports. One live system, zero manual re-entry.",
     pts: ["Real-time cross-module sync", "Single source of financial truth", "Role-based access control", "Open API for third-party apps"] },
 ];
 
 const flow = [
-  { step: "01", icon: FileText,   color: "#4FC6FF", title: "Sales Invoice Raised",         detail: "Sales team raises invoice in seconds using the product catalogue" },
+  { step: "01", icon: FileText,   color: "#1E4DA0", title: "Sales Invoice Raised",         detail: "Sales team raises invoice in seconds using the product catalogue" },
   { step: "02", icon: Boxes,      color: "#1E4DA0", title: "Inventory Auto-Deducted",       detail: "Stock levels drop instantly — no warehouse team update needed" },
   { step: "03", icon: BookOpen,   color: "#1E4DA0", title: "Ledger Auto-Journaled",         detail: "Debit AR, credit Revenue posted automatically — double-entry complete" },
-  { step: "04", icon: TrendingUp, color: "#4FC6FF", title: "P&L Updates in Real Time",      detail: "Gross margin and revenue charts refresh the moment the invoice saves" },
-  { step: "05", icon: Users,      color: "#4FC6FF", title: "Payroll Linked to Accounts",    detail: "Every salary run debits wages expense and credits bank automatically" },
-  { step: "06", icon: BarChart3,  color: "#4FC6FF", title: "Reports Always Accurate",       detail: "No month-end close needed — your Balance Sheet is live 24/7" },
+  { step: "04", icon: TrendingUp, color: "#1E4DA0", title: "P&L Updates in Real Time",      detail: "Gross margin and revenue charts refresh the moment the invoice saves" },
+  { step: "05", icon: Users,      color: "#1E4DA0", title: "Payroll Linked to Accounts",    detail: "Every salary run debits wages expense and credits bank automatically" },
+  { step: "06", icon: BarChart3,  color: "#1E4DA0", title: "Reports Always Accurate",       detail: "No month-end close needed — your Balance Sheet is live 24/7" },
 ];
 
 const testimonials = [
   { quote: "We used to spend 3 days closing the books every month. With OneSoft it takes half a morning. The double-entry is automatic and our accountant has a read-only portal — she doesn't need to email us for reports anymore.",
-    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Dubai, UAE", color: "#4FC6FF" },
+    name: "Danielle Forsyth", role: "Finance Director", co: "Northgate Retail, Dubai, UAE", color: "#1E4DA0" },
   { quote: "The HRM payroll link is a game-changer. Every month payroll runs, every journal posts automatically. I reviewed our payroll submissions last year and found zero discrepancies for the first time ever.",
     name: "Ravi Menon", role: "Managing Director", co: "Spice Route Restaurants, Singapore", color: "#1E4DA0" },
   { quote: "Our warehouse manager used to message me when stock was low. Now the system raises the PO automatically and I just approve it. Stock value always matches the Balance Sheet — magic.",
@@ -1053,7 +1053,7 @@ export default function AccountingPage() {
               {to:40,  suf:"+", label:"Accounting Modules",     Icon:Layers,     color:"#1E4DA0"},
               {to:300, suf:"+", label:"Businesses on Platform",  Icon:Building2,  color:"#1E4DA0"},
               {to:99.9,suf:"%", label:"Data Accuracy",           Icon:ShieldCheck,color:"#1E4DA0",d:1},
-              {to:80,  suf:"%", label:"Time Saved on Bookkeeping",Icon:Clock,     color:"#4FC6FF"},
+              {to:80,  suf:"%", label:"Time Saved on Bookkeeping",Icon:Clock,     color:"#1E4DA0"},
             ].map((s,i)=>(
               <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}}
                 viewport={{once:true}} transition={{delay:i*0.1,duration:0.5}}>
@@ -1187,13 +1187,13 @@ export default function AccountingPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: ArrowUpRight, color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: ArrowUpRight, color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Purchase order → auto inventory receipt → auto AP journal",
                     sub: "Every goods receipt auto-debits inventory and credits your payables account" },
                   { icon: ArrowDownRight, color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Sales invoice → inventory deduction → revenue posting",
                     sub: "Selling one unit auto-reduces stock and books COGS vs Revenue immediately" },
-                  { icon: Zap, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: Zap, color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Low-stock alert → automated reorder PO to supplier",
                     sub: "Configurable thresholds trigger purchase orders without human intervention" },
                   { icon: BarChart3, color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
@@ -1232,7 +1232,7 @@ export default function AccountingPage() {
                 <div className="flex items-center justify-between px-5 py-4" style={{borderBottom:`1px solid ${dividerColor}`}}>
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{background:"rgba(30,77,160,0.2)"}}>
-                      <Boxes className="w-4 h-4 text-blue-400"/>
+                      <Boxes className="w-4 h-4 text-[#1E4DA0]"/>
                     </div>
                     <span className="font-bold text-sm">Inventory Status</span>
                   </div>
@@ -1245,8 +1245,8 @@ export default function AccountingPage() {
                 <div className="grid grid-cols-3 gap-px" style={{background:gridLine}}>
                   {[
                     {label:"Total Items",value:"847",color:"#1E4DA0"},
-                    {label:"Total Value",value:"£67.2K",color:"#4FC6FF"},
-                    {label:"Low / Out",value:"3 items",color:"#4FC6FF"},
+                    {label:"Total Value",value:"£67.2K",color:"#1E4DA0"},
+                    {label:"Low / Out",value:"3 items",color:"#1E4DA0"},
                   ].map(s=>(
                     <div key={s.label} className="px-4 py-3" style={{background:tableBg}}>
                       <p className="text-xs mb-1" style={{color:t45}}>{s.label}</p>
@@ -1276,7 +1276,7 @@ export default function AccountingPage() {
                         <tr key={i} style={{borderBottom:"1px solid rgba(255,255,255,0.04)"}}>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.8)"}}>{r.name}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.35)"}}>{r.sku}</td>
-                          <td className="py-2.5 pr-4 font-semibold" style={{color:r.qty===0?"#1E4DA0":r.qty<r.min?"#4FC6FF":"rgba(255,255,255,0.7)"}}>{r.qty}</td>
+                          <td className="py-2.5 pr-4 font-semibold" style={{color:r.qty===0?"#1E4DA0":r.qty<r.min?"#1E4DA0":"rgba(255,255,255,0.7)"}}>{r.qty}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.3)"}}>{r.min}</td>
                           <td className="py-2.5 pr-4" style={{color:"rgba(255,255,255,0.6)"}}>{r.val}</td>
                           <td className="py-2.5">
@@ -1370,7 +1370,7 @@ export default function AccountingPage() {
       </div>
 
       <CTAStrip onCTA={() => openCTAModal("Accounting & Bookkeeping ERP")}/>
-      <CustomSolutionsSection accentColor="#4FC6FF" productName="Accounting ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="Accounting ERP" />
       <ERPCrossLinks current="/accounting" />
       <Footer />
     </div>

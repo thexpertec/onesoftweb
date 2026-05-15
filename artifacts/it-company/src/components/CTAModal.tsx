@@ -93,7 +93,7 @@ export function CTAModal() {
             className="relative w-full max-w-lg rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/70 overflow-hidden"
           >
             {/* Top accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-primary via-blue-400 to-primary" />
+            <div className="h-1 w-full bg-gradient-to-r from-primary via-[#1E4DA0] to-primary" />
 
             {/* Header */}
             <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/8">

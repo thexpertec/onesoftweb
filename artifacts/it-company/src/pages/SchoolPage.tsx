@@ -37,15 +37,15 @@ const TABS = ["Overview", "Fees", "Timetable", "Results"];
 function DashboardOverview() {
   const kpis = [
     { label: "Total Students", value: "1,284", delta: "+38 this term", up: true, color: "#1E4DA0", Icon: Users },
-    { label: "Attendance Today", value: "96.4%", delta: "+1.2% vs yesterday", up: true, color: "#4FC6FF", Icon: UserCheck },
-    { label: "Fees Collected", value: "£84.2K", delta: "£12.4K outstanding", up: false, color: "#4FC6FF", Icon: Wallet },
+    { label: "Attendance Today", value: "96.4%", delta: "+1.2% vs yesterday", up: true, color: "#1E4DA0", Icon: UserCheck },
+    { label: "Fees Collected", value: "£84.2K", delta: "£12.4K outstanding", up: false, color: "#1E4DA0", Icon: Wallet },
     { label: "Exams This Week", value: "6", delta: "3 results pending", up: true, color: "#1E4DA0", Icon: ClipboardList },
   ];
   const notices = [
-    { type: "Fee", msg: "Term 2 fee due — 142 students", color: "#4FC6FF", time: "Today" },
+    { type: "Fee", msg: "Term 2 fee due — 142 students", color: "#1E4DA0", time: "Today" },
     { type: "Exam", msg: "Maths Yr 10 results uploaded", color: "#1E4DA0", time: "2h ago" },
     { type: "Absent", msg: "18 students marked absent", color: "#1E4DA0", time: "9:15 AM" },
-    { type: "New", msg: "3 new admissions approved", color: "#4FC6FF", time: "Yesterday" },
+    { type: "New", msg: "3 new admissions approved", color: "#1E4DA0", time: "Yesterday" },
   ];
   const classes = [
     { name: "Year 7A", students: 28, teacher: "Mrs. Ahmed", present: 27 },
@@ -121,9 +121,9 @@ function FeeSlide() {
   const outstanding = [18, 12, 22, 10, 15, 8, 12, 9, 14, 7, 10, 6];
   const feeBreakdown = [
     { name: "Tuition Fees",   amount: "£54,200", pct: 90, color: "#1E4DA0" },
-    { name: "Transport",      amount: "£12,800", pct: 65, color: "#4FC6FF" },
+    { name: "Transport",      amount: "£12,800", pct: 65, color: "#1E4DA0" },
     { name: "Library & Lab",  amount: "£6,400",  pct: 45, color: "#1E4DA0" },
-    { name: "Sports & Trips", amount: "£4,200",  pct: 30, color: "#4FC6FF" },
+    { name: "Sports & Trips", amount: "£4,200",  pct: 30, color: "#1E4DA0" },
   ];
   const pending = [
     { student: "Amir Hassan",    class: "Yr 9B",  amount: "£1,200", due: "3 days", overdue: false },
@@ -161,14 +161,14 @@ function FeeSlide() {
             <div key={i} className="flex flex-col items-center gap-0.5">
               <div className="w-full flex flex-col-reverse gap-px">
                 <div className="w-full rounded-sm" style={{ height: `${(collected[i]/98)*36}px`, background: "#1E4DA0" }} />
-                <div className="w-full rounded-sm" style={{ height: `${(outstanding[i]/22)*12}px`, background: "#4FC6FF88" }} />
+                <div className="w-full rounded-sm" style={{ height: `${(outstanding[i]/22)*12}px`, background: "#1E4DA088" }} />
               </div>
               <span className="text-[5px] text-white/20">{m}</span>
             </div>
           ))}
         </div>
         <div className="flex gap-3 mb-3">
-          {[["Collected","#1E4DA0"],["Outstanding","#4FC6FF"]].map(([l,c])=>(
+          {[["Collected","#1E4DA0"],["Outstanding","#1E4DA0"]].map(([l,c])=>(
             <div key={l} className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full" style={{background:c}}/><span className="text-[7px] text-white/35">{l}</span></div>
           ))}
         </div>
@@ -198,12 +198,12 @@ function TimetableSlide() {
   const periods = ["8:30","9:30","10:30","11:30","12:30","1:30","2:30"];
   const subjects: Record<string,{label:string;color:string}> = {
     maths:   { label: "Maths",    color: "#1E4DA0" },
-    eng:     { label: "English",  color: "#4FC6FF" },
+    eng:     { label: "English",  color: "#1E4DA0" },
     sci:     { label: "Science",  color: "#1E4DA0" },
-    hist:    { label: "History",  color: "#4FC6FF" },
+    hist:    { label: "History",  color: "#1E4DA0" },
     geo:     { label: "Geography",color: "#1E4DA0" },
-    pe:      { label: "PE",       color: "#4FC6FF" },
-    art:     { label: "Art",      color: "#4FC6FF" },
+    pe:      { label: "PE",       color: "#1E4DA0" },
+    art:     { label: "Art",      color: "#1E4DA0" },
     break:   { label: "Break",    color: "" },
     lunch:   { label: "Lunch",    color: "" },
   };
@@ -267,7 +267,7 @@ function ResultsSlide() {
     { name: "Emma Clarke",    maths: 88, eng: 94, sci: 80, hist: 92, avg: 88.5, grade: "A"  },
     { name: "Ravi Menon",     maths: 71, eng: 68, sci: 74, hist: 65, avg: 69.5, grade: "C+" },
   ];
-  const gradeColor = (g: string) => g.startsWith("A") ? "#4FC6FF" : g.startsWith("B") ? "#1E4DA0" : "#4FC6FF";
+  const gradeColor = (g: string) => g.startsWith("A") ? "#1E4DA0" : g.startsWith("B") ? "#1E4DA0" : "#1E4DA0";
   return (
     <div className="flex flex-col flex-1 min-h-0">
       <div className="flex items-center justify-between mb-2">
@@ -290,7 +290,7 @@ function ResultsSlide() {
             <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
               <td className="py-2 pr-3 font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>{s.name}</td>
               {[s.maths,s.eng,s.sci,s.hist].map((m,j)=>(
-                <td key={j} className="py-2 pr-3" style={{ color: m>=90?"#4FC6FF":m>=75?"rgba(255,255,255,0.7)":"#4FC6FF" }}>{m}%</td>
+                <td key={j} className="py-2 pr-3" style={{ color: m>=90?"#1E4DA0":m>=75?"rgba(255,255,255,0.7)":"#1E4DA0" }}>{m}%</td>
               ))}
               <td className="py-2 pr-3 font-bold" style={{ color: "rgba(255,255,255,0.9)" }}>{s.avg}%</td>
               <td className="py-2">
@@ -356,43 +356,43 @@ const modules = [
   { icon: Users,        color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Student Management",
     desc: "Complete student lifecycle from application to graduation — profiles, documents, and history in one place.",
     pts: ["Online admissions & enrolment", "Student profiles with document vault", "Class & section assignment", "Alumni & leavers tracking"] },
-  { icon: Wallet,       color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Fee Management",
+  { icon: Wallet,       color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Fee Management",
     desc: "Automated fee schedules, instant receipts, outstanding trackers, and parent payment portals.",
     pts: ["Flexible fee structures per class", "Automated due date reminders", "Online & cash payment recording", "Aged debtors & collection reports"] },
   { icon: UserCheck,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "Attendance Tracking",
     desc: "Mark attendance in seconds, auto-notify parents of absences, and generate compliance reports.",
     pts: ["One-click class-wise attendance", "Automated parent SMS/email alerts", "Monthly attendance registers", "Biometric & RFID integration ready"] },
-  { icon: Calendar,     color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Timetable & Scheduling",
+  { icon: Calendar,     color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Timetable & Scheduling",
     desc: "Drag-and-drop timetable builder that auto-checks conflicts across teachers, rooms, and subjects.",
     pts: ["Conflict-free schedule builder", "Substitute teacher assignment", "Room & lab allocation", "Exportable weekly timetables"] },
   { icon: ClipboardList,color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Exams & Results",
     desc: "Schedule exams, enter marks, auto-calculate grades, and publish result cards to parents instantly.",
     pts: ["Configurable grading schemes", "Auto-calculated averages & ranks", "Result cards generated instantly", "Parent portal result access"] },
-  { icon: Library,      color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Library Management",
+  { icon: Library,      color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Library Management",
     desc: "Catalogue books, manage checkouts, track overdue returns, and enforce borrowing limits automatically.",
     pts: ["Book catalogue with ISBN scan", "Student checkout & return tracking", "Overdue notices auto-sent", "Stock audit & procurement reports"] },
-  { icon: Bus,          color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Transport Management",
+  { icon: Bus,          color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Transport Management",
     desc: "Define routes and stops, assign students to buses, and give parents live departure tracking.",
     pts: ["Route & stop management", "Student bus assignment", "Driver & vehicle records", "Parent transport notifications"] },
-  { icon: Bell,         color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Communication Hub",
+  { icon: Bell,         color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Communication Hub",
     desc: "Send notices, circulars, and announcements to parents and staff via SMS, email, or in-app push.",
     pts: ["Bulk SMS & email to parents", "Notice board & circular archive", "Parent-teacher message threads", "Event & holiday calendar"] },
 ];
 
 const flow = [
   { step: "01", icon: Users,        color: "#1E4DA0", title: "Student Enrolled",            detail: "Admission form submitted online — profile, class & fee schedule created automatically" },
-  { step: "02", icon: UserCheck,    color: "#4FC6FF", title: "Attendance Marked",            detail: "Teacher marks attendance in one click — absent students' parents notified instantly" },
-  { step: "03", icon: Wallet,       color: "#4FC6FF", title: "Fee Due — Reminder Sent",     detail: "System detects upcoming due dates and sends automated payment reminders to parents" },
+  { step: "02", icon: UserCheck,    color: "#1E4DA0", title: "Attendance Marked",            detail: "Teacher marks attendance in one click — absent students' parents notified instantly" },
+  { step: "03", icon: Wallet,       color: "#1E4DA0", title: "Fee Due — Reminder Sent",     detail: "System detects upcoming due dates and sends automated payment reminders to parents" },
   { step: "04", icon: ClipboardList,color: "#1E4DA0", title: "Exams Completed",             detail: "Marks entered once — averages, ranks, and grade cards generated automatically" },
   { step: "05", icon: FileText,     color: "#1E4DA0", title: "Result Cards Published",       detail: "Parents receive result cards on their portal the moment the teacher clicks 'Publish'" },
-  { step: "06", icon: BarChart3,    color: "#4FC6FF", title: "Admin Gets Full Picture",      detail: "Live dashboards show fees, attendance, results, and staff — no manual reports needed" },
+  { step: "06", icon: BarChart3,    color: "#1E4DA0", title: "Admin Gets Full Picture",      detail: "Live dashboards show fees, attendance, results, and staff — no manual reports needed" },
 ];
 
 const testimonials = [
   { quote: "We used to spend the entire first week of term just sorting fee ledgers and attendance registers. With OneSoft, the data is already there on day one. Parents get fee reminders automatically and I haven't chased a single payment manually this term.",
     name: "Mrs. Anita Sharma", role: "Principal", co: "Bright Futures Academy, Karachi, Pakistan", color: "#1E4DA0" },
   { quote: "The timetable builder alone saved us two full days of admin. It checks conflicts automatically — no more double-booking teachers or rooms. And when we need a substitute, we assign them in seconds.",
-    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Dubai, UAE", color: "#4FC6FF" },
+    name: "Mr. David Clarke", role: "Head of Administration", co: "St. Margaret's School, Dubai, UAE", color: "#1E4DA0" },
   { quote: "Parents love the portal. They can see attendance, results, and fee balance from their phone. We've had zero calls asking 'did my child come in today?' since going live. That alone is worth every penny.",
     name: "Ms. Fatima Al-Rashid", role: "IT & Operations Lead", co: "Crescent Park School, Toronto, Canada", color: "#1E4DA0" },
 ];
@@ -491,9 +491,9 @@ export default function SchoolPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 500,  suf: "+",  label: "Schools on Platform",      Icon: Building2,  color: "#1E4DA0" },
-              { to: 200,  suf: "K+", label: "Students Managed",         Icon: Users,      color: "#4FC6FF" },
+              { to: 200,  suf: "K+", label: "Students Managed",         Icon: Users,      color: "#1E4DA0" },
               { to: 98,   suf: "%",  label: "Average Fee Collection",   Icon: Wallet,     color: "#1E4DA0" },
-              { to: 3,    suf: "hrs",label: "Admin Saved Per Day",      Icon: Clock,      color: "#4FC6FF" },
+              { to: 3,    suf: "hrs",label: "Admin Saved Per Day",      Icon: Clock,      color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -627,10 +627,10 @@ export default function SchoolPage() {
                   { icon: UserCheck,    color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Absence alert sent within 60 seconds",
                     sub: "If a student is marked absent, parents receive an automated SMS and app notification instantly" },
-                  { icon: Wallet,       color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: Wallet,       color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Fee reminders auto-sent 7 days before due date",
                     sub: "Parents receive payment reminders automatically — no staff intervention needed" },
-                  { icon: Award,        color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: Award,        color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Results visible to parents the moment they're published",
                     sub: "No waiting for report cards — parents see marks and grades on their portal instantly" },
                   { icon: Bell,         color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
@@ -680,9 +680,9 @@ export default function SchoolPage() {
 
                 <div className="grid grid-cols-3 gap-px" style={{ background: gridLine }}>
                   {[
-                    { label: "Attendance", value: "97.2%", color: "#4FC6FF" },
+                    { label: "Attendance", value: "97.2%", color: "#1E4DA0" },
                     { label: "Class Rank",  value: "2nd",  color: "#1E4DA0" },
-                    { label: "Fee Balance", value: "£0",   color: "#4FC6FF" },
+                    { label: "Fee Balance", value: "£0",   color: "#1E4DA0" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
                       <p className="text-xs mb-1" style={{ color: t45 }}>{s.label}</p>
@@ -696,9 +696,9 @@ export default function SchoolPage() {
                   <div className="space-y-3">
                     {[
                       { subject: "Mathematics",  mark: 94, grade: "A*", color: "#1E4DA0" },
-                      { subject: "English",       mark: 88, grade: "A",  color: "#4FC6FF" },
+                      { subject: "English",       mark: 88, grade: "A",  color: "#1E4DA0" },
                       { subject: "Science",       mark: 91, grade: "A*", color: "#1E4DA0" },
-                      { subject: "History",       mark: 85, grade: "A",  color: "#4FC6FF" },
+                      { subject: "History",       mark: 85, grade: "A",  color: "#1E4DA0" },
                       { subject: "Geography",     mark: 79, grade: "B+", color: "#1E4DA0" },
                     ].map((r, i) => (
                       <div key={i} className="flex items-center gap-3">
@@ -809,44 +809,44 @@ export default function SchoolPage() {
         row1={[
           { icon: "🎓", label: "Student Enrolment",     color: "#1E4DA0" },
           { icon: "📋", label: "Attendance Tracking",   color: "#1E4DA0" },
-          { icon: "💳", label: "Fee Management",        color: "#4FC6FF" },
-          { icon: "📝", label: "Exam Scheduling",       color: "#4FC6FF" },
-          { icon: "📅", label: "Timetabling",           color: "#4FC6FF" },
-          { icon: "👨‍👩‍👦", label: "Parent Portal",       color: "#4FC6FF" },
-          { icon: "📚", label: "Library Management",    color: "#4FC6FF" },
+          { icon: "💳", label: "Fee Management",        color: "#1E4DA0" },
+          { icon: "📝", label: "Exam Scheduling",       color: "#1E4DA0" },
+          { icon: "📅", label: "Timetabling",           color: "#1E4DA0" },
+          { icon: "👨‍👩‍👦", label: "Parent Portal",       color: "#1E4DA0" },
+          { icon: "📚", label: "Library Management",    color: "#1E4DA0" },
           { icon: "🏆", label: "Report Cards",          color: "#1E4DA0" },
           { icon: "🔔", label: "SMS & Push Alerts",     color: "#1E4DA0" },
           { icon: "🏫", label: "Multi-Branch",          color: "#1E4DA0" },
           { icon: "🚌", label: "Transport Tracking",    color: "#1E4DA0" },
-          { icon: "🛏️", label: "Hostel Management",    color: "#4FC6FF" },
+          { icon: "🛏️", label: "Hostel Management",    color: "#1E4DA0" },
         ]}
         row2={[
-          { icon: "👩‍🏫", label: "Staff Payroll",        color: "#4FC6FF" },
+          { icon: "👩‍🏫", label: "Staff Payroll",        color: "#1E4DA0" },
           { icon: "🗂️", label: "HR Management",        color: "#1E4DA0" },
           { icon: "📢", label: "Notice Board",          color: "#1E4DA0" },
-          { icon: "🏖️", label: "Leave Management",     color: "#4FC6FF" },
-          { icon: "🎓", label: "Certificate Printing",  color: "#4FC6FF" },
-          { icon: "📊", label: "Academic Analytics",    color: "#4FC6FF" },
-          { icon: "💻", label: "E-Learning Module",     color: "#4FC6FF" },
+          { icon: "🏖️", label: "Leave Management",     color: "#1E4DA0" },
+          { icon: "🎓", label: "Certificate Printing",  color: "#1E4DA0" },
+          { icon: "📊", label: "Academic Analytics",    color: "#1E4DA0" },
+          { icon: "💻", label: "E-Learning Module",     color: "#1E4DA0" },
           { icon: "🩺", label: "Health Records",        color: "#1E4DA0" },
           { icon: "🍱", label: "Canteen Management",    color: "#1E4DA0" },
           { icon: "🔒", label: "Discipline Module",     color: "#1E4DA0" },
           { icon: "🎨", label: "Extracurricular",       color: "#1E4DA0" },
-          { icon: "🌐", label: "Alumni Portal",         color: "#4FC6FF" },
+          { icon: "🌐", label: "Alumni Portal",         color: "#1E4DA0" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "📱", label: "Mobile App",            color: "#1E4DA0" },
           { icon: "📷", label: "CCTV Integration",      color: "#1E4DA0" },
           { icon: "🗓️", label: "Academic Calendar",    color: "#1E4DA0" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
-          { icon: "📈", label: "Progress Tracking",     color: "#4FC6FF" },
-          { icon: "💬", label: "Teacher–Parent Chat",   color: "#4FC6FF" },
-          { icon: "🧾", label: "Fee Receipts",          color: "#4FC6FF" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
+          { icon: "📈", label: "Progress Tracking",     color: "#1E4DA0" },
+          { icon: "💬", label: "Teacher–Parent Chat",   color: "#1E4DA0" },
+          { icon: "🧾", label: "Fee Receipts",          color: "#1E4DA0" },
           { icon: "🌍", label: "Multi-Language",        color: "#1E4DA0" },
           { icon: "⚙️", label: "Custom Workflows",      color: "#1E4DA0" },
           { icon: "🔄", label: "Data Import/Export",    color: "#1E4DA0" },
           { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
-          { icon: "📦", label: "Bulk Operations",       color: "#4FC6FF" },
+          { icon: "📦", label: "Bulk Operations",       color: "#1E4DA0" },
         ]}
       />
       <CustomSolutionsSection accentColor="#1E4DA0" productName="School ERP" />

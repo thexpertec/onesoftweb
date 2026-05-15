@@ -47,7 +47,7 @@ export function ThemePickerModal() {
             {/* Card */}
             <div className="rounded-3xl border border-white/12 bg-[#0d1526] shadow-2xl shadow-black/60 overflow-hidden">
               {/* Top accent line */}
-              <div className="h-1 w-full bg-gradient-to-r from-blue-600 via-blue-400 to-violet-500" />
+              <div className="h-1 w-full bg-gradient-to-r from-[#1E4DA0] via-[#1E4DA0] to-violet-500" />
 
               <div className="p-8">
                 {/* Logo + heading */}
@@ -70,16 +70,16 @@ export function ThemePickerModal() {
                   >
                     {/* Preview swatch */}
                     <div className="w-full h-20 rounded-xl bg-[#070d1a] border border-white/10 overflow-hidden relative mb-1 flex flex-col justify-end p-2">
-                      <div className="w-full h-1.5 rounded-full bg-blue-600/60 mb-1.5" />
+                      <div className="w-full h-1.5 rounded-full bg-[#1E4DA0]/60 mb-1.5" />
                       <div className="flex gap-1">
                         <div className="h-1.5 rounded w-10 bg-white/20" />
                         <div className="h-1.5 rounded w-6 bg-white/10" />
                       </div>
-                      <div className="absolute top-2 right-2 w-5 h-5 rounded-md bg-blue-600/40 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-sm bg-blue-400/80" />
+                      <div className="absolute top-2 right-2 w-5 h-5 rounded-md bg-[#1E4DA0]/40 flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-sm bg-[#1E4DA0]/80" />
                       </div>
                     </div>
-                    <Moon className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform duration-200" />
+                    <Moon className="w-5 h-5 text-[#1E4DA0] group-hover:scale-110 transition-transform duration-200" />
                     <div>
                       <p className="text-sm font-bold text-white">Dark Theme</p>
                       <p className="text-[11px] text-white/40 mt-0.5">Easy on the eyes</p>
@@ -96,13 +96,13 @@ export function ThemePickerModal() {
                   >
                     {/* Preview swatch */}
                     <div className="w-full h-20 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden relative mb-1 flex flex-col justify-end p-2">
-                      <div className="w-full h-1.5 rounded-full bg-blue-600/70 mb-1.5" />
+                      <div className="w-full h-1.5 rounded-full bg-[#1E4DA0]/70 mb-1.5" />
                       <div className="flex gap-1">
                         <div className="h-1.5 rounded w-10 bg-slate-400/40" />
                         <div className="h-1.5 rounded w-6 bg-slate-300/40" />
                       </div>
-                      <div className="absolute top-2 right-2 w-5 h-5 rounded-md bg-blue-600/30 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-sm bg-blue-500/80" />
+                      <div className="absolute top-2 right-2 w-5 h-5 rounded-md bg-[#1E4DA0]/30 flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-sm bg-[#1E4DA0]/80" />
                       </div>
                     </div>
                     <Sun className="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform duration-200" />

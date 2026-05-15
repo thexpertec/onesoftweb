@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const BLUE  = "#1E4DA0";
-const CYAN  = "#4FC6FF";
+const CYAN  = "#1E4DA0";
 
 /* ── Count-up ───────────────────────────────────────────── */
 function CountUp({ to, suffix = "", prefix = "", duration = 2 }:
@@ -226,7 +226,7 @@ export default function AboutPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center mb-16">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ background: "rgba(79,198,255,0.10)", color: CYAN }}>What Drives Us</span>
+              style={{ background: "rgba(30,77,160,0.10)", color: CYAN }}>What Drives Us</span>
             <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: isLight ? "#000000" : "#ffffff" }}>
               Our core values
             </h2>

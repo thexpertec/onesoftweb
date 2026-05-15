@@ -78,7 +78,7 @@ export default function Home() {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-16 right-[8%] w-96 h-96 bg-blue-500/10 rounded-full blur-[110px] -z-10 pointer-events-none"
+          className="absolute bottom-16 right-[8%] w-96 h-96 bg-[#1E4DA0]/10 rounded-full blur-[110px] -z-10 pointer-events-none"
           animate={{ y: [0, 24, 0], scale: [1, 1.06, 1] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         />
@@ -103,7 +103,7 @@ export default function Home() {
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-tight text-white">
               Mission-Critical <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+              <span className="text-primary">
                 Infrastructure.
               </span>
             </motion.h1>

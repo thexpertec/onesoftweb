@@ -81,17 +81,17 @@ const STATUS_CLS: Record<string, string> = {
   Pending:       "text-amber-400   bg-amber-400/10",
   Overdue:       "text-red-400     bg-red-400/10",
   Delivered:     "text-emerald-400 bg-emerald-400/10",
-  Shipped:       "text-blue-400    bg-blue-400/10",
+  Shipped:       "text-[#1E4DA0]    bg-[#1E4DA0]/10",
   Processing:    "text-amber-400   bg-amber-400/10",
   Cancelled:     "text-red-400     bg-red-400/10",
   Active:        "text-emerald-400 bg-emerald-400/10",
   Vacant:        "text-slate-400   bg-slate-400/10",
-  Occupied:      "text-blue-400    bg-blue-400/10",
+  Occupied:      "text-[#1E4DA0]    bg-[#1E4DA0]/10",
   Reserved:      "text-violet-400  bg-violet-400/10",
   Available:     "text-emerald-400 bg-emerald-400/10",
-  New:           "text-blue-400    bg-blue-400/10",
+  New:           "text-[#1E4DA0]    bg-[#1E4DA0]/10",
   Closed:        "text-slate-400   bg-slate-400/10",
-  OPD:           "text-cyan-400    bg-cyan-400/10",
+  OPD:           "text-[#1E4DA0]    bg-[#1E4DA0]/10",
   IPD:           "text-violet-400  bg-violet-400/10",
 };
 
@@ -140,7 +140,7 @@ function SchoolErpDash() {
         tabs={["Dashboard","Students","Fees","Timetable","Reports"]} active="Dashboard" />
       <div className="grid grid-cols-4 gap-2">
         <StatCard label="Students" value="1,248" change="+4.2% this term" color="#1E4DA0" icon={Users} />
-        <StatCard label="Attendance" value="94.6%" change="+1.1% today" color="#4FC6FF" icon={Activity} />
+        <StatCard label="Attendance" value="94.6%" change="+1.1% today" color="#1E4DA0" icon={Activity} />
         <StatCard label="Fees Collected" value="£84.2K" change="+8.5% this month" color="#1E4DA0" icon={DollarSign} />
         <StatCard label="Active Classes" value="48" change="+2 new this week" color="#1E4DA0" icon={Package} />
       </div>
@@ -152,7 +152,7 @@ function SchoolErpDash() {
             {days.map((d, di) => <span key={di} className="text-[7px] text-white/25 text-center pb-0.5">{d}</span>)}
             {att.flat().map((v, i) => (
               <div key={i} className="rounded h-6 flex items-center justify-center text-[8px] font-bold"
-                style={{ backgroundColor: v >= 95 ? "#16a34a28" : v >= 90 ? "#d9780625" : "#dc262625", color: v >= 95 ? "#4FC6FF" : v >= 90 ? "#4FC6FF" : "#f87171" }}>
+                style={{ backgroundColor: v >= 95 ? "#16a34a28" : v >= 90 ? "#d9780625" : "#dc262625", color: v >= 95 ? "#1E4DA0" : v >= 90 ? "#1E4DA0" : "#f87171" }}>
                 {v}
               </div>
             ))}
@@ -179,7 +179,7 @@ function SchoolErpDash() {
                   {subs.map((s, ci) => (
                     <td key={ci} className="py-1 pr-1">
                       <span className="px-1.5 py-0.5 rounded text-[7.5px] font-medium whitespace-nowrap"
-                        style={{ backgroundColor: ["#2563eb18","#16a34a18","#1E4DA018","#d9780618","#4FC6FF18"][ci % 5], color: ["#1E4DA0","#4FC6FF","#1E4DA0","#4FC6FF","#38bdf8"][ci % 5] }}>
+                        style={{ backgroundColor: ["#2563eb18","#16a34a18","#1E4DA018","#d9780618","#1E4DA018"][ci % 5], color: ["#1E4DA0","#1E4DA0","#1E4DA0","#1E4DA0","#38bdf8"][ci % 5] }}>
                         {s}
                       </span>
                     </td>
@@ -226,14 +226,14 @@ function HospitalErpDash() {
     {r:"301",s:"Reserved"},{r:"302",s:"Occupied"},{r:"303",s:"Vacant"},{r:"304",s:"Occupied"},
   ];
   const bg: Record<string,string> = { Occupied:"rgba(30,77,160,0.13)", Vacant:"#16a34a18", Reserved:"#1E4DA022" };
-  const tc: Record<string,string> = { Occupied:"#1E4DA0",   Vacant:"#4FC6FF",   Reserved:"#1E4DA0" };
+  const tc: Record<string,string> = { Occupied:"#1E4DA0",   Vacant:"#1E4DA0",   Reserved:"#1E4DA0" };
   return (
     <div className="w-full h-full bg-[#080f1e] flex flex-col text-white p-3 gap-2.5 overflow-hidden">
-      <NavBar title="HospitalCare ERP" iconBg="#4FC6FF" icon={<span className="text-[8px] font-black">H</span>}
+      <NavBar title="HospitalCare ERP" iconBg="#1E4DA0" icon={<span className="text-[8px] font-black">H</span>}
         tabs={["OPD","IPD","Pharmacy","Lab","Billing"]} active="OPD" />
       <div className="grid grid-cols-4 gap-2">
-        <StatCard label="Patients Today" value="284" change="+12 since morning" color="#4FC6FF" icon={Users} />
-        <StatCard label="OPD Queue" value="47" change="-3 avg wait 8 min" color="#4FC6FF" icon={Activity} />
+        <StatCard label="Patients Today" value="284" change="+12 since morning" color="#1E4DA0" icon={Users} />
+        <StatCard label="OPD Queue" value="47" change="-3 avg wait 8 min" color="#1E4DA0" icon={Activity} />
         <StatCard label="Beds Occupied" value="68%" change="+5% this week" color="#1E4DA0" icon={Package} />
         <StatCard label="Revenue Today" value="£12.4K" change="+18% vs yesterday" color="#1E4DA0" icon={DollarSign} />
       </div>
@@ -267,7 +267,7 @@ function HospitalErpDash() {
               </div>
             ))}
           </div>
-          {[["Occupied","#1E4DA0"],["Vacant","#4FC6FF"],["Reserved","#1E4DA0"]].map(([s,c]) => (
+          {[["Occupied","#1E4DA0"],["Vacant","#1E4DA0"],["Reserved","#1E4DA0"]].map(([s,c]) => (
             <div key={s} className="flex items-center gap-2 text-[8px] text-white/40 mb-1">
               <span className="w-2 h-2 rounded-sm shrink-0" style={{ backgroundColor: c }} />
               {s}: {beds.filter(b => b.s === s).length}
@@ -290,14 +290,14 @@ function AnalyticsDash() {
       <div className="grid grid-cols-3 gap-2">
         <StatCard label="Annual Revenue" value="£842K" change="+18.4% YoY" color="#1E4DA0" icon={DollarSign} />
         <StatCard label="Active Clients" value="12,480" change="+6.2% this quarter" color="#1E4DA0" icon={Users} />
-        <StatCard label="Conversion Rate" value="3.84%" change="+0.6% vs last month" color="#4FC6FF" icon={TrendingUp} />
+        <StatCard label="Conversion Rate" value="3.84%" change="+0.6% vs last month" color="#1E4DA0" icon={TrendingUp} />
       </div>
       <div className="flex gap-2 flex-1 min-h-0">
         <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1">
           <div className="flex items-center justify-between mb-2">
             <p className="text-[9px] font-semibold text-white/50">Monthly Revenue — FY 2025–26 (£K)</p>
             <div className="flex gap-2 text-[8px]">
-              <span className="text-blue-400 font-medium">● Revenue</span>
+              <span className="text-[#1E4DA0] font-medium">● Revenue</span>
               <span className="text-white/25">● Target</span>
             </div>
           </div>
@@ -338,7 +338,7 @@ function EcommerceDash() {
         tabs={["Orders","Inventory","Suppliers","Analytics"]} active="Orders" />
       <div className="grid grid-cols-4 gap-2">
         <StatCard label="Orders Today" value="184" change="+24% vs yesterday" color="#1E4DA0" icon={ShoppingBag} />
-        <StatCard label="Revenue Today" value="£28.4K" change="+15% this week" color="#4FC6FF" icon={DollarSign} />
+        <StatCard label="Revenue Today" value="£28.4K" change="+15% this week" color="#1E4DA0" icon={DollarSign} />
         <StatCard label="Pending Orders" value="37" change="-8 processing now" color="#1E4DA0" icon={Package} />
         <StatCard label="Active Products" value="2,841" change="+52 new listings" color="#1E4DA0" icon={Activity} />
       </div>
@@ -369,7 +369,7 @@ function EcommerceDash() {
                 <span className="text-white/60 font-medium">{v}%</span>
               </div>
               <div className="h-1.5 rounded-full bg-white/8">
-                <div className="h-1.5 rounded-full transition-all" style={{ width:`${v}%`, backgroundColor: v>70?"#4FC6FF":v>40?"#1E4DA0":"#1E4DA0" }} />
+                <div className="h-1.5 rounded-full transition-all" style={{ width:`${v}%`, backgroundColor: v>70?"#1E4DA0":v>40?"#1E4DA0":"#1E4DA0" }} />
               </div>
             </div>
           ))}
@@ -391,16 +391,16 @@ function SalesReportDash() {
   ];
   return (
     <div className="w-full h-full bg-[#080f1e] flex flex-col text-white p-3 gap-2.5 overflow-hidden">
-      <NavBar title="Sales & Revenue Reports" iconBg="#4FC6FF" tabs={["Overview","By Region","By Product","Forecast"]} active="Overview" />
+      <NavBar title="Sales & Revenue Reports" iconBg="#1E4DA0" tabs={["Overview","By Region","By Product","Forecast"]} active="Overview" />
       <div className="grid grid-cols-3 gap-2">
-        <StatCard label="Annual Revenue" value="£1.02M" change="+22.4% YoY" color="#4FC6FF" icon={DollarSign} />
+        <StatCard label="Annual Revenue" value="£1.02M" change="+22.4% YoY" color="#1E4DA0" icon={DollarSign} />
         <StatCard label="Deals Closed" value="324" change="+18% this quarter" color="#1E4DA0" icon={Activity} />
         <StatCard label="Avg Deal Size" value="£3,148" change="+4.2% vs last year" color="#1E4DA0" icon={TrendingUp} />
       </div>
       <div className="flex gap-2 flex-1 min-h-0">
         <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1">
           <p className="text-[9px] font-semibold text-white/50 mb-1.5">Monthly Sales Performance (£K)</p>
-          <BarChart data={bars} color="#4FC6FF" labels={months} w={230} h={100} />
+          <BarChart data={bars} color="#1E4DA0" labels={months} w={230} h={100} />
         </div>
         <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1">
           <p className="text-[9px] font-semibold text-white/50 mb-2">Top Sales Representatives</p>
@@ -428,9 +428,9 @@ function KpiMetricsDash() {
   const kpis = [
     { label:"Total Revenue",    value:"£842K",  change:"+18.4%", color:"#1E4DA0", data:[40,55,48,70,65,82,90,85,95,88,102,112] },
     { label:"Active Clients",   value:"12.4K",  change:"+6.2%",  color:"#1E4DA0", data:[8.2,9.1,8.8,10.2,10.8,11.4,12.0,11.6,12.1,12.8,12.4,12.5] },
-    { label:"Conversion Rate",  value:"3.84%",  change:"+0.6%",  color:"#4FC6FF", data:[2.8,3.1,2.9,3.4,3.2,3.6,3.5,3.7,3.9,3.8,3.7,3.84] },
-    { label:"Avg Response",     value:"1.2s",   change:"-0.3s",  color:"#4FC6FF", data:[2.1,1.9,2.0,1.7,1.8,1.5,1.6,1.4,1.3,1.5,1.2,1.2] },
-    { label:"Platform Uptime",  value:"99.97%", change:"+0.02%", color:"#4FC6FF", data:[99.8,99.9,99.7,99.95,99.9,99.97,99.95,99.98,99.97,99.96,99.98,99.97] },
+    { label:"Conversion Rate",  value:"3.84%",  change:"+0.6%",  color:"#1E4DA0", data:[2.8,3.1,2.9,3.4,3.2,3.6,3.5,3.7,3.9,3.8,3.7,3.84] },
+    { label:"Avg Response",     value:"1.2s",   change:"-0.3s",  color:"#1E4DA0", data:[2.1,1.9,2.0,1.7,1.8,1.5,1.6,1.4,1.3,1.5,1.2,1.2] },
+    { label:"Platform Uptime",  value:"99.97%", change:"+0.02%", color:"#1E4DA0", data:[99.8,99.9,99.7,99.95,99.9,99.97,99.95,99.98,99.97,99.96,99.98,99.97] },
     { label:"Support CSAT",     value:"4.9/5",  change:"+0.1",   color:"#1E4DA0", data:[4.5,4.6,4.5,4.7,4.6,4.8,4.7,4.8,4.9,4.8,4.9,4.9] },
   ];
   return (
@@ -466,12 +466,12 @@ function DistributorDash() {
   const cats  = ["Apparel","FMCG","Pharma","Tech","Food","Auto","Home","Elec"];
   return (
     <div className="w-full h-full bg-[#080f1e] flex flex-col text-white p-3 gap-2.5 overflow-hidden">
-      <NavBar title="Distributor ERP" iconBg="#4FC6FF" icon={<Truck className="w-2.5 h-2.5" />}
+      <NavBar title="Distributor ERP" iconBg="#1E4DA0" icon={<Truck className="w-2.5 h-2.5" />}
         tabs={["Stock Ledger","Invoices","Deliveries","Suppliers"]} active="Stock Ledger" />
       <div className="grid grid-cols-4 gap-2">
-        <StatCard label="Total Parties" value="284" change="+12 this month" color="#4FC6FF" icon={Users} />
+        <StatCard label="Total Parties" value="284" change="+12 this month" color="#1E4DA0" icon={Users} />
         <StatCard label="Pending Dues" value="£68.4K" change="+£8K overdue" color="#1E4DA0" icon={DollarSign} />
-        <StatCard label="Orders Today" value="142" change="+18 since 9am" color="#4FC6FF" icon={Package} />
+        <StatCard label="Orders Today" value="142" change="+18 since 9am" color="#1E4DA0" icon={Package} />
         <StatCard label="In Transit" value="38" change="+5 dispatched" color="#1E4DA0" icon={Truck} />
       </div>
       <div className="flex gap-2 flex-1 min-h-0">
@@ -500,7 +500,7 @@ function DistributorDash() {
                 <span className="text-white/60 font-medium">{v}%</span>
               </div>
               <div className="h-1.5 rounded-full bg-white/8">
-                <div className="h-1.5 rounded-full" style={{ width:`${v}%`, backgroundColor:"#4FC6FF" }} />
+                <div className="h-1.5 rounded-full" style={{ width:`${v}%`, backgroundColor:"#1E4DA0" }} />
               </div>
             </div>
           ))}
@@ -517,8 +517,8 @@ function RestaurantPosDash() {
     {n:"T7",s:"Occupied",g:3},{n:"T8",s:"Available",g:0},{n:"T9",s:"Reserved",g:4},
     {n:"T10",s:"Occupied",g:2},{n:"T11",s:"Available",g:0},{n:"T12",s:"Occupied",g:6},
   ];
-  const bg: Record<string,string> = { Occupied:"rgba(30,77,160,0.13)", Available:"rgba(79,198,255,0.10)", Reserved:"rgba(30,77,160,0.13)" };
-  const tc: Record<string,string> = { Occupied:"#1E4DA0",   Available:"#4FC6FF",   Reserved:"#4FC6FF" };
+  const bg: Record<string,string> = { Occupied:"rgba(30,77,160,0.13)", Available:"rgba(30,77,160,0.10)", Reserved:"rgba(30,77,160,0.13)" };
+  const tc: Record<string,string> = { Occupied:"#1E4DA0",   Available:"#1E4DA0",   Reserved:"#1E4DA0" };
   const orders = [
     { tbl:"T1",  items:"Burger ×2, Fries ×2, Cola ×2",                 total:"£28.50" },
     { tbl:"T4",  items:"Pasta ×1, Garden Salad ×1",                     total:"£18.00" },
@@ -531,7 +531,7 @@ function RestaurantPosDash() {
         tabs={["Floor View","Orders","Menu","Reports"]} active="Floor View" />
       <div className="grid grid-cols-4 gap-2">
         <StatCard label="Tables Occupied" value="7/12" change="+2 since lunch" color="#1E4DA0" icon={Activity} />
-        <StatCard label="Revenue Today" value="£1,842" change="+14% vs yesterday" color="#4FC6FF" icon={DollarSign} />
+        <StatCard label="Revenue Today" value="£1,842" change="+14% vs yesterday" color="#1E4DA0" icon={DollarSign} />
         <StatCard label="Active Orders" value="4" change="+1 just placed" color="#1E4DA0" icon={Package} />
         <StatCard label="Avg Bill" value="£35.75" change="+£4.20 this week" color="#1E4DA0" icon={TrendingUp} />
       </div>
@@ -578,8 +578,8 @@ function RealEstateDash() {
     { label:"New Leads",   count:48, color:"#1E4DA0" },
     { label:"Contacted",   count:31, color:"#1E4DA0" },
     { label:"Viewing",     count:18, color:"#1E4DA0" },
-    { label:"Negotiation", count:9,  color:"#4FC6FF" },
-    { label:"Closed",      count:24, color:"#4FC6FF" },
+    { label:"Negotiation", count:9,  color:"#1E4DA0" },
+    { label:"Closed",      count:24, color:"#1E4DA0" },
   ];
   return (
     <div className="w-full h-full bg-[#080f1e] flex flex-col text-white p-3 gap-2.5 overflow-hidden">
@@ -588,7 +588,7 @@ function RealEstateDash() {
       <div className="grid grid-cols-3 gap-2">
         <StatCard label="Active Listings" value="148" change="+12 this month" color="#1E4DA0" icon={HomeIcon} />
         <StatCard label="Total Pipeline" value="£18.4M" change="+£2.1M this quarter" color="#1E4DA0" icon={DollarSign} />
-        <StatCard label="Active Leads" value="130" change="+24 this week" color="#4FC6FF" icon={Users} />
+        <StatCard label="Active Leads" value="130" change="+24 this week" color="#1E4DA0" icon={Users} />
       </div>
       <div className="flex gap-2 flex-1 min-h-0">
         <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/8 flex-1">
@@ -638,12 +638,12 @@ type SlideConfig = {
 
 const SLIDES: SlideConfig[] = [
   { component: SchoolErpDash,    label: "School Management ERP",       tag: "Education",    tagColor: "#1E4DA0", wide: true },
-  { component: HospitalErpDash,  label: "Hospital OPD & IPD Modules",  tag: "Healthcare",   tagColor: "#4FC6FF" },
+  { component: HospitalErpDash,  label: "Hospital OPD & IPD Modules",  tag: "Healthcare",   tagColor: "#1E4DA0" },
   { component: AnalyticsDash,    label: "Business Analytics Dashboard", tag: "Analytics",    tagColor: "#1E4DA0" },
   { component: EcommerceDash,    label: "E-commerce ERP Suite",         tag: "E-commerce",   tagColor: "#1E4DA0" },
-  { component: SalesReportDash,  label: "Sales & Revenue Reports",      tag: "Finance",      tagColor: "#4FC6FF" },
+  { component: SalesReportDash,  label: "Sales & Revenue Reports",      tag: "Finance",      tagColor: "#1E4DA0" },
   { component: KpiMetricsDash,   label: "Executive KPI Dashboard",      tag: "Intelligence", tagColor: "#1E4DA0" },
-  { component: DistributorDash,  label: "Distributor & Wholesale ERP",  tag: "Distribution", tagColor: "#4FC6FF" },
+  { component: DistributorDash,  label: "Distributor & Wholesale ERP",  tag: "Distribution", tagColor: "#1E4DA0" },
   { component: RestaurantPosDash,label: "Restaurant & POS System",      tag: "Restaurant",   tagColor: "#1E4DA0" },
   { component: RealEstateDash,   label: "Real Estate CRM & ERP",        tag: "Real Estate",  tagColor: "#1E4DA0" },
 ];

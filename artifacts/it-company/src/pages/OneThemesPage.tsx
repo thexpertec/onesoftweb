@@ -53,8 +53,8 @@ function ConversationMockup() {
       {/* Header */}
       <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${divider}`, background: sideBg }}>
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(79,198,255,0.15)", border: "1px solid rgba(79,198,255,0.30)" }}>
-            <MessageSquare className="w-4.5 h-4.5" style={{ color: "#4FC6FF" }} />
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)", border: "1px solid rgba(30,77,160,0.30)" }}>
+            <MessageSquare className="w-4.5 h-4.5" style={{ color: "#1E4DA0" }} />
           </div>
           <div>
             <p className="text-sm font-bold">Discovery Call</p>
@@ -89,7 +89,7 @@ function ConversationMockup() {
         <div className="flex-1 rounded-xl px-4 py-2.5 text-sm" style={{ background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.06)", color: t45 }}>
           Tell us about your project…
         </div>
-        <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: "#4FC6FF" }}>
+        <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: "#1E4DA0" }}>
           <ArrowRight className="w-4 h-4 text-white" />
         </div>
       </div>
@@ -105,33 +105,33 @@ const techStack = [
   { icon: Code2,       color: "#1E4DA0", label: "React & Next.js",   desc: "Lightning-fast, SEO-optimised apps with server-side rendering." },
   { icon: Globe,       color: "#1E4DA0", label: "WordPress",          desc: "Easy CMS with WooCommerce for product catalogues & blogs." },
   { icon: ShoppingCart,color: "#1E4DA0", label: "Shopify / Ecomm",   desc: "Full-stack storefronts with payments, inventory & shipping." },
-  { icon: Smartphone,  color: "#4FC6FF", label: "Mobile-First PWA",  desc: "App-like experiences that work offline and install to home screens." },
+  { icon: Smartphone,  color: "#1E4DA0", label: "Mobile-First PWA",  desc: "App-like experiences that work offline and install to home screens." },
   { icon: Bot,         color: "#1E4DA0", label: "AI-Powered Sites",   desc: "Chat widgets, recommendation engines, and intelligent search built in." },
   { icon: Wrench,      color: ACCENT,    label: "Any Stack You Need", desc: "Vue, Nuxt, Laravel, Django — we work in whatever fits your project." },
 ];
 
 const whatYouGet = [
-  { icon: Palette,   color: "#4FC6FF", title: "Custom Design",          desc: "Every pixel designed around your brand. No templates, no off-the-shelf layouts." },
-  { icon: Search,    color: "#4FC6FF", title: "SEO From Day One",        desc: "Structured data, meta tags, sitemaps, Core Web Vitals — ranked before you launch." },
+  { icon: Palette,   color: "#1E4DA0", title: "Custom Design",          desc: "Every pixel designed around your brand. No templates, no off-the-shelf layouts." },
+  { icon: Search,    color: "#1E4DA0", title: "SEO From Day One",        desc: "Structured data, meta tags, sitemaps, Core Web Vitals — ranked before you launch." },
   { icon: Smartphone,color: "#1E4DA0", title: "100% Mobile-Responsive",  desc: "Looks and performs perfectly on every screen size, tested on real devices." },
   { icon: Shield,    color: "#1E4DA0", title: "Secure & GDPR-Ready",     desc: "SSL, cookie consent, privacy policy, and security headers built in by default." },
-  { icon: RefreshCw, color: "#4FC6FF", title: "Post-Launch Support",     desc: "30 days of free fixes after go-live, then optional monthly retainer packages." },
+  { icon: RefreshCw, color: "#1E4DA0", title: "Post-Launch Support",     desc: "30 days of free fixes after go-live, then optional monthly retainer packages." },
   { icon: BarChart3, color: "#1E4DA0", title: "Analytics & Reporting",   desc: "Google Analytics 4, Search Console, and a monthly traffic report included." },
 ];
 
 const flow = [
-  { step: "01", icon: MessageSquare, color: "#4FC6FF", title: "Discover",  detail: "We start with a free 30-minute call. Tell us your goals, audience, and tech preferences — no brief required." },
-  { step: "02", icon: Palette,       color: "#4FC6FF", title: "Design",    detail: "We produce mockups in Figma first. You approve the look and feel before a single line of code is written." },
+  { step: "01", icon: MessageSquare, color: "#1E4DA0", title: "Discover",  detail: "We start with a free 30-minute call. Tell us your goals, audience, and tech preferences — no brief required." },
+  { step: "02", icon: Palette,       color: "#1E4DA0", title: "Design",    detail: "We produce mockups in Figma first. You approve the look and feel before a single line of code is written." },
   { step: "03", icon: Code2,         color: "#1E4DA0", title: "Build",     detail: "Development on your chosen stack with weekly progress check-ins. A live staging link throughout." },
   { step: "04", icon: Rocket,        color: "#1E4DA0", title: "Launch",    detail: "We handle hosting setup, domain config, and go-live. Then hand you the keys with full documentation." },
 ];
 
 const industries = [
   { icon: UtensilsCrossed, color: "#1E4DA0", label: "Restaurants & Cafes" },
-  { icon: Stethoscope,     color: "#4FC6FF", label: "Clinics & Healthcare" },
+  { icon: Stethoscope,     color: "#1E4DA0", label: "Clinics & Healthcare" },
   { icon: GraduationCap,   color: "#1E4DA0", label: "Schools & Coaching" },
   { icon: ShoppingCart,    color: "#1E4DA0", label: "Retail & E-commerce" },
-  { icon: Building2,       color: "#4FC6FF", label: "Corporates & Agencies" },
+  { icon: Building2,       color: "#1E4DA0", label: "Corporates & Agencies" },
   { icon: Heart,           color: "#1E4DA0", label: "Events & Hospitality" },
   { icon: Package,         color: ACCENT,    label: "Distributors & Logistics" },
   { icon: Bot,             color: "#1E4DA0", label: "SaaS & Tech Startups" },
@@ -139,7 +139,7 @@ const industries = [
 
 const testimonials = [
   { quote: "OneSoft built our restaurant website in 8 days. Online reservations went from zero to 200+ bookings in the first month. Exceptional work.", name: "Khalid Mansour",   role: "Owner",    co: "Casa Bella Restaurant", color: "#1E4DA0" },
-  { quote: "We asked for a clinic website with an appointment system. They delivered something better than we imagined — on time and on budget.", name: "Dr. Priya Sharma",  role: "Director", co: "HealthFirst Clinic",   color: "#4FC6FF" },
+  { quote: "We asked for a clinic website with an appointment system. They delivered something better than we imagined — on time and on budget.", name: "Dr. Priya Sharma",  role: "Director", co: "HealthFirst Clinic",   color: "#1E4DA0" },
   { quote: "The discovery call was 20 minutes. The site was live in 9 days. No agency has ever moved this fast without cutting corners.", name: "James Okafor",     role: "Founder",  co: "Pixel & Oak Agency",   color: "#1E4DA0" },
 ];
 
@@ -173,12 +173,12 @@ export default function OneThemesPage() {
       <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
           <div className="absolute top-0 left-0 right-0 h-[600px]"
-            style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(79,198,255,0.13), transparent)" }} />
+            style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.13), transparent)" }} />
           <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full"
-            style={{ background: "rgba(79,198,255,0.09)", filter: "blur(90px)" }}
+            style={{ background: "rgba(30,77,160,0.09)", filter: "blur(90px)" }}
             animate={{ y: [0, -18, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
           <motion.div className="absolute bottom-10 right-[6%] w-96 h-96 rounded-full"
-            style={{ background: "rgba(79,198,255,0.06)", filter: "blur(110px)" }}
+            style={{ background: "rgba(30,77,160,0.06)", filter: "blur(110px)" }}
             animate={{ y: [0, 18, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
         </div>
 
@@ -258,7 +258,7 @@ export default function OneThemesPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 320,  suf: "+",   label: "Websites Delivered",      Icon: Globe,      color: ACCENT },
-              { to: 98,   suf: "%",   label: "On-Time Delivery Rate",   Icon: Clock,      color: "#4FC6FF" },
+              { to: 98,   suf: "%",   label: "On-Time Delivery Rate",   Icon: Clock,      color: "#1E4DA0" },
               { to: 40,   suf: "+",   label: "Industries Served",       Icon: Building2,  color: "#1E4DA0" },
               { to: 7,    suf: " days",label: "Average Delivery Time",  Icon: Zap,        color: "#1E4DA0" },
             ].map((s, i) => (
@@ -281,12 +281,12 @@ export default function OneThemesPage() {
       {/* ═══ PROCESS ═════════════════════════════════════════════ */}
       <div id="process" className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(79,198,255,0.06), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(30,77,160,0.06), transparent)" }} />
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
               <Sparkles className="w-3.5 h-3.5" />How We Work
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">From conversation to live site.</h2>
@@ -328,7 +328,7 @@ export default function OneThemesPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
               <Code2 className="w-3.5 h-3.5" />Any Technology, Your Choice
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">We build on whatever<br />works best for you.</h2>
@@ -363,7 +363,7 @@ export default function OneThemesPage() {
       {/* ═══ WHAT YOU GET + CTA CARD ═════════════════════════════ */}
       <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 20% 50%, rgba(79,198,255,0.05), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 60% at 20% 50%, rgba(30,77,160,0.05), transparent)" }} />
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-start gap-16">
 
@@ -371,7 +371,7 @@ export default function OneThemesPage() {
             <motion.div className="flex-1"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-                style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+                style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
                 <CheckCircle2 className="w-3.5 h-3.5" />What's Included
               </span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Everything you need.<br />Nothing you don't.</h2>
@@ -404,7 +404,7 @@ export default function OneThemesPage() {
               <div className="rounded-2xl overflow-hidden" style={{ background: tableBg, border: `1px solid ${dividerColor}`, boxShadow: "0 30px 60px rgba(0,0,0,0.10)" }}>
                 <div className="px-6 pt-6 pb-5" style={{ borderBottom: `1px solid ${dividerColor}` }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(79,198,255,0.15)", border: "1px solid rgba(79,198,255,0.30)" }}>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(30,77,160,0.15)", border: "1px solid rgba(30,77,160,0.30)" }}>
                       <Phone className="w-4 h-4" style={{ color: ACCENT }} />
                     </div>
                     <div>
@@ -420,7 +420,7 @@ export default function OneThemesPage() {
                 <div className="px-6 py-5 space-y-3">
                   {[
                     { icon: Calendar, label: "Book a 30-min discovery call", color: ACCENT },
-                    { icon: MessageSquare, label: "Or chat with us via WhatsApp", color: "#4FC6FF" },
+                    { icon: MessageSquare, label: "Or chat with us via WhatsApp", color: "#1E4DA0" },
                     { icon: Globe, label: "Or fill in a quick project brief", color: "#1E4DA0" },
                   ].map((opt, i) => (
                     <button key={i}
@@ -437,7 +437,7 @@ export default function OneThemesPage() {
                   ))}
                 </div>
 
-                <div className="mx-6 mb-5 rounded-xl p-4" style={{ background: "rgba(79,198,255,0.08)", border: "1px solid rgba(79,198,255,0.20)" }}>
+                <div className="mx-6 mb-5 rounded-xl p-4" style={{ background: "rgba(30,77,160,0.08)", border: "1px solid rgba(30,77,160,0.20)" }}>
                   <p className="text-xs font-semibold mb-2" style={{ color: t65 }}>Every project includes</p>
                   <div className="grid grid-cols-2 gap-y-1.5 gap-x-2">
                     {["Figma mockups first", "Fixed-price quote", "Staging preview link", "Full source code handover", "30-day free fixes", "Hosting setup help"].map(item => (
@@ -468,7 +468,7 @@ export default function OneThemesPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
               <Building2 className="w-3.5 h-3.5" />Industries We Serve
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Whatever your business does,<br />we've built it before.</h2>
@@ -495,7 +495,7 @@ export default function OneThemesPage() {
           <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
-              style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
               <Star className="w-3.5 h-3.5 fill-current" />Client Results
             </span>
             <h2 className="text-4xl md:text-5xl font-black mb-5">Real websites. Real results.</h2>
@@ -531,11 +531,11 @@ export default function OneThemesPage() {
       {/* ═══ FINAL CTA ═══════════════════════════════════════════ */}
       <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(79,198,255,0.09), transparent)" }} />
+          style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.09), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-8"
-              style={{ background: "rgba(79,198,255,0.10)", border: "1px solid rgba(79,198,255,0.30)", color: ACCENT }}>
+              style={{ background: "rgba(30,77,160,0.10)", border: "1px solid rgba(30,77,160,0.30)", color: ACCENT }}>
               <Lock className="w-3.5 h-3.5" />Free call · Fixed price · Full ownership
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
@@ -569,13 +569,13 @@ export default function OneThemesPage() {
           { icon: "🎨", label: "Custom UI Design",         color: ACCENT    },
           { icon: "⚛️", label: "React & Next.js",          color: "#1E4DA0" },
           { icon: "🛍️", label: "WooCommerce Stores",      color: "#1E4DA0" },
-          { icon: "📱", label: "Mobile-Responsive",        color: "#4FC6FF" },
+          { icon: "📱", label: "Mobile-Responsive",        color: "#1E4DA0" },
           { icon: "🔍", label: "SEO Optimised",            color: "#1E4DA0" },
-          { icon: "🔒", label: "SSL & Security Headers",   color: "#4FC6FF" },
+          { icon: "🔒", label: "SSL & Security Headers",   color: "#1E4DA0" },
           { icon: "⚡", label: "Core Web Vitals",          color: "#1E4DA0" },
           { icon: "🤖", label: "AI Chat Integration",      color: "#1E4DA0" },
           { icon: "📊", label: "Google Analytics 4",       color: "#1E4DA0" },
-          { icon: "🗺️", label: "Google Maps Embed",       color: "#4FC6FF" },
+          { icon: "🗺️", label: "Google Maps Embed",       color: "#1E4DA0" },
           { icon: "📝", label: "Lead Capture Forms",       color: "#1E4DA0" },
           { icon: "🌍", label: "Multi-Language Support",   color: "#1E4DA0" },
         ]}
@@ -583,13 +583,13 @@ export default function OneThemesPage() {
           { icon: "🖼️", label: "Figma Mockups First",     color: ACCENT    },
           { icon: "🏗️", label: "WordPress / Headless",    color: "#1E4DA0" },
           { icon: "🛒", label: "Shopify Storefronts",     color: "#1E4DA0" },
-          { icon: "🧩", label: "Reusable Components",     color: "#4FC6FF" },
+          { icon: "🧩", label: "Reusable Components",     color: "#1E4DA0" },
           { icon: "📄", label: "CMS Integration",         color: "#1E4DA0" },
-          { icon: "🔗", label: "3rd-Party API Hooks",     color: "#4FC6FF" },
+          { icon: "🔗", label: "3rd-Party API Hooks",     color: "#1E4DA0" },
           { icon: "📅", label: "Booking Systems",         color: "#1E4DA0" },
           { icon: "💳", label: "Payment Gateways",        color: "#1E4DA0" },
           { icon: "🔔", label: "Push Notifications",      color: "#1E4DA0" },
-          { icon: "🧾", label: "Invoicing Pages",         color: "#4FC6FF" },
+          { icon: "🧾", label: "Invoicing Pages",         color: "#1E4DA0" },
           { icon: "☁️", label: "Cloud Deployment",        color: "#1E4DA0" },
           { icon: "🛡️", label: "GDPR Cookie Consent",    color: "#1E4DA0" },
         ]}
@@ -597,13 +597,13 @@ export default function OneThemesPage() {
           { icon: "📸", label: "Image Optimisation",      color: ACCENT    },
           { icon: "🎥", label: "Video Hero Sections",     color: "#1E4DA0" },
           { icon: "🏆", label: "Portfolio Grids",         color: "#1E4DA0" },
-          { icon: "💬", label: "Testimonial Blocks",      color: "#4FC6FF" },
+          { icon: "💬", label: "Testimonial Blocks",      color: "#1E4DA0" },
           { icon: "📣", label: "Promo Banners",           color: "#1E4DA0" },
-          { icon: "🔄", label: "30-Day Post-Launch Fix",  color: "#4FC6FF" },
+          { icon: "🔄", label: "30-Day Post-Launch Fix",  color: "#1E4DA0" },
           { icon: "📦", label: "Full Source Handover",    color: "#1E4DA0" },
           { icon: "🧑‍💻", label: "Clean, Documented Code", color: "#1E4DA0" },
           { icon: "🌙", label: "Dark Mode Option",        color: "#1E4DA0" },
-          { icon: "📋", label: "Sitemap & Robots.txt",   color: "#4FC6FF" },
+          { icon: "📋", label: "Sitemap & Robots.txt",   color: "#1E4DA0" },
           { icon: "🔑", label: "Admin Panel Access",      color: "#1E4DA0" },
           { icon: "📬", label: "Email / SMTP Setup",      color: "#1E4DA0" },
         ]}

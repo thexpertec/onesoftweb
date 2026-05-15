@@ -44,11 +44,11 @@ function OrdersSlide() {
   ];
   const kpis = [
     { label: "Orders Today",    value: "62",     color: "#1E4DA0", Icon: ClipboardList },
-    { label: "Dispatched",      value: "38",     color: "#4FC6FF", Icon: Truck },
-    { label: "Pending",         value: "24",     color: "#4FC6FF", Icon: Package },
+    { label: "Dispatched",      value: "38",     color: "#1E4DA0", Icon: Truck },
+    { label: "Pending",         value: "24",     color: "#1E4DA0", Icon: Package },
     { label: "Today's Value",   value: "£84,200",color: "#1E4DA0", Icon: Receipt },
   ];
-  const stColor = (s: string) => s === "Dispatched" ? "#4FC6FF" : s === "Picking" ? "#1E4DA0" : "#4FC6FF";
+  const stColor = (s: string) => s === "Dispatched" ? "#1E4DA0" : s === "Picking" ? "#1E4DA0" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -101,7 +101,7 @@ function StockSlide() {
   ];
   const summary = [
     { label: "Active SKUs",   value: "2,140", color: "#1E4DA0" },
-    { label: "Low Stock",     value: "18",    color: "#4FC6FF" },
+    { label: "Low Stock",     value: "18",    color: "#1E4DA0" },
     { label: "Out of Stock",  value: "5",     color: "#1E4DA0" },
   ];
   return (
@@ -125,9 +125,9 @@ function StockSlide() {
               <tr key={i} className="border-t border-white/[0.04]">
                 <td className="py-1.5 pr-2 font-mono text-[6.5px]" style={{ color: "#1E4DA0" }}>{r.sku}</td>
                 <td className="py-1.5 pr-2 text-white/75">{r.name}</td>
-                <td className="py-1.5 pr-2 font-bold" style={{ color: r.stock === 0 ? "#1E4DA0" : r.stock <= r.reorder ? "#4FC6FF" : "#4FC6FF" }}>{r.stock}</td>
+                <td className="py-1.5 pr-2 font-bold" style={{ color: r.stock === 0 ? "#1E4DA0" : r.stock <= r.reorder ? "#1E4DA0" : "#1E4DA0" }}>{r.stock}</td>
                 <td className="py-1.5 pr-2 text-white/45">{r.committed}</td>
-                <td className="py-1.5 pr-2 font-bold" style={{ color: r.avail === 0 ? "#1E4DA0" : r.avail < 10 ? "#4FC6FF" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
+                <td className="py-1.5 pr-2 font-bold" style={{ color: r.avail === 0 ? "#1E4DA0" : r.avail < 10 ? "#1E4DA0" : "rgba(255,255,255,0.65)" }}>{r.avail}</td>
                 <td className="py-1.5 pr-2 text-white/40 font-mono text-[6px]">{r.batch}</td>
                 <td className="py-1.5 text-white/40">{r.expiry}</td>
               </tr>
@@ -150,9 +150,9 @@ function LedgerSlide() {
   const summary = [
     { label: "Total Receivable", value: "£3,84,600", color: "#1E4DA0" },
     { label: "Overdue",          value: "£42,800",   color: "#1E4DA0" },
-    { label: "Avg. Collection",  value: "28 days",   color: "#4FC6FF" },
+    { label: "Avg. Collection",  value: "28 days",   color: "#1E4DA0" },
   ];
-  const riskColor = (r: string) => r === "Low" ? "#4FC6FF" : r === "Medium" ? "#4FC6FF" : "#1E4DA0";
+  const riskColor = (r: string) => r === "Low" ? "#1E4DA0" : r === "Medium" ? "#1E4DA0" : "#1E4DA0";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
@@ -175,7 +175,7 @@ function LedgerSlide() {
                 <td className="py-1.5 pr-3 text-white/80 font-semibold">{r.name}</td>
                 <td className="py-1.5 pr-3 text-white/45">{r.limit}</td>
                 <td className="py-1.5 pr-3 text-white/70 font-semibold">{r.outstanding}</td>
-                <td className="py-1.5 pr-3 font-bold" style={{ color: r.overdue === "£0" ? "#4FC6FF" : "#1E4DA0" }}>{r.overdue}</td>
+                <td className="py-1.5 pr-3 font-bold" style={{ color: r.overdue === "£0" ? "#1E4DA0" : "#1E4DA0" }}>{r.overdue}</td>
                 <td className="py-1.5 pr-3 text-white/40">{r.days > 0 ? `${r.days}d` : "—"}</td>
                 <td className="py-1.5">
                   <span className="text-[6.5px] font-bold px-1.5 py-0.5 rounded-full" style={{ color: riskColor(r.risk), background: `${riskColor(r.risk)}18` }}>{r.risk}</span>
@@ -210,9 +210,9 @@ function DeliverySlide() {
             {routes.map((r, i) => (
               <div key={i} className="p-2 rounded-lg" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-[7.5px] font-bold" style={{ color: r.status === "Completed" ? "#4FC6FF" : "#1E4DA0" }}>{r.id}</span>
+                  <span className="text-[7.5px] font-bold" style={{ color: r.status === "Completed" ? "#1E4DA0" : "#1E4DA0" }}>{r.id}</span>
                   <span className="text-[6px] font-bold px-1.5 py-0.5 rounded-full"
-                    style={{ background: r.status === "Completed" ? "rgba(79,198,255,0.12)" : "rgba(30,77,160,0.12)", color: r.status === "Completed" ? "#4FC6FF" : "#1E4DA0" }}>{r.status}</span>
+                    style={{ background: r.status === "Completed" ? "rgba(30,77,160,0.12)" : "rgba(30,77,160,0.12)", color: r.status === "Completed" ? "#1E4DA0" : "#1E4DA0" }}>{r.status}</span>
                 </div>
                 <p className="text-[7px] text-white/55">{r.driver} · {r.vehicle}</p>
                 <div className="flex gap-2 mt-1">
@@ -244,13 +244,13 @@ function DeliverySlide() {
               </div>
               <div className="text-right shrink-0">
                 <p className="text-[8px] font-bold" style={{ color: s.status === "Next Stop" ? "#1E4DA0" : "rgba(255,255,255,0.5)" }}>ETA {s.eta}</p>
-                <p className="text-[6.5px] font-bold" style={{ color: s.status === "Next Stop" ? "#4FC6FF" : "rgba(255,255,255,0.3)" }}>{s.status}</p>
+                <p className="text-[6.5px] font-bold" style={{ color: s.status === "Next Stop" ? "#1E4DA0" : "rgba(255,255,255,0.3)" }}>{s.status}</p>
               </div>
             </div>
           ))}
-          <div className="rounded-xl p-2.5 border" style={{ background: "rgba(79,198,255,0.05)", borderColor: "rgba(79,198,255,0.20)" }}>
+          <div className="rounded-xl p-2.5 border" style={{ background: "rgba(30,77,160,0.05)", borderColor: "rgba(30,77,160,0.20)" }}>
             <div className="flex items-center gap-2">
-              <CheckCheck className="w-4 h-4" style={{ color: "#4FC6FF" }} />
+              <CheckCheck className="w-4 h-4" style={{ color: "#1E4DA0" }} />
               <div>
                 <p className="text-[7.5px] font-bold text-white/60">POD collected at 5 stops</p>
                 <p className="text-[7px] text-white/35">Digital signature + photo captured — auto-synced to party ledger</p>
@@ -316,43 +316,43 @@ const modules = [
   { icon: Package,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030", title: "Stock & Inventory",
     desc: "Multi-warehouse stock with batch tracking, expiry dates, and real-time committed vs available split.",
     pts: ["Batch & lot number tracking", "Expiry date management & alerts", "Multi-warehouse stock visibility", "FIFO / FEFO issue rules"] },
-  { icon: ClipboardList,color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30", title: "Sales Order Management",
+  { icon: ClipboardList,color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030", title: "Sales Order Management",
     desc: "Take orders from retailers, allocate stock, generate invoices, and track fulfilment — all in one flow.",
     pts: ["Order booking from office or field app", "Stock allocation on order confirmation", "Partial delivery & backorder handling", "Invoice auto-generated on dispatch"] },
   { icon: FileText,     color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030", title: "VAT / GST Billing",
     desc: "Fully compliant invoicing with VAT or GST breakdowns, credit notes, and e-invoice integration.",
     pts: ["VAT / GST invoice generation", "Credit note & debit note management", "E-invoicing & Making Tax Digital ready", "Consolidated tax reports by period"] },
-  { icon: BookOpen,     color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30", title: "Party Ledger",
+  { icon: BookOpen,     color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030", title: "Party Ledger",
     desc: "Every customer and supplier account — balances, credit limits, payment history, and aging reports.",
     pts: ["Credit limit alerts on order entry", "Aged debt report (30/60/90 days)", "Payment receipts & allocation", "Statement of account per party"] },
   { icon: Truck,        color: "#1E4DA0", bg: "#2e0a0a", border: "#1E4DA030", title: "Route & Delivery",
     desc: "Plan delivery routes, assign drivers, track progress live, and capture proof of delivery digitally.",
     pts: ["Daily route planning & optimisation", "Driver app with stop-by-stop navigation", "Digital POD — signature & photo", "Deviation & delay alerts"] },
-  { icon: RefreshCw,    color: "#4FC6FF", bg: "#011e26", border: "#4FC6FF30", title: "Purchase & Supplier",
+  { icon: RefreshCw,    color: "#1E4DA0", bg: "#011e26", border: "#1E4DA030", title: "Purchase & Supplier",
     desc: "Raise purchase orders against reorder levels, receive goods, and track supplier performance.",
     pts: ["Auto purchase order on low stock", "GRN with batch & quantity verification", "Landed cost allocation", "Supplier price history & comparison"] },
-  { icon: UserCheck,    color: "#4FC6FF", bg: "#2d0a1a", border: "#4FC6FF30", title: "Salesman Management",
+  { icon: UserCheck,    color: "#1E4DA0", bg: "#2d0a1a", border: "#1E4DA030", title: "Salesman Management",
     desc: "Assign territories, set sales targets, track orders per rep, and calculate commissions automatically.",
     pts: ["Territory & route assignment", "Daily order targets vs actuals", "Mobile order-booking app for reps", "Commission calculation & payslip"] },
-  { icon: BarChart3,    color: "#4FC6FF", bg: "#021f1c", border: "#4FC6FF30", title: "Reports & Analytics",
+  { icon: BarChart3,    color: "#1E4DA0", bg: "#021f1c", border: "#1E4DA030", title: "Reports & Analytics",
     desc: "Stock movement, party-wise sales, route performance, and margin reports — all exportable.",
     pts: ["Party-wise sales & margin report", "Stock movement & valuation", "Route efficiency analytics", "Monthly P&L by product category"] },
 ];
 
 const flow = [
   { step: "01", icon: ClipboardList, color: "#1E4DA0", title: "Order Booked by Rep or Office",    detail: "Retailer order taken on mobile app or desktop — stock checked and allocated instantly" },
-  { step: "02", icon: Package,       color: "#4FC6FF", title: "Stock Allocated, Picking Starts",   detail: "Warehouse receives the pick list immediately — batch selected by FIFO and items flagged for loading" },
+  { step: "02", icon: Package,       color: "#1E4DA0", title: "Stock Allocated, Picking Starts",   detail: "Warehouse receives the pick list immediately — batch selected by FIFO and items flagged for loading" },
   { step: "03", icon: FileText,      color: "#1E4DA0", title: "Invoice Auto-Generated",            detail: "Tax-compliant invoice created automatically on dispatch confirmation — no manual invoice entry" },
-  { step: "04", icon: Truck,         color: "#4FC6FF", title: "Route Assigned, Driver Dispatched", detail: "Order slotted into the day's route — driver app shows all stops with ETAs and customer details" },
+  { step: "04", icon: Truck,         color: "#1E4DA0", title: "Route Assigned, Driver Dispatched", detail: "Order slotted into the day's route — driver app shows all stops with ETAs and customer details" },
   { step: "05", icon: CheckCheck,    color: "#1E4DA0", title: "POD Collected at Delivery",         detail: "Customer signs digitally on driver app — photo of goods captured and synced to the system" },
-  { step: "06", icon: BookOpen,      color: "#4FC6FF", title: "Party Ledger Updated Instantly",    detail: "Invoice posted to customer account the moment POD is collected — outstanding balance updates in real time" },
+  { step: "06", icon: BookOpen,      color: "#1E4DA0", title: "Party Ledger Updated Instantly",    detail: "Invoice posted to customer account the moment POD is collected — outstanding balance updates in real time" },
 ];
 
 const testimonials = [
   { quote: "We distribute to 400 retailers across the region. Before OneSoft, tracking who owed what was a nightmare — half our credit limits were being exceeded because the salesmen had no visibility. Now every rep sees the party balance before they take an order and our bad debt has dropped significantly.",
     name: "Tariq Mahmood",  role: "Managing Director",     co: "TM Foods Distribution, Karachi, Pakistan", color: "#1E4DA0" },
   { quote: "The route planning and digital POD changed everything for our drivers. No more paper delivery notes, no more arguments about whether something was delivered. The customer signs on the tablet, a photo is taken, and it's in the system before the driver leaves the premises.",
-    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Dubai, UAE",   color: "#4FC6FF" },
+    name: "Sandra Lewis",   role: "Operations Manager",    co: "Lewis & Sons Wholesale, Dubai, UAE",   color: "#1E4DA0" },
   { quote: "Stock used to go out of date and we'd only find out when we tried to pick it. OneSoft shows us items approaching expiry weeks in advance and automatically prioritises FEFO issue. We've cut our write-off losses by over 70% in the first year.",
     name: "Imran Sheikh",   role: "Warehouse Director",    co: "Global Foods & Commodities, New York, USA", color: "#1E4DA0" },
 ];
@@ -448,9 +448,9 @@ export default function DistributorPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { to: 400,  suf: "+",  label: "Distributors & Wholesalers",   Icon: Store,      color: "#1E4DA0" },
-              { to: 10,   suf: "M+", label: "Invoices Generated",           Icon: FileText,   color: "#4FC6FF" },
+              { to: 10,   suf: "M+", label: "Invoices Generated",           Icon: FileText,   color: "#1E4DA0" },
               { to: 99.9, suf: "%",  label: "Tax Compliance Rate",          Icon: BadgeCheck, color: "#1E4DA0", d: 1 },
-              { to: 50,   suf: "%",  label: "Faster Delivery Planning",     Icon: Truck,      color: "#4FC6FF" },
+              { to: 50,   suf: "%",  label: "Faster Delivery Planning",     Icon: Truck,      color: "#1E4DA0" },
             ].map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
@@ -581,13 +581,13 @@ export default function DistributorPage() {
 
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: AlertTriangle, color: "#4FC6FF", bg: "#2d1f00", border: "#4FC6FF30",
+                  { icon: AlertTriangle, color: "#1E4DA0", bg: "#2d1f00", border: "#1E4DA030",
                     title: "Credit limits enforced at the point of order",
                     sub: "Rep tries to book an order for a customer who's over their limit — system blocks it and shows the outstanding balance instantly" },
                   { icon: FileText,      color: "#1E4DA0", bg: "#0a1f3e", border: "#1E4DA030",
                     title: "Aged debt report always up to date",
                     sub: "See every customer broken into 0–30, 31–60, 61–90, and 90+ day buckets — in one report, any time" },
-                  { icon: Wallet,        color: "#4FC6FF", bg: "#052e1c", border: "#4FC6FF30",
+                  { icon: Wallet,        color: "#1E4DA0", bg: "#052e1c", border: "#1E4DA030",
                     title: "Payments received and allocated in seconds",
                     sub: "Record a payment, select which invoices to knock off — partial payments handled correctly with running balance updated immediately" },
                   { icon: CheckCheck,    color: "#1E4DA0", bg: "#1a0b38", border: "#1E4DA030",
@@ -635,7 +635,7 @@ export default function DistributorPage() {
                 <div className="grid grid-cols-3 gap-px" style={{ background: dividerColor }}>
                   {[
                     { label: "Credit Limit",  value: "£50,000", color: "#1E4DA0" },
-                    { label: "Outstanding",   value: "£48,900", color: "#4FC6FF" },
+                    { label: "Outstanding",   value: "£48,900", color: "#1E4DA0" },
                     { label: "Overdue 42d",   value: "£12,400", color: "#1E4DA0" },
                   ].map(s => (
                     <div key={s.label} className="px-4 py-3" style={{ background: tableBg }}>
@@ -649,9 +649,9 @@ export default function DistributorPage() {
                   <p className="text-xs font-semibold mb-2" style={{ color: t55 }}>Recent Transactions</p>
                   {[
                     { date: "12 May", ref: "INV-8421", desc: "Sales Invoice",   amount: "+£9,840", color: "#1E4DA0"  },
-                    { date: "10 May", ref: "RCP-0812", desc: "Payment Received",amount: "-£15,000",color: "#4FC6FF" },
+                    { date: "10 May", ref: "RCP-0812", desc: "Payment Received",amount: "-£15,000",color: "#1E4DA0" },
                     { date: "08 May", ref: "INV-8386", desc: "Sales Invoice",   amount: "+£7,200", color: "#1E4DA0"  },
-                    { date: "05 May", ref: "CN-0041",  desc: "Credit Note",     amount: "-£640",   color: "#4FC6FF" },
+                    { date: "05 May", ref: "CN-0041",  desc: "Credit Note",     amount: "-£640",   color: "#1E4DA0" },
                     { date: "03 May", ref: "INV-8341", desc: "Sales Invoice",   amount: "+£11,300",color: "#1E4DA0"  },
                   ].map((tx, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 px-3 rounded-lg"
@@ -751,53 +751,53 @@ export default function DistributorPage() {
 
       <CTAStrip onCTA={() => openCTAModal("Wholesaler & Distributor ERP")} />
       <FeatureMarqueeSection
-        accentColor="#4FC6FF"
+        accentColor="#1E4DA0"
         heading="Everything a Distributor Needs"
         subheading="From sales order to digital proof of delivery — every module built for modern wholesale distribution."
         row1={[
-          { icon: "📋", label: "Sales Order",           color: "#4FC6FF" },
+          { icon: "📋", label: "Sales Order",           color: "#1E4DA0" },
           { icon: "🛒", label: "Purchase Order",        color: "#1E4DA0" },
-          { icon: "📦", label: "Stock Management",      color: "#4FC6FF" },
-          { icon: "🗺️", label: "Route Planning",       color: "#4FC6FF" },
-          { icon: "🚗", label: "Driver App",            color: "#4FC6FF" },
-          { icon: "✍️", label: "Digital POD",           color: "#4FC6FF" },
-          { icon: "📒", label: "Customer Ledger",       color: "#4FC6FF" },
+          { icon: "📦", label: "Stock Management",      color: "#1E4DA0" },
+          { icon: "🗺️", label: "Route Planning",       color: "#1E4DA0" },
+          { icon: "🚗", label: "Driver App",            color: "#1E4DA0" },
+          { icon: "✍️", label: "Digital POD",           color: "#1E4DA0" },
+          { icon: "📒", label: "Customer Ledger",       color: "#1E4DA0" },
           { icon: "💳", label: "Credit Control",        color: "#1E4DA0" },
           { icon: "🏪", label: "Van Sales",             color: "#1E4DA0" },
           { icon: "🏭", label: "Warehouse Management",  color: "#1E4DA0" },
           { icon: "📅", label: "Batch & Expiry",        color: "#1E4DA0" },
-          { icon: "🔄", label: "FEFO Issue",            color: "#4FC6FF" },
+          { icon: "🔄", label: "FEFO Issue",            color: "#1E4DA0" },
         ]}
         row2={[
-          { icon: "🔀", label: "Stock Transfer",        color: "#4FC6FF" },
+          { icon: "🔀", label: "Stock Transfer",        color: "#1E4DA0" },
           { icon: "🔔", label: "Reorder Alerts",        color: "#1E4DA0" },
           { icon: "🤝", label: "Supplier Management",   color: "#1E4DA0" },
-          { icon: "↩️", label: "Return Goods",          color: "#4FC6FF" },
-          { icon: "🏢", label: "Multi-Warehouse",       color: "#4FC6FF" },
-          { icon: "🚛", label: "Fleet Tracking",        color: "#4FC6FF" },
-          { icon: "📋", label: "Load Planning",         color: "#4FC6FF" },
+          { icon: "↩️", label: "Return Goods",          color: "#1E4DA0" },
+          { icon: "🏢", label: "Multi-Warehouse",       color: "#1E4DA0" },
+          { icon: "🚛", label: "Fleet Tracking",        color: "#1E4DA0" },
+          { icon: "📋", label: "Load Planning",         color: "#1E4DA0" },
           { icon: "💰", label: "Price Lists",           color: "#1E4DA0" },
           { icon: "🎁", label: "Scheme Management",     color: "#1E4DA0" },
           { icon: "💵", label: "Commission Tracking",   color: "#1E4DA0" },
           { icon: "📊", label: "Financial Reports",     color: "#1E4DA0" },
-          { icon: "👤", label: "Customer Portal",       color: "#4FC6FF" },
+          { icon: "👤", label: "Customer Portal",       color: "#1E4DA0" },
         ]}
         row3={[
-          { icon: "📱", label: "Mobile App",            color: "#4FC6FF" },
+          { icon: "📱", label: "Mobile App",            color: "#1E4DA0" },
           { icon: "☁️", label: "Cloud Hosted",          color: "#1E4DA0" },
           { icon: "🏷️", label: "Barcode Scanning",     color: "#1E4DA0" },
-          { icon: "🔑", label: "Role-Based Access",     color: "#4FC6FF" },
-          { icon: "📈", label: "Demand Forecasting",    color: "#4FC6FF" },
-          { icon: "🧾", label: "Tax & VAT",             color: "#4FC6FF" },
-          { icon: "🔒", label: "Audit Trail",           color: "#4FC6FF" },
+          { icon: "🔑", label: "Role-Based Access",     color: "#1E4DA0" },
+          { icon: "📈", label: "Demand Forecasting",    color: "#1E4DA0" },
+          { icon: "🧾", label: "Tax & VAT",             color: "#1E4DA0" },
+          { icon: "🔒", label: "Audit Trail",           color: "#1E4DA0" },
           { icon: "🌍", label: "Multi-Currency",        color: "#1E4DA0" },
           { icon: "🔗", label: "API Integrations",      color: "#1E4DA0" },
           { icon: "📉", label: "Shrinkage Control",     color: "#1E4DA0" },
           { icon: "🧊", label: "Cold Chain Tracking",   color: "#1E4DA0" },
-          { icon: "🤖", label: "AI Stock Insights",     color: "#4FC6FF" },
+          { icon: "🤖", label: "AI Stock Insights",     color: "#1E4DA0" },
         ]}
       />
-      <CustomSolutionsSection accentColor="#4FC6FF" productName="Distributor ERP" />
+      <CustomSolutionsSection accentColor="#1E4DA0" productName="Distributor ERP" />
       <ERPCrossLinks current="/distributor" />
       <Footer />
     </div>
