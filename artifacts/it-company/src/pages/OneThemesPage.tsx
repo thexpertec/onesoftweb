@@ -77,7 +77,7 @@ function ConversationMockup() {
             <div className="max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
               style={m.from === "client"
                 ? { background: "#1E4DA0", color: "#fff", borderBottomRightRadius: "6px" }
-                : { background: isLight ? "#f1f5f9" : "rgba(255,255,255,0.07)", color: t70, borderBottomLeftRadius: "6px" }}>
+                : { background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.07)", color: t70, borderBottomLeftRadius: "6px" }}>
               {m.text}
             </div>
           </motion.div>
@@ -86,7 +86,7 @@ function ConversationMockup() {
 
       {/* Input */}
       <div className="flex items-center gap-3 px-5 py-4" style={{ borderTop: `1px solid ${divider}`, background: sideBg }}>
-        <div className="flex-1 rounded-xl px-4 py-2.5 text-sm" style={{ background: isLight ? "#e2e8f0" : "rgba(255,255,255,0.06)", color: t45 }}>
+        <div className="flex-1 rounded-xl px-4 py-2.5 text-sm" style={{ background: isLight ? "#F5F5F5" : "rgba(255,255,255,0.06)", color: t45 }}>
           Tell us about your project…
         </div>
         <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: "#4FC6FF" }}>
@@ -151,7 +151,7 @@ export default function OneThemesPage() {
   const isLight = theme === "light";
 
   const pageBg       = isLight ? "#ffffff"                  : "#070e1c";
-  const sectionBg    = isLight ? "#f1f5f9"                  : "#04091a";
+  const sectionBg    = isLight ? "#F5F5F5"                  : "#04091a";
   const tableBg      = isLight ? "#ffffff"                  : "#07111f";
   const dividerColor = isLight ? "rgba(0,0,0,0.08)"         : "rgba(255,255,255,0.08)";
   const t45          = isLight ? "rgba(15,23,42,0.5)"       : "rgba(255,255,255,0.45)";
@@ -353,7 +353,7 @@ export default function OneThemesPage() {
                   <tech.icon className="w-6 h-6" style={{ color: tech.color }} />
                 </div>
                 <h3 className="text-base font-bold mb-2" style={{ color: isLight ? "#0f172a" : undefined }}>{tech.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: isLight ? "#475569" : t50 }}>{tech.desc}</p>
+                <p className="text-sm leading-relaxed" style={{ color: isLight ? "rgba(0,0,0,0.55)" : t50 }}>{tech.desc}</p>
               </motion.div>
             ))}
           </div>

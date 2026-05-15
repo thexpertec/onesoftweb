@@ -18,7 +18,7 @@ export function ERPCrossLinks({ current }: { current: string }) {
 
   const others = ALL_PRODUCTS.filter(p => p.href !== current);
 
-  const sectionBg   = isLight ? "#f1f5f9"           : "#04091a";
+  const sectionBg   = isLight ? "#F5F5F5"           : "#04091a";
   const divider     = isLight ? "rgba(0,0,0,0.08)"  : "rgba(255,255,255,0.08)";
   const pillBg      = isLight ? "#ffffff"            : "rgba(255,255,255,0.04)";
   const pillBorder  = isLight ? "rgba(0,0,0,0.1)"   : "rgba(255,255,255,0.1)";

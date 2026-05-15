@@ -20,7 +20,7 @@ const capabilities = [
     title: "AI Chatbots & Virtual Assistants",
     desc: "Custom-trained chatbots that handle customer queries, route support tickets, and answer FAQs 24/7 — integrated directly into your website, WhatsApp, or ERP.",
     examples: ["School fee inquiry bot", "Hospital appointment assistant", "Restaurant order assistant"],
-    color: "#2563eb",
+    color: "#1E4DA0",
   },
   {
     icon: FileSearch,
@@ -41,7 +41,7 @@ const capabilities = [
     title: "Predictive Analytics & Reporting",
     desc: "LLM-powered dashboards that don't just show numbers — they explain them. Ask questions in plain English and get instant insights from your business data.",
     examples: ["Sales trend forecasting", "Student performance prediction", "Demand planning for distributors"],
-    color: "#16a34a",
+    color: "#4FC6FF",
   },
   {
     icon: Database,
@@ -60,8 +60,8 @@ const capabilities = [
 ];
 
 const useCases = [
-  { sector: "Schools",     icon: "🎓", color: "#2563eb", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
-  { sector: "Hospitals",   icon: "🏥", color: "#16a34a", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
+  { sector: "Schools",     icon: "🎓", color: "#1E4DA0", task: "Auto-generate student progress reports from attendance, grades, and behaviour data — sent to parents every term." },
+  { sector: "Hospitals",   icon: "🏥", color: "#4FC6FF", task: "AI triage assistant that collects patient symptoms via chat before the doctor visit, summarising them in the OPD record." },
   { sector: "Restaurants", icon: "🍽️", color: "#1E4DA0", task: "Demand forecasting that predicts daily covers from weather, local events, and historical data — cutting food waste by up to 30%." },
   { sector: "Distributors",icon: "📦", color: "#4FC6FF", task: "Auto-match incoming orders with available stock, generate pick lists, and notify drivers — zero manual dispatch coordination." },
   { sector: "E-commerce",  icon: "🛒", color: "#1E4DA0", task: "AI product description writer that generates SEO-optimised listings from images and specifications in seconds." },
@@ -149,7 +149,7 @@ export function AIAutomationSection() {
                 {cap.examples.map(ex => (
                   <div key={ex} className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: cap.color }} />
-                    <span className="text-xs" style={{ color: "#475569" }}>{ex}</span>
+                    <span className="text-xs" style={{ color: "rgba(0,0,0,0.55)" }}>{ex}</span>
                   </div>
                 ))}
               </div>
@@ -167,7 +167,7 @@ export function AIAutomationSection() {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="h-px flex-1 bg-slate-200" />
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3" style={{ color: "#64748b" }}>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3" style={{ color: "rgba(0,0,0,0.45)" }}>
               <Bot className="w-4 h-4" style={{ color: "#1E4DA0" }} />
               Real-world automation use cases
             </div>
@@ -196,7 +196,7 @@ export function AIAutomationSection() {
                 </div>
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-widest block mb-1" style={{ color: uc.color }}>{uc.sector}</span>
-                  <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>{uc.task}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(0,0,0,0.65)" }}>{uc.task}</p>
                 </div>
               </motion.div>
             ))}
@@ -211,7 +211,7 @@ export function AIAutomationSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-center text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#64748b" }}>AI & automation tools we work with</p>
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(0,0,0,0.45)" }}>AI & automation tools we work with</p>
           <div className="flex flex-wrap items-center justify-center gap-2">
             {stack.map((tool, i) => (
               <motion.span
@@ -221,7 +221,7 @@ export function AIAutomationSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
                 className="text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all duration-200"
-                style={{ border: "1px solid #e2e8f0", background: "#f8fafc", color: "#475569" }}
+                style={{ border: "1px solid #e2e8f0", background: "#FFFFFF", color: "rgba(0,0,0,0.55)" }}
               >
                 {tool}
               </motion.span>
@@ -250,7 +250,7 @@ export function AIAutomationSection() {
               <h3 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight" style={{ color: "#0f172a" }}>
                 See exactly where AI can save<br className="hidden md:block" /> your business 10+ hours a week
               </h3>
-              <p className="text-sm max-w-lg" style={{ color: "#475569" }}>
+              <p className="text-sm max-w-lg" style={{ color: "rgba(0,0,0,0.55)" }}>
                 We'll audit your current workflows, identify the top 3 automation opportunities, and show you a concrete ROI estimate — all in a free 30-minute call.
               </p>
             </div>
@@ -259,7 +259,7 @@ export function AIAutomationSection() {
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm transition-all duration-200"
                 style={{ background: "#1E4DA0", color: "#ffffff" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "#1558a8")}
+                onMouseEnter={e => (e.currentTarget.style.background = "#1E4DA0")}
                 onMouseLeave={e => (e.currentTarget.style.background = "#1E4DA0")}
               >
                 <BrainCircuit className="w-4 h-4" />

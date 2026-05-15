@@ -47,7 +47,7 @@ function OPDSlide() {
     { label: "Avg Wait Time",  value: "18m",  color: "#4FC6FF", Icon: Clock },
     { label: "Appointments",   value: "112",  color: "#1E4DA0", Icon: Calendar },
   ];
-  const statusColor = (s: string) => s === "In Consultation" ? "#4FC6FF" : s === "Waiting" ? "#4FC6FF" : "#94a3b8";
+  const statusColor = (s: string) => s === "In Consultation" ? "#4FC6FF" : s === "Waiting" ? "#4FC6FF" : "rgba(0,0,0,0.35)";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-4 gap-2 shrink-0">
@@ -364,9 +364,9 @@ export default function HospitalPage() {
   const isLight = theme === "light";
 
   const pageBg       = isLight ? "#ffffff"             : "#070e1c";
-  const sectionBg    = isLight ? "#f1f5f9"             : "#04091a";
+  const sectionBg    = isLight ? "#F5F5F5"             : "#04091a";
   const tableBg      = isLight ? "#ffffff"             : "#07111f";
-  const connectorBg  = isLight ? "#f1f5f9"             : "#070e1c";
+  const connectorBg  = isLight ? "#F5F5F5"             : "#070e1c";
   const dividerColor = isLight ? "rgba(0,0,0,0.08)"   : "rgba(255,255,255,0.08)";
   const gridLine     = isLight ? "rgba(0,0,0,0.04)"   : "rgba(255,255,255,0.06)";
   const t45          = isLight ? "rgba(15,23,42,0.5)"  : "rgba(255,255,255,0.45)";
@@ -546,7 +546,7 @@ export default function HospitalPage() {
                   <m.icon className="w-6 h-6" style={{ color: m.color }} />
                 </div>
                 <h3 className="text-base font-bold mb-2" style={{ color: isLight ? "#0f172a" : undefined }}>{m.title}</h3>
-                <p className="text-sm mb-4 leading-relaxed" style={{ color: isLight ? "#475569" : t50 }}>{m.desc}</p>
+                <p className="text-sm mb-4 leading-relaxed" style={{ color: isLight ? "rgba(0,0,0,0.55)" : t50 }}>{m.desc}</p>
                 <ul className="space-y-2">
                   {m.pts.map(p => (
                     <li key={p} className="flex items-start gap-2">
@@ -554,7 +554,7 @@ export default function HospitalPage() {
                         style={{ background: isLight ? `${m.color}28` : `${m.color}20`, border: `1px solid ${m.color}50` }}>
                         <CheckCircle2 className="w-2.5 h-2.5" style={{ color: m.color }} />
                       </div>
-                      <span className="text-xs leading-relaxed" style={{ color: isLight ? "#475569" : t55 }}>{p}</span>
+                      <span className="text-xs leading-relaxed" style={{ color: isLight ? "rgba(0,0,0,0.55)" : t55 }}>{p}</span>
                     </li>
                   ))}
                 </ul>

@@ -54,7 +54,7 @@ export function StickyCTA() {
           {/* Glow line on top */}
           <div className="h-px w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
 
-          <div className="bg-gradient-to-r from-[#0d1117] via-[#0f1f45] to-[#0d1117] border-t border-primary/30 backdrop-blur-md shadow-[0_-8px_40px_rgba(37,99,235,0.25)]">
+          <div className="bg-gradient-to-r from-[#0d1117] via-[#0f1f45] to-[#0d1117] border-t border-primary/30 backdrop-blur-md shadow-[0_-8px_40px_rgba(30,77,160,0.25)]">
             <div className="container mx-auto px-4 py-3">
               <div className="flex items-center justify-between gap-4 flex-wrap md:flex-nowrap">
 

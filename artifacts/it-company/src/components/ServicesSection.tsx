@@ -28,14 +28,14 @@ const devServices: Service[] = [
     title: "Website Development",
     desc: "Bespoke business websites — from corporate brochures to full content platforms — built for speed, SEO, and conversion.",
     tags: ["React", "Next.js", "WordPress", "Webflow"],
-    color: "#2563eb",
+    color: "#1E4DA0",
   },
   {
     icon: ShoppingBag,
     title: "Shopify Stores",
     desc: "End-to-end Shopify builds including custom themes, app integrations, payment setup, and multi-currency storefronts.",
     tags: ["Shopify Plus", "Liquid", "Custom Apps", "Multi-currency"],
-    color: "#16a34a",
+    color: "#4FC6FF",
   },
   {
     icon: Webhook,
@@ -70,14 +70,14 @@ const devServices: Service[] = [
     title: "Custom Development",
     desc: "Have something specific in mind? We take on unique, complex builds that off-the-shelf tools simply can't handle.",
     tags: ["Scoping", "Architecture", "Build", "Deploy"],
-    color: "#0284c7",
+    color: "#4FC6FF",
   },
   {
     icon: BrainCircuit,
     title: "AI Integration & Automation",
     desc: "LLM-powered features, document intelligence, chatbots, and workflow automation baked into your existing systems.",
     tags: ["OpenAI", "LangChain", "RAG", "Automation"],
-    color: "#6d28d9",
+    color: "#1E4DA0",
   },
 ];
 
@@ -87,21 +87,21 @@ const marketingServices: Service[] = [
     title: "Social Media Marketing",
     desc: "Strategy, content creation, scheduling, and community management across Instagram, Facebook, LinkedIn, and TikTok.",
     tags: ["Instagram", "LinkedIn", "TikTok", "Meta Ads"],
-    color: "#e11d48",
+    color: "#1E4DA0",
   },
   {
     icon: SearchCheck,
     title: "SEO",
     desc: "Technical SEO audits, keyword strategy, on-page optimisation, and link building that actually moves rankings.",
     tags: ["On-page", "Technical", "Backlinks", "Local SEO"],
-    color: "#15803d",
+    color: "#4FC6FF",
   },
   {
     icon: ImagePlay,
     title: "Ad Creatives",
     desc: "High-converting static and video ad creatives for Google, Meta, TikTok, and programmatic — designed to stop the scroll.",
     tags: ["Google Ads", "Meta Ads", "Video", "A/B Testing"],
-    color: "#b45309",
+    color: "#1E4DA0",
   },
 ];
 

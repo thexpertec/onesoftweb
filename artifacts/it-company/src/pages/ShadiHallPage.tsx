@@ -148,7 +148,7 @@ function CalendarSlide() {
                 {days.map(d => {
                   const ev = schedule[hall][d];
                   if (!ev) return <td key={d} className="py-1 pr-1 align-top"><div className="px-1.5 py-1 rounded bg-white/[0.03] border border-white/[0.05] text-[5.5px] text-white/20">Available</div></td>;
-                  const c = colorMap[ev.event] ?? "#6b7280";
+                  const c = colorMap[ev.event] ?? "rgba(0,0,0,0.45)";
                   return (
                     <td key={d} className="py-1 pr-1 align-top">
                       <div className="px-1.5 py-1 rounded border" style={{ background: `${c}18`, borderColor: `${c}35` }}>
@@ -176,7 +176,7 @@ function CateringSlide() {
   const menus = [
     { name: "Platinum Package",  price: "£55/head", items: 14, desc: "BBQ + Karahi + Desserts", color: "#1E4DA0" },
     { name: "Gold Package",      price: "£38/head", items: 10, desc: "Karahi + Biryani + Sweets", color: "#4FC6FF" },
-    { name: "Silver Package",    price: "£25/head", items: 7,  desc: "Biryani + Raita + Drinks",  color: "#6b7280" },
+    { name: "Silver Package",    price: "£25/head", items: 7,  desc: "Biryani + Raita + Drinks",  color: "rgba(0,0,0,0.45)" },
     { name: "Custom Package",    price: "Quote",    items: 0,  desc: "Bespoke menu selection",    color: "#1E4DA0" },
   ];
   const orders = [
@@ -382,9 +382,9 @@ export default function ShadiHallPage() {
   const isLight = theme === "light";
 
   const pageBg       = isLight ? "#ffffff"             : "#070e1c";
-  const sectionBg    = isLight ? "#f1f5f9"             : "#04091a";
+  const sectionBg    = isLight ? "#F5F5F5"             : "#04091a";
   const tableBg      = isLight ? "#ffffff"             : "#07111f";
-  const connectorBg  = isLight ? "#f1f5f9"             : "#070e1c";
+  const connectorBg  = isLight ? "#F5F5F5"             : "#070e1c";
   const dividerColor = isLight ? "rgba(0,0,0,0.08)"    : "rgba(255,255,255,0.08)";
   const gridLine     = isLight ? "rgba(0,0,0,0.04)"    : "rgba(255,255,255,0.06)";
   const t45          = isLight ? "rgba(15,23,42,0.5)"  : "rgba(255,255,255,0.45)";

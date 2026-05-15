@@ -178,7 +178,7 @@ export function CTAFormSection() {
                       className="w-full appearance-none pl-10 pr-10 py-3 rounded-lg border border-white/10 bg-white/[0.05] text-sm outline-none focus:border-primary/50 focus:bg-white/[0.08] transition-all cursor-pointer"
                       style={{ color: form.interest ? "white" : "rgb(100 116 139)" }}
                     >
-                      <option value="" disabled style={{ backgroundColor: "#0f1929", color: "#94a3b8" }}>
+                      <option value="" disabled style={{ backgroundColor: "#0f1929", color: "rgba(0,0,0,0.35)" }}>
                         Interested In…
                       </option>
                       {INTERESTS.map(opt => (

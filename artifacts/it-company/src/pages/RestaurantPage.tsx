@@ -96,12 +96,12 @@ function KitchenSlide() {
     { id: "#145", table: "T11", items: ["Soup of Day x1", "Garlic Bread x1"],       mins: 4,  status: "Ready",    priority: "normal" },
     { id: "#146", table: "T05", items: ["Chicken Tikka x2", "Naan x4"],             mins: 2,  status: "Pending",  priority: "high"   },
   ];
-  const sColor = (s: string) => s === "Ready" ? "#4FC6FF" : s === "Cooking" ? "#4FC6FF" : "#94a3b8";
+  const sColor = (s: string) => s === "Ready" ? "#4FC6FF" : s === "Cooking" ? "#4FC6FF" : "rgba(0,0,0,0.35)";
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">
       <div className="grid grid-cols-3 gap-2 shrink-0">
         {[
-          { label: "Pending Tickets", value: "3",   color: "#94a3b8" },
+          { label: "Pending Tickets", value: "3",   color: "rgba(0,0,0,0.35)" },
           { label: "Cooking Now",     value: "2",   color: "#4FC6FF" },
           { label: "Ready to Serve",  value: "1",   color: "#4FC6FF" },
         ].map((k, i) => (
@@ -366,9 +366,9 @@ export default function RestaurantPage() {
   const isLight = theme === "light";
 
   const pageBg       = isLight ? "#ffffff"             : "#070e1c";
-  const sectionBg    = isLight ? "#f1f5f9"             : "#04091a";
+  const sectionBg    = isLight ? "#F5F5F5"             : "#04091a";
   const tableBg      = isLight ? "#ffffff"             : "#07111f";
-  const connectorBg  = isLight ? "#f1f5f9"             : "#070e1c";
+  const connectorBg  = isLight ? "#F5F5F5"             : "#070e1c";
   const dividerColor = isLight ? "rgba(0,0,0,0.08)"   : "rgba(255,255,255,0.08)";
   const gridLine     = isLight ? "rgba(0,0,0,0.04)"   : "rgba(255,255,255,0.06)";
   const t45          = isLight ? "rgba(15,23,42,0.5)"  : "rgba(255,255,255,0.45)";
@@ -548,7 +548,7 @@ export default function RestaurantPage() {
                   <m.icon className="w-6 h-6" style={{ color: m.color }} />
                 </div>
                 <h3 className="text-base font-bold mb-2" style={{ color: isLight ? "#0f172a" : undefined }}>{m.title}</h3>
-                <p className="text-sm mb-4 leading-relaxed" style={{ color: isLight ? "#475569" : t50 }}>{m.desc}</p>
+                <p className="text-sm mb-4 leading-relaxed" style={{ color: isLight ? "rgba(0,0,0,0.55)" : t50 }}>{m.desc}</p>
                 <ul className="space-y-2">
                   {m.pts.map(p => (
                     <li key={p} className="flex items-start gap-2">
@@ -556,7 +556,7 @@ export default function RestaurantPage() {
                         style={{ background: isLight ? `${m.color}28` : `${m.color}20`, border: `1px solid ${m.color}50` }}>
                         <CheckCircle2 className="w-2.5 h-2.5" style={{ color: m.color }} />
                       </div>
-                      <span className="text-xs leading-relaxed" style={{ color: isLight ? "#475569" : t55 }}>{p}</span>
+                      <span className="text-xs leading-relaxed" style={{ color: isLight ? "rgba(0,0,0,0.55)" : t55 }}>{p}</span>
                     </li>
                   ))}
                 </ul>
@@ -647,7 +647,7 @@ export default function RestaurantPage() {
                   ].map((ticket, i) => (
                     <div key={i} className="rounded-xl p-3.5 transition-all"
                       style={{
-                        background: ticket.status === "ready" ? "rgba(79,198,255,0.08)" : ticket.late ? "rgba(30,77,160,0.08)" : `${isLight ? "#f1f5f9" : "rgba(255,255,255,0.03)"}`,
+                        background: ticket.status === "ready" ? "rgba(79,198,255,0.08)" : ticket.late ? "rgba(30,77,160,0.08)" : `${isLight ? "#F5F5F5" : "rgba(255,255,255,0.03)"}`,
                         border: `1.5px solid ${ticket.status === "ready" ? "rgba(79,198,255,0.30)" : ticket.late ? "rgba(30,77,160,0.30)" : dividerColor}`,
                       }}>
                       <div className="flex items-center justify-between mb-2">

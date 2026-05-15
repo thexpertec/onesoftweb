@@ -86,7 +86,7 @@ function MarqueeRow({
             className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border transition-all duration-300 cursor-default group shrink-0"
             style={{
               background: isLight ? "#ffffff" : "rgba(255,255,255,0.04)",
-              borderColor: isLight ? "#e2e8f0" : "rgba(255,255,255,0.10)",
+              borderColor: isLight ? "#F5F5F5" : "rgba(255,255,255,0.10)",
             }}
           >
             <item.Icon
@@ -95,7 +95,7 @@ function MarqueeRow({
             />
             <span
               className="text-sm font-medium whitespace-nowrap transition-colors"
-              style={{ color: isLight ? "#334155" : "rgba(255,255,255,0.65)" }}
+              style={{ color: isLight ? "rgba(0,0,0,0.65)" : "rgba(255,255,255,0.65)" }}
             >
               {item.label}
             </span>
@@ -114,8 +114,8 @@ export function AccountingMarquee() {
     <div
       className="py-16 relative overflow-hidden border-y"
       style={{
-        background: isLight ? "#f8fafc" : "rgba(0,0,0,0.3)",
-        borderColor: isLight ? "#e2e8f0" : "rgba(255,255,255,0.07)",
+        background: isLight ? "#FFFFFF" : "rgba(0,0,0,0.3)",
+        borderColor: isLight ? "#F5F5F5" : "rgba(255,255,255,0.07)",
       }}
     >
       <div className="container mx-auto px-4 mb-10 text-center relative z-10">
@@ -133,7 +133,7 @@ export function AccountingMarquee() {
         </h2>
         <p
           className="max-w-xl mx-auto text-base"
-          style={{ color: isLight ? "#475569" : "rgba(255,255,255,0.5)" }}
+          style={{ color: isLight ? "rgba(0,0,0,0.55)" : "rgba(255,255,255,0.5)" }}
         >
           From double-entry bookkeeping to HMRC compliance — every module built for modern accountants.
         </p>

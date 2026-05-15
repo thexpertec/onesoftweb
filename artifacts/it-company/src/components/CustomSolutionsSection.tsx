@@ -36,10 +36,10 @@ export function CustomSolutionsSection({ accentColor, productName }: Props) {
   const isLight = theme === "light";
 
   const bg   = isLight ? "#ffffff" : "#080f1e";
-  const card = isLight ? "#f8fafc" : "rgba(255,255,255,0.04)";
-  const border = isLight ? "#e2e8f0" : "rgba(255,255,255,0.08)";
+  const card = isLight ? "#FFFFFF" : "rgba(255,255,255,0.04)";
+  const border = isLight ? "#F5F5F5" : "rgba(255,255,255,0.08)";
   const text  = isLight ? "#0f172a" : "#ffffff";
-  const muted = isLight ? "#64748b" : "rgba(255,255,255,0.5)";
+  const muted = isLight ? "rgba(0,0,0,0.45)" : "rgba(255,255,255,0.5)";
 
   return (
     <section
@@ -133,7 +133,7 @@ export function CustomSolutionsSection({ accentColor, productName }: Props) {
                 style={{
                   background: card,
                   borderColor: border,
-                  color: isLight ? "#334155" : "rgba(255,255,255,0.65)",
+                  color: isLight ? "rgba(0,0,0,0.65)" : "rgba(255,255,255,0.65)",
                 }}
               >
                 {tag}

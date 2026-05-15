@@ -198,7 +198,7 @@ export function CTAModal() {
                       className="w-full appearance-none pl-9 pr-9 py-2.5 rounded-lg border border-white/10 bg-white/[0.05] text-sm outline-none focus:border-primary/50 focus:bg-white/[0.08] transition-all cursor-pointer"
                       style={{ color: form.interest ? "white" : "rgb(100 116 139)" }}
                     >
-                      <option value="" disabled style={{ backgroundColor: "#0f1929", color: "#94a3b8" }}>
+                      <option value="" disabled style={{ backgroundColor: "#0f1929", color: "rgba(0,0,0,0.35)" }}>
                         What are you interested in?
                       </option>
                       {INTERESTS.map(opt => (
