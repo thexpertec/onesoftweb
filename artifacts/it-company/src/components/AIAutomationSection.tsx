@@ -76,7 +76,7 @@ const stack = [
 
 export function AIAutomationSection() {
   return (
-    <section id="ai-automation" className="py-28 relative overflow-hidden">
+    <section id="ai-automation" className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden">
       {/* Subtle blue tint top stripe */}
       <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#1E4DA0" }} />
 

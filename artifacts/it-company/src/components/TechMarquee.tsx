@@ -92,7 +92,7 @@ function MarqueeTrack({
 
 export function TechMarquee() {
   return (
-    <section className="py-20 relative overflow-hidden border-y border-white/10 bg-black/60">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden border-y border-white/10 bg-black/60">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 mb-12 text-center relative z-10">

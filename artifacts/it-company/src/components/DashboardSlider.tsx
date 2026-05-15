@@ -684,7 +684,7 @@ export function DashboardSlider() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden bg-[#04080f] border-y border-white/8">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden bg-[#04080f] border-y border-white/8">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/6 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">

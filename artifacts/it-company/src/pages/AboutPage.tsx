@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Our Story ──────────────────────────────────── */}
-      <section className="py-24" style={{ background: heroBg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: heroBg }}>
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center mb-16">
@@ -221,7 +221,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ─────────────────────────────────────── */}
-      <section className="py-24" style={{ background: bg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: bg }}>
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center mb-16">
@@ -254,7 +254,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Why clients choose us ──────────────────────── */}
-      <section className="py-24" style={{ background: heroBg, borderTop: `1px solid ${border}`, borderBottom: `1px solid ${border}` }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: heroBg, borderTop: `1px solid ${border}`, borderBottom: `1px solid ${border}` }}>
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
@@ -300,7 +300,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Testimonial Pull-quote ─────────────────────── */}
-      <section className="py-20" style={{ background: bg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: bg }}>
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
             <div className="flex justify-center gap-1 mb-6">

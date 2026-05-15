@@ -30,7 +30,7 @@ const steps = [
 
 export function HowWeWork() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-8 md:py-10 lg:py-[60px] bg-background relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

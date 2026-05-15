@@ -69,7 +69,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-10 md:pt-28 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background -z-10" />
         {/* Floating ambient orbs */}
         <motion.div
@@ -166,7 +166,7 @@ export default function Home() {
       <FeatureMarquee />
 
       {/* Core ERP Products — moved up so product offer lands early */}
-      <section id="products" className="py-24 relative">
+      <section id="products" className="py-8 md:py-10 lg:py-[60px] relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Badge variant="outline" className="border-primary/50 text-primary mb-4 bg-primary/10">Core Infrastructure</Badge>
@@ -213,7 +213,7 @@ export default function Home() {
       <HowWeWork />
 
       {/* Testimonials */}
-      <section className="py-24 bg-secondary/30 border-y border-border">
+      <section className="py-8 md:py-10 lg:py-[60px] bg-secondary/30 border-y border-border">
          <div className="container mx-auto px-4">
             <motion.div
               className="text-center max-w-2xl mx-auto mb-16"

@@ -44,7 +44,7 @@ export function CTAFormSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-[#060b16]">
+    <section id="contact" className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden bg-[#060b16]">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary/12 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4">

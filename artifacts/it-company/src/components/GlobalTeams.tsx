@@ -89,7 +89,7 @@ function MemberCard({ member }: { member: Member }) {
 
 export function GlobalTeams() {
   return (
-    <section className="py-24 relative overflow-hidden border-y border-white/10">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden border-y border-white/10">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/8 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">

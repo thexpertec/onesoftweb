@@ -43,7 +43,7 @@ export function CustomSolutionsSection({ accentColor, productName }: Props) {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden"
       style={{ background: bg, borderTop: `1px solid ${border}` }}
     >
       {/* Soft glow behind heading */}

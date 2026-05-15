@@ -42,7 +42,7 @@ export function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24 relative overflow-hidden border-t border-white/8">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden border-t border-white/8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
 

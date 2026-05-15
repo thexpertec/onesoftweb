@@ -94,7 +94,7 @@ function PillTrack({
 
 export function FeatureMarquee() {
   return (
-    <section className="py-20 relative overflow-hidden border-y border-white/8 bg-black/30">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden border-y border-white/8 bg-black/30">
       <div className="container mx-auto px-4 text-center mb-12">
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
           What We Deliver

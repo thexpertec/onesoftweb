@@ -401,7 +401,7 @@ export default function ShadiHallPage() {
       <Navigation />
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-24 pb-4 md:pt-32 md:pb-8">
+      <section className="pt-24 pb-8 md:pt-28 md:pb-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left copy */}
@@ -472,7 +472,7 @@ export default function ShadiHallPage() {
       </section>
 
       {/* ── MODULES ───────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: pageBg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: pageBg }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -514,7 +514,7 @@ export default function ShadiHallPage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────── */}
-      <section className="py-20" style={{ background: sectionBg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: sectionBg }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -557,7 +557,7 @@ export default function ShadiHallPage() {
       <CTAStrip />
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-20" style={{ background: pageBg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: pageBg }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -595,7 +595,7 @@ export default function ShadiHallPage() {
       </section>
 
       {/* ── COMPARISON TABLE ──────────────────────────────────── */}
-      <section className="py-20" style={{ background: sectionBg }}>
+      <section className="py-8 md:py-10 lg:py-[60px]" style={{ background: sectionBg }}>
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-14">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

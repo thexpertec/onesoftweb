@@ -604,3 +604,41 @@ html {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
+/* ── Standard layout rhythm ──────────────────────────────── */
+
+/* Heading → paragraph gap */
+.section-heading + p,
+h1 + p, h2 + p, h3 + p {
+  margin-top: 1.25rem; /* 20px */
+}
+
+/* Paragraph → next component gap */
+.prose-gap {
+  margin-top: 1.875rem; /* 30px */
+}
+
+/* Card grids: 20–24px between cards */
+.card-grid {
+  gap: 1.25rem; /* 20px */
+}
+@media (min-width: 768px) {
+  .card-grid {
+    gap: 1.5rem; /* 24px */
+  }
+}
+
+/* Hero area: fixed-nav clearance + 50px breathing room */
+.hero-section {
+  padding-top: max(96px, calc(var(--nav-h, 64px) + 50px));
+  padding-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .hero-section {
+    padding-bottom: 56px;
+  }
+}
+@media (max-width: 639px) {
+  .hero-section {
+    padding-bottom: 36px;
+  }
+}

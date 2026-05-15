@@ -42,7 +42,7 @@ const offices = [
 
 export function GlobalOffices() {
   return (
-    <section className="py-24 bg-[#080d1a] relative overflow-hidden border-y border-white/8">
+    <section className="py-8 md:py-10 lg:py-[60px] bg-[#080d1a] relative overflow-hidden border-y border-white/8">
       {/* faint grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"

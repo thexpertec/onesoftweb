@@ -387,7 +387,7 @@ export default function RestaurantPage() {
       <Navigation />
 
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
-      <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
+      <div className="relative pt-24 pb-8 md:pt-28 md:pb-10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
           <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,77,160,0.15), transparent)" }} />
           <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(30,77,160,0.10)", filter: "blur(90px)" }}
@@ -731,7 +731,7 @@ export default function RestaurantPage() {
       </div>
 
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
-      <div className="py-20 relative overflow-hidden">
+      <div className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(30,77,160,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">

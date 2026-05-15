@@ -116,7 +116,7 @@ function MarqueeRow({
 
 export function ClientLogos() {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#070d1a]">
+    <section className="py-8 md:py-10 lg:py-[60px] relative overflow-hidden bg-[#070d1a]">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/6 via-transparent to-transparent pointer-events-none" />
 
       <motion.div
