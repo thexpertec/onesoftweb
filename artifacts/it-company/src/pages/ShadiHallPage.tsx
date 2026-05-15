@@ -401,7 +401,7 @@ export default function ShadiHallPage() {
       <Navigation />
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-20">
+      <section className="pt-24 pb-4 md:pt-32 md:pb-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left copy */}
@@ -642,7 +642,7 @@ export default function ShadiHallPage() {
       </section>
 
       {/* ── FINAL CTA ─────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: pageBg }}>
+      <section className="py-16" style={{ background: pageBg }}>
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-3xl p-10 border relative overflow-hidden"

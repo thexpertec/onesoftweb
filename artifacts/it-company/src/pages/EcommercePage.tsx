@@ -384,7 +384,7 @@ export default function EcommercePage() {
       <Navigation />
 
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
-      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <div className="relative pt-32 pb-6 md:pt-40 md:pb-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
           <div className="absolute top-0 left-0 right-0 h-[600px]" style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,105,196,0.15), transparent)" }} />
           <motion.div className="absolute top-20 left-[8%] w-72 h-72 rounded-full" style={{ background: "rgba(26,105,196,0.10)", filter: "blur(90px)" }}
@@ -442,7 +442,7 @@ export default function EcommercePage() {
 
       {/* ═══ STATS ══════════════════════════════════════════════ */}
       <div style={{ background: isLight ? "rgba(0,0,0,0.03)" : "rgba(255,255,255,0.03)", borderTop: `1px solid ${dividerColor}`, borderBottom: `1px solid ${dividerColor}` }}
-        className="py-14">
+        className="py-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -468,11 +468,11 @@ export default function EcommercePage() {
       </div>
 
       {/* ═══ FLOW ═══════════════════════════════════════════════ */}
-      <div className="py-24 relative overflow-hidden">
+      <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
           style={{ background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(26,105,196,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
-          <motion.div className="text-center max-w-2xl mx-auto mb-16"
+          <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
@@ -512,9 +512,9 @@ export default function EcommercePage() {
       </div>
 
       {/* ═══ MODULES GRID ════════════════════════════════════════ */}
-      <div id="modules" className="py-24" style={{ background: isLight ? "#ffffff" : sectionBg }}>
+      <div id="modules" className="py-16" style={{ background: isLight ? "#ffffff" : sectionBg }}>
         <div className="container mx-auto px-4">
-          <motion.div className="text-center max-w-2xl mx-auto mb-16"
+          <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
@@ -562,7 +562,7 @@ export default function EcommercePage() {
       </div>
 
       {/* ═══ MULTI-CHANNEL SYNC DEEP-DIVE ════════════════════════ */}
-      <div className="py-24 relative overflow-hidden">
+      <div className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10"
           style={{ background: "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,105,196,0.07), transparent)" }} />
         <div className="container mx-auto px-4">
@@ -680,9 +680,9 @@ export default function EcommercePage() {
       </div>
 
       {/* ═══ TESTIMONIALS ════════════════════════════════════════ */}
-      <div className="py-24" style={{ background: sectionBg }}>
+      <div className="py-16" style={{ background: sectionBg }}>
         <div className="container mx-auto px-4">
-          <motion.div className="text-center max-w-2xl mx-auto mb-16"
+          <motion.div className="text-center max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
               style={{ background: "rgba(26,105,196,0.10)", border: "1px solid rgba(26,105,196,0.30)", color: "#1a69c4" }}>
@@ -719,7 +719,7 @@ export default function EcommercePage() {
       </div>
 
       {/* ═══ CTA ═════════════════════════════════════════════════ */}
-      <div className="py-32 relative overflow-hidden">
+      <div className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,105,196,0.10), transparent)" }} />
         <div className="container mx-auto px-4 text-center relative">
