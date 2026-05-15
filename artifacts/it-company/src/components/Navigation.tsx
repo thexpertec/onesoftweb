@@ -7,7 +7,7 @@ import {
   Palette, Globe, ShoppingBag, Webhook, Code2, Users, LayoutDashboard,
   Wrench, BrainCircuit, Megaphone, SearchCheck, ImagePlay,
   ArrowRight, Sparkles, Phone,
-  Pill, Hotel, Home, Dumbbell, Shirt, Truck, Calculator,
+  Pill, Hotel, Home, Dumbbell, Shirt, Truck, Calculator, Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,7 @@ const erpProducts = [
   { icon: UtensilsCrossed, label: "Restaurant ERP",           desc: "POS, kitchen display, menu & delivery",   color: "#ea580c", href: "/restaurant" },
   { icon: ShoppingCart,    label: "E-commerce ERP",           desc: "Inventory, orders & multi-channel sales", color: "#7c3aed", href: "/ecommerce" },
   { icon: Package,         label: "Wholesaler / Distributor", desc: "Stock, invoicing & supply chain",         color: "#0891b2", href: "/distributor" },
+  { icon: Heart,           label: "Shadi Hall ERP",           desc: "Bookings, catering, billing & vendors",   color: "#db2777", href: "/shadi-hall" },
   { icon: Calculator,      label: "Accounting & Bookkeeping", desc: "Double-entry, HRM, inventory & payroll",  color: "#10b981", href: "/accounting" },
 ];
 
@@ -342,6 +343,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               { label: "Restaurant ERP", href: "/restaurant", blue: true },
               { label: "E-commerce ERP", href: "/ecommerce", blue: true },
               { label: "Distributor ERP", href: "/distributor", blue: true },
+              { label: "Shadi Hall ERP", href: "/shadi-hall", blue: true },
               { label: "OneThemes", href: "#themes" },
               { label: "Why Us", href: "#why-choose-us" },
             ].map(item => (

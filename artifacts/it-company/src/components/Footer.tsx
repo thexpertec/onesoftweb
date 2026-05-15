@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Twitter, Linkedin, Youtube, Github, ExternalLink } from "lucide-react";
+import { Link } from "wouter";
 
 const colVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -62,18 +63,19 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">ERP Products</h4>
             <ul className="space-y-3">
               {[
-                "School ERP",
-                "Hospital ERP",
-                "E-commerce ERP",
-                "Restaurant ERP",
-                "Shadi Hall ERP",
-                "Distributor ERP",
-              ].map((item) => (
-                <li key={item}>
-                  <a href="#products" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
+                { label: "School ERP",      href: "/school"      },
+                { label: "Hospital ERP",    href: "/hospital"    },
+                { label: "E-commerce ERP",  href: "/ecommerce"   },
+                { label: "Restaurant ERP",  href: "/restaurant"  },
+                { label: "Shadi Hall ERP",  href: "/shadi-hall"  },
+                { label: "Distributor ERP", href: "/distributor" },
+                { label: "Accounting ERP",  href: "/accounting"  },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
                     <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
-                    {item}
-                  </a>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
