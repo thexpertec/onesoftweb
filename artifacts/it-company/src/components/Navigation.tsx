@@ -158,94 +158,43 @@ function ProductsMega({ close }: { close: () => void }) {
 function ServicesMega({ close }: { close: () => void }) {
   const { openCTAModal } = useCTAModal();
   return (
-    <div className="grid grid-cols-[1fr_196px] gap-0 min-w-[780px] max-h-[calc(100vh-90px)] overflow-y-auto">
+    <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[640px] max-h-[calc(100vh-90px)] overflow-y-auto">
 
-      {/* Left: 3×2 service cards */}
-      <div className="p-5 border-r border-gray-100">
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Our Services</p>
-          <span className="text-[9px] text-gray-400">6 capabilities</span>
-        </div>
-        <div className="grid grid-cols-3 gap-2.5">
+      {/* Left: service rows */}
+      <div className="p-4 border-r border-gray-100">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Our Services</p>
+        <div className="grid grid-cols-2 gap-1">
           {allServices.map(s => (
             <a key={s.label} href={s.href} onClick={close}
-              className={`group relative flex flex-col gap-2 p-3 rounded-xl border transition-all duration-200 hover:scale-[1.02] bg-gradient-to-br ${s.grad} ${s.border} hover:border-opacity-80 hover:shadow-lg`}
-              style={{ ["--hover-shadow" as string]: `${s.color}20` }}>
-
-              {/* Badge */}
-              {"badge" in s && s.badge && (
-                <span className="absolute top-2 right-2 text-[8px] font-bold px-1.5 py-0.5 rounded-full"
-                  style={{ background: `${s.color}25`, color: s.color }}>
-                  {s.badge}
-                </span>
-              )}
-
-              {/* Icon */}
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: `${s.color}20`, border: `1px solid ${s.color}40` }}>
-                <s.icon className="w-4.5 h-4.5" style={{ color: s.color, width: 18, height: 18 }} />
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors group">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                style={{ backgroundColor: `${s.color}18`, border: `1px solid ${s.color}35` }}>
+                <s.icon className="w-4 h-4" style={{ color: s.color }} />
               </div>
-
-              {/* Text */}
-              <div>
-                <p className="text-[12.5px] font-semibold text-gray-800 group-hover:text-gray-900 leading-tight mb-0.5">{s.label}</p>
-                <p className="text-[10.5px] text-gray-500 leading-tight">{s.desc}</p>
+              <div className="min-w-0">
+                <p className="text-[13px] font-semibold text-gray-800 group-hover:text-gray-900 leading-tight truncate">{s.label}</p>
+                <p className="text-[11px] text-gray-400 leading-tight truncate">{s.desc}</p>
               </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1 mt-0.5">
-                {s.tags.map(tag => (
-                  <span key={tag} className="text-[8.5px] font-medium px-1.5 py-0.5 rounded-full"
-                    style={{ background: `${s.color}20`, color: s.color }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Hover arrow */}
-              <ArrowRight className="absolute bottom-3 right-3 w-3 h-3 opacity-0 group-hover:opacity-60 transition-all -translate-x-1 group-hover:translate-x-0"
-                style={{ color: s.color }} />
             </a>
           ))}
         </div>
       </div>
 
-      {/* Right: AI CTA panel */}
-      <div className="p-5 flex flex-col justify-between bg-violet-50">
+      {/* Right: CTA */}
+      <div className="p-4 flex flex-col justify-between bg-gray-50">
         <div>
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-            style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)" }}>
-            <Sparkles className="w-5 h-5 text-violet-500" />
+          <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
+            <Sparkles className="w-4 h-4 text-primary" />
           </div>
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-violet-500">AI-Powered</span>
-          </div>
-          <p className="text-[14px] font-bold text-gray-900 leading-snug mb-2">Every service AI-ready</p>
-          <p className="text-[11.5px] text-gray-500 leading-relaxed">
-            We layer AI automation into every product we build — chatbots, document AI, predictive analytics.
+          <p className="text-sm font-bold text-gray-900 mb-1">All services, AI-ready</p>
+          <p className="text-xs text-gray-500 leading-relaxed">
+            Every solution we build is layered with AI — chatbots, automation, and predictive analytics included.
           </p>
-
-          {/* Capability pills */}
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {["GPT-4", "RAG", "Agents", "Vision AI"].map(pill => (
-              <span key={pill} className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-violet-100 text-violet-600 border border-violet-200">
-                {pill}
-              </span>
-            ))}
-          </div>
         </div>
-
-        <div className="mt-5 space-y-3">
-          <div className="h-px bg-violet-100" />
-          <a href="#ai-automation" onClick={close}
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-violet-600 hover:text-violet-700 transition-colors group">
-            Explore AI <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-          </a>
-          <button onClick={() => { close(); openCTAModal(); }}
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-blue-600 hover:text-blue-700 transition-colors group">
-            Get a Quote <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-          </button>
-        </div>
+        <button onClick={() => { close(); openCTAModal(); }}
+          className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+          Get a Free Quote <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
     </div>
   );
