@@ -101,48 +101,48 @@ function ProductsMega({ close }: { close: () => void }) {
   return (
     <div className="grid grid-cols-[1fr_200px] gap-0 min-w-[640px] max-h-[calc(100vh-90px)] overflow-y-auto">
       {/* Left: ERP + Themes */}
-      <div className="p-4 border-r border-white/8">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">ERP Systems</p>
+      <div className="p-4 border-r border-gray-100">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">ERP Systems</p>
         <div className="grid grid-cols-2 gap-1 mb-3">
           {erpProducts.map(p => (
             <a key={p.label} href={p.href} onClick={close}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.07] transition-colors group">
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors group">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `${p.color}20`, border: `1px solid ${p.color}40` }}>
+                style={{ backgroundColor: `${p.color}18`, border: `1px solid ${p.color}35` }}>
                 <p.icon className="w-4 h-4" style={{ color: p.color }} />
               </div>
               <div className="min-w-0">
-                <p className="text-[13px] font-semibold text-white/90 group-hover:text-white leading-tight truncate">{p.label}</p>
-                <p className="text-[11px] text-white/45 leading-tight truncate">{p.desc}</p>
+                <p className="text-[13px] font-semibold text-gray-800 group-hover:text-gray-900 leading-tight truncate">{p.label}</p>
+                <p className="text-[11px] text-gray-400 leading-tight truncate">{p.desc}</p>
               </div>
             </a>
           ))}
         </div>
-        <div className="h-px bg-white/8 mb-2" />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Website Products</p>
+        <div className="h-px bg-gray-100 mb-2" />
+        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Website Products</p>
         {themeProducts.map(p => (
           <a key={p.label} href={p.href} onClick={close}
-            className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-white/[0.06] transition-colors group">
+            className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group">
             <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
-              style={{ backgroundColor: `${p.color}1a`, border: `1px solid ${p.color}30` }}>
+              style={{ backgroundColor: `${p.color}15`, border: `1px solid ${p.color}28` }}>
               <p.icon className="w-3.5 h-3.5" style={{ color: p.color }} />
             </div>
             <div>
-              <p className="text-[12px] font-semibold text-white/90 group-hover:text-white leading-tight">{p.label}</p>
-              <p className="text-[10px] text-white/40 leading-tight">{p.desc}</p>
+              <p className="text-[12px] font-semibold text-gray-800 group-hover:text-gray-900 leading-tight">{p.label}</p>
+              <p className="text-[10px] text-gray-400 leading-tight">{p.desc}</p>
             </div>
           </a>
         ))}
       </div>
 
       {/* Right: CTA */}
-      <div className="p-4 flex flex-col justify-between bg-white/[0.02]">
+      <div className="p-4 flex flex-col justify-between bg-gray-50">
         <div>
-          <div className="w-9 h-9 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-3">
+          <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
             <Zap className="w-4 h-4 text-primary" />
           </div>
-          <p className="text-sm font-bold text-white mb-1">See it in action</p>
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-sm font-bold text-gray-900 mb-1">See it in action</p>
+          <p className="text-xs text-gray-500 leading-relaxed">
             Book a free 30-minute demo of any ERP module — live, no slides.
           </p>
         </div>
@@ -161,42 +161,42 @@ function ServicesMega({ close }: { close: () => void }) {
     <div className="grid grid-cols-[1fr_196px] gap-0 min-w-[780px] max-h-[calc(100vh-90px)] overflow-y-auto">
 
       {/* Left: 3×2 service cards */}
-      <div className="p-5 border-r border-white/8">
+      <div className="p-5 border-r border-gray-100">
         <div className="flex items-center justify-between mb-4">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white/35">Our Services</p>
-          <span className="text-[9px] text-white/25">6 capabilities</span>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Our Services</p>
+          <span className="text-[9px] text-gray-400">6 capabilities</span>
         </div>
         <div className="grid grid-cols-3 gap-2.5">
           {allServices.map(s => (
             <a key={s.label} href={s.href} onClick={close}
-              className={`group relative flex flex-col gap-2 p-3 rounded-xl border transition-all duration-200 hover:scale-[1.02] bg-gradient-to-br ${s.grad} ${s.border} hover:border-opacity-60 hover:shadow-lg`}
+              className={`group relative flex flex-col gap-2 p-3 rounded-xl border transition-all duration-200 hover:scale-[1.02] bg-gradient-to-br ${s.grad} ${s.border} hover:border-opacity-80 hover:shadow-lg`}
               style={{ ["--hover-shadow" as string]: `${s.color}20` }}>
 
               {/* Badge */}
               {"badge" in s && s.badge && (
                 <span className="absolute top-2 right-2 text-[8px] font-bold px-1.5 py-0.5 rounded-full"
-                  style={{ background: `${s.color}30`, color: s.color }}>
+                  style={{ background: `${s.color}25`, color: s.color }}>
                   {s.badge}
                 </span>
               )}
 
               {/* Icon */}
               <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: `${s.color}18`, border: `1px solid ${s.color}35` }}>
+                style={{ background: `${s.color}20`, border: `1px solid ${s.color}40` }}>
                 <s.icon className="w-4.5 h-4.5" style={{ color: s.color, width: 18, height: 18 }} />
               </div>
 
               {/* Text */}
               <div>
-                <p className="text-[12.5px] font-semibold text-white/90 group-hover:text-white leading-tight mb-0.5">{s.label}</p>
-                <p className="text-[10.5px] text-white/42 leading-tight">{s.desc}</p>
+                <p className="text-[12.5px] font-semibold text-gray-800 group-hover:text-gray-900 leading-tight mb-0.5">{s.label}</p>
+                <p className="text-[10.5px] text-gray-500 leading-tight">{s.desc}</p>
               </div>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-1 mt-0.5">
                 {s.tags.map(tag => (
                   <span key={tag} className="text-[8.5px] font-medium px-1.5 py-0.5 rounded-full"
-                    style={{ background: `${s.color}15`, color: `${s.color}`, opacity: 0.85 }}>
+                    style={{ background: `${s.color}20`, color: s.color }}>
                     {tag}
                   </span>
                 ))}
@@ -211,25 +211,24 @@ function ServicesMega({ close }: { close: () => void }) {
       </div>
 
       {/* Right: AI CTA panel */}
-      <div className="p-5 flex flex-col justify-between"
-        style={{ background: "linear-gradient(160deg,rgba(109,40,217,0.08) 0%,rgba(139,92,246,0.03) 100%)" }}>
+      <div className="p-5 flex flex-col justify-between bg-violet-50">
         <div>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-            style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.35)" }}>
-            <Sparkles className="w-5 h-5 text-violet-400" />
+            style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)" }}>
+            <Sparkles className="w-5 h-5 text-violet-500" />
           </div>
           <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-violet-400">AI-Powered</span>
+            <span className="text-[9px] font-bold uppercase tracking-wider text-violet-500">AI-Powered</span>
           </div>
-          <p className="text-[14px] font-bold text-white leading-snug mb-2">Every service AI-ready</p>
-          <p className="text-[11.5px] text-white/48 leading-relaxed">
+          <p className="text-[14px] font-bold text-gray-900 leading-snug mb-2">Every service AI-ready</p>
+          <p className="text-[11.5px] text-gray-500 leading-relaxed">
             We layer AI automation into every product we build — chatbots, document AI, predictive analytics.
           </p>
 
           {/* Capability pills */}
           <div className="flex flex-wrap gap-1.5 mt-3">
             {["GPT-4", "RAG", "Agents", "Vision AI"].map(pill => (
-              <span key={pill} className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/20">
+              <span key={pill} className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-violet-100 text-violet-600 border border-violet-200">
                 {pill}
               </span>
             ))}
@@ -237,13 +236,13 @@ function ServicesMega({ close }: { close: () => void }) {
         </div>
 
         <div className="mt-5 space-y-3">
-          <div className="h-px bg-white/8" />
+          <div className="h-px bg-violet-100" />
           <a href="#ai-automation" onClick={close}
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-violet-400 hover:text-violet-300 transition-colors group">
+            className="flex items-center gap-1.5 text-[12px] font-semibold text-violet-600 hover:text-violet-700 transition-colors group">
             Explore AI <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
           <button onClick={() => { close(); openCTAModal(); }}
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-primary hover:text-blue-300 transition-colors group">
+            className="flex items-center gap-1.5 text-[12px] font-semibold text-blue-600 hover:text-blue-700 transition-colors group">
             Get a Quote <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
@@ -311,10 +310,10 @@ function MegaNavItem({
           >
             {/* Arrow — stays centred over the button */}
             <div
-              className="absolute -top-1.5 w-3 h-3 rotate-45 bg-[#0d1526] border-l border-t border-white/10"
+              className="absolute -top-1.5 w-3 h-3 rotate-45 bg-white border-l border-t border-gray-200"
               style={{ left: `calc(50% - ${panelLeft}px - 6px)` }}
             />
-            <div className="mega-panel rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/60 overflow-hidden">
+            <div className="mega-panel rounded-2xl border border-gray-200 bg-white shadow-2xl shadow-gray-300/60 overflow-hidden">
               {children}
             </div>
           </motion.div>
