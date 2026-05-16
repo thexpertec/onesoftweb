@@ -95,7 +95,7 @@ export function Footer() {
               {[
                 { label: "About Us",     href: "#" },
                 { label: "Our Team",     href: "/team" },
-                { label: "Case Studies", href: "#" },
+                { label: "Case Studies", href: "/case-studies" },
                 { label: "Careers",      href: "#" },
                 { label: "Contact",      href: "#contact" },
                 { label: "Blog",         href: "#" },

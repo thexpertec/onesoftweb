@@ -24,6 +24,7 @@ import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import SLAPage from "@/pages/SLAPage";
 import CookiePolicyPage from "@/pages/CookiePolicyPage";
 import OurTeamPage from "@/pages/OurTeamPage";
+import CaseStudiesPage from "@/pages/CaseStudiesPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -54,6 +55,7 @@ function Router() {
       <Route path="/sla" component={SLAPage} />
       <Route path="/cookie-policy" component={CookiePolicyPage} />
       <Route path="/team" component={OurTeamPage} />
+      <Route path="/case-studies" component={CaseStudiesPage} />
       <Route component={NotFound} />
     </Switch>
   );

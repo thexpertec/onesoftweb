@@ -16,6 +16,7 @@ import { CTAStrip } from "@/components/CTAStrip";
 import { CTAFormSection } from "@/components/CTAFormSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { AIAutomationSection } from "@/components/AIAutomationSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -211,6 +212,8 @@ export default function Home() {
       <AIAutomationSection />
 
       <HowWeWork />
+
+      <CaseStudiesSection />
 
       {/* Testimonials */}
       <section className="py-8 md:py-10 lg:py-[60px] bg-secondary/30 border-y border-border">
