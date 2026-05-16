@@ -47,6 +47,7 @@ function Router() {
       <Route path="/ad-creatives" component={AdCreativesPage} />
       <Route path="/seo" component={SEOPage} />
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+      <Route path="/terms-of-service" component={TermsOfServicePage} />
       <Route component={NotFound} />
     </Switch>
   );
