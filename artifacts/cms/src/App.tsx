@@ -26,6 +26,7 @@ import FeatureHighlightsPage from "@/pages/FeatureHighlightsPage";
 import WebDevCMSPage from "@/pages/WebDevCMSPage";
 import CustomSoftwareCMSPage from "@/pages/CustomSoftwareCMSPage";
 import AIAutomationServiceCMSPage from "@/pages/AIAutomationServiceCMSPage";
+import SocialMediaCMSPage from "@/pages/SocialMediaCMSPage";
 import RolesPage from "@/pages/RolesPage";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ function Router() {
       <Route path="/web-development"      component={() => <ProtectedRoute component={WebDevCMSPage} />} />
       <Route path="/custom-software"     component={() => <ProtectedRoute component={CustomSoftwareCMSPage} />} />
       <Route path="/ai-automation-svc"  component={() => <ProtectedRoute component={AIAutomationServiceCMSPage} />} />
+      <Route path="/social-media-svc"   component={() => <ProtectedRoute component={SocialMediaCMSPage} />} />
       <Route path="/roles"               component={() => <ProtectedRoute component={RolesPage} />} />
       <Route component={() => <Redirect to="/" />} />
     </Switch>
