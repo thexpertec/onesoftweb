@@ -7,13 +7,7 @@ import {
   AlignLeft, Undo, Redo, Globe, Calendar,
   User, Tag,
 } from "lucide-react";
-
-const INTERESTS = [
-  "ERP & Business Software",
-  "Digital Marketing",
-  "AI & Automation",
-  "Custom Software & Web",
-];
+import { INITIAL_CATEGORIES } from "@/data/blogCategories";
 
 const AUTHORS = ["Omar Farooq", "Aisha Malik", "Zain Ahmed", "Bilal Qureshi", "Fatima Khan", "Hamza Siddiqui"];
 
@@ -32,7 +26,7 @@ const SAMPLE = {
 export default function BlogEditPage() {
   const [, params] = useRoute("/blog/:id/edit");
   const isNew = params?.id === "new";
-  const [form, setForm] = useState(isNew ? { title: "", slug: "", excerpt: "", category: INTERESTS[0], author: AUTHORS[0], status: "draft", date: "", tags: "", body: "" } : SAMPLE);
+  const [form, setForm] = useState(isNew ? { title: "", slug: "", excerpt: "", category: INITIAL_CATEGORIES[0].name, author: AUTHORS[0], status: "draft", date: "", tags: "", body: "" } : SAMPLE);
   const [saved, setSaved] = useState(false);
 
   const set = (k: string) => (e: any) => setForm(f => ({ ...f, [k]: e.target.value }));
@@ -157,7 +151,7 @@ export default function BlogEditPage() {
                   <div className="relative">
                     <select value={form.category} onChange={set("category")}
                       className="w-full appearance-none px-3 py-2 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 transition-all">
-                      {INTERESTS.map(i => <option key={i}>{i}</option>)}
+                      {INITIAL_CATEGORIES.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
                     </select>
                     <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground pointer-events-none" />
                   </div>
