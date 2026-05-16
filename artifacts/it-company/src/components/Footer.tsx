@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Twitter, Linkedin, Youtube, Github, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
+
 const colVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
@@ -119,12 +120,17 @@ export function Footer() {
           >
             <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
             <ul className="space-y-3 mb-8">
-              {["Privacy Policy", "Terms of Service", "SLA Agreement", "Cookie Policy"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
+              {[
+                { label: "Privacy Policy",   href: "/privacy-policy" },
+                { label: "Terms of Service", href: "#" },
+                { label: "SLA Agreement",    href: "#" },
+                { label: "Cookie Policy",    href: "#" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
                     <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
-                    {item}
-                  </a>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

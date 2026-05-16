@@ -19,6 +19,7 @@ import AIAutomationPage from "@/pages/AIAutomationPage";
 import SocialMediaPage from "@/pages/SocialMediaPage";
 import AdCreativesPage from "@/pages/AdCreativesPage";
 import SEOPage from "@/pages/SEOPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -44,6 +45,7 @@ function Router() {
       <Route path="/social-media" component={SocialMediaPage} />
       <Route path="/ad-creatives" component={AdCreativesPage} />
       <Route path="/seo" component={SEOPage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route component={NotFound} />
     </Switch>
   );
