@@ -20,6 +20,7 @@ import SocialMediaPage from "@/pages/SocialMediaPage";
 import AdCreativesPage from "@/pages/AdCreativesPage";
 import SEOPage from "@/pages/SEOPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
