@@ -363,20 +363,12 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             {[
               { label: "AI Automation", href: "#ai-automation", violet: true },
-              { label: "Accounting", href: "/accounting", blue: true },
-              { label: "School ERP", href: "/school", blue: true },
-              { label: "Hospital ERP", href: "/hospital", blue: true },
-              { label: "Restaurant ERP", href: "/restaurant", blue: true },
-              { label: "E-commerce ERP", href: "/ecommerce", blue: true },
-              { label: "Distributor ERP", href: "/distributor", blue: true },
-              { label: "Shadi Hall ERP", href: "/shadi-hall", blue: true },
               { label: "OneSites", href: "/onethemes" },
               { label: "Why OneSoft", href: "/about" },
             ].map(item => (
               <a key={item.label} href={item.href} onClick={onClose}
-                className={`flex py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : (item as any).blue ? "text-[#1E4DA0]" : "text-white"}`}>
-                {item.violet && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse mr-2 mt-1.5" />}
-                {(item as any).blue && <span className="w-1.5 h-1.5 rounded-full bg-[#1E4DA0] animate-pulse mr-2 mt-1.5" />}
+                className={`flex items-center py-3 text-sm font-semibold border-b border-white/8 ${item.violet ? "text-violet-400" : "text-white/85"}`}>
+                {item.violet && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse mr-2" />}
                 {item.label}
               </a>
             ))}
