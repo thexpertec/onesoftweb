@@ -31,6 +31,7 @@ import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
+import { EditModeProvider } from "@/context/EditModeContext";
 import { CTAModal } from "@/components/CTAModal";
 
 const queryClient = new QueryClient();
@@ -73,15 +74,17 @@ function App() {
   return (
     <ThemeProvider>
       <CTAModalProvider>
-        <QueryClientProvider client={queryClient}>
-          <TooltipProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <Router />
-            </WouterRouter>
-            <Toaster />
-            <CTAModal />
-          </TooltipProvider>
-        </QueryClientProvider>
+        <EditModeProvider>
+          <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+              <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                <Router />
+              </WouterRouter>
+              <Toaster />
+              <CTAModal />
+            </TooltipProvider>
+          </QueryClientProvider>
+        </EditModeProvider>
       </CTAModalProvider>
     </ThemeProvider>
   );
