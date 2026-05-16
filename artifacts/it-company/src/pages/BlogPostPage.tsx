@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { Link, useRoute } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -57,6 +59,23 @@ export default function BlogPostPage() {
   const [, params] = useRoute("/blog/:slug");
   const slug = params?.slug ?? "";
   const post = getPost(slug);
+
+  useSEO(post ? {
+    title:       `${post.title} | OneSoft Blog`,
+    description: post.excerpt,
+    canonical:   `https://onesoft.org.uk/blog/${post.slug}`,
+    ogType:      "article",
+    jsonLd: {
+      "@context":      "https://schema.org",
+      "@type":         "Article",
+      headline:        post.title,
+      description:     post.excerpt,
+      author:          { "@type": "Person", name: post.author, jobTitle: post.authorRole },
+      publisher:       { "@type": "Organization", name: "OneSoft", url: "https://onesoft.org.uk" },
+      datePublished:   post.date,
+      keywords:        post.tags.join(", "),
+    },
+  } : PAGE_SEO.blog);
 
   const pageBg       = isLight ? "#ffffff"             : "#070e1c";
   const sectionBg    = isLight ? "#F5F5F5"             : "#04091a";

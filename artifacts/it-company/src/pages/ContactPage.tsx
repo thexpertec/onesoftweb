@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -150,6 +152,7 @@ function FAQRow({ q, a, divider, cardBg, t70, t45, headingColor }:
 
 /* ── Page ─────────────────────────────────────────────────── */
 export default function ContactPage() {
+  useSEO(PAGE_SEO.contact);
   const { theme } = useTheme();
   const isLight = theme === "light";
 

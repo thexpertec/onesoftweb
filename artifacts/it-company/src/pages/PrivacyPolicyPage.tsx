@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useTheme } from "@/context/ThemeContext";
@@ -152,6 +154,7 @@ function Para({ text, color }: { text: string; color: string }) {
 
 /* ── Page ─────────────────────────────────────────────────── */
 export default function PrivacyPolicyPage() {
+  useSEO(PAGE_SEO.privacy);
   const { theme } = useTheme();
   const isLight = theme === "light";
 

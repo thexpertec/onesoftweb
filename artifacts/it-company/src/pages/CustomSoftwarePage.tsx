@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -121,6 +123,7 @@ const industries = [
 /* ── Page ─────────────────────────────────────────────────── */
 
 export default function CustomSoftwarePage() {
+  useSEO(PAGE_SEO.customSoftware);
   const { openCTAModal } = useCTAModal();
   const { theme } = useTheme();
   const isLight = theme === "light";

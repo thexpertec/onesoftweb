@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { CTAStrip } from "@/components/CTAStrip";
@@ -100,6 +102,7 @@ const stats = [
 /* ── Page ─────────────────────────────────────────────────── */
 
 export default function OurTeamPage() {
+  useSEO(PAGE_SEO.team);
   const { theme } = useTheme();
   const { openCTAModal } = useCTAModal();
   const isLight = theme === "light";

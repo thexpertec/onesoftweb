@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { useCTAModal } from "@/context/CTAModalContext";
 import { Navigation } from "@/components/Navigation";
@@ -64,6 +66,7 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  useSEO(PAGE_SEO.home);
   const { openCTAModal } = useCTAModal();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">

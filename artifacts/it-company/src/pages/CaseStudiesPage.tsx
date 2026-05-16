@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -293,6 +295,7 @@ function CaseStudyCard({ cs, isLight, divider, cardBg, t70, t45, headingColor, s
 
 /* ── Page ─────────────────────────────────────────────────── */
 export default function CaseStudiesPage() {
+  useSEO(PAGE_SEO.caseStudies);
   const { theme } = useTheme();
   const { openCTAModal } = useCTAModal();
   const isLight = theme === "light";

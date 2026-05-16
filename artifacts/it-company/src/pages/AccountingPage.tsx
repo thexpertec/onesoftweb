@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
@@ -959,6 +961,7 @@ const testimonials = [
 /* ─────────────────────────── Page ─────────────────────────── */
 
 export default function AccountingPage() {
+  useSEO(PAGE_SEO.accounting);
   const { openCTAModal } = useCTAModal();
   const { theme } = useTheme();
   const isLight = theme === "light";

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
@@ -13,6 +15,7 @@ import {
 const BLUE = "#1E4DA0";
 
 export default function BlogPage() {
+  useSEO(PAGE_SEO.blog);
   const { theme } = useTheme();
   const isLight = theme === "light";
   const [activeCategory, setActiveCategory] = useState("All");

@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
@@ -400,6 +402,7 @@ const testimonials = [
 /* ─────────────────── Page ───────────────────────────────── */
 
 export default function SchoolPage() {
+  useSEO(PAGE_SEO.school);
   const { openCTAModal } = useCTAModal();
   const { theme } = useTheme();
   const isLight = theme === "light";

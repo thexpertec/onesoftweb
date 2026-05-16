@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -89,6 +91,7 @@ const milestones = [
 ];
 
 export default function AboutPage() {
+  useSEO(PAGE_SEO.about);
   const { openCTAModal } = useCTAModal();
   const { theme } = useTheme();
   const isLight = theme === "light";

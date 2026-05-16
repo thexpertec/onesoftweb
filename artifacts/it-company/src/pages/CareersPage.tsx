@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -294,6 +296,7 @@ function RoleCard({ role, color, isLight, divider, cardBg, sectionBg, t45, t70, 
 
 /* ── Page ─────────────────────────────────────────────────── */
 export default function CareersPage() {
+  useSEO(PAGE_SEO.careers);
   const { theme } = useTheme();
   const { openCTAModal } = useCTAModal();
   const isLight = theme === "light";
