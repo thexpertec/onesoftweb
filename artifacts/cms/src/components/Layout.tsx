@@ -49,6 +49,7 @@ const modules = [
       { path: "/custom-software",   label: "↳ Custom Software Page",  count: 9  },
       { path: "/ai-automation-svc", label: "↳ AI & Automation Page",  count: 9  },
       { path: "/social-media-svc",  label: "↳ Social Media Page",     count: 9  },
+      { path: "/ad-creatives-svc",  label: "↳ Ad Creatives Page",     count: 9  },
     ],
   },
   {

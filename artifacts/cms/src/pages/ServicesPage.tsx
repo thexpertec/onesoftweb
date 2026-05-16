@@ -8,6 +8,7 @@ const PAGE_EDITORS: Record<string, string> = {
   "/custom-software":  "/custom-software",
   "/ai-automation":    "/ai-automation-svc",
   "/social-media":     "/social-media-svc",
+  "/ad-creatives":     "/ad-creatives-svc",
 };
 
 const services = [
