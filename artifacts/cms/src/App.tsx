@@ -18,6 +18,9 @@ import SettingsPage from "@/pages/SettingsPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import FAQsPage from "@/pages/FAQsPage";
 import ClientsPage from "@/pages/ClientsPage";
+import ProcessPage from "@/pages/ProcessPage";
+import HomepageServicesPage from "@/pages/HomepageServicesPage";
+import AIAutomationCMSPage from "@/pages/AIAutomationCMSPage";
 
 const queryClient = new QueryClient();
 
@@ -48,9 +51,12 @@ function Router() {
       <Route path="/pages"        component={() => <ProtectedRoute component={PagesPage} />} />
       <Route path="/media"        component={() => <ProtectedRoute component={MediaPage} />} />
       <Route path="/settings"      component={() => <ProtectedRoute component={SettingsPage} />} />
-      <Route path="/testimonials"  component={() => <ProtectedRoute component={TestimonialsPage} />} />
-      <Route path="/faqs"          component={() => <ProtectedRoute component={FAQsPage} />} />
-      <Route path="/clients"       component={() => <ProtectedRoute component={ClientsPage} />} />
+      <Route path="/testimonials"       component={() => <ProtectedRoute component={TestimonialsPage} />} />
+      <Route path="/faqs"               component={() => <ProtectedRoute component={FAQsPage} />} />
+      <Route path="/clients"            component={() => <ProtectedRoute component={ClientsPage} />} />
+      <Route path="/process"            component={() => <ProtectedRoute component={ProcessPage} />} />
+      <Route path="/homepage-services"  component={() => <ProtectedRoute component={HomepageServicesPage} />} />
+      <Route path="/ai-automation-cms"  component={() => <ProtectedRoute component={AIAutomationCMSPage} />} />
       <Route component={() => <Redirect to="/" />} />
     </Switch>
   );

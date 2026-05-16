@@ -6,7 +6,7 @@ import {
   BookOpen, Users, Briefcase, FileStack,
   Image, Settings, ChevronDown, LogOut,
   Menu, X, Bell, ExternalLink, ChevronRight,
-  Star, MessageSquare, Building2,
+  Star, MessageSquare, Building2, ListChecks, Grid3X3, Bot,
 } from "lucide-react";
 
 const BLUE = "#1E4DA0";
@@ -23,9 +23,12 @@ const navSections = [
   {
     label: "Homepage Sections",
     items: [
-      { path: "/testimonials", icon: Star,           label: "Testimonials", count: 5 },
-      { path: "/faqs",         icon: MessageSquare,  label: "FAQs",         count: 10 },
-      { path: "/clients",      icon: Building2,      label: "Clients & Logos", count: 32 },
+      { path: "/testimonials",      icon: Star,           label: "Testimonials",      count: 5 },
+      { path: "/faqs",              icon: MessageSquare,  label: "FAQs",              count: 10 },
+      { path: "/clients",           icon: Building2,      label: "Clients & Logos",   count: 32 },
+      { path: "/process",           icon: ListChecks,     label: "How We Work",       count: 4 },
+      { path: "/homepage-services", icon: Grid3X3,        label: "Services Grid",     count: 11 },
+      { path: "/ai-automation-cms", icon: Bot,            label: "AI & Automation",   count: 6 },
     ],
   },
   {

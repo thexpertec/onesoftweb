@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Layout, PageHeader, Btn, Breadcrumb } from "@/components/Layout";
-import { Save, Globe, Mail, Phone, MapPin, Shield, Bell, Code2, Users, ChevronRight, Edit2, X, BarChart3 } from "lucide-react";
+import { Save, Globe, Mail, Phone, MapPin, Shield, Bell, Code2, Users, ChevronRight, Edit2, X, BarChart3, Navigation, Layout as LayoutIcon, Plus, Trash2, GripVertical, ExternalLink, Linkedin, Twitter, Youtube, Instagram, Facebook } from "lucide-react";
 
 const TABS = [
-  { id: "general",  label: "General",      icon: Globe },
-  { id: "seo",      label: "SEO",          icon: Code2 },
-  { id: "contact",  label: "Contact",      icon: Mail },
-  { id: "offices",  label: "Offices",      icon: MapPin },
-  { id: "stats",    label: "Site Stats",   icon: BarChart3 },
-  { id: "users",    label: "Admin Users",  icon: Users },
-  { id: "notifs",   label: "Notifications",icon: Bell },
-  { id: "security", label: "Security",     icon: Shield },
+  { id: "general",    label: "General",      icon: Globe },
+  { id: "seo",        label: "SEO",          icon: Code2 },
+  { id: "contact",    label: "Contact",      icon: Mail },
+  { id: "offices",    label: "Offices",      icon: MapPin },
+  { id: "stats",      label: "Site Stats",   icon: BarChart3 },
+  { id: "navigation", label: "Navigation",   icon: Navigation },
+  { id: "footer",     label: "Footer",       icon: LayoutIcon },
+  { id: "users",      label: "Admin Users",  icon: Users },
+  { id: "notifs",     label: "Notifications",icon: Bell },
+  { id: "security",   label: "Security",     icon: Shield },
 ];
 
 function Field({ label, value, onChange, type = "text", mono = false, hint }:
@@ -244,6 +246,146 @@ export default function SettingsPage() {
                   </div>
                   <div className="bg-primary/5 border border-primary/20 rounded-xl px-4 py-3">
                     <p className="text-xs text-foreground">These stats are currently hardcoded in the site build. After saving here, a developer needs to push an update for the live site to reflect the new values.</p>
+                  </div>
+                </div>
+              )}
+
+              {tab === "navigation" && (
+                <div className="space-y-5">
+                  <p className="text-xs text-muted-foreground">Manage the labels and order of top-level navigation items. ERP product links and service links are auto-generated from the Products and Services sections.</p>
+
+                  <div>
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Main Navigation Links</p>
+                    <div className="space-y-2">
+                      {[
+                        { label: "Home", path: "/", type: "built-in", visible: true },
+                        { label: "About", path: "/about", type: "built-in", visible: true },
+                        { label: "ERP Products", path: "#", type: "dropdown", visible: true },
+                        { label: "Services", path: "#", type: "dropdown", visible: true },
+                        { label: "Case Studies", path: "/case-studies", type: "built-in", visible: true },
+                        { label: "Our Team", path: "/team", type: "built-in", visible: true },
+                        { label: "Blog", path: "/blog", type: "built-in", visible: true },
+                        { label: "Careers", path: "/careers", type: "built-in", visible: true },
+                        { label: "Contact", path: "/contact", type: "built-in", visible: true },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-border bg-background hover:border-primary/30 transition-all">
+                          <GripVertical className="w-4 h-4 text-muted-foreground/30 cursor-grab shrink-0" />
+                          <div className="flex-1 grid grid-cols-3 gap-3 items-center">
+                            <span className="text-sm font-semibold text-foreground">{item.label}</span>
+                            <span className="text-xs font-mono text-muted-foreground">{item.path}</span>
+                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full w-fit ${item.type === "dropdown" ? "bg-amber-100 text-amber-700" : "bg-muted text-muted-foreground"}`}>
+                              {item.type}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 shrink-0">
+                            <span className={`w-2 h-2 rounded-full ${item.visible ? "bg-green-400" : "bg-muted"}`} />
+                            <span className="text-[11px] text-muted-foreground">{item.visible ? "Visible" : "Hidden"}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">CTA Button</p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <Field label="CTA Label" value="Book Free Consultation" onChange={() => {}} />
+                      <Field label="CTA Link / Action" value="#contact" onChange={() => {}} mono />
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-2">ERP Dropdown — Products Listed</p>
+                    <p className="text-xs text-muted-foreground mb-3">These are drawn automatically from the <button onClick={() => {}} className="text-primary underline">ERP Products</button> section. To reorder them, manage them there.</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {["School ERP", "Hospital ERP", "Restaurant ERP", "E-commerce ERP", "Distributor ERP", "Shadi Hall ERP", "Accounting ERP", "OneSites"].map(p => (
+                        <span key={p} className="text-[11px] px-2.5 py-1 rounded-full border border-border bg-background text-muted-foreground">{p}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+                    <p className="text-xs text-amber-800">Navigation reordering and live editing will be wired to the site in a future release. Changes here update the CMS record — a developer push is needed for live site changes.</p>
+                  </div>
+                </div>
+              )}
+
+              {tab === "footer" && (
+                <div className="space-y-5">
+                  <div>
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Brand & Tagline</p>
+                    <div className="space-y-3">
+                      <Field label="Footer Tagline" value="Smart software for ambitious businesses." onChange={() => {}} />
+                      <div>
+                        <label className="block text-xs font-semibold text-muted-foreground mb-1.5">Footer About Copy</label>
+                        <textarea defaultValue="OneSoft builds ERP systems, custom software, and digital marketing solutions for businesses in the UK, UAE, and Pakistan. From schools to hospitals to e-commerce — we digitise the work that holds your team back."
+                          rows={3} className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 resize-none" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Social Media Links</p>
+                    <div className="space-y-3">
+                      {[
+                        { icon: Linkedin, label: "LinkedIn", placeholder: "https://linkedin.com/company/onesoft", value: "https://linkedin.com/company/onesoft" },
+                        { icon: Twitter,   label: "X (Twitter)", placeholder: "https://x.com/onesoftuk", value: "https://x.com/onesoftuk" },
+                        { icon: Youtube,   label: "YouTube", placeholder: "https://youtube.com/@onesoft", value: "" },
+                        { icon: Instagram, label: "Instagram", placeholder: "https://instagram.com/onesoftuk", value: "" },
+                        { icon: Facebook,  label: "Facebook", placeholder: "https://facebook.com/onesoft", value: "" },
+                      ].map(({ icon: Icon, label, placeholder, value }) => (
+                        <div key={label} className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                            <Icon className="w-4 h-4 text-muted-foreground" />
+                          </div>
+                          <div className="flex-1">
+                            <input defaultValue={value} placeholder={placeholder}
+                              className="w-full px-3 py-2 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 font-mono" />
+                          </div>
+                          <div className={`w-2 h-2 rounded-full shrink-0 ${value ? "bg-green-400" : "bg-muted"}`} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Footer Link Columns</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {[
+                        { title: "ERP Products", links: ["School ERP", "Hospital ERP", "Restaurant ERP", "E-commerce ERP", "Distributor ERP", "Shadi Hall ERP", "Accounting ERP"] },
+                        { title: "Services", links: ["Web Development", "Custom Software", "AI & Automation", "Social Media", "SEO", "Ad Creatives"] },
+                        { title: "Company", links: ["About Us", "Our Team", "Careers", "Case Studies", "Blog", "Contact"] },
+                      ].map(col => (
+                        <div key={col.title} className="bg-background border border-border rounded-xl p-3">
+                          <p className="text-xs font-bold text-foreground mb-2">{col.title}</p>
+                          <ul className="space-y-1">
+                            {col.links.map(l => (
+                              <li key={l} className="flex items-center justify-between gap-2 group">
+                                <span className="text-xs text-muted-foreground">{l}</span>
+                                <Edit2 className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" />
+                              </li>
+                            ))}
+                          </ul>
+                          <button className="mt-2 text-[11px] text-primary flex items-center gap-1 hover:underline">
+                            <Plus className="w-3 h-3" /> Add link
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Legal & Copyright</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <Field label="Copyright Text" value="© 2025 OneSoft Ltd. All rights reserved." onChange={() => {}} />
+                      <Field label="Company Registration" value="Registered in England & Wales" onChange={() => {}} />
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      {["Privacy Policy", "Terms of Service", "SLA", "Cookie Policy"].map(l => (
+                        <span key={l} className="text-[11px] px-2.5 py-1 rounded-full border border-border bg-background text-primary cursor-pointer hover:border-primary/40 transition-colors">{l}</span>
+                      ))}
+                    </div>
+                    <p className="text-[11px] text-muted-foreground mt-2">Legal pages are managed under <button className="text-primary underline">Pages</button>.</p>
                   </div>
                 </div>
               )}
