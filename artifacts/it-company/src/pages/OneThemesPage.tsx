@@ -251,6 +251,134 @@ export default function OneThemesPage() {
         </div>
       </div>
 
+      {/* ═══ CLIENT PORTFOLIO — TOSSDOWN ══════════════════════ */}
+      <div style={{ background: isLight ? "#0a0a0a" : "#04080f", borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }}
+        className="py-8 md:py-10 lg:py-[60px] overflow-hidden">
+
+        {/* Header */}
+        <div className="container mx-auto px-4 mb-10">
+          <motion.div className="flex flex-col md:flex-row md:items-end justify-between gap-4"
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
+                style={{ background: "rgba(30,77,160,0.18)", border: "1px solid rgba(30,77,160,0.35)", color: "#4FC6FF" }}>
+                <Star className="w-3 h-3" /> Featured Client Work
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                Built by OneSites
+              </h2>
+              <p className="text-sm mt-2" style={{ color: "rgba(255,255,255,0.45)" }}>
+                A look at real projects delivered for our clients.
+              </p>
+            </div>
+            <a href="https://tossdown.com" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shrink-0"
+              style={{ background: "rgba(30,77,160,0.20)", border: "1px solid rgba(30,77,160,0.40)", color: "#fff" }}>
+              View Live Site <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Auto-scrolling portfolio strip */}
+        <div className="relative w-full overflow-hidden mb-10">
+          {/* Left fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+            style={{ background: isLight ? "linear-gradient(to right,#0a0a0a,transparent)" : "linear-gradient(to right,#04080f,transparent)" }} />
+          {/* Right fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+            style={{ background: isLight ? "linear-gradient(to left,#0a0a0a,transparent)" : "linear-gradient(to left,#04080f,transparent)" }} />
+
+          <div className="flex w-max"
+            style={{ animation: "marquee-left 28s linear infinite" }}>
+            <img src="/tossdown-portfolio.png" alt="Tossdown app portfolio"
+              className="h-52 md:h-64 object-cover object-center select-none"
+              style={{ minWidth: "auto", userSelect: "none", pointerEvents: "none" }} />
+            <img src="/tossdown-portfolio.png" alt="Tossdown app portfolio"
+              className="h-52 md:h-64 object-cover object-center select-none"
+              style={{ minWidth: "auto", userSelect: "none", pointerEvents: "none" }} />
+          </div>
+        </div>
+
+        {/* Project card */}
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}
+            className="rounded-2xl overflow-hidden"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+
+            <div className="flex flex-col md:flex-row">
+              {/* Preview panel */}
+              <div className="md:w-[340px] shrink-0 overflow-hidden relative"
+                style={{ background: "#0e0e10", borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+                <img src="/tossdown-site.png" alt="Tossdown website"
+                  className="w-full h-48 md:h-full object-cover object-top" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)" }} />
+                <div className="absolute bottom-3 left-3">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{ background: "rgba(30,77,160,0.85)", color: "#fff" }}>
+                    Live Project
+                  </span>
+                </div>
+              </div>
+
+              {/* Info panel */}
+              <div className="flex-1 p-7 md:p-10 flex flex-col justify-between gap-6">
+                <div>
+                  {/* Brand */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-white text-sm"
+                      style={{ background: "linear-gradient(135deg,#d63384,#9c1e5f)" }}>T</div>
+                    <div>
+                      <p className="text-lg font-black text-white leading-tight">Tossdown</p>
+                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>tossdown.com</p>
+                    </div>
+                  </div>
+
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.60)" }}>
+                    A growth marketing platform built for multi-location restaurants, supermarkets, and food brands.
+                    Tossdown delivers AI-powered ordering, loyalty & rewards, digital menu boards, and insightful
+                    analytics — all in a single connected platform. OneSites delivered the full web presence
+                    and digital experience from discovery to launch.
+                  </p>
+
+                  {/* Feature highlights from their portfolio */}
+                  <div className="grid grid-cols-2 gap-2 mb-6">
+                    {[
+                      "Merchandising by food experts",
+                      "Loyalty & Rewards engine",
+                      "Insightful analytics dashboard",
+                      "Digital menu board integration",
+                    ].map(f => (
+                      <div key={f} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: "#1E4DA0" }} />
+                        <span className="text-xs" style={{ color: "rgba(255,255,255,0.60)" }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {["Food Tech", "React", "AI-Powered", "Restaurant", "Marketing Platform"].map(tag => (
+                      <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                        style={{ background: "rgba(30,77,160,0.18)", border: "1px solid rgba(30,77,160,0.30)", color: "rgba(255,255,255,0.70)" }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a href="https://tossdown.com" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:opacity-90"
+                    style={{ background: "#1E4DA0", color: "#fff" }}>
+                    Visit Tossdown <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
       {/* ═══ STATS ══════════════════════════════════════════════ */}
       <div style={{ background: isLight ? "rgba(0,0,0,0.03)" : "rgba(255,255,255,0.03)", borderTop: `1px solid ${dividerColor}`, borderBottom: `1px solid ${dividerColor}` }}
         className="py-10 mt-10">
