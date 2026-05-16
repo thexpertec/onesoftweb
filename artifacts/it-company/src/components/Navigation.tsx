@@ -299,7 +299,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed inset-0 z-50 bg-[#070d1a] flex flex-col overflow-y-auto"
+          className="fixed inset-0 z-50 flex flex-col overflow-y-auto"
+          style={{ backgroundColor: '#070d1a' }}
         >
           <div className="flex items-center justify-between px-5 h-16 border-b border-white/8 shrink-0">
             <div className="flex items-center">
