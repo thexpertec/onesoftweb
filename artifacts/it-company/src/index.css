@@ -219,6 +219,16 @@ html {
   border-bottom-color: #e5e5e5 !important;
 }
 
+/* ── Elements on dark backgrounds always keep white text ──────── */
+[data-theme="light"] .bg-primary.text-white,
+[data-theme="light"] .bg-primary .text-white,
+[data-theme="light"] [style*="background:#1E4DA0"].text-white,
+[data-theme="light"] [style*="background:#1E4DA0"] .text-white,
+[data-theme="light"] [style*="background: #1E4DA0"].text-white,
+[data-theme="light"] [style*="background: #1E4DA0"] .text-white {
+  color: #ffffff !important;
+}
+
 /* ── ALL white-opacity text variants → dark slate ───────────── */
 [data-theme="light"] .text-white {
   color: #000000 !important;
