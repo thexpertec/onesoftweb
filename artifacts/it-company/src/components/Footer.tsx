@@ -98,7 +98,7 @@ export function Footer() {
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Careers",      href: "/careers" },
                 { label: "Contact",      href: "/contact" },
-                { label: "Blog",         href: "#" },
+                { label: "Blog",         href: "/blog" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <a href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
