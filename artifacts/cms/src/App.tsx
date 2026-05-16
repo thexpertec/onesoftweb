@@ -1,41 +1,67 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
+import LoginPage from "@/pages/LoginPage";
+import DashboardPage from "@/pages/DashboardPage";
+import BlogListPage from "@/pages/blog/BlogListPage";
+import BlogEditPage from "@/pages/blog/BlogEditPage";
+import ProductsPage from "@/pages/ProductsPage";
+import ServicesPage from "@/pages/ServicesPage";
+import CaseStudiesPage from "@/pages/CaseStudiesPage";
+import TeamPage from "@/pages/TeamPage";
+import CareersPage from "@/pages/CareersPage";
+import PagesPage from "@/pages/PagesPage";
+import MediaPage from "@/pages/MediaPage";
+import SettingsPage from "@/pages/SettingsPage";
 
 const queryClient = new QueryClient();
 
-function Home() {
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-gray-900">Replit Agent is building...</h1>
-        <p className="mt-2 text-sm text-gray-600">Your app will appear here once it's ready.</p>
-      </div>
+function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
+  const { user, isLoading } = useAuth();
+  if (isLoading) return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
     </div>
   );
+  if (!user) return <Redirect to="/login" />;
+  return <Component />;
 }
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/"             component={() => <ProtectedRoute component={DashboardPage} />} />
+      <Route path="/blog"         component={() => <ProtectedRoute component={BlogListPage} />} />
+      <Route path="/blog/new"     component={() => <ProtectedRoute component={BlogEditPage} />} />
+      <Route path="/blog/:id/edit" component={() => <ProtectedRoute component={BlogEditPage} />} />
+      <Route path="/products"     component={() => <ProtectedRoute component={ProductsPage} />} />
+      <Route path="/services"     component={() => <ProtectedRoute component={ServicesPage} />} />
+      <Route path="/case-studies" component={() => <ProtectedRoute component={CaseStudiesPage} />} />
+      <Route path="/team"         component={() => <ProtectedRoute component={TeamPage} />} />
+      <Route path="/careers"      component={() => <ProtectedRoute component={CareersPage} />} />
+      <Route path="/pages"        component={() => <ProtectedRoute component={PagesPage} />} />
+      <Route path="/media"        component={() => <ProtectedRoute component={MediaPage} />} />
+      <Route path="/settings"     component={() => <ProtectedRoute component={SettingsPage} />} />
+      <Route component={() => <Redirect to="/" />} />
     </Switch>
   );
 }
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <Router />
+          </WouterRouter>
+          <Toaster />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </AuthProvider>
   );
 }
 
