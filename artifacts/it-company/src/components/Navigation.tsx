@@ -90,7 +90,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-emerald-600/20 to-teal-500/5",
     border: "border-emerald-500/20",
-    href: "#services",
+    href: "/seo",
   },
 ];
 
