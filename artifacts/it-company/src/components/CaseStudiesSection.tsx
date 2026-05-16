@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, TrendingUp } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
 const BLUE = "#1E4DA0";
 
@@ -53,6 +54,16 @@ export const featuredCaseStudies = [
 ];
 
 export default function CaseStudiesSection() {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
+  const cardBg      = isLight ? "#ffffff"              : "#07111f";
+  const cardBorder  = isLight ? "rgba(0,0,0,0.08)"     : "rgba(255,255,255,0.08)";
+  const headingCol  = isLight ? "#0f172a"               : "#ffffff";
+  const t65         = isLight ? "rgba(15,23,42,0.70)"   : "rgba(255,255,255,0.65)";
+  const t45         = isLight ? "rgba(15,23,42,0.50)"   : "rgba(255,255,255,0.45)";
+  const t40         = isLight ? "rgba(15,23,42,0.45)"   : "rgba(255,255,255,0.40)";
+
   return (
     <section className="py-8 md:py-10 lg:py-[60px] border-t border-border">
       <div className="container mx-auto px-4">
@@ -64,10 +75,11 @@ export default function CaseStudiesSection() {
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
               Case Studies
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
+              style={{ color: headingCol }}>
               Real businesses. Real results.
             </h2>
-            <p className="mt-3 text-muted-foreground text-lg max-w-xl">
+            <p className="mt-3 text-lg max-w-xl" style={{ color: t65 }}>
               Numbers from clients who use OneSoft products and services every day.
             </p>
           </div>
@@ -85,7 +97,7 @@ export default function CaseStudiesSection() {
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.1 }}
               className="group rounded-2xl overflow-hidden flex flex-col"
-              style={{ background: "var(--card, #07111f)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              style={{ background: cardBg, border: `1px solid ${cardBorder}` }}>
 
               {/* Top colour bar */}
               <div className="h-1" style={{ background: cs.tagColor }} />
@@ -97,17 +109,17 @@ export default function CaseStudiesSection() {
                     style={{ background: `${cs.tagColor}18`, color: cs.tagColor, border: `1px solid ${cs.tagColor}30` }}>
                     {cs.tag}
                   </span>
-                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <span className="text-xs" style={{ color: t40 }}>
                     {cs.flag} {cs.location}
                   </span>
                 </div>
 
                 {/* Client + headline */}
                 <div>
-                  <p className="text-xs font-semibold mb-1" style={{ color: "rgba(255,255,255,0.45)" }}>
+                  <p className="text-xs font-semibold mb-1" style={{ color: t45 }}>
                     {cs.client}
                   </p>
-                  <h3 className="text-base font-black leading-snug text-white">
+                  <h3 className="text-base font-black leading-snug" style={{ color: headingCol }}>
                     {cs.headline}
                   </h3>
                 </div>
@@ -118,7 +130,7 @@ export default function CaseStudiesSection() {
                     <div key={r.label} className="rounded-xl p-3 text-center"
                       style={{ background: `${cs.tagColor}10`, border: `1px solid ${cs.tagColor}22` }}>
                       <p className="text-sm font-black" style={{ color: cs.tagColor }}>{r.value}</p>
-                      <p className="text-[10px] leading-tight mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>
+                      <p className="text-[10px] leading-tight mt-0.5" style={{ color: t45 }}>
                         {r.label}
                       </p>
                     </div>
@@ -127,16 +139,16 @@ export default function CaseStudiesSection() {
 
                 {/* Quote */}
                 <blockquote className="flex-1">
-                  <p className="text-sm leading-relaxed italic" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <p className="text-sm leading-relaxed italic" style={{ color: t65 }}>
                     "{cs.quote}"
                   </p>
-                  <p className="text-xs font-semibold mt-2" style={{ color: "rgba(255,255,255,0.40)" }}>
+                  <p className="text-xs font-semibold mt-2" style={{ color: t40 }}>
                     — {cs.author}
                   </p>
                 </blockquote>
 
                 {/* CTA */}
-                <Link href={`/case-studies`}
+                <Link href="/case-studies"
                   className="inline-flex items-center gap-1.5 text-xs font-bold group/link"
                   style={{ color: cs.tagColor }}>
                   <TrendingUp className="w-3.5 h-3.5" />
