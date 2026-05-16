@@ -26,6 +26,7 @@ import CookiePolicyPage from "@/pages/CookiePolicyPage";
 import OurTeamPage from "@/pages/OurTeamPage";
 import CaseStudiesPage from "@/pages/CaseStudiesPage";
 import CareersPage from "@/pages/CareersPage";
+import ContactPage from "@/pages/ContactPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -58,6 +59,7 @@ function Router() {
       <Route path="/team" component={OurTeamPage} />
       <Route path="/case-studies" component={CaseStudiesPage} />
       <Route path="/careers" component={CareersPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );
