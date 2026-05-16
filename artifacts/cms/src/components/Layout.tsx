@@ -33,7 +33,9 @@ const modules = [
       { path: "/clients",           label: "Clients & Logos", count: 32 },
       { path: "/process",           label: "How We Work",     count: 4 },
       { path: "/homepage-services", label: "Services Grid",   count: 11 },
-      { path: "/ai-automation-cms", label: "AI & Automation", count: 6 },
+      { path: "/ai-automation-cms",   label: "AI & Automation",     count: 6  },
+      { path: "/tech-stack",          label: "Tech Stack",          count: 30 },
+      { path: "/feature-highlights",  label: "Feature Highlights",  count: 33 },
     ],
   },
   {
