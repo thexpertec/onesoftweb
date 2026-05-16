@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import { PAGE_SEO } from "@/data/seoMeta";
 import { motion, useInView, animate as motionAnimate } from "framer-motion";
@@ -65,9 +65,45 @@ const staggerContainer = {
   }
 };
 
+const TYPED_WORDS = [
+  "Infrastructure.",
+  "Automation.",
+  "ERP Systems.",
+  "Web Platforms.",
+  "Software.",
+  "Innovation.",
+];
+
+function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 45, pauseMs = 1800) {
+  const [displayed, setDisplayed] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = words[wordIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && displayed.length < current.length) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), typingSpeed);
+    } else if (!isDeleting && displayed.length === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), pauseMs);
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), deletingSpeed);
+    } else if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false);
+      setWordIndex((i) => (i + 1) % words.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseMs]);
+
+  return displayed;
+}
+
 export default function Home() {
   useSEO(PAGE_SEO.home);
   const { openCTAModal } = useCTAModal();
+  const typedWord = useTypewriter(TYPED_WORDS);
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       <Navigation />
@@ -107,8 +143,12 @@ export default function Home() {
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-tight text-white">
               Mission-Critical <br />
-              <span className="text-primary">
-                Infrastructure.
+              <span className="text-primary inline-block min-w-[4px]">
+                {typedWord}
+                <span
+                  className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle"
+                  style={{ animation: "blink 1s step-end infinite" }}
+                />
               </span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
