@@ -62,6 +62,7 @@ const modules = [
       { path: "/pages",    label: "Pages" },
       { path: "/media",    label: "Media Library" },
       { path: "/settings", label: "Settings" },
+      { path: "/roles",    label: "Roles & Permissions" },
     ],
   },
 ];
