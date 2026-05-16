@@ -66,8 +66,8 @@ export function StickyCTA() {
                         <Star key={s} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <span className="text-[10px] font-semibold text-white mt-0.5">4.9 / 5.0</span>
-                    <span className="text-[9px] text-white/50 uppercase tracking-wider">500+ Clients</span>
+                    <span className="text-[10px] font-semibold mt-0.5" style={{ color: "#ffffff" }}>4.9 / 5.0</span>
+                    <span className="text-[9px] uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.6)" }}>500+ Clients</span>
                   </div>
                 </div>
 
