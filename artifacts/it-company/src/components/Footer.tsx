@@ -123,7 +123,7 @@ export function Footer() {
               {[
                 { label: "Privacy Policy",   href: "/privacy-policy" },
                 { label: "Terms of Service", href: "/terms-of-service" },
-                { label: "SLA Agreement",    href: "#" },
+                { label: "SLA Agreement",    href: "/sla" },
                 { label: "Cookie Policy",    href: "#" },
               ].map(({ label, href }) => (
                 <li key={label}>

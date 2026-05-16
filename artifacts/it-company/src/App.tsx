@@ -21,6 +21,7 @@ import AdCreativesPage from "@/pages/AdCreativesPage";
 import SEOPage from "@/pages/SEOPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "@/pages/TermsOfServicePage";
+import SLAPage from "@/pages/SLAPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/seo" component={SEOPage} />
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
+      <Route path="/sla" component={SLAPage} />
       <Route component={NotFound} />
     </Switch>
   );
