@@ -80,7 +80,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-rose-600/20 to-pink-500/5",
     border: "border-rose-500/20",
-    href: "#services",
+    href: "/social-media",
   },
   {
     icon: BarChart3,
