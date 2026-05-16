@@ -51,8 +51,8 @@ export default function SettingsPage() {
   const [toggles, setToggles] = useState({ maintenanceMode: false, showCookieBanner: true, allowIndexing: true, blogComments: false, autoSaveDrafts: true, emailNotifs: true });
   const [offices, setOffices] = useState([
     { id: 1, flag: "🇬🇧", city: "Hull", country: "United Kingdom", role: "Headquarters", address: "Hull, East Yorkshire, United Kingdom", phone: "+44 7984 273482", email: "info@onesoft.org.uk", hours: "Mon–Fri 09:00–17:00 GMT/BST", mapUrl: "https://maps.google.com/?q=Hull,+East+Yorkshire" },
-    { id: 2, flag: "🇦🇪", city: "Dubai", country: "United Arab Emirates", role: "Middle East Office", address: "Business Bay, Dubai, UAE", phone: "+971 4 000 0000", email: "dubai@onesoft.org.uk", hours: "Sun–Thu 09:00–18:00 GST", mapUrl: "" },
-    { id: 3, flag: "🇵🇰", city: "Islamabad", country: "Pakistan", role: "Engineering Office", address: "G9 Markaz, Islamabad, Pakistan", phone: "+92 51 000 0000", email: "pk@onesoft.org.uk", hours: "Mon–Fri 09:00–18:00 PKT", mapUrl: "" },
+    { id: 2, flag: "🇦🇪", city: "Dubai", country: "United Arab Emirates", role: "Middle East Office", address: "Business Bay, Dubai, United Arab Emirates", phone: "+971 50 584 1517", email: "info@onesoft.org.uk", hours: "Sun–Thu 09:00–18:00 GST", mapUrl: "" },
+    { id: 3, flag: "🇵🇰", city: "Islamabad", country: "Pakistan", role: "Engineering Office", address: "Islamabad, Pakistan", phone: "+92 333 41 99 233", email: "info@onesoft.org.uk", hours: "Mon–Fri 09:00–18:00 PKT", mapUrl: "" },
   ]);
   const [editingOffice, setEditingOffice] = useState<number | null>(null);
   const [siteStats, setSiteStats] = useState([

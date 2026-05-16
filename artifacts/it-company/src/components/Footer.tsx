@@ -139,7 +139,7 @@ export function Footer() {
             <div className="space-y-1.5 text-xs text-muted-foreground">
               <p>🇬🇧 Hull, United Kingdom</p>
               <p>🇦🇪 Business Bay, Dubai</p>
-              <p>🇵🇰 G9 Markaz, Islamabad</p>
+              <p>🇵🇰 Islamabad, Pakistan</p>
             </div>
           </motion.div>
         </div>
