@@ -124,7 +124,7 @@ export function Footer() {
                 { label: "Privacy Policy",   href: "/privacy-policy" },
                 { label: "Terms of Service", href: "/terms-of-service" },
                 { label: "SLA Agreement",    href: "/sla" },
-                { label: "Cookie Policy",    href: "#" },
+                { label: "Cookie Policy",    href: "/cookie-policy" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group">
