@@ -4,16 +4,19 @@ import {
   FileText, Package, Wrench, BookOpen,
   Users, Briefcase, Eye, TrendingUp,
   ArrowRight, Clock, AlertCircle, CheckCircle2,
-  Image, Globe,
+  Image, Globe, Star, MessageSquare, Building2,
 } from "lucide-react";
 
 const stats = [
-  { label: "Blog Posts",     value: "9",  sub: "+1 this month",  icon: FileText,  color: "#1E4DA0", href: "/blog" },
-  { label: "ERP Products",   value: "12", sub: "7 active",        icon: Package,   color: "#0891b2", href: "/products" },
-  { label: "Team Members",   value: "12", sub: "3 offices",       icon: Users,     color: "#16a34a", href: "/team" },
-  { label: "Open Roles",     value: "10", sub: "4 departments",   icon: Briefcase, color: "#7c3aed", href: "/careers" },
-  { label: "Case Studies",   value: "8",  sub: "3 categories",    icon: BookOpen,  color: "#f97316", href: "/case-studies" },
-  { label: "Services",       value: "6",  sub: "All active",      icon: Wrench,    color: "#ec4899", href: "/services" },
+  { label: "Blog Posts",      value: "9",  sub: "+1 this month",   icon: FileText,  color: "#1E4DA0", href: "/blog" },
+  { label: "ERP Products",    value: "12", sub: "7 active",         icon: Package,   color: "#0891b2", href: "/products" },
+  { label: "Team Members",    value: "12", sub: "3 offices",        icon: Users,     color: "#16a34a", href: "/team" },
+  { label: "Open Roles",      value: "10", sub: "4 departments",    icon: Briefcase, color: "#7c3aed", href: "/careers" },
+  { label: "Case Studies",    value: "8",  sub: "3 categories",     icon: BookOpen,  color: "#f97316", href: "/case-studies" },
+  { label: "Services",        value: "6",  sub: "All active",       icon: Wrench,    color: "#ec4899", href: "/services" },
+  { label: "Testimonials",    value: "5",  sub: "3 on homepage",    icon: Star,      color: "#eab308", href: "/testimonials" },
+  { label: "FAQs",            value: "10", sub: "8 published",      icon: MessageSquare, color: "#0891b2", href: "/faqs" },
+  { label: "Client Logos",    value: "32", sub: "2 marquee rows",   icon: Building2, color: "#64748b", href: "/clients" },
 ];
 
 const recentActivity = [

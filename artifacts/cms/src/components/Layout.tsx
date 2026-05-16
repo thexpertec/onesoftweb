@@ -6,6 +6,7 @@ import {
   BookOpen, Users, Briefcase, FileStack,
   Image, Settings, ChevronDown, LogOut,
   Menu, X, Bell, ExternalLink, ChevronRight,
+  Star, MessageSquare, Building2,
 } from "lucide-react";
 
 const BLUE = "#1E4DA0";
@@ -14,16 +15,24 @@ const navSections = [
   {
     label: "Content",
     items: [
-      { path: "/",              icon: LayoutDashboard, label: "Dashboard" },
-      { path: "/blog",          icon: FileText,         label: "Blog",          count: 9 },
-      { path: "/case-studies",  icon: BookOpen,         label: "Case Studies",  count: 8 },
+      { path: "/",             icon: LayoutDashboard, label: "Dashboard" },
+      { path: "/blog",         icon: FileText,        label: "Blog",         count: 9 },
+      { path: "/case-studies", icon: BookOpen,        label: "Case Studies", count: 8 },
+    ],
+  },
+  {
+    label: "Homepage Sections",
+    items: [
+      { path: "/testimonials", icon: Star,           label: "Testimonials", count: 5 },
+      { path: "/faqs",         icon: MessageSquare,  label: "FAQs",         count: 10 },
+      { path: "/clients",      icon: Building2,      label: "Clients & Logos", count: 32 },
     ],
   },
   {
     label: "Products & Services",
     items: [
-      { path: "/products",  icon: Package, label: "ERP Products", count: 12 },
-      { path: "/services",  icon: Wrench,  label: "Services",     count: 6 },
+      { path: "/products", icon: Package, label: "ERP Products", count: 12 },
+      { path: "/services", icon: Wrench,  label: "Services",     count: 6 },
     ],
   },
   {
@@ -36,9 +45,9 @@ const navSections = [
   {
     label: "Site",
     items: [
-      { path: "/pages",   icon: FileStack, label: "Pages" },
-      { path: "/media",   icon: Image,     label: "Media Library" },
-      { path: "/settings",icon: Settings,  label: "Settings" },
+      { path: "/pages",    icon: FileStack, label: "Pages" },
+      { path: "/media",    icon: Image,     label: "Media Library" },
+      { path: "/settings", icon: Settings,  label: "Settings" },
     ],
   },
 ];

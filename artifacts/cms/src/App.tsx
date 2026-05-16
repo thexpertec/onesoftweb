@@ -15,6 +15,9 @@ import CareersPage from "@/pages/CareersPage";
 import PagesPage from "@/pages/PagesPage";
 import MediaPage from "@/pages/MediaPage";
 import SettingsPage from "@/pages/SettingsPage";
+import TestimonialsPage from "@/pages/TestimonialsPage";
+import FAQsPage from "@/pages/FAQsPage";
+import ClientsPage from "@/pages/ClientsPage";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +47,10 @@ function Router() {
       <Route path="/careers"      component={() => <ProtectedRoute component={CareersPage} />} />
       <Route path="/pages"        component={() => <ProtectedRoute component={PagesPage} />} />
       <Route path="/media"        component={() => <ProtectedRoute component={MediaPage} />} />
-      <Route path="/settings"     component={() => <ProtectedRoute component={SettingsPage} />} />
+      <Route path="/settings"      component={() => <ProtectedRoute component={SettingsPage} />} />
+      <Route path="/testimonials"  component={() => <ProtectedRoute component={TestimonialsPage} />} />
+      <Route path="/faqs"          component={() => <ProtectedRoute component={FAQsPage} />} />
+      <Route path="/clients"       component={() => <ProtectedRoute component={ClientsPage} />} />
       <Route component={() => <Redirect to="/" />} />
     </Switch>
   );

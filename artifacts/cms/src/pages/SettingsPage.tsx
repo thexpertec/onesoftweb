@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Layout, PageHeader, Btn, Breadcrumb } from "@/components/Layout";
-import { Save, Globe, Mail, Phone, MapPin, Shield, Bell, Palette, Code2, Users, ChevronRight } from "lucide-react";
+import { Save, Globe, Mail, Phone, MapPin, Shield, Bell, Code2, Users, ChevronRight, Edit2, X, BarChart3 } from "lucide-react";
 
 const TABS = [
-  { id: "general",  label: "General",     icon: Globe },
-  { id: "seo",      label: "SEO",         icon: Code2 },
-  { id: "contact",  label: "Contact",     icon: Mail },
-  { id: "users",    label: "Admin Users", icon: Users },
+  { id: "general",  label: "General",      icon: Globe },
+  { id: "seo",      label: "SEO",          icon: Code2 },
+  { id: "contact",  label: "Contact",      icon: Mail },
+  { id: "offices",  label: "Offices",      icon: MapPin },
+  { id: "stats",    label: "Site Stats",   icon: BarChart3 },
+  { id: "users",    label: "Admin Users",  icon: Users },
   { id: "notifs",   label: "Notifications",icon: Bell },
-  { id: "security", label: "Security",    icon: Shield },
+  { id: "security", label: "Security",     icon: Shield },
 ];
 
 function Field({ label, value, onChange, type = "text", mono = false, hint }:
@@ -45,6 +47,18 @@ export default function SettingsPage() {
   const [seo, setSeo] = useState({ metaTitle: "OneSoft — Smart ERP & Digital Marketing", metaDesc: "OneSoft delivers industry-specific ERP systems, custom software, and digital marketing services for businesses in the UK, UAE, and Pakistan.", ogImage: "/og-image.jpg", googleTag: "G-XXXXXXXXXX", robotsTxt: "User-agent: *\nAllow: /" });
   const [contact, setContact] = useState({ email: "info@onesoft.org.uk", phone: "+44 7984 273482", address: "Hull, East Yorkshire, United Kingdom", linkedIn: "https://linkedin.com/company/onesoft", twitter: "https://twitter.com/onesoftuk" });
   const [toggles, setToggles] = useState({ maintenanceMode: false, showCookieBanner: true, allowIndexing: true, blogComments: false, autoSaveDrafts: true, emailNotifs: true });
+  const [offices, setOffices] = useState([
+    { id: 1, flag: "🇬🇧", city: "Hull", country: "United Kingdom", role: "Headquarters", address: "Hull, East Yorkshire, United Kingdom", phone: "+44 7984 273482", email: "info@onesoft.org.uk", hours: "Mon–Fri 09:00–17:00 GMT/BST", mapUrl: "https://maps.google.com/?q=Hull,+East+Yorkshire" },
+    { id: 2, flag: "🇦🇪", city: "Dubai", country: "United Arab Emirates", role: "Middle East Office", address: "Business Bay, Dubai, UAE", phone: "+971 4 000 0000", email: "dubai@onesoft.org.uk", hours: "Sun–Thu 09:00–18:00 GST", mapUrl: "" },
+    { id: 3, flag: "🇵🇰", city: "Islamabad", country: "Pakistan", role: "Engineering Office", address: "G9 Markaz, Islamabad, Pakistan", phone: "+92 51 000 0000", email: "pk@onesoft.org.uk", hours: "Mon–Fri 09:00–18:00 PKT", mapUrl: "" },
+  ]);
+  const [editingOffice, setEditingOffice] = useState<number | null>(null);
+  const [siteStats, setSiteStats] = useState([
+    { id: 1, label: "ERP Deployments", value: "340", suffix: "+", icon: "Server" },
+    { id: 2, label: "Industries Served", value: "6", suffix: "", icon: "Building2" },
+    { id: 3, label: "Active Clients", value: "520", suffix: "+", icon: "Users" },
+    { id: 4, label: "Uptime Delivered", value: "99.9", suffix: "%", icon: "ShieldCheck" },
+  ]);
 
   const setT = (k: string) => (v: boolean) => setToggles(t => ({ ...t, [k]: v }));
   const handleSave = () => { setSaved(true); setTimeout(() => setSaved(false), 2000); };
@@ -130,6 +144,107 @@ export default function SettingsPage() {
                   <Field label="HQ Address" value={contact.address} onChange={v => setContact(c => ({ ...c, address: v }))} />
                   <Field label="LinkedIn URL" value={contact.linkedIn} onChange={v => setContact(c => ({ ...c, linkedIn: v }))} mono />
                   <Field label="X (Twitter) URL" value={contact.twitter} onChange={v => setContact(c => ({ ...c, twitter: v }))} mono />
+                  <p className="text-xs text-muted-foreground pt-2">Manage individual office locations in the <button onClick={() => setTab("offices")} className="text-primary underline">Offices tab</button>.</p>
+                </div>
+              )}
+
+              {tab === "offices" && (
+                <div className="space-y-4">
+                  <p className="text-xs text-muted-foreground">These three offices appear on the Contact page and footer. Edit addresses, phone numbers, emails, and hours for each location.</p>
+                  {offices.map((o, i) => (
+                    <div key={o.id} className="rounded-xl border border-border overflow-hidden">
+                      {/* Office header */}
+                      <div className="flex items-center gap-3 px-4 py-3 bg-muted/40 border-b border-border">
+                        <span className="text-2xl">{o.flag}</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-bold text-foreground">{o.city}, {o.country}</p>
+                          <p className="text-xs text-primary font-semibold">{o.role}</p>
+                        </div>
+                        <button
+                          onClick={() => setEditingOffice(editingOffice === o.id ? null : o.id)}
+                          className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-lg hover:bg-muted">
+                          {editingOffice === o.id ? <X className="w-3.5 h-3.5" /> : <Edit2 className="w-3.5 h-3.5" />}
+                          {editingOffice === o.id ? "Close" : "Edit"}
+                        </button>
+                      </div>
+                      {/* Collapsed view */}
+                      {editingOffice !== o.id && (
+                        <div className="px-4 py-3 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          <div className="flex items-start gap-2">
+                            <MapPin className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                            <p className="text-xs text-muted-foreground">{o.address}</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-3.5 h-3.5 text-primary shrink-0" />
+                            <p className="text-xs text-muted-foreground">{o.phone}</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Mail className="w-3.5 h-3.5 text-primary shrink-0" />
+                            <p className="text-xs text-muted-foreground">{o.email}</p>
+                          </div>
+                        </div>
+                      )}
+                      {/* Expanded edit form */}
+                      {editingOffice === o.id && (
+                        <div className="p-4 space-y-3">
+                          <div className="grid grid-cols-2 gap-3">
+                            <Field label="City" value={o.city} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, city: v } : x))} />
+                            <Field label="Country" value={o.country} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, country: v } : x))} />
+                          </div>
+                          <div className="grid grid-cols-2 gap-3">
+                            <Field label="Role / Label" value={o.role} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, role: v } : x))} />
+                            <Field label="Flag Emoji" value={o.flag} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, flag: v } : x))} />
+                          </div>
+                          <Field label="Full Address" value={o.address} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, address: v } : x))} />
+                          <div className="grid grid-cols-2 gap-3">
+                            <Field label="Phone Number" value={o.phone} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, phone: v } : x))} />
+                            <Field label="Email" value={o.email} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, email: v } : x))} type="email" />
+                          </div>
+                          <Field label="Office Hours" value={o.hours} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, hours: v } : x))} hint="e.g. Mon–Fri 09:00–17:00 GMT" />
+                          <Field label="Google Maps URL" value={o.mapUrl} onChange={v => setOffices(os => os.map(x => x.id === o.id ? { ...x, mapUrl: v } : x))} mono />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {tab === "stats" && (
+                <div className="space-y-4">
+                  <p className="text-xs text-muted-foreground">These four stats appear in the homepage hero section and on the About page. Update them whenever your milestones change.</p>
+                  <div className="space-y-3">
+                    {siteStats.map(s => (
+                      <div key={s.id} className="flex items-center gap-3 p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition-all">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                          <BarChart3 className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1 grid grid-cols-3 gap-3">
+                          <div>
+                            <label className="block text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">Label</label>
+                            <input value={s.label} onChange={e => setSiteStats(ss => ss.map(x => x.id === s.id ? { ...x, label: e.target.value } : x))}
+                              className="w-full px-2.5 py-1.5 rounded-lg border border-border bg-card text-sm outline-none focus:border-primary/50" />
+                          </div>
+                          <div>
+                            <label className="block text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">Value</label>
+                            <input value={s.value} onChange={e => setSiteStats(ss => ss.map(x => x.id === s.id ? { ...x, value: e.target.value } : x))}
+                              className="w-full px-2.5 py-1.5 rounded-lg border border-border bg-card text-sm font-mono outline-none focus:border-primary/50" />
+                          </div>
+                          <div>
+                            <label className="block text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">Suffix</label>
+                            <input value={s.suffix} onChange={e => setSiteStats(ss => ss.map(x => x.id === s.id ? { ...x, suffix: e.target.value } : x))}
+                              className="w-full px-2.5 py-1.5 rounded-lg border border-border bg-card text-sm font-mono outline-none focus:border-primary/50" placeholder="+ or %" />
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <p className="text-2xl font-black text-foreground">{s.value}{s.suffix}</p>
+                          <p className="text-[11px] text-muted-foreground">{s.label}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl px-4 py-3">
+                    <p className="text-xs text-foreground">These stats are currently hardcoded in the site build. After saving here, a developer needs to push an update for the live site to reflect the new values.</p>
+                  </div>
                 </div>
               )}
 
