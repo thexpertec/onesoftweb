@@ -13,6 +13,7 @@ import DistributorPage from "@/pages/DistributorPage";
 import ShadiHallPage from "@/pages/ShadiHallPage";
 import OneThemesPage from "@/pages/OneThemesPage";
 import AboutPage from "@/pages/AboutPage";
+import WebDevPage from "@/pages/WebDevPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/shadi-hall" component={ShadiHallPage} />
       <Route path="/onethemes" component={OneThemesPage} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/web-development" component={WebDevPage} />
       <Route component={NotFound} />
     </Switch>
   );

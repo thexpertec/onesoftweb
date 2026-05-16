@@ -39,7 +39,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-[#1E4DA0]/20 to-[#1E4DA0]/5",
     border: "border-[#1E4DA0]/20",
-    href: "#services",
+    href: "/web-development",
   },
   {
     icon: Code2,
