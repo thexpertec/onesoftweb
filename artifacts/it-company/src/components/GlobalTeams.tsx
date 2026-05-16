@@ -17,14 +17,6 @@ import uk1 from "@/assets/team/uk-1.png";
 import uk2 from "@/assets/team/uk-2.png";
 import uk3 from "@/assets/team/uk-3.png";
 import bd1 from "@/assets/team/bd-1.png";
-import bd2 from "@/assets/team/bd-2.png";
-import bd3 from "@/assets/team/bd-3.png";
-import in1 from "@/assets/team/in-1.png";
-import in2 from "@/assets/team/in-2.png";
-import in3 from "@/assets/team/in-3.png";
-import us1 from "@/assets/team/us-1.png";
-import us2 from "@/assets/team/us-2.png";
-import us3 from "@/assets/team/us-3.png";
 
 type Member = {
   name: string;
@@ -34,31 +26,28 @@ type Member = {
   accent: string;
 };
 
+/* ── Unified team — same 16 people as OurTeamPage + leadership ── */
 const members: Member[] = [
-  { name: "Ahmed Raza",         role: "Head of Engineering",   photo: pk1,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Sara Malik",         role: "Lead UX Designer",      photo: pk2,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Tariq Hassan",       role: "Senior Backend Dev",    photo: pk3,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Usman Farooq",       role: "ERP Implementation",    photo: pk4,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Bilal Chaudhry",     role: "Mobile Developer",      photo: pk5,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Ayesha Siddiqui",    role: "Project Coordinator",   photo: pk6,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Hamza Nawaz",        role: "DevOps Engineer",       photo: pk7,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Zainab Qureshi",     role: "Business Analyst",      photo: pk8,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Faisal Mehmood",     role: "Database Architect",    photo: pk9,  flag: "🇵🇰", accent: "#1E4DA0" },
-  { name: "Khalid Al Mansoori", role: "Regional Director",     photo: uae1, flag: "🇦🇪", accent: "#1E4DA0" },
-  { name: "Layla Al Farsi",     role: "Business Development",  photo: uae2, flag: "🇦🇪", accent: "#1E4DA0" },
-  { name: "Omar Rashid",        role: "Solutions Architect",   photo: uae3, flag: "🇦🇪", accent: "#1E4DA0" },
-  { name: "James Whitfield",    role: "CTO & Co-Founder",      photo: uk1,  flag: "🇬🇧", accent: "#1E4DA0" },
-  { name: "Emily Carter",       role: "Product Manager",       photo: uk2,  flag: "🇬🇧", accent: "#1E4DA0" },
-  { name: "Arjun Patel",        role: "Enterprise Consultant", photo: uk3,  flag: "🇬🇧", accent: "#1E4DA0" },
-  { name: "Rafiqul Islam",      role: "Full-Stack Developer",  photo: bd1,  flag: "🇧🇩", accent: "#1E4DA0" },
-  { name: "Nadia Akter",        role: "QA & DevOps Lead",      photo: bd2,  flag: "🇧🇩", accent: "#1E4DA0" },
-  { name: "Kamal Hossain",      role: "ERP Specialist",        photo: bd3,  flag: "🇧🇩", accent: "#1E4DA0" },
-  { name: "Rohan Verma",        role: "Cloud Architect",       photo: in1,  flag: "🇮🇳", accent: "#1E4DA0" },
-  { name: "Priya Sharma",       role: "AI / ML Engineer",      photo: in2,  flag: "🇮🇳", accent: "#1E4DA0" },
-  { name: "Kiran Mehta",        role: "Data Analytics Lead",   photo: in3,  flag: "🇮🇳", accent: "#1E4DA0" },
-  { name: "Daniel Brooks",      role: "Sales Director",        photo: us1,  flag: "🇺🇸", accent: "#1E4DA0" },
-  { name: "Sarah O'Connor",     role: "Partnership Manager",   photo: us2,  flag: "🇺🇸", accent: "#1E4DA0" },
-  { name: "Marcus Webb",        role: "Enterprise Accounts",   photo: us3,  flag: "🇺🇸", accent: "#1E4DA0" },
+  /* Leadership */
+  { name: "Zain ul Abideen",  role: "Founder & CEO",              photo: uk1,  flag: "🇬🇧", accent: "#1E4DA0" },
+  { name: "Aisha Mahmood",    role: "Chief Technology Officer",    photo: pk1,  flag: "🇵🇰", accent: "#1E4DA0" },
+  { name: "Omar Farooq",      role: "Chief Operating Officer",     photo: uae1, flag: "🇦🇪", accent: "#1E4DA0" },
+  { name: "Sara Nawaz",       role: "Head of Design",              photo: uk2,  flag: "🇬🇧", accent: "#1E4DA0" },
+  /* Islamabad team */
+  { name: "Bilal Hussain",    role: "Lead Backend Engineer",       photo: pk2,  flag: "🇵🇰", accent: "#1E4DA0" },
+  { name: "Fatima Riaz",      role: "Full-Stack Developer",        photo: pk3,  flag: "🇵🇰", accent: "#1E4DA0" },
+  { name: "Tariq Saleem",     role: "ERP Specialist",              photo: pk4,  flag: "🇵🇰", accent: "#1E4DA0" },
+  { name: "Nadia Khan",       role: "AI & Automation Engineer",    photo: pk5,  flag: "🇵🇰", accent: "#1E4DA0" },
+  { name: "Hassan Qureshi",   role: "DevOps & Infrastructure",     photo: pk6,  flag: "🇵🇰", accent: "#1E4DA0" },
+  /* Hull team */
+  { name: "Mariam Yousaf",    role: "Frontend Developer",          photo: uk3,  flag: "🇬🇧", accent: "#1E4DA0" },
+  { name: "James Whitfield",  role: "SEO Strategist",              photo: pk7,  flag: "🇬🇧", accent: "#1E4DA0" },
+  { name: "Priya Menon",      role: "Digital Marketing Manager",   photo: pk8,  flag: "🇬🇧", accent: "#1E4DA0" },
+  { name: "Adam Thornton",    role: "Project Manager",             photo: pk9,  flag: "🇬🇧", accent: "#1E4DA0" },
+  /* Dubai team */
+  { name: "Khalid Al-Rashid", role: "Client Success Manager",      photo: uae2, flag: "🇦🇪", accent: "#1E4DA0" },
+  { name: "Leila Abubakar",   role: "Business Development",        photo: uae3, flag: "🇦🇪", accent: "#1E4DA0" },
+  { name: "Rania Hashim",     role: "Creative Director",           photo: bd1,  flag: "🇦🇪", accent: "#1E4DA0" },
 ];
 
 const doubled = [...members, ...members];
@@ -101,13 +90,13 @@ export function GlobalTeams() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
-            Our Global Presence
+            Our Global Team
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            Meet the Teams Behind the Tech
+            Meet the People Behind OneSoft
           </h2>
           <p className="text-muted-foreground text-lg">
-            Six countries. One mission. A globally distributed team of engineers, designers, and strategists building world-class software.
+            Three offices. One mission. Engineers, designers, and strategists in Hull, Dubai, and Islamabad — building world-class software together.
           </p>
         </motion.div>
       </div>
