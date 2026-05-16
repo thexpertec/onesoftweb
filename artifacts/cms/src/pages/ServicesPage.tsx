@@ -4,7 +4,8 @@ import { Layout, PageHeader, Badge, Btn, Breadcrumb } from "@/components/Layout"
 import { Edit2, ExternalLink, Save, X, ChevronDown, LayoutDashboard } from "lucide-react";
 
 const PAGE_EDITORS: Record<string, string> = {
-  "/web-development": "/web-development",
+  "/web-development":  "/web-development",
+  "/custom-software":  "/custom-software",
 };
 
 const services = [
