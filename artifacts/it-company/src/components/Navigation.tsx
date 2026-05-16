@@ -59,7 +59,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-purple-600/20 to-fuchsia-500/5",
     border: "border-purple-500/20",
-    href: "#ai-automation",
+    href: "/ai-automation",
     badge: "New",
   },
   {

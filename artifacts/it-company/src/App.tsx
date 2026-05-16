@@ -15,6 +15,7 @@ import OneThemesPage from "@/pages/OneThemesPage";
 import AboutPage from "@/pages/AboutPage";
 import WebDevPage from "@/pages/WebDevPage";
 import CustomSoftwarePage from "@/pages/CustomSoftwarePage";
+import AIAutomationPage from "@/pages/AIAutomationPage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/web-development" component={WebDevPage} />
       <Route path="/custom-software" component={CustomSoftwarePage} />
+      <Route path="/ai-automation" component={AIAutomationPage} />
       <Route component={NotFound} />
     </Switch>
   );
