@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Layout, PageHeader, Badge, Btn, Breadcrumb } from "@/components/Layout";
-import { Plus, Edit2, Trash2, Search, Save, X, ChevronDown, Star, Linkedin, Twitter } from "lucide-react";
+import { Plus, Edit2, Trash2, Search, Save, X, ChevronDown } from "lucide-react";
 
 const TEAM_MEMBERS = [
   { id: 1, name: "Bilal Hussain",    role: "Lead Backend Engineer",       dept: "Engineering", location: "Islamabad, PK", initials: "BH", color: "#1E4DA0", status: "active", joined: "Mar 2021" },
@@ -22,25 +22,25 @@ const LEADERSHIP = [
     id: 1, name: "Zain ul Abideen", role: "Founder & CEO", office: "Hull, UK", initials: "ZA", color: "#1E4DA0",
     bio: "Zain founded OneSoft with a single conviction: businesses everywhere deserve enterprise-grade software without enterprise-grade complexity. With a background in systems architecture and a decade of building software for clients across three continents, he leads the company's vision and strategic direction.",
     tags: ["Strategy", "Systems Architecture", "Business Development"],
-    linkedin: "#", twitter: "#", status: "active",
+    status: "active",
   },
   {
     id: 2, name: "Aisha Mahmood", role: "Chief Technology Officer", office: "Islamabad, PK", initials: "AM", color: "#1E4DA0",
     bio: "Aisha oversees everything technical at OneSoft — from cloud infrastructure and ERP architecture to AI research and security. She has shipped software used by over two hundred organisations across education, healthcare, and retail, and leads a team of thirty-plus engineers.",
     tags: ["Cloud Infrastructure", "ERP Architecture", "AI & Automation"],
-    linkedin: "#", twitter: "#", status: "active",
+    status: "active",
   },
   {
     id: 3, name: "Omar Farooq", role: "Chief Operating Officer", office: "Business Bay, Dubai", initials: "OF", color: "#1E4DA0",
     bio: "Omar ensures OneSoft delivers on every promise made to every client. He manages client success, delivery operations, and the company's processes across all three offices. Before OneSoft, he spent eight years in operations and programme management at a Big Four consultancy.",
     tags: ["Operations", "Client Success", "Delivery Management"],
-    linkedin: "#", twitter: "#", status: "active",
+    status: "active",
   },
   {
     id: 4, name: "Sara Nawaz", role: "Head of Design", office: "Hull, UK", initials: "SN", color: "#1E4DA0",
     bio: "Sara leads product design and brand across OneSoft and every client project we touch. She brings a deep belief that good design is not decoration — it is how software communicates. She has designed digital products for clients ranging from NHS-linked clinics to Series-B startups.",
     tags: ["Product Design", "Brand Identity", "UX Research"],
-    linkedin: "#", twitter: "#", status: "active",
+    status: "active",
   },
 ];
 
@@ -158,18 +158,6 @@ function LeaderModal({ leader, onClose }: { leader: Leader; onClose: () => void 
             <input value={form.tagsStr} onChange={set("tagsStr")} placeholder="Strategy, Systems Architecture, Business Development"
               className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 font-mono" />
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-semibold text-muted-foreground mb-1.5">LinkedIn URL</label>
-              <input value={form.linkedin} onChange={set("linkedin")} placeholder="https://linkedin.com/in/..."
-                className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 font-mono" />
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-muted-foreground mb-1.5">Twitter / X URL</label>
-              <input value={form.twitter} onChange={set("twitter")} placeholder="https://x.com/..."
-                className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:border-primary/50 font-mono" />
-            </div>
-          </div>
           <div>
             <label className="block text-xs font-semibold text-muted-foreground mb-1.5">Status</label>
             <select value={form.status} onChange={set("status")}
@@ -215,7 +203,7 @@ export default function TeamPage() {
           action={
             activeTab === "team"
               ? <Btn onClick={() => setEditingMember({ id: 0, name: "", role: "", dept: "Engineering", location: "", initials: "", color: "#1E4DA0", status: "active", joined: "" })}><Plus className="w-4 h-4" /> Add Member</Btn>
-              : <Btn onClick={() => setEditingLeader({ id: 0, name: "", role: "", office: "", initials: "", color: "#1E4DA0", bio: "", tags: [], linkedin: "#", twitter: "#", status: "active" })}><Plus className="w-4 h-4" /> Add Leader</Btn>
+              : <Btn onClick={() => setEditingLeader({ id: 0, name: "", role: "", office: "", initials: "", color: "#1E4DA0", bio: "", tags: [], status: "active" })}><Plus className="w-4 h-4" /> Add Leader</Btn>
           }
         />
 
@@ -303,15 +291,7 @@ export default function TeamPage() {
                           <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{tag}</span>
                         ))}
                       </div>
-                      <div className="flex items-center gap-3 mt-3">
-                        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                          <Linkedin className="w-3 h-3" />
-                          <span className="font-mono truncate max-w-32">{l.linkedin}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                          <Twitter className="w-3 h-3" />
-                          <span className="font-mono truncate max-w-32">{l.twitter}</span>
-                        </div>
+                      <div className="flex items-center gap-2 mt-3">
                         <Badge color={l.status === "active" ? "green" : "default"}>{l.status}</Badge>
                       </div>
                     </div>
