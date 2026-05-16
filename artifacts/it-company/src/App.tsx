@@ -14,6 +14,7 @@ import ShadiHallPage from "@/pages/ShadiHallPage";
 import OneThemesPage from "@/pages/OneThemesPage";
 import AboutPage from "@/pages/AboutPage";
 import WebDevPage from "@/pages/WebDevPage";
+import CustomSoftwarePage from "@/pages/CustomSoftwarePage";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CTAModalProvider } from "@/context/CTAModalContext";
 import { CTAModal } from "@/components/CTAModal";
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/onethemes" component={OneThemesPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/web-development" component={WebDevPage} />
+      <Route path="/custom-software" component={CustomSoftwarePage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -49,7 +49,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-violet-600/20 to-violet-500/5",
     border: "border-violet-500/20",
-    href: "#services",
+    href: "/custom-software",
   },
   {
     icon: Bot,
