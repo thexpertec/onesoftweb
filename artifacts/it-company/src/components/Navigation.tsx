@@ -70,7 +70,7 @@ const allServices = [
     color: "#1E4DA0",
     grad: "from-orange-600/20 to-orange-500/5",
     border: "border-orange-500/20",
-    href: "#services",
+    href: "/ad-creatives",
   },
   {
     icon: Megaphone,
