@@ -6,6 +6,7 @@ import { Edit2, ExternalLink, Save, X, ChevronDown, LayoutDashboard } from "luci
 const PAGE_EDITORS: Record<string, string> = {
   "/web-development":  "/web-development",
   "/custom-software":  "/custom-software",
+  "/ai-automation":    "/ai-automation-svc",
 };
 
 const services = [

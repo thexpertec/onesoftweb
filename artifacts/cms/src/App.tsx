@@ -25,6 +25,7 @@ import TechStackPage from "@/pages/TechStackPage";
 import FeatureHighlightsPage from "@/pages/FeatureHighlightsPage";
 import WebDevCMSPage from "@/pages/WebDevCMSPage";
 import CustomSoftwareCMSPage from "@/pages/CustomSoftwareCMSPage";
+import AIAutomationServiceCMSPage from "@/pages/AIAutomationServiceCMSPage";
 import RolesPage from "@/pages/RolesPage";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/feature-highlights"   component={() => <ProtectedRoute component={FeatureHighlightsPage} />} />
       <Route path="/web-development"      component={() => <ProtectedRoute component={WebDevCMSPage} />} />
       <Route path="/custom-software"     component={() => <ProtectedRoute component={CustomSoftwareCMSPage} />} />
+      <Route path="/ai-automation-svc"  component={() => <ProtectedRoute component={AIAutomationServiceCMSPage} />} />
       <Route path="/roles"               component={() => <ProtectedRoute component={RolesPage} />} />
       <Route component={() => <Redirect to="/" />} />
     </Switch>
