@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Layout, PageHeader, Badge, Btn, Breadcrumb } from "@/components/Layout";
-import { Edit2, ExternalLink, Save, X, ChevronDown } from "lucide-react";
+import { Edit2, ExternalLink, Save, X, ChevronDown, LayoutDashboard } from "lucide-react";
+
+const PAGE_EDITORS: Record<string, string> = {
+  "/web-development": "/web-development",
+};
 
 const services = [
   {
@@ -126,6 +131,14 @@ export default function ServicesPage() {
               <div className="flex items-center justify-between pt-2 border-t border-border">
                 <span className="text-[11px] text-muted-foreground">Updated {s.lastUpdated}</span>
                 <div className="flex gap-1">
+                  {PAGE_EDITORS[s.slug] && (
+                    <Link href={PAGE_EDITORS[s.slug]}>
+                      <Btn variant="ghost" size="sm">
+                        <LayoutDashboard className="w-3.5 h-3.5 text-primary" />
+                        <span className="text-[11px] text-primary font-semibold ml-1">Full Editor</span>
+                      </Btn>
+                    </Link>
+                  )}
                   <Btn variant="ghost" size="sm" onClick={() => setEditing(s)}><Edit2 className="w-3.5 h-3.5" /></Btn>
                   <a href={`https://onesoft.org.uk${s.slug}`} target="_blank" rel="noopener noreferrer">
                     <Btn variant="ghost" size="sm"><ExternalLink className="w-3.5 h-3.5" /></Btn>

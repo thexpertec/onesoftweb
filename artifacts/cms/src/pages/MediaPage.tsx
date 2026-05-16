@@ -166,7 +166,8 @@ function WebpPanel({
         {/* File list */}
         <div className="px-5 py-3 max-h-64 overflow-y-auto space-y-1 mt-2">
           {rows.map((row, i) => {
-            const item = eligible.find(m => m.id === row.id)!;
+            const item = eligible.find(m => m.id === row.id);
+            if (!item) return null;
             const saved = Math.round(item.sizeKB * savingsRate(item.name));
             return (
               <div

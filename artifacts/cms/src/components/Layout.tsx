@@ -43,8 +43,9 @@ const modules = [
     label: "Products & Services",
     icon: Package,
     items: [
-      { path: "/products", label: "ERP Products", count: 12 },
-      { path: "/services", label: "Services",     count: 6 },
+      { path: "/products",        label: "ERP Products",    count: 12 },
+      { path: "/services",        label: "Services",        count: 6  },
+      { path: "/web-development", label: "↳ Web Dev Page",  count: 9  },
     ],
   },
   {
